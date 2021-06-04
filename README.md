@@ -1,0 +1,4 @@
+# hiMate
+
+Group chat app
+
