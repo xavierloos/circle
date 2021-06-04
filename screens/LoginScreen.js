@@ -1,10 +1,11 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-
+import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
 const LoginScreen = () => {
   return (
     <View>
-      <Text>Login Screen</Text>
+      <StatusBar style="light"/>
+      <Text>Login</Text>
     </View>
   )
 }
