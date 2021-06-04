@@ -3,16 +3,20 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
+import LoginScreen from './screens/LoginScreen';
+import { createStackNavigator } from "@react-navigation/stack";
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <View style={styles.container}>
-        <Text>hiMate</Text>
-        <StatusBar style="auto" />
-      </View>
+      <Stack.Navigator>
+        <Stack.Screen options={{
+          title: "Sign up"
+        }} name="Login" component={LoginScreen} />
+      </Stack.Navigator>
     </NavigationContainer>
-    
   );
 }
 
