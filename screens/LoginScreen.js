@@ -1,6 +1,6 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native';
-import {Button, Input, Image} from "react-native-elements"
+import { StyleSheet, View } from 'react-native';
+import {Button, Input, Image, Text} from "react-native-elements"
 import { StatusBar } from "expo-status-bar";
 
 const LoginScreen = () => {
@@ -13,7 +13,7 @@ const LoginScreen = () => {
         }}
         style={styles.logo}
       />
-      <Text>Mate</Text>
+      <Text h2>Mate</Text>
     </View>
   )
 }
