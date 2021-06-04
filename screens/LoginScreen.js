@@ -1,15 +1,32 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native';
+import {Button, Input, Image} from "react-native-elements"
 import { StatusBar } from "expo-status-bar";
+
 const LoginScreen = () => {
   return (
-    <View>
+    <View style={styles.container}>
       <StatusBar style="light"/>
-      <Text>Login</Text>
+      <Image
+        source={{
+          uri: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fst4.depositphotos.com%2F6381748%2F27917%2Fv%2F450%2Fdepositphotos_279171494-stock-illustration-hand-wave-waving-hi-or.jpg&f=1&nofb=1"
+        }}
+        style={styles.logo}
+      />
+      <Text>Mate</Text>
     </View>
   )
 }
 
 export default LoginScreen
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  logo: {
+    width: 200,
+    height: 200,
+  },
+})
