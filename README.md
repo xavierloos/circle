@@ -9,3 +9,7 @@ Group chat app
 - Add the import to the app.js file: `import 'react-native-gesture-handler';`
 - Add the navigation container to the app.js file: `import { NavigationContainer } from '@react-navigation/native';` and sorround the `<View>` with the `</NavigationContainer>` tag
 - Install the stack navigation: `yarn add @react-navigation/stack`
+
+### React Native Elements
+
+- Add the elements: `yarn add react-native-elements`
