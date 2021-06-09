@@ -44,5 +44,10 @@ const styles = StyleSheet.create({
     height: 200,
   },
   inputContainer: {
+    width:300,
+  },
+  button: {
+    width: 200,
+    marginTop:10,
   }
 })
