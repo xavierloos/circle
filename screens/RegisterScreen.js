@@ -1,12 +1,39 @@
-import React from 'react'
-import { View, Text } from 'react-native'
+import React, { useState } from 'react'
+import { View, KeyboardAvoidingView, StyleSheet } from 'react-native'
+import { Button, Input, Image, Text } from "react-native-elements"
+import { StatusBar } from 'expo-status-bar'
 
 const RegisterScreen = ({ navigation }) => {
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [avatar, setAvatar] = useState("")
+
+  const register = () => {
+
+  }
+
   return (
-    <View>
-      <Text>You are in the register screen</Text>
-    </View>
+    <KeyboardAvoidingView behavior="padding" style={styles.container}>
+      <StatusBar style="light" />
+      <Text h2 style={{ marginBotton: 50 }}>Create an account</Text>
+      <View style={styles.inputContainer}>
+        <Input type="text" placeholder="Full name" autoFocus value={name} onChangeText={(text) => setName(text)} />
+        <Input type="email" placeholder="Email" value={email} onChangeText={(text) => setEmail(text)} />
+        <Input type="password" secureTextEntry placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} />
+        <Input type="text" placeholder="Profile picture URL" value={avatar} onChangeText={(text) => setAvatar(text)} onSubmitEditing={register} />
+      </View>
+    </KeyboardAvoidingView>
   )
 }
 
-export default RegisterScreen
+export default RegisterScreen;
+
+const styles = StyleSheet.create({
+  container: {
+
+  },
+  inputContainer: {
+
+  }
+})
