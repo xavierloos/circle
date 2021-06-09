@@ -3,16 +3,14 @@ import { StyleSheet, View, KeyboardAvoidingView } from 'react-native';
 import { Button, Input, Image, Text } from "react-native-elements"
 import { StatusBar } from "expo-status-bar";
 
-const LoginScreen = () => {
+const LoginScreen = ({navigation}) => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
   const singIn = () => {
     
   }
-  const register = () => {
-    
-  }
+
   return (
     <KeyboardAvoidingView behavior="padding" style={styles.container}>
       <StatusBar style="light" />
@@ -28,7 +26,7 @@ const LoginScreen = () => {
         <Input type="password" placeholder="Password" value={password} onChangeText={(text)=> setPassword(text)}/>
       </View>
       <Button title="Login" containerStyle={styles.button} onPress={singIn} />
-      <Button title="Register" type="outline" containerStyle={styles.button} onPress={register} />
+      <Button title="Register" type="outline" containerStyle={styles.button} onPress={()=>navigation.navigate("Register")} />
     </KeyboardAvoidingView>
   )
 }
