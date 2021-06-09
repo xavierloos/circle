@@ -21,7 +21,7 @@ const LoginScreen = () => {
 export default LoginScreen
 
 const styles = StyleSheet.create({
-  container: {
+  container:
     justifyContent: 'center',
     alignItems: 'center',
   },
