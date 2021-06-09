@@ -6,6 +6,10 @@ import { StatusBar } from "expo-status-bar";
 const LoginScreen = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+
+  const singIn = () => {
+    
+  }
   return (
     <View>
       <StatusBar style="light" />
@@ -20,6 +24,7 @@ const LoginScreen = () => {
         <Input type="email" placeholder="Email" autoFocus value={email} onChangeText={(text)=> setEmail(text)}/>
         <Input type="password" placeholder="Password" value={password} onChangeText={(text)=> setPassword(text)}/>
       </View>
+      <Button title="Login" containerStyle={styles.button} onPress={singIn} />
     </View>
   )
 }
