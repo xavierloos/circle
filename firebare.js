@@ -1,3 +1,7 @@
+import * as firebase from "firebase"
+import "firebase/firestore"
+import "firebase/auth"
+
 const firebaseConfig = {
   apiKey: "AIzaSyBVBwdx1nC5jKgH2gu6w50WH5n6WlOYmz0",
   authDomain: "himate-a26bc.firebaseapp.com",
