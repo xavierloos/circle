@@ -2,6 +2,7 @@ import React, { useState, useLayoutEffect } from 'react'
 import { View, KeyboardAvoidingView, StyleSheet } from 'react-native'
 import { Button, Input, Image, Text } from "react-native-elements"
 import { StatusBar } from 'expo-status-bar'
+import { auth } from "../firebare"
 
 const RegisterScreen = ({ navigation }) => {
   const [name, setName] = useState("")
@@ -16,7 +17,14 @@ const RegisterScreen = ({ navigation }) => {
   }, [navigation])
 
   const register = () => {
-
+    auth.createUserWithEmailAndPassword(email, password)
+      .then(authUser => {
+        authUser.user.update({
+          displayName: name,
+          photoURL: avatar || "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.9LeJajtN75YM4qNKou-0ewHaHa%26pid%3DApi&f=1"
+        })
+       })
+      .catch(error => alert(error.message))
   }
 
   return (
@@ -46,7 +54,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   title: {
-    marginBottom:50
+    marginBottom: 50
   },
   inputContainer: {
     width: 300
