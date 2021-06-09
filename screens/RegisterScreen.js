@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useLayoutEffect } from 'react'
 import { View, KeyboardAvoidingView, StyleSheet } from 'react-native'
 import { Button, Input, Image, Text } from "react-native-elements"
 import { StatusBar } from 'expo-status-bar'
@@ -8,6 +8,12 @@ const RegisterScreen = ({ navigation }) => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [avatar, setAvatar] = useState("")
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerBackTitle: "Back to login",
+    });
+  }, [navigation])
 
   const register = () => {
 
