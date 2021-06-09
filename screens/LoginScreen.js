@@ -1,11 +1,11 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { StyleSheet, View } from 'react-native';
 import { Button, Input, Image, Text } from "react-native-elements"
 import { StatusBar } from "expo-status-bar";
 
 const LoginScreen = () => {
   const [email, setEmail] = useState("")
-  const [password, setPassword] =  useState("")
+  const [password, setPassword] = useState("")
   return (
     <View>
       <StatusBar style="light" />
@@ -17,7 +17,8 @@ const LoginScreen = () => {
       />
       <Text h2>Mate</Text>
       <View style={styles.inputContainer}>
-        <Input type="email" placeholder="Email" autoFocus/>
+        <Input type="email" placeholder="Email" autoFocus />
+        <Input type="password" placeholder="Password" />
       </View>
     </View>
   )
@@ -35,6 +36,5 @@ const styles = StyleSheet.create({
     height: 200,
   },
   inputContainer: {
-    color: "red"
   }
 })
