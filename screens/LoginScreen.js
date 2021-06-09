@@ -1,14 +1,23 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { StyleSheet, View, KeyboardAvoidingView } from 'react-native';
 import { Button, Input, Image, Text } from "react-native-elements"
 import { StatusBar } from "expo-status-bar";
+import { auth } from '../firebare';
+import { auth } from "../firebare"
 
-const LoginScreen = ({navigation}) => {
+const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChange((authUser) => {
+      if (authUser) { navigation.replace("Home") }
+    })
+    return unsubscribe
+  }, [])
+
   const singIn = () => {
-    
+
   }
 
   return (
@@ -22,11 +31,11 @@ const LoginScreen = ({navigation}) => {
       />
       <Text h2>Mate</Text>
       <View style={styles.inputContainer}>
-        <Input type="email" placeholder="Email" autoFocus value={email} onChangeText={(text)=> setEmail(text)}/>
-        <Input type="password" placeholder="Password" value={password} onChangeText={(text)=> setPassword(text)}/>
+        <Input type="email" placeholder="Email" autoFocus value={email} onChangeText={(text) => setEmail(text)} />
+        <Input type="password" placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} />
       </View>
       <Button title="Login" containerStyle={styles.button} onPress={singIn} />
-      <Button title="Register" type="outline" containerStyle={styles.button} onPress={()=>navigation.navigate("Register")} />
+      <Button title="Register" type="outline" containerStyle={styles.button} onPress={() => navigation.navigate("Register")} />
     </KeyboardAvoidingView>
   )
 }
@@ -39,17 +48,17 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 10,
-    backgroundColor:"white"
+    backgroundColor: "white"
   },
   logo: {
     width: 200,
     height: 200,
   },
   inputContainer: {
-    width:300,
+    width: 300,
   },
   button: {
     width: 200,
-    marginTop:10,
+    marginTop: 10,
   }
 })
