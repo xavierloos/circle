@@ -38,6 +38,7 @@ const LoginScreen = ({ navigation }) => {
   )
 }
 
+
 export default LoginScreen
 
 const styles = StyleSheet.create({
