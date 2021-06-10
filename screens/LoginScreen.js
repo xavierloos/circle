@@ -16,7 +16,6 @@ const LoginScreen = ({ navigation }) => {
   }, [])
 
   const singIn = () => {
-
   }
 
   return (
