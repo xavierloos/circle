@@ -15,6 +15,7 @@ const globalScreenOptions = {
   headerTitleStyle: { color: "white" },
   headerTintColor: "whi"
 }
+
 export default function App() {
   return (
     <NavigationContainer>
