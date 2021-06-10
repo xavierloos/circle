@@ -27,7 +27,6 @@ const LoginScreen = ({ navigation }) => {
         }}
         style={styles.logo}
       />
-      
       <Text h2>Mate</Text>
       <View style={styles.inputContainer}>
         <Input type="email" placeholder="Email" autoFocus value={email} onChangeText={(text) => setEmail(text)} />
