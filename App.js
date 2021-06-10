@@ -9,6 +9,7 @@ import HomeScreen from './screens/HomeScreen';
 import { createStackNavigator } from "@react-navigation/stack";
 
 const Stack = createStackNavigator();
+
 const globalScreenOptions = {
   headerStyle: { backgroundColor: "#2c6bed" },
   headerTitleStyle: { color: "white" },
