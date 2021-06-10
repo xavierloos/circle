@@ -5,7 +5,7 @@ import { StatusBar } from "expo-status-bar";
 import { auth } from "../firebase"
 
 const LoginScreen = ({ navigation }) => {
-  
+
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
@@ -27,6 +27,7 @@ const LoginScreen = ({ navigation }) => {
         }}
         style={styles.logo}
       />
+      
       <Text h2>Mate</Text>
       <View style={styles.inputContainer}>
         <Input type="email" placeholder="Email" autoFocus value={email} onChangeText={(text) => setEmail(text)} />
