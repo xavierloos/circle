@@ -23,7 +23,7 @@ const RegisterScreen = ({ navigation }) => {
           displayName: name,
           photoURL: avatar || "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.9LeJajtN75YM4qNKou-0ewHaHa%26pid%3DApi&f=1"
         })
-       })
+      })
       .catch(error => alert(error.message))
   }
 
