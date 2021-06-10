@@ -15,8 +15,7 @@ const LoginScreen = ({ navigation }) => {
     return unsubscribe
   }, [])
 
-  const singIn = () => {
-  }
+  const singIn = () => { }
 
   return (
     <KeyboardAvoidingView behavior="padding" style={styles.container}>
