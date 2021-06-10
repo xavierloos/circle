@@ -1,6 +1,6 @@
 import React, { useState, useLayoutEffect } from 'react'
 import { View, KeyboardAvoidingView, StyleSheet } from 'react-native'
-import { Button, Input, Image, Text } from "react-native-elements"
+import { Button, Input, Text } from "react-native-elements"
 import { StatusBar } from 'expo-status-bar'
 import { auth } from "../firebase"
 
