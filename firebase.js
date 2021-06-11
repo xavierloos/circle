@@ -13,11 +13,7 @@ const firebaseConfig = {
 
 let app
 
-if (firebase.apps.length === 0) {
-  app = firebase.initializeApp(firebaseConfig)
-} else {
-  app = firebase.app()
-}
+(firebase.apps.length === 0) ? app = firebase.initializeApp(firebaseConfig) : app = firebase.app()
 
 const db = app.firestore()
 const auth = firebase.auth()
