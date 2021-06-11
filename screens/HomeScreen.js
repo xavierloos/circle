@@ -1,5 +1,5 @@
 import React, { useLayoutEffect } from 'react'
-import { ScrollView, StyleSheet, Text, View, SafeAreaView } from 'react-native'
+import { ScrollView, StyleSheet, Text, View, SafeAreaView, TouchableOpacity} from 'react-native'
 import CustomListItem from '../components/CustomListItem'
 import { NavigationContainer } from '@react-navigation/native'
 import { StatusBar } from 'expo-status-bar'
@@ -13,9 +13,11 @@ const HomeScreen = ({ navigation }) => {
       headerStyle: { backgroundColor: "#D50000" },
       headerTitleStyle: { color: "white" },
       headerTintColor: "black",
-      headerRight: () => (
+      headerLeft: () => (
         <View style={{ marginRight: 20 }}>
-          <Avatar rounded source={{ uri: auth?.currentUser?.photoURL }} />
+          <TouchableOpacity>
+            <Avatar rounded source={{ uri: auth?.currentUser?.photoURL }} />
+          </TouchableOpacity>
         </View>
       ),
     })
