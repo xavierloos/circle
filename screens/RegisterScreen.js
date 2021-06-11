@@ -19,7 +19,7 @@ const RegisterScreen = ({ navigation }) => {
   const register = () => {
     auth.createUserWithEmailAndPassword(email, password)
       .then(authUser => {
-        authUser.user.update({
+        authUser.user.updateProfile({
           displayName: name,
           photoURL: avatar || "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.9LeJajtN75YM4qNKou-0ewHaHa%26pid%3DApi&f=1"
         })
