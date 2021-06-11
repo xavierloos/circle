@@ -17,14 +17,15 @@ const RegisterScreen = ({ navigation }) => {
   }, [navigation])
 
   const register = () => {
-    auth.createUserWithEmailAndPassword(email, password)
-      .then(authUser => {
-        authUser.user.updateProfile({
+    auth
+      .createUserWithEmailAndPassword(email, password)
+      .then((authUser) => {
+        authUser.user.update({
           displayName: name,
           photoURL: avatar || "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.9LeJajtN75YM4qNKou-0ewHaHa%26pid%3DApi&f=1"
         })
       })
-      .catch(error => alert(error.message))
+      .catch((error) => alert(error.message))
   }
 
   return (
@@ -34,7 +35,8 @@ const RegisterScreen = ({ navigation }) => {
       <View style={styles.inputContainer}>
         <Input type="text" placeholder="Full name" autoFocus value={name} onChangeText={(text) => setName(text)} />
         <Input type="email" placeholder="Email" value={email} onChangeText={(text) => setEmail(text)} />
-        <Input type="password" secureTextEntry placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} />
+        {/* secureTextEntry */}
+        <Input type="password"  placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} />
         <Input type="text" placeholder="Profile picture URL" value={avatar} onChangeText={(text) => setAvatar(text)} onSubmitEditing={register} />
       </View>
       <Button containerStyle={styles.button} raised onPress={register} title="Register" />

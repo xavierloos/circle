@@ -3,6 +3,8 @@ import { ScrollView, StyleSheet, Text, View, SafeAreaView } from 'react-native'
 import CustomListItem from '../components/CustomListItem'
 import { NavigationContainer } from '@react-navigation/native'
 import { StatusBar } from 'expo-status-bar'
+import { Avatar } from 'react-native-elements/dist/avatar/Avatar'
+import { auth } from '../firebase'
 
 const HomeScreen = ({ navigation }) => {
   useLayoutEffect(() => {
@@ -10,7 +12,12 @@ const HomeScreen = ({ navigation }) => {
       title: "hiMate Chat",
       headerStyle: { backgroundColor: "#D50000" },
       headerTitleStyle: { color: "white" },
-      headerTintColor: "black"
+      headerTintColor: "black",
+      headerRight: () => (
+        <View>
+          <Avatar rounded source={{ uri: auth?.currentUser?.photoURL }} />
+        </View>
+      ),
     })
   }, [])
 
