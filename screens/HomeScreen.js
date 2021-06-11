@@ -4,7 +4,7 @@ import CustomListItem from '../components/CustomListItem'
 import { NavigationContainer } from '@react-navigation/native'
 import { StatusBar } from 'expo-status-bar'
 import { Avatar } from 'react-native-elements/dist/avatar/Avatar'
-import { auth } from '../firebase'
+import { auth, db } from '../firebase'
 
 const HomeScreen = ({ navigation }) => {
   useLayoutEffect(() => {
@@ -14,7 +14,7 @@ const HomeScreen = ({ navigation }) => {
       headerTitleStyle: { color: "white" },
       headerTintColor: "black",
       headerRight: () => (
-        <View>
+        <View style={{ marginRight: 20 }}>
           <Avatar rounded source={{ uri: auth?.currentUser?.photoURL }} />
         </View>
       ),
