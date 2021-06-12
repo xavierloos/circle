@@ -8,7 +8,7 @@ const RegisterScreen = ({ navigation }) => {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  const [avatar, setAvatar] = useState("")
+  const [imageUrl, setImageUrl] = useState("")
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -22,7 +22,7 @@ const RegisterScreen = ({ navigation }) => {
       .then((authUser) => {
         authUser.user.update({
           displayName: name,
-          photoURL: avatar || "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.9LeJajtN75YM4qNKou-0ewHaHa%26pid%3DApi&f=1"
+          photoURL: imageUrl || "http://icons.iconarchive.com/icons/pelfusion/long-shadow-media/512/Contact-icon.png",
         })
       })
       .catch((error) => alert(error.message))
@@ -36,8 +36,8 @@ const RegisterScreen = ({ navigation }) => {
         <Input type="text" placeholder="Full name" autoFocus value={name} onChangeText={(text) => setName(text)} />
         <Input type="email" placeholder="Email" value={email} onChangeText={(text) => setEmail(text)} />
         {/* secureTextEntry */}
-        <Input type="password"  placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} />
-        <Input type="text" placeholder="Profile picture URL" value={avatar} onChangeText={(text) => setAvatar(text)} onSubmitEditing={register} />
+        <Input type="password" placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} />
+        <Input type="text" placeholder="Profile picture URL" value={imageUrl} onChangeText={(text) => setImageUrl(text)} onSubmitEditing={register} />
       </View>
       <Button containerStyle={styles.button} raised onPress={register} title="Register" />
       <View style={{ height: 100 }} />
