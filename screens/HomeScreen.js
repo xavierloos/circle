@@ -3,6 +3,7 @@ import { ScrollView, StyleSheet, Text, View, SafeAreaView, TouchableOpacity } fr
 import CustomListItem from '../components/CustomListItem'
 import { StatusBar } from 'expo-status-bar'
 import { Avatar } from 'react-native-elements'
+import { AntDesign, SimpleLineIcons } from "@expo/vector-icons"
 import { auth, db } from '../firebase'
 
 const HomeScreen = ({ navigation }) => {
