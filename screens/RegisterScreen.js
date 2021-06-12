@@ -22,7 +22,7 @@ const RegisterScreen = ({ navigation }) => {
       .then((authUser) => {
         authUser.user.update({
           displayName: name,
-          photoURL: imageUrl || "https://www.schematherapysociety.org/resources/Pictures/My%20Profile%20Icon%20-%20Instructions.png",
+          photoURL: imageUrl || "http://icons.iconarchive.com/icons/pelfusion/long-shadow-media/512/Contact-icon.png",
         })
       })
       .catch((error) => alert(error.message))
