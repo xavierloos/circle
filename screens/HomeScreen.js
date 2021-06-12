@@ -20,7 +20,7 @@ const HomeScreen = ({ navigation }) => {
           <TouchableOpacity activeOpacity={0.5} style={{ marginLeft: 5 }}>
             <SimpleLineIcons name="camera" size={24} color="white" />
           </TouchableOpacity>
-          <TouchableOpacity activeOpacity={0.5} style={{ marginLeft: 5 }}>
+          <TouchableOpacity onPress={()=>navigation.navigate("AddChat")} activeOpacity={0.5} style={{ marginLeft: 5 }}>
             <SimpleLineIcons name="pencil" size={24} color="white" />
           </TouchableOpacity>
           <TouchableOpacity activeOpacity={0.5} style={{ marginLeft: 5 }}>
