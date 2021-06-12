@@ -24,7 +24,9 @@ const HomeScreen = ({ navigation }) => {
             <SimpleLineIcons name="pencil" size={24} color="white" />
           </TouchableOpacity>
           <TouchableOpacity activeOpacity={0.5} style={{ marginLeft: 5 }}>
-            <Avatar rounded source={{ uri: "http://icons.iconarchive.com/icons/pelfusion/long-shadow-media/512/Contact-icon.png" }} />
+            {
+              (auth?.currentUser?.photoURL === null) ? <SimpleLineIcons name="user" size={24} color="white" /> : <Avatar rounded source={{ uri: "http://icons.iconarchive.com/icons/pelfusion/long-shadow-media/512/Contact-icon.png" }} />
+            }
           </TouchableOpacity>
         </View>
       ),
