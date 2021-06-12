@@ -16,12 +16,12 @@ const HomeScreen = ({ navigation }) => {
       headerTitleStyle: { color: "white" },
       headerTintColor: "black",
       headerRight: () => (
-        <View style={{ marginRight: 10, flexDirection:"row", justifyContent:"space-between",alignItems: "center" }}>
+        <View style={{ marginRight: 10, flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
           <TouchableOpacity activeOpacity={0.5} style={{ marginLeft: 5 }}>
-            <AntDesign name="camera" size={24} color="white"/>
+            <SimpleLineIcons name="camera" size={24} color="white" />
           </TouchableOpacity>
           <TouchableOpacity activeOpacity={0.5} style={{ marginLeft: 5 }}>
-            <Avatar rounded source={{ uri: "http://icons.iconarchive.com/icons/pelfusion/long-shadow-media/512/Contact-icon.png" }} />
+            <SimpleLineIcons name="pencil" size={24} color="white" />
           </TouchableOpacity>
           <TouchableOpacity activeOpacity={0.5} style={{ marginLeft: 5 }}>
             <Avatar rounded source={{ uri: "http://icons.iconarchive.com/icons/pelfusion/long-shadow-media/512/Contact-icon.png" }} />
