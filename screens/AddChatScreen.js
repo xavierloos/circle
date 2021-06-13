@@ -15,6 +15,7 @@ const AddChatScreen = ({ navigation }) => {
       <Text>Add Chat Screen</Text>
     </View>
   )
-} 
+}
+
 export default AddChatScreen
 const styles = StyleSheet.create({})
