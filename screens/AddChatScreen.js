@@ -13,7 +13,6 @@ const AddChatScreen = ({ navigation }) => {
   return (
     <View>
       <Text>Add Chat Screen</Text>
-      
     </View>
   )
 }
