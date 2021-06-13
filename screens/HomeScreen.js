@@ -29,6 +29,7 @@ const HomeScreen = ({ navigation }) => {
             }
           </TouchableOpacity>
         </View>
+
       ),
     })
   }, [])
@@ -41,6 +42,7 @@ const HomeScreen = ({ navigation }) => {
         <CustomListItem />
       </ScrollView>
     </SafeAreaView>
+    
   )
 
 }

@@ -2,7 +2,6 @@ import React, { useLayoutEffect } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
 const AddChatScreen = ({ navigation }) => {
-
   useLayoutEffect(() => {
     navigation.setOptions({
       title: "Add a new chat",
