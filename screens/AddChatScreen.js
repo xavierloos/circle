@@ -11,7 +11,7 @@ const AddChatScreen = ({ navigation }) => {
   }, [navigation])
 
   return (
-    <View style={styles}>
+    <View>
       <Text>Add Chat Screen</Text>
     </View>
   )
