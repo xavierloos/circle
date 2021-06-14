@@ -24,7 +24,7 @@ const AddChatScreen = ({ navigation }) => {
       <Text>Add Chat Screen</Text>
       <Input placeholder="Chat name" value={chatname} onChangeText={() => setChatname(chatname)} leftIcon={
         <Icon name="wechat" type="antdesign" size={30} color="black" />
-      } />
+      } onSubmitEditing={createChat}/>
       <Button onPress={createChat} title="Create chat" />
     </View>
   )
