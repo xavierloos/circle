@@ -11,14 +11,12 @@ const AddChatScreen = ({ navigation }) => {
     });
   }, [navigation])
 
-  const createChat = async() => {
-    await db.collection("chats").add({
-      chatName: chatname,
-    })
-    .then(() => {
-      navigation.goBack()
-    })
-      
+  const createChat = async () => {
+    await db.collection("chats").add({ chatName: chatname, })
+      .then(() => {
+        navigation.goBack()
+      })
+      .catch((e) => alert(e))
   }
 
   return (
