@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from 'react'
+import React, { useLayoutEffect, useState, useEffect } from 'react'
 import { ScrollView, StyleSheet, Text, View, SafeAreaView, TouchableOpacity } from 'react-native'
 import CustomListItem from '../components/CustomListItem'
 import { StatusBar } from 'expo-status-bar'
@@ -22,7 +22,7 @@ const HomeScreen = ({ navigation }) => {
           <TouchableOpacity activeOpacity={0.5} style={{ marginLeft: 5 }}>
             <SimpleLineIcons name="camera" size={24} color="white" />
           </TouchableOpacity>
-          <TouchableOpacity onPress={()=>navigation.navigate("AddChat")} activeOpacity={0.5} style={{ marginLeft: 5 }}>
+          <TouchableOpacity onPress={() => navigation.navigate("AddChat")} activeOpacity={0.5} style={{ marginLeft: 5 }}>
             <SimpleLineIcons name="pencil" size={24} color="white" />
           </TouchableOpacity>
           <TouchableOpacity activeOpacity={0.5} style={{ marginLeft: 5 }}>
@@ -36,6 +36,20 @@ const HomeScreen = ({ navigation }) => {
     })
   }, [])
 
+  useEffect(() => {
+    const unsubscribe = db.collection("chats").onSnapshot((snapshot) =>
+      setChats(
+        snapshot.docs.map((doc) => ({
+          id: doc.id,
+          data: doc.data(),
+        }))
+      )
+    )
+    
+    return unsubscribe
+
+  }, [])
+
   return (
     <SafeAreaView>
       <StatusBar style="light" />
@@ -43,7 +57,7 @@ const HomeScreen = ({ navigation }) => {
         <CustomListItem />
       </ScrollView>
     </SafeAreaView>
-    
+
   )
 
 }
