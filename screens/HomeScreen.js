@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from 'react'
+import React, { useLayoutEffect, useState } from 'react'
 import { ScrollView, StyleSheet, Text, View, SafeAreaView, TouchableOpacity } from 'react-native'
 import CustomListItem from '../components/CustomListItem'
 import { StatusBar } from 'expo-status-bar'
@@ -7,6 +7,8 @@ import { AntDesign, SimpleLineIcons } from "@expo/vector-icons"
 import { auth, db } from '../firebase'
 
 const HomeScreen = ({ navigation }) => {
+  const [chats, setChats] = useState([]);
+
   console.log(auth?.currentUser?.email)
   console.log(auth?.currentUser?.photoURL)
   useLayoutEffect(() => {
@@ -35,7 +37,6 @@ const HomeScreen = ({ navigation }) => {
   }, [])
 
   return (
-
     <SafeAreaView>
       <StatusBar style="light" />
       <ScrollView>
