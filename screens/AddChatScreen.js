@@ -20,8 +20,7 @@ const AddChatScreen = ({ navigation }) => {
   }
 
   return (
-    <View>
-      <Text>Add Chat Screen</Text>
+    <View style={styles.container}>
       <Input placeholder="Chat name" value={chatname} onChangeText={(text) => setChatname(text)} leftIcon={
         <Icon name="wechat" type="antdesign" size={30} color="black" />
       } onSubmitEditing={createChat}/>
@@ -31,4 +30,14 @@ const AddChatScreen = ({ navigation }) => {
 }
 
 export default AddChatScreen
-const styles = StyleSheet.create({})
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 10,
+    backgroundColor: "white",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
+})
