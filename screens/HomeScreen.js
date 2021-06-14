@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from 'react'
+import React, { useLayoutEffect, useState, useEffect } from 'react'
 import { ScrollView, StyleSheet, Text, View, SafeAreaView, TouchableOpacity } from 'react-native'
 import CustomListItem from '../components/CustomListItem'
 import { StatusBar } from 'expo-status-bar'
@@ -7,6 +7,8 @@ import { AntDesign, SimpleLineIcons } from "@expo/vector-icons"
 import { auth, db } from '../firebase'
 
 const HomeScreen = ({ navigation }) => {
+  const [chats, setChats] = useState([]);
+
   console.log(auth?.currentUser?.email)
   console.log(auth?.currentUser?.photoURL)
   useLayoutEffect(() => {
@@ -20,7 +22,7 @@ const HomeScreen = ({ navigation }) => {
           <TouchableOpacity activeOpacity={0.5} style={{ marginLeft: 5 }}>
             <SimpleLineIcons name="camera" size={24} color="white" />
           </TouchableOpacity>
-          <TouchableOpacity onPress={()=>navigation.navigate("AddChat")} activeOpacity={0.5} style={{ marginLeft: 5 }}>
+          <TouchableOpacity onPress={() => navigation.navigate("AddChat")} activeOpacity={0.5} style={{ marginLeft: 5 }}>
             <SimpleLineIcons name="pencil" size={24} color="white" />
           </TouchableOpacity>
           <TouchableOpacity activeOpacity={0.5} style={{ marginLeft: 5 }}>
@@ -34,15 +36,31 @@ const HomeScreen = ({ navigation }) => {
     })
   }, [])
 
-  return (
+  useEffect(() => {
+    const unsubscribe = db.collection("chats").onSnapshot((snapshot) =>
+      setChats(
+        snapshot.docs.map((doc) => ({
+          id: doc.id,
+          data: doc.data(),
+        }))
+      )
+    )
+    
+    return unsubscribe
 
+  }, [])
+
+  return (
     <SafeAreaView>
       <StatusBar style="light" />
       <ScrollView>
-        <CustomListItem />
+        {chats.map(({ id, data: { chatName } }) => (
+          <CustomListItem key={id} id={id} chatName={chatName}/>
+        ))}
+        
       </ScrollView>
     </SafeAreaView>
-    
+
   )
 
 }
