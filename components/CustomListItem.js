@@ -4,10 +4,10 @@ import { ListItem, Avatar } from "react-native-elements"
 
 const CustomListItem = ({id, chatName, enterChat}) => {
   return (
-    <ListItem>
+    <ListItem key={id} bottomDivider>
       <Avatar rounded source={{ uri: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.9LeJajtN75YM4qNKou-0ewHaHa%26pid%3DApi&f=1" }} />
       <ListItem.Content>
-        <ListItem.Title style={{ fontWeight: "600" }}>Cooking</ListItem.Title>
+        <ListItem.Title style={{ fontWeight: "600" }}>{chatName}</ListItem.Title>
         <ListItem.Subtitle numberOfLines={1} ellipsizeMode="tail" style={{fontWeight:"400"}}>This is a chat for cooking recipies, please join if you want to learn more.</ListItem.Subtitle>
       </ListItem.Content>
     </ListItem>
