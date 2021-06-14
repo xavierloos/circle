@@ -27,7 +27,7 @@ const AddChatScreen = ({ navigation }) => {
         } onSubmitEditing={createChat} />
       </View>
 
-      <Button onPress={createChat} title="Create chat" />
+      <Button style={styles.button} onPress={createChat} title="Create chat" />
     </View>
   )
 }
@@ -45,5 +45,8 @@ const styles = StyleSheet.create({
   inputContainer: {
     width: 300
   },
-
+  button: {
+    width: 200,
+    marginTop: 10,
+  }
 })
