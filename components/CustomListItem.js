@@ -14,5 +14,4 @@ const CustomListItem = ({id, chatName, enterChat}) => {
   )
 }
 export default CustomListItem
-
 const styles = StyleSheet.create({})
