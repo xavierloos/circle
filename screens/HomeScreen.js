@@ -46,7 +46,6 @@ const HomeScreen = ({ navigation }) => {
       )
     )
     return unsubscribe
-
   }, [])
 
   return (
