@@ -57,7 +57,6 @@ const HomeScreen = ({ navigation }) => {
       </ScrollView>
     </SafeAreaView>
   )
-
 }
 
 export default HomeScreen
