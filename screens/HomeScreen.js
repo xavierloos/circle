@@ -9,6 +9,10 @@ import { auth, db } from '../firebase'
 const HomeScreen = ({ navigation }) => {
   const [chats, setChats] = useState([]);
 
+  const singOut = () => {
+    
+  }
+
   // console.log(auth?.currentUser?.email)
   // console.log(auth?.currentUser?.photoURL)
   useLayoutEffect(() => {
@@ -52,7 +56,7 @@ const HomeScreen = ({ navigation }) => {
       <StatusBar style="light" />
       <ScrollView>
         {chats.map(({ id, data: { chatName } }) => (
-          <CustomListItem key={id} id={id} chatName={chatName}/>
+          <CustomListItem key={id} id={id} chatName={chatName} />
         ))}
       </ScrollView>
     </SafeAreaView>
