@@ -10,13 +10,17 @@ const LoginScreen = ({ navigation }) => {
   const [password, setPassword] = useState("")
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((authUser) => { 
+    const unsubscribe = auth.onAuthStateChanged((authUser) => {
       if (authUser) { navigation.replace("Home") }
     })
     return unsubscribe
   }, [])
 
-  const singIn = () => { }
+  const singIn = () => {
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .catch((error) => alert(error))
+  }
 
   return (
     <KeyboardAvoidingView behavior="padding" style={styles.container}>
@@ -30,7 +34,7 @@ const LoginScreen = ({ navigation }) => {
       <Text h2>Mate</Text>
       <View style={styles.inputContainer}>
         <Input type="email" placeholder="Email" autoFocus value={email} onChangeText={(text) => setEmail(text)} />
-        <Input type="password" placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} />
+        <Input type="password" placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} onSubmitEditing={singIn}/>
       </View>
       <Button title="Login" containerStyle={styles.button} onPress={singIn} />
       <Button title="Register" type="outline" containerStyle={styles.button} onPress={() => navigation.navigate("Register")} />
