@@ -31,7 +31,6 @@ const HomeScreen = ({ navigation }) => {
             }
           </TouchableOpacity>
         </View>
-
       ),
     })
   }, [])
