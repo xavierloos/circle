@@ -10,13 +10,16 @@ const LoginScreen = ({ navigation }) => {
   const [password, setPassword] = useState("")
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((authUser) => { 
+    const unsubscribe = auth.onAuthStateChanged((authUser) => {
       if (authUser) { navigation.replace("Home") }
     })
     return unsubscribe
   }, [])
 
-  const singIn = () => { }
+  const singIn = () => {
+    auth
+      .signInWithEmailAndPassword(email, password)
+  }
 
   return (
     <KeyboardAvoidingView behavior="padding" style={styles.container}>
