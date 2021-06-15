@@ -9,9 +9,12 @@ import { auth, db } from '../firebase'
 const HomeScreen = ({ navigation }) => {
   const [chats, setChats] = useState([]);
 
-  const singOut = () => {
-    
+  const signOut = () => {
+    auth.signOut().then(() => {
+      navigation.replace("Login")
+    })
   }
+
 
   // console.log(auth?.currentUser?.email)
   // console.log(auth?.currentUser?.photoURL)
@@ -31,7 +34,7 @@ const HomeScreen = ({ navigation }) => {
           </TouchableOpacity>
           <TouchableOpacity activeOpacity={0.5} style={{ marginLeft: 5 }}>
             {
-              (auth?.currentUser?.photoURL === null) ? <SimpleLineIcons name="user" size={24} color="white" /> : <Avatar rounded source={{ uri: "http://icons.iconarchive.com/icons/pelfusion/long-shadow-media/512/Contact-icon.png" }} />
+              (auth?.currentUser?.photoURL === null) ? <SimpleLineIcons name="user" size={24} color="white" onPress={signOut} /> : <Avatar rounded source={{ uri: "http://icons.iconarchive.com/icons/pelfusion/long-shadow-media/512/Contact-icon.png" }} onPress={signOut} />
             }
           </TouchableOpacity>
         </View>
