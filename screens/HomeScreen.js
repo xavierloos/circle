@@ -54,7 +54,6 @@ const HomeScreen = ({ navigation }) => {
         {chats.map(({ id, data: { chatName } }) => (
           <CustomListItem key={id} id={id} chatName={chatName}/>
         ))}
-        
       </ScrollView>
     </SafeAreaView>
 
