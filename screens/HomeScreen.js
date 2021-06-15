@@ -9,8 +9,8 @@ import { auth, db } from '../firebase'
 const HomeScreen = ({ navigation }) => {
   const [chats, setChats] = useState([]);
 
-  console.log(auth?.currentUser?.email)
-  console.log(auth?.currentUser?.photoURL)
+  // console.log(auth?.currentUser?.email)
+  // console.log(auth?.currentUser?.photoURL)
   useLayoutEffect(() => {
     navigation.setOptions({
       title: "hiMate Chat",
