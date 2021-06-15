@@ -19,6 +19,7 @@ const LoginScreen = ({ navigation }) => {
   const singIn = () => {
     auth
       .signInWithEmailAndPassword(email, password)
+      .catch((error) => alert(error))
   }
 
   return (
