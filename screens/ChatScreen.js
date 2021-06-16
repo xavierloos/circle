@@ -14,7 +14,7 @@ const ChatScreen = ({ navigation, route }) => {
       headerBackTitleVisible: false,
       headerRight: () => (
         <View style={{ marginRight: 10, flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
-          <Text>{route.params.chatName}</Text>
+          <Text style={styles.chatTitle}>{route.params.chatName}</Text>
           <TouchableOpacity activeOpacity={0.5} style={{ marginLeft: 5 }}>
             {
               (auth?.currentUser?.photoURL === null) ? <SimpleLineIcons name="user" size={24} color="white" /> : <Avatar rounded source={{ uri: auth?.currentUser?.photoURL }} />
@@ -33,4 +33,8 @@ const ChatScreen = ({ navigation, route }) => {
 
 export default ChatScreen
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  chatTitle: {
+    color: "white"
+  }
+})
