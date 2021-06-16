@@ -50,6 +50,7 @@ const HomeScreen = ({ navigation }) => {
     return unsubscribe
   }, [])
 
+
   return (
     <SafeAreaView>
       <StatusBar style="light" />
