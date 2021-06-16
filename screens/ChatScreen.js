@@ -1,5 +1,6 @@
 import React, { useLayoutEffect } from 'react'
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
+import { StyleSheet, View, TouchableOpacity } from 'react-native'
+import { Text } from "react-native-elements"
 import { AntDesign, SimpleLineIcons } from "@expo/vector-icons"
 import { auth, db } from '../firebase'
 import { Avatar } from 'react-native-elements'
@@ -8,7 +9,7 @@ const ChatScreen = ({ navigation, route }) => {
   useLayoutEffect(() => {
     navigation.setOptions({
       headerStyle: { backgroundColor: "#D50000" },
-      headerTitleStyle: { color: "#D50000"},
+      headerTitleStyle: { color: "#D50000" },
       headerTintColor: "white",
       headerBackTitleVisible: false,
       headerRight: () => (
