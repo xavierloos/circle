@@ -51,6 +51,11 @@ const HomeScreen = ({ navigation }) => {
   }, [])
 
 
+  const enterChat = (id, chatName) => {
+    
+    
+  }
+
   return (
     <SafeAreaView>
       <StatusBar style="light" />
