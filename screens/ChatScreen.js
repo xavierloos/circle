@@ -1,10 +1,11 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
-const ChatScreen = () => {
+const ChatScreen = ({ navigation, route }) => {
+  console.log(route.params)
   return (
     <View>
-      <Text>Chat screen</Text>
+      <Text>{route.params.chatName}</Text>
     </View>
   )
 }
