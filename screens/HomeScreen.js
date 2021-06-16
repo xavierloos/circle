@@ -15,9 +15,9 @@ const HomeScreen = ({ navigation }) => {
     })
   }
 
-
-  // console.log(auth?.currentUser?.email)
-  // console.log(auth?.currentUser?.photoURL)
+  console.log(auth?.currentUser)
+  console.log(auth?.currentUser?.email)
+  console.log()
   useLayoutEffect(() => {
     navigation.setOptions({
       title: "hiMate Chat",
@@ -34,7 +34,7 @@ const HomeScreen = ({ navigation }) => {
           </TouchableOpacity>
           <TouchableOpacity activeOpacity={0.5} style={{ marginLeft: 5 }}>
             {
-              (auth?.currentUser?.photoURL === null) ? <SimpleLineIcons name="user" size={24} color="white" onPress={signOut} /> : <Avatar rounded source={{ uri: "http://icons.iconarchive.com/icons/pelfusion/long-shadow-media/512/Contact-icon.png" }} onPress={signOut} />
+              (auth?.currentUser?.photoURL === null) ? <SimpleLineIcons name="user" size={24} color="white" onPress={signOut} /> : <Avatar rounded source={{ uri: auth?.currentUser?.photoURL }} onPress={signOut} />
             }
           </TouchableOpacity>
         </View>
