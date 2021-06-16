@@ -14,10 +14,6 @@ const HomeScreen = ({ navigation }) => {
       navigation.replace("Login")
     })
   }
-
-  console.log(auth?.currentUser)
-  console.log(auth?.currentUser?.email)
-  console.log()
   useLayoutEffect(() => {
     navigation.setOptions({
       title: "hiMate Chat",
