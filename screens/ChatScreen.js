@@ -35,6 +35,7 @@ export default ChatScreen
 
 const styles = StyleSheet.create({
   chatTitle: {
-    color: "white"
+    color: "white",
+    fontWeight: 'bold'
   }
 })
