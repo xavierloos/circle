@@ -25,6 +25,7 @@ const ChatScreen = ({ navigation, route }) => {
     })
   }, [])
   return (
+    
     <View>
       <Text>{route.params.chatName}</Text>
     </View>
