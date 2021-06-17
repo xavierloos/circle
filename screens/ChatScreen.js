@@ -9,6 +9,7 @@ import * as firebase from 'firebase'
 
 const ChatScreen = ({ navigation, route }) => {
   const [message, setMessage] = useState("")
+  const [messages, setMessages] = useState("")
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -43,16 +44,33 @@ const ChatScreen = ({ navigation, route }) => {
     setMessage("")
   }
 
+  useLayoutEffect(() => {
+    const unsubscribe = db.collection("chats").doc(route.params.id).collection("messages").orderBy("timestamp", "desc").onSnapshot((snapshot) => setMessages(snapshot.docs.map(doc => ({
+      id: doc.id,
+      data: doc.data()
+    }))))
+    return unsubscribe
+  }, [route])
+
   return (
     <SafeAreaView >
       <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={styles.container} keyboardVerticalOffset={90} >
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <>
             <ScrollView>
-              {/* Chats here */}
+              {messages.map(({ id, data }) => (
+                data.email == auth.currentUser.email ? (
+                  <View>
+                    <Avatar />
+                    <Text style={styles.receiverText}>{data.message}</Text>
+                  </View>
+                ) : (
+                    <View></View>
+                  )
+              ))}
             </ScrollView>
             <View style={styles.footer}>
-              <TextInput style={styles.message} placeholder="Message" value={message} onChangeText={(text) => setMessage(text)} />
+              <TextInput style={styles.message} placeholder="Message" value={message} onChangeText={(text) => setMessage(text)} onSubmitEditing={sendMessage} />
               <TouchableOpacity onPress={sendMessage} activeOpacity={0.5}>
                 <Ionicons name="send" type="antdesign" size={30} color="#D50000" required />
               </TouchableOpacity>
