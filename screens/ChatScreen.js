@@ -33,8 +33,12 @@ const ChatScreen = ({ navigation, route }) => {
   }
 
   return (
-    <SafeAreaView>
-      <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={styles.container} keyboardVerticalOffset={90}>
+    <SafeAreaView >
+      <KeyboardAvoidingView
+        behavior={Platform.OS === "ios" ? "padding" : "height"}
+        style={styles.container}
+        keyboardVerticalOffset={90}
+      >
         <>
           <ScrollView>
             {/* Chats here */}
@@ -42,7 +46,7 @@ const ChatScreen = ({ navigation, route }) => {
           <View style={styles.footer}>
             <TextInput style={styles.message} placeholder="Message" value={message} onChangeText={(text) => setMessage(text)} />
             <TouchableOpacity onPress={sendMessage} activeOpacity={0.5}>
-              <Ionicons name="send" type="antdesign" size={30} color="black" required />
+              <Ionicons name="send" type="antdesign" size={30} color="#D50000" required />
             </TouchableOpacity>
           </View>
         </>
@@ -60,8 +64,26 @@ const styles = StyleSheet.create({
     fontSize: 17
   },
   container: {
-    flex: 1
+    display: "flex",
+    height: "100%",
+    bottom: 0,
   },
-  message: {},
-  footer: {}
+  message: {
+
+    height: 40,
+    flex: 1,
+    marginRight: 15,
+    borderColor: "#D50000",
+    backgroundColor: "white",
+    borderWidth: 1,
+    color: "#D50000",
+    borderRadius: 50,
+    padding: 10
+  },
+  footer: {
+    flexDirection: "row",
+    alignItems: "center",
+    width: "100%",
+    padding: 15,
+  }
 })
