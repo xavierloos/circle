@@ -4,6 +4,7 @@ import { Text } from "react-native-elements"
 import { AntDesign, SimpleLineIcons } from "@expo/vector-icons"
 import { auth, db } from '../firebase'
 import { Avatar } from 'react-native-elements'
+import { ScrollView } from 'react-native-gesture-handler'
 
 const ChatScreen = ({ navigation, route }) => {
   useLayoutEffect(() => {
@@ -28,7 +29,16 @@ const ChatScreen = ({ navigation, route }) => {
   return (
     <SafeAreaView>
       <Text>{route.params.chatName}</Text>
-      <KeyboardAvoidingView behavior={Platform.OS==="ios"? "padding" : "height"} style={styles.container} keyboardVerticalOffset={90}></KeyboardAvoidingView>
+      <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={styles.container} keyboardVerticalOffset={90}>
+        <>
+          <ScrollView>
+            {/* Chats here */}
+          </ScrollView>
+          <View style={styles.footer}>
+
+          </View>
+        </>
+      </KeyboardAvoidingView>
     </SafeAreaView>
   )
 }
@@ -43,5 +53,6 @@ const styles = StyleSheet.create({
   },
   container: {
     
-  }
+  },
+  footer:{}
 })
