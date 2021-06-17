@@ -67,44 +67,45 @@ const ChatScreen = ({ navigation, route }) => {
       <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={styles.container} keyboardVerticalOffset={90} >
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <>
-            <ScrollView>
+            <ScrollView contentContainerStyle={{paddingTop:15}}>
               {messages.map(({ id, data }) =>
-                data.email === auth.currentUser.email ? (
-                  <View key={id} style={styles.receiver}>
-                    <Avatar position="absolute" bottom={-15} right={-5} rounded size={30} source={{ uri: data.photoURL }}
+              data.email === auth.currentUser.email ? (
+                <View key={id} style={styles.receiver}>
+                  <Avatar position="absolute" bottom={-15} right={-5} rounded size={30} source={{ uri: data.photoURL }}
+                    // WEB
+                    containerStyle={{
+                      position: "absolute",
+                      bottom: -15,
+                      right: -5
+                    }}
+                  />
+                  <Text style={styles.receiverText}>{data.message}</Text>
+                </View>
+              ) : (
+                  <View key={id} style={styles.sender}>
+                    <Avatar position="absolute" bottom={-15} left={-5} rounded size={30} source={{ uri: data.photoURL }}
                       // WEB
                       containerStyle={{
                         position: "absolute",
                         bottom: -15,
-                        right: -5
-                      }}
-                    />
-                    <Text style={styles.receiverText}>{data.message}</Text>
-                  </View>
-                ) : (
-                    <View key={id} style={styles.sender}>
-                      <Avatar position="absolute" bottom={-15} left={-5} rounded size={30} source={{ uri: data.photoURL }}
-                        // WEB
-                        containerStyle={{
-                          position: "absolute",
-                          bottom: -15,
-                          left: -5
-                        }} />
+                        left: -5
+                      }} />
                       <Text style={styles.senderText}>{data.message}</Text>
-                    </View>
-                  )
-              )}
-            </ScrollView>
-            <View style={styles.footer}>
-              <TextInput style={styles.message} placeholder="Message" value={inputMessage} onChangeText={(text) => setInputMessage(text)} onSubmitEditing={sendMessage} />
-              <TouchableOpacity onPress={sendMessage} activeOpacity={0.5}>
-                <Ionicons name="send" type="antdesign" size={30} color="#D50000" required />
-              </TouchableOpacity>
-            </View>
+                      <Text style={styles.senderName}>{data.displayName}</Text>
+                  </View>
+                )
+            )}
+          </ScrollView>
+          <View style={styles.footer}>
+            <TextInput style={styles.message} placeholder="Message" value={inputMessage} onChangeText={(text) => setInputMessage(text)} onSubmitEditing={sendMessage} />
+            <TouchableOpacity onPress={sendMessage} activeOpacity={0.5}>
+              <Ionicons name="send" type="antdesign" size={30} color="#D50000" required />
+            </TouchableOpacity>
+          </View>
           </>
         </TouchableWithoutFeedback>
       </KeyboardAvoidingView>
-    </SafeAreaView>
+    </SafeAreaView >
   )
 }
 
@@ -142,6 +143,12 @@ const styles = StyleSheet.create({
     maxWidth: "80%",
     position: "relative"
   },
+  receiverText: {
+    color: "black",
+    fontWeight: "500",
+    marginLeft: 10,
+    marginBottom: 15
+  },
   sender: {
     padding: 15,
     backgroundColor: "#D50000",
@@ -152,7 +159,18 @@ const styles = StyleSheet.create({
     maxWidth: "80%",
     position: "relative"
   },
-
+  senderText: {
+    color: "white",
+    fontWeight: "500",
+    marginLeft: 10,
+    marginBottom: 15
+  },
+  senderName: {
+    left: 10,
+    paddingRight: 10,
+    fontSize: 10,
+    color: "white"
+  },
   footer: {
     flexDirection: "row",
     alignItems: "center",
