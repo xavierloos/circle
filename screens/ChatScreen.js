@@ -1,10 +1,10 @@
 import React, { useLayoutEffect, useState } from 'react'
-import { StyleSheet, View, TouchableOpacity, SafeAreaView, KeyboardAvoidingView, Platform } from 'react-native'
+import { StyleSheet, View, TouchableOpacity, SafeAreaView, KeyboardAvoidingView, Platform, Keyboard } from 'react-native'
 import { Text } from "react-native-elements"
 import { AntDesign, SimpleLineIcons, Ionicons } from "@expo/vector-icons"
 import { auth, db } from '../firebase'
 import { Avatar } from 'react-native-elements'
-import { ScrollView, TextInput } from 'react-native-gesture-handler'
+import { ScrollView, TextInput, TouchableWithoutFeedback } from 'react-native-gesture-handler'
 
 const ChatScreen = ({ navigation, route }) => {
   const [message, setMessage] = useState("")
@@ -29,27 +29,25 @@ const ChatScreen = ({ navigation, route }) => {
   }, [navigation])
 
   const sendMessage = () => {
-
+    Keyboard.dismiss()
   }
 
   return (
     <SafeAreaView >
-      <KeyboardAvoidingView
-        behavior={Platform.OS === "ios" ? "padding" : "height"}
-        style={styles.container}
-        keyboardVerticalOffset={90}
-      >
-        <>
-          <ScrollView>
-            {/* Chats here */}
-          </ScrollView>
-          <View style={styles.footer}>
-            <TextInput style={styles.message} placeholder="Message" value={message} onChangeText={(text) => setMessage(text)} />
-            <TouchableOpacity onPress={sendMessage} activeOpacity={0.5}>
-              <Ionicons name="send" type="antdesign" size={30} color="#D50000" required />
-            </TouchableOpacity>
-          </View>
-        </>
+      <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={styles.container} keyboardVerticalOffset={90} >
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+          <>
+            <ScrollView>
+              {/* Chats here */}
+            </ScrollView>
+            <View style={styles.footer}>
+              <TextInput style={styles.message} placeholder="Message" value={message} onChangeText={(text) => setMessage(text)} />
+              <TouchableOpacity onPress={sendMessage} activeOpacity={0.5}>
+                <Ionicons name="send" type="antdesign" size={30} color="#D50000" required />
+              </TouchableOpacity>
+            </View>
+          </>
+        </TouchableWithoutFeedback>
       </KeyboardAvoidingView>
     </SafeAreaView>
   )
@@ -65,11 +63,10 @@ const styles = StyleSheet.create({
   },
   container: {
     display: "flex",
-    height: "100%",
+    // height: "100%",
     bottom: 0,
   },
   message: {
-
     height: 40,
     flex: 1,
     marginRight: 15,
