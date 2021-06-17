@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useState } from 'react'
 import { StyleSheet, View, TouchableOpacity, SafeAreaView, KeyboardAvoidingView, Platform } from 'react-native'
 import { Text } from "react-native-elements"
-import { AntDesign, SimpleLineIcons } from "@expo/vector-icons"
+import { AntDesign, SimpleLineIcons, Ionicons } from "@expo/vector-icons"
 import { auth, db } from '../firebase'
 import { Avatar } from 'react-native-elements'
 import { ScrollView, TextInput } from 'react-native-gesture-handler'
@@ -26,7 +26,7 @@ const ChatScreen = ({ navigation, route }) => {
         </View>
       ),
     })
-  }, [])
+  }, [navigation])
 
   const sendMessage = () => {
 
@@ -42,7 +42,7 @@ const ChatScreen = ({ navigation, route }) => {
           <View style={styles.footer}>
             <TextInput style={styles.message} placeholder="Message" value={message} onChangeText={(text) => setMessage(text)} />
             <TouchableOpacity onPress={sendMessage} activeOpacity={0.5}>
-              
+              <Ionicons name="send" type="antdesign" size={30} color="black" required />
             </TouchableOpacity>
           </View>
         </>
