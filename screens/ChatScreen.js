@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     fontSize: 17
   },
   container: {
-
+    flex: 1
   },
   message: {},
   footer: {}
