@@ -1,12 +1,14 @@
-import React, { useLayoutEffect } from 'react'
+import React, { useLayoutEffect, useState } from 'react'
 import { StyleSheet, View, TouchableOpacity, SafeAreaView, KeyboardAvoidingView, Platform } from 'react-native'
 import { Text } from "react-native-elements"
 import { AntDesign, SimpleLineIcons } from "@expo/vector-icons"
 import { auth, db } from '../firebase'
 import { Avatar } from 'react-native-elements'
-import { ScrollView } from 'react-native-gesture-handler'
+import { ScrollView, TextInput } from 'react-native-gesture-handler'
 
 const ChatScreen = ({ navigation, route }) => {
+  const [message, setMessage] = useState("")
+
   useLayoutEffect(() => {
     navigation.setOptions({
       headerStyle: { backgroundColor: "#D50000" },
@@ -35,7 +37,7 @@ const ChatScreen = ({ navigation, route }) => {
             {/* Chats here */}
           </ScrollView>
           <View style={styles.footer}>
-
+            <TextInput placeholder="Message" value={message} onChangeText={(text)=>setMessage(text)}/>
           </View>
         </>
       </KeyboardAvoidingView>
@@ -52,7 +54,7 @@ const styles = StyleSheet.create({
     fontSize: 17
   },
   container: {
-    
+
   },
-  footer:{}
+  footer: {}
 })
