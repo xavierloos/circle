@@ -8,7 +8,7 @@ import { ScrollView, TextInput, TouchableWithoutFeedback } from 'react-native-ge
 import * as firebase from 'firebase'
 
 const ChatScreen = ({ navigation, route }) => {
-  const [message, setMessage] = useState("")
+  const [inputMessage, setInputMessage] = useState("")
   const [messages, setMessages] = useState("")
 
   useLayoutEffect(() => {
@@ -35,20 +35,29 @@ const ChatScreen = ({ navigation, route }) => {
     db.collection("chats").doc(route.params.id).collection("messages").add(
       {
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-        message: message,
+        message: inputMessage,
         displayName: auth.currentUser.displayName,
         email: auth.currentUser.email,
         photoURL: auth.currentUser.photoURL
       }
     )
-    setMessage("")
+    setInputMessage("")
   }
 
   useLayoutEffect(() => {
-    const unsubscribe = db.collection("chats").doc(route.params.id).collection("messages").orderBy("timestamp", "desc").onSnapshot((snapshot) => setMessages(snapshot.docs.map(doc => ({
-      id: doc.id,
-      data: doc.data()
-    }))))
+    const unsubscribe = db
+      .collection("chats")
+      .doc(route.params.id)
+      .collection("messages")
+      .orderBy("timestamp", "desc")
+      .onSnapshot((snapshot) =>
+        setMessages(
+          snapshot.docs.map(doc => ({
+            id: doc.id,
+            data: doc.data()
+          }))
+        )
+      )
     return unsubscribe
   }, [route])
 
@@ -60,17 +69,22 @@ const ChatScreen = ({ navigation, route }) => {
             <ScrollView>
               {messages.map(({ id, data }) => (
                 data.email == auth.currentUser.email ? (
+
                   <View>
+                    
                     <Avatar />
                     <Text style={styles.receiverText}>{data.message}</Text>
                   </View>
                 ) : (
-                    <View></View>
+                    <View>
+                      <Avatar />
+                      <Text style={styles.senderText}>{data.message}</Text>
+                    </View>
                   )
               ))}
             </ScrollView>
             <View style={styles.footer}>
-              <TextInput style={styles.message} placeholder="Message" value={message} onChangeText={(text) => setMessage(text)} onSubmitEditing={sendMessage} />
+              <TextInput style={styles.message} placeholder="Message" value={inputMessage} onChangeText={(text) => setInputMessage(text)} onSubmitEditing={sendMessage} />
               <TouchableOpacity onPress={sendMessage} activeOpacity={0.5}>
                 <Ionicons name="send" type="antdesign" size={30} color="#D50000" required />
               </TouchableOpacity>
