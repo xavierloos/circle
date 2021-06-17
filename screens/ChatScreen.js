@@ -28,16 +28,22 @@ const ChatScreen = ({ navigation, route }) => {
     })
   }, [])
 
+  const sendMessage = () => {
+
+  }
+
   return (
     <SafeAreaView>
-      <Text>{route.params.chatName}</Text>
       <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={styles.container} keyboardVerticalOffset={90}>
         <>
           <ScrollView>
             {/* Chats here */}
           </ScrollView>
           <View style={styles.footer}>
-            <TextInput placeholder="Message" value={message} onChangeText={(text)=>setMessage(text)}/>
+            <TextInput style={styles.message} placeholder="Message" value={message} onChangeText={(text) => setMessage(text)} />
+            <TouchableOpacity onPress={sendMessage} activeOpacity={0.5}>
+              
+            </TouchableOpacity>
           </View>
         </>
       </KeyboardAvoidingView>
@@ -56,5 +62,6 @@ const styles = StyleSheet.create({
   container: {
 
   },
+  message: {},
   footer: {}
 })
