@@ -5,6 +5,7 @@ import { AntDesign, SimpleLineIcons, Ionicons } from "@expo/vector-icons"
 import { auth, db } from '../firebase'
 import { Avatar } from 'react-native-elements'
 import { ScrollView, TextInput, TouchableWithoutFeedback } from 'react-native-gesture-handler'
+import * as firebase from 'firebase'
 
 const ChatScreen = ({ navigation, route }) => {
   const [message, setMessage] = useState("")
@@ -30,6 +31,16 @@ const ChatScreen = ({ navigation, route }) => {
 
   const sendMessage = () => {
     Keyboard.dismiss()
+    db.collection("chats").doc(route.params.id).collection("messages").add(
+      {
+        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+        message: message,
+        displayName: auth.currentUser.displayName,
+        email: auth.currentUser.email,
+        photoURL: auth.currentUser.photoURL
+      }
+    )
+    setMessage("")
   }
 
   return (
