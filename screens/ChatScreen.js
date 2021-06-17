@@ -1,11 +1,9 @@
 import React, { useLayoutEffect, useState } from 'react'
-import { StyleSheet, View, TouchableOpacity, SafeAreaView, KeyboardAvoidingView, Platform, Keyboard } from 'react-native'
-import { Text } from "react-native-elements"
+import { StyleSheet, View, TouchableOpacity, SafeAreaView, KeyboardAvoidingView, Platform, Keyboard, TouchableWithoutFeedback, ScrollView, TextInput, Text } from 'react-native'
 import { AntDesign, SimpleLineIcons, Ionicons } from "@expo/vector-icons"
 import { auth, db } from '../firebase'
 import { Avatar } from 'react-native-elements'
-import { ScrollView, TextInput, TouchableWithoutFeedback } from 'react-native-gesture-handler'
-import * as firebase from 'firebase'
+import firebase from "firebase"
 
 const ChatScreen = ({ navigation, route }) => {
   const [inputMessage, setInputMessage] = useState("")
@@ -67,41 +65,41 @@ const ChatScreen = ({ navigation, route }) => {
       <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={styles.container} keyboardVerticalOffset={90} >
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <>
-            <ScrollView contentContainerStyle={{paddingTop:15}}>
+            <ScrollView contentContainerStyle={{ paddingTop: 15 }}>
               {messages.map(({ id, data }) =>
-              data.email === auth.currentUser.email ? (
-                <View key={id} style={styles.receiver}>
-                  <Avatar position="absolute" bottom={-15} right={-5} rounded size={30} source={{ uri: data.photoURL }}
-                    // WEB
-                    containerStyle={{
-                      position: "absolute",
-                      bottom: -15,
-                      right: -5
-                    }}
-                  />
-                  <Text style={styles.receiverText}>{data.message}</Text>
-                </View>
-              ) : (
-                  <View key={id} style={styles.sender}>
-                    <Avatar position="absolute" bottom={-15} left={-5} rounded size={30} source={{ uri: data.photoURL }}
+                data.email === auth.currentUser.email ? (
+                  <View key={id} style={styles.receiver}>
+                    <Avatar position="absolute" bottom={-15} right={-5} rounded size={30} source={{ uri: data.photoURL }}
                       // WEB
                       containerStyle={{
                         position: "absolute",
                         bottom: -15,
-                        left: -5
-                      }} />
+                        right: -5
+                      }}
+                    />
+                    <Text style={styles.receiverText}>{data.message}</Text>
+                  </View>
+                ) : (
+                    <View key={id} style={styles.sender}>
+                      <Avatar position="absolute" bottom={-15} left={-5} rounded size={30} source={{ uri: data.photoURL }}
+                        // WEB
+                        containerStyle={{
+                          position: "absolute",
+                          bottom: -15,
+                          left: -5
+                        }} />
                       <Text style={styles.senderText}>{data.message}</Text>
                       <Text style={styles.senderName}>{data.displayName}</Text>
-                  </View>
-                )
-            )}
-          </ScrollView>
-          <View style={styles.footer}>
-            <TextInput style={styles.message} placeholder="Message" value={inputMessage} onChangeText={(text) => setInputMessage(text)} onSubmitEditing={sendMessage} />
-            <TouchableOpacity onPress={sendMessage} activeOpacity={0.5}>
-              <Ionicons name="send" type="antdesign" size={30} color="#D50000" required />
-            </TouchableOpacity>
-          </View>
+                    </View>
+                  )
+              )}
+            </ScrollView>
+            <View style={styles.footer}>
+              <TextInput style={styles.message} placeholder="Message" value={inputMessage} onChangeText={(text) => setInputMessage(text)} onSubmitEditing={sendMessage} />
+              <TouchableOpacity onPress={sendMessage} activeOpacity={0.5}>
+                <Ionicons name="send" type="antdesign" size={30} color="#D50000" required />
+              </TouchableOpacity>
+            </View>
           </>
         </TouchableWithoutFeedback>
       </KeyboardAvoidingView>
