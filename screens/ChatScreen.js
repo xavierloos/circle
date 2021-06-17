@@ -41,6 +41,7 @@ const ChatScreen = ({ navigation, route }) => {
         photoURL: auth.currentUser.photoURL
       }
     )
+    console.log(db.collection("chats").doc(route.params.id).collection("messages"))
     setInputMessage("")
   }
 
@@ -75,14 +76,20 @@ const ChatScreen = ({ navigation, route }) => {
                       containerStyle={{
                         position: "absolute",
                         bottom: -15,
-                        right:-5
+                        right: -5
                       }}
                     />
                     <Text style={styles.receiverText}>{data.message}</Text>
                   </View>
                 ) : (
                     <View key={id} style={styles.sender}>
-                      <Avatar />
+                      <Avatar position="absolute" bottom={-15} left={-5} rounded size={30} source={{ uri: data.photoURL }}
+                        // WEB
+                        containerStyle={{
+                          position: "absolute",
+                          bottom: -15,
+                          left: -5
+                        }} />
                       <Text style={styles.senderText}>{data.message}</Text>
                     </View>
                   )
@@ -105,7 +112,7 @@ export default ChatScreen
 
 const styles = StyleSheet.create({
   chatTitle: {
-    color: "white",
+    color: "#f0f",
     fontWeight: 'bold',
     fontSize: 17
   },
