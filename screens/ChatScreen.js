@@ -1,5 +1,5 @@
 import React, { useLayoutEffect } from 'react'
-import { StyleSheet, View, TouchableOpacity } from 'react-native'
+import { StyleSheet, View, TouchableOpacity, SafeAreaView } from 'react-native'
 import { Text } from "react-native-elements"
 import { AntDesign, SimpleLineIcons } from "@expo/vector-icons"
 import { auth, db } from '../firebase'
@@ -24,11 +24,11 @@ const ChatScreen = ({ navigation, route }) => {
       ),
     })
   }, [])
-  
+
   return (
-    <View>
+    <SafeAreaView>
       <Text>{route.params.chatName}</Text>
-    </View>
+    </SafeAreaView>
   )
 }
 
