@@ -114,7 +114,7 @@ export default ChatScreen
 
 const styles = StyleSheet.create({
   chatTitle: {
-    color: "#f0f",
+    color: "white",
     fontWeight: 'bold',
     fontSize: 17
   },
@@ -135,10 +135,12 @@ const styles = StyleSheet.create({
     padding: 10
   },
   receiver: {
-    padding: 15,
-    backgroundColor: "#ececec",
+    padding: 10,
+    borderColor: "#D50000",
+    backgroundColor: "white",
+    borderWidth: 1.5,
     alignSelf: "flex-end",
-    borderRadius: 20,
+    borderRadius:10,
     marginBottom: 20,
     marginRight: 15,
     maxWidth: "80%",
@@ -152,7 +154,7 @@ const styles = StyleSheet.create({
   },
   sender: {
     padding: 15,
-    backgroundColor: "#D50000",
+    backgroundColor: "#D32F2F",
     alignSelf: "flex-start",
     borderRadius: 20,
     marginBottom: 20,
