@@ -147,7 +147,13 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     marginRight: 15,
     maxWidth: "80%",
-    position: "relative"
+    position: "relative",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 2
   },
   receiverText: {
     color: "red",
