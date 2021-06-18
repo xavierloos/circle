@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from 'react'
+import React, { useLayoutEffect, useState, useEffect } from 'react'
 import { StyleSheet, View, TouchableOpacity, SafeAreaView, KeyboardAvoidingView, Platform, Keyboard, TouchableWithoutFeedback, ScrollView, TextInput, Text } from 'react-native'
 import { AntDesign, SimpleLineIcons, Ionicons } from "@expo/vector-icons"
 import { auth, db } from '../firebase'
@@ -7,7 +7,7 @@ import firebase from "firebase"
 
 const ChatScreen = ({ navigation, route }) => {
   const [inputMessage, setInputMessage] = useState("")
-  const [messages, setMessages] = useState("")
+  const [messages, setMessages] = useState([])
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -52,7 +52,7 @@ const ChatScreen = ({ navigation, route }) => {
       .doc(route.params.id)
       .collection("messages")
       .orderBy("timestamp", "desc")
-      .onSnapshot((snapshot) =>
+      .onSnapshot(snapshot =>
         setMessages(
           snapshot.docs.map(doc => ({
             id: doc.id,
