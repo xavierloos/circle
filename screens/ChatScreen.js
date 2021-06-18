@@ -92,6 +92,8 @@ const ChatScreen = ({ navigation, route }) => {
 
                     <View key={id} style={styles.sender}>
                       <Text style={styles.senderName}>{data.displayName}</Text>
+
+                      {console.log(data.timestamp.seconds)}
                       <Avatar position="absolute" top={-15} left={-10} rounded size={40} source={{ uri: data.photoURL }}
                         // WEB
                         containerStyle={{
@@ -99,8 +101,7 @@ const ChatScreen = ({ navigation, route }) => {
                           top: -15,
                           left: -10
                         }} />
-                      <Text style={styles.senderText}>{data.message}</Text>
-
+                      <Text style={styles.senderText}>{data.message} {data.timestamp.seconds} seconds ago</Text>
                     </View>
                   )
               )}
