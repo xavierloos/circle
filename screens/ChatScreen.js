@@ -74,7 +74,7 @@ const ChatScreen = ({ navigation, route }) => {
                 <Ionicons name="send" type="antdesign" size={30} color="#D50000" required />
               </TouchableOpacity>
             </View>
-            <ScrollView contentContainerStyle={{ paddingTop: 15 }}>
+            <ScrollView contentContainerStyle={{ paddingTop: 20, paddingBottom: 20 }}>
               {messages.map(({ id, data }) =>
                 data.email === auth.currentUser.email ? (
                   <View key={id} style={styles.receiver}>
@@ -124,7 +124,6 @@ const styles = StyleSheet.create({
   },
   container: {
     display: "flex",
-    bottom: 0,
   },
   message: {
     height: 40,
