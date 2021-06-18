@@ -124,7 +124,6 @@ const styles = StyleSheet.create({
   },
   container: {
     display: "flex",
-    // height: "100%",
     bottom: 0,
   },
   message: {
@@ -163,7 +162,7 @@ const styles = StyleSheet.create({
   },
   sender: {
     padding: 10,
-    backgroundColor: "#D32F2F",
+    backgroundColor: "#D50000",
     alignSelf: "flex-start",
     borderRadius: 15,
     marginBottom: 20,
@@ -182,7 +181,7 @@ const styles = StyleSheet.create({
     top: -15,
     paddingLeft: 10,
     fontSize: 10,
-    color: "#D32F2F"
+    color: "#D50000"
   },
   messageContainer: {
     flexDirection: "row",
