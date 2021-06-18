@@ -78,7 +78,7 @@ const ChatScreen = ({ navigation, route }) => {
               {messages.map(({ id, data }) =>
                 data.email === auth.currentUser.email ? (
                   <View key={id} style={styles.receiver}>
-                    <Avatar position="absolute" bottom={-15}  right={-10} rounded size={40} source={{ uri: data.photoURL }}
+                    <Avatar position="absolute" bottom={-15} right={-10} rounded size={40} source={{ uri: data.photoURL }}
                       // WEB
                       containerStyle={{
                         position: "absolute",
@@ -89,7 +89,9 @@ const ChatScreen = ({ navigation, route }) => {
                     <Text style={styles.receiverText}>{data.message}</Text>
                   </View>
                 ) : (
+
                     <View key={id} style={styles.sender}>
+                      <Text style={styles.senderName}>{data.displayName}</Text>
                       <Avatar position="absolute" top={-15} left={-10} rounded size={40} source={{ uri: data.photoURL }}
                         // WEB
                         containerStyle={{
@@ -98,7 +100,7 @@ const ChatScreen = ({ navigation, route }) => {
                           left: -10
                         }} />
                       <Text style={styles.senderText}>{data.message}</Text>
-                      <Text style={styles.senderName}>{data.displayName}</Text>
+
                     </View>
                   )
               )}
@@ -149,10 +151,8 @@ const styles = StyleSheet.create({
   },
   receiverText: {
     color: "red",
-    fontWeight: "400",
     marginRight: 25,
     textAlign: "justify"
-    // marginBottom: 15
   },
   sender: {
     padding: 15,
@@ -160,21 +160,22 @@ const styles = StyleSheet.create({
     alignSelf: "flex-start",
     borderRadius: 20,
     marginBottom: 20,
-    marginRight: 15,
+    marginLeft: 15,
     maxWidth: "80%",
     position: "relative"
   },
   senderText: {
     color: "white",
-    fontWeight: "500",
-    marginLeft: 10,
-    marginBottom: 15
+    marginLeft: 25,
+    textAlign: "justify"
   },
   senderName: {
-    left: 10,
-    paddingRight: 10,
+    position: "absolute",
+    left: 22,
+    top: -15,
+    paddingLeft: 10,
     fontSize: 10,
-    color: "white"
+    color: "#D32F2F"
   },
   messageContainer: {
     flexDirection: "row",
