@@ -30,16 +30,19 @@ const ChatScreen = ({ navigation, route }) => {
 
   const sendMessage = () => {
     Keyboard.dismiss()
-    db.collection("chats").doc(route.params.id).collection("messages").add(
-      {
-        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-        message: inputMessage,
-        displayName: auth.currentUser.displayName,
-        email: auth.currentUser.email,
-        photoURL: auth.currentUser.photoURL
-      }
-    )
-    console.log(db.collection("chats").doc(route.params.id).collection("messages"))
+    db
+      .collection("chats")
+      .doc(route.params.id)
+      .collection("messages")
+      .add(
+        {
+          timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+          message: inputMessage,
+          displayName: auth.currentUser.displayName,
+          email: auth.currentUser.email,
+          photoURL: auth.currentUser.photoURL
+        }
+      )
     setInputMessage("")
   }
 
