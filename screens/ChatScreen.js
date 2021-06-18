@@ -68,6 +68,12 @@ const ChatScreen = ({ navigation, route }) => {
       <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={styles.container} keyboardVerticalOffset={90} >
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <>
+            <View style={styles.footer}>
+              <TextInput style={styles.message} placeholder="Message" value={inputMessage} onChangeText={(text) => setInputMessage(text)} onSubmitEditing={sendMessage} />
+              <TouchableOpacity onPress={sendMessage} activeOpacity={0.5}>
+                <Ionicons name="send" type="antdesign" size={30} color="#D50000" required />
+              </TouchableOpacity>
+            </View>
             <ScrollView contentContainerStyle={{ paddingTop: 15 }}>
               {messages.map(({ id, data }) =>
                 data.email === auth.currentUser.email ? (
@@ -97,12 +103,7 @@ const ChatScreen = ({ navigation, route }) => {
                   )
               )}
             </ScrollView>
-            <View style={styles.footer}>
-              <TextInput style={styles.message} placeholder="Message" value={inputMessage} onChangeText={(text) => setInputMessage(text)} onSubmitEditing={sendMessage} />
-              <TouchableOpacity onPress={sendMessage} activeOpacity={0.5}>
-                <Ionicons name="send" type="antdesign" size={30} color="#D50000" required />
-              </TouchableOpacity>
-            </View>
+
           </>
         </TouchableWithoutFeedback>
       </KeyboardAvoidingView>
@@ -140,7 +141,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     borderWidth: 1.5,
     alignSelf: "flex-end",
-    borderRadius:10,
+    borderRadius: 10,
     marginBottom: 20,
     marginRight: 15,
     maxWidth: "80%",
