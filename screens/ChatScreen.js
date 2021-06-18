@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     borderWidth: 1.5,
     alignSelf: "flex-end",
-    borderRadius: 10,
+    borderRadius: 15,
     marginBottom: 20,
     marginRight: 15,
     maxWidth: "80%",
@@ -161,10 +161,10 @@ const styles = StyleSheet.create({
     textAlign: "justify"
   },
   sender: {
-    padding: 15,
+    padding: 10,
     backgroundColor: "#D32F2F",
     alignSelf: "flex-start",
-    borderRadius: 20,
+    borderRadius: 15,
     marginBottom: 20,
     marginLeft: 15,
     maxWidth: "80%",
