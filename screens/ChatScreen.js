@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from 'react'
+import React, { useLayoutEffect, useState, useEffect } from 'react'
 import { StyleSheet, View, TouchableOpacity, SafeAreaView, KeyboardAvoidingView, Platform, Keyboard, TouchableWithoutFeedback, ScrollView, TextInput, Text } from 'react-native'
 import { AntDesign, SimpleLineIcons, Ionicons } from "@expo/vector-icons"
 import { auth, db } from '../firebase'
@@ -7,7 +7,7 @@ import firebase from "firebase"
 
 const ChatScreen = ({ navigation, route }) => {
   const [inputMessage, setInputMessage] = useState("")
-  const [messages, setMessages] = useState("")
+  const [messages, setMessages] = useState([])
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -30,16 +30,19 @@ const ChatScreen = ({ navigation, route }) => {
 
   const sendMessage = () => {
     Keyboard.dismiss()
-    db.collection("chats").doc(route.params.id).collection("messages").add(
-      {
-        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-        message: inputMessage,
-        displayName: auth.currentUser.displayName,
-        email: auth.currentUser.email,
-        photoURL: auth.currentUser.photoURL
-      }
-    )
-    console.log(db.collection("chats").doc(route.params.id).collection("messages"))
+    db
+      .collection("chats")
+      .doc(route.params.id)
+      .collection("messages")
+      .add(
+        {
+          timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+          message: inputMessage,
+          displayName: auth.currentUser.displayName,
+          email: auth.currentUser.email,
+          photoURL: auth.currentUser.photoURL
+        }
+      )
     setInputMessage("")
   }
 
@@ -49,7 +52,7 @@ const ChatScreen = ({ navigation, route }) => {
       .doc(route.params.id)
       .collection("messages")
       .orderBy("timestamp", "desc")
-      .onSnapshot((snapshot) =>
+      .onSnapshot(snapshot =>
         setMessages(
           snapshot.docs.map(doc => ({
             id: doc.id,
@@ -65,41 +68,45 @@ const ChatScreen = ({ navigation, route }) => {
       <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={styles.container} keyboardVerticalOffset={90} >
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <>
-            <ScrollView contentContainerStyle={{ paddingTop: 15 }}>
-              {messages.map(({ id, data }) =>
-                data.email === auth.currentUser.email ? (
-                  <View key={id} style={styles.receiver}>
-                    <Avatar position="absolute" bottom={-15} right={-5} rounded size={30} source={{ uri: data.photoURL }}
-                      // WEB
-                      containerStyle={{
-                        position: "absolute",
-                        bottom: -15,
-                        right: -5
-                      }}
-                    />
-                    <Text style={styles.receiverText}>{data.message}</Text>
-                  </View>
-                ) : (
-                    <View key={id} style={styles.sender}>
-                      <Avatar position="absolute" bottom={-15} left={-5} rounded size={30} source={{ uri: data.photoURL }}
-                        // WEB
-                        containerStyle={{
-                          position: "absolute",
-                          bottom: -15,
-                          left: -5
-                        }} />
-                      <Text style={styles.senderText}>{data.message}</Text>
-                      <Text style={styles.senderName}>{data.displayName}</Text>
-                    </View>
-                  )
-              )}
-            </ScrollView>
-            <View style={styles.footer}>
+            <View style={styles.messageContainer}>
               <TextInput style={styles.message} placeholder="Message" value={inputMessage} onChangeText={(text) => setInputMessage(text)} onSubmitEditing={sendMessage} />
               <TouchableOpacity onPress={sendMessage} activeOpacity={0.5}>
                 <Ionicons name="send" type="antdesign" size={30} color="#D50000" required />
               </TouchableOpacity>
             </View>
+            <ScrollView contentContainerStyle={{ paddingTop: 20, paddingBottom: 20 }}>
+              {messages.map(({ id, data }) =>
+                data.email === auth.currentUser.email ? (
+                  <View key={id} style={styles.receiver}>
+                    <Avatar position="absolute" bottom={-15} right={-10} rounded size={40} source={{ uri: data.photoURL }}
+                      // WEB
+                      containerStyle={{
+                        position: "absolute",
+                        bottom: -15,
+                        right: -10
+                      }}
+                    />
+                    <Text style={styles.receiverText}>{data.message}</Text>
+                  </View>
+                ) : (
+
+                    <View key={id} style={styles.sender}>
+                      <Text style={styles.senderName}>{data.displayName}</Text>
+
+                      {console.log(data.timestamp.seconds)}
+                      <Avatar position="absolute" top={-15} left={-10} rounded size={40} source={{ uri: data.photoURL }}
+                        // WEB
+                        containerStyle={{
+                          position: "absolute",
+                          top: -15,
+                          left: -10
+                        }} />
+                      <Text style={styles.senderText}>{data.message} {data.timestamp.seconds} seconds ago</Text>
+                    </View>
+                  )
+              )}
+            </ScrollView>
+
           </>
         </TouchableWithoutFeedback>
       </KeyboardAvoidingView>
@@ -111,14 +118,12 @@ export default ChatScreen
 
 const styles = StyleSheet.create({
   chatTitle: {
-    color: "#f0f",
+    color: "white",
     fontWeight: 'bold',
     fontSize: 17
   },
   container: {
     display: "flex",
-    // height: "100%",
-    bottom: 0,
   },
   message: {
     height: 40,
@@ -132,44 +137,52 @@ const styles = StyleSheet.create({
     padding: 10
   },
   receiver: {
-    padding: 15,
-    backgroundColor: "#ececec",
+    padding: 10,
+    borderColor: "#D50000",
+    backgroundColor: "white",
+    borderWidth: 1.5,
     alignSelf: "flex-end",
-    borderRadius: 20,
+    borderRadius: 15,
     marginBottom: 20,
     marginRight: 15,
     maxWidth: "80%",
-    position: "relative"
+    position: "relative",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 2
   },
   receiverText: {
-    color: "black",
-    fontWeight: "500",
-    marginLeft: 10,
-    marginBottom: 15
+    color: "red",
+    marginRight: 25,
+    textAlign: "justify"
   },
   sender: {
-    padding: 15,
+    padding: 10,
     backgroundColor: "#D50000",
     alignSelf: "flex-start",
-    borderRadius: 20,
+    borderRadius: 15,
     marginBottom: 20,
-    marginRight: 15,
+    marginLeft: 15,
     maxWidth: "80%",
     position: "relative"
   },
   senderText: {
     color: "white",
-    fontWeight: "500",
-    marginLeft: 10,
-    marginBottom: 15
+    marginLeft: 25,
+    textAlign: "justify"
   },
   senderName: {
-    left: 10,
-    paddingRight: 10,
+    position: "absolute",
+    left: 22,
+    top: -15,
+    paddingLeft: 10,
     fontSize: 10,
-    color: "white"
+    color: "#D50000"
   },
-  footer: {
+  messageContainer: {
     flexDirection: "row",
     alignItems: "center",
     width: "100%",
