@@ -68,7 +68,7 @@ const ChatScreen = ({ navigation, route }) => {
       <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={styles.container} keyboardVerticalOffset={90} >
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <>
-            <View style={styles.footer}>
+            <View style={styles.messageContainer}>
               <TextInput style={styles.message} placeholder="Message" value={inputMessage} onChangeText={(text) => setInputMessage(text)} onSubmitEditing={sendMessage} />
               <TouchableOpacity onPress={sendMessage} activeOpacity={0.5}>
                 <Ionicons name="send" type="antdesign" size={30} color="#D50000" required />
@@ -175,7 +175,7 @@ const styles = StyleSheet.create({
     fontSize: 10,
     color: "white"
   },
-  footer: {
+  messageContainer: {
     flexDirection: "row",
     alignItems: "center",
     width: "100%",
