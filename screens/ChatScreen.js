@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState} from 'react'
+import React, { useLayoutEffect, useState } from 'react'
 import { StyleSheet, View, TouchableOpacity, SafeAreaView, KeyboardAvoidingView, Platform, Keyboard, TouchableWithoutFeedback, ScrollView, TextInput, Text } from 'react-native'
 import { SimpleLineIcons, Ionicons } from "@expo/vector-icons"
 import { auth, db } from '../firebase'
@@ -83,7 +83,7 @@ const ChatScreen = ({ navigation, route }) => {
                   </View>
                 ) : (
                     <View key={id} style={styles.sender}>
-                      <Text style={styles.senderName}>{data.displayName}</Text> 
+                      <Text style={styles.senderName}>{data.displayName}</Text>
                       {console.log(data.timestamp.seconds)}
                       <Avatar position="absolute" top={-15} left={-10} rounded size={40} source={{ uri: data.photoURL }}
                         // WEB
@@ -94,9 +94,8 @@ const ChatScreen = ({ navigation, route }) => {
                         }} />
                       <Text style={styles.senderText}>{data.message} {data.timestamp.seconds} seconds ago</Text>
                     </View>
-                  )
-              )}
-            </ScrollView> 
+                  ))}
+            </ScrollView>
           </>
         </TouchableWithoutFeedback>
       </KeyboardAvoidingView>
