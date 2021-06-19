@@ -82,7 +82,6 @@ const ChatScreen = ({ navigation, route }) => {
                     <Text style={styles.receiverText}>{data.message}</Text>
                   </View>
                 ) : (
-
                     <View key={id} style={styles.sender}>
                       <Text style={styles.senderName}>{data.displayName}</Text>
 
