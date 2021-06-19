@@ -57,9 +57,7 @@ const ChatScreen = ({ navigation, route }) => {
           snapshot.docs.map(doc => ({
             id: doc.id,
             data: doc.data()
-          }))
-        )
-      )
+          }))))
     return unsubscribe
   }, [route])
   return (
