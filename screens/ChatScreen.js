@@ -96,8 +96,7 @@ const ChatScreen = ({ navigation, route }) => {
                     </View>
                   )
               )}
-            </ScrollView>
-
+            </ScrollView> 
           </>
         </TouchableWithoutFeedback>
       </KeyboardAvoidingView>
