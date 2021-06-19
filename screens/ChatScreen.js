@@ -34,15 +34,12 @@ const ChatScreen = ({ navigation, route }) => {
       .collection("chats")
       .doc(route.params.id)
       .collection("messages")
-      .add(
-        {
+      .add({
           timestamp: firebase.firestore.FieldValue.serverTimestamp(),
           message: inputMessage,
           displayName: auth.currentUser.displayName,
           email: auth.currentUser.email,
-          photoURL: auth.currentUser.photoURL
-        }
-      )
+          photoURL: auth.currentUser.photoURL})
     setInputMessage("")
   }
 
