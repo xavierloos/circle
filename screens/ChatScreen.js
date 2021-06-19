@@ -24,7 +24,7 @@ const ChatScreen = ({ navigation, route }) => {
             }
           </TouchableOpacity>
         </View>
-      ),
+      )
     })
   }, [navigation])
 
@@ -35,11 +35,12 @@ const ChatScreen = ({ navigation, route }) => {
       .doc(route.params.id)
       .collection("messages")
       .add({
-          timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-          message: inputMessage,
-          displayName: auth.currentUser.displayName,
-          email: auth.currentUser.email,
-          photoURL: auth.currentUser.photoURL})
+        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+        message: inputMessage,
+        displayName: auth.currentUser.displayName,
+        email: auth.currentUser.email,
+        photoURL: auth.currentUser.photoURL
+      })
     setInputMessage("")
   }
 
