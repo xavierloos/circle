@@ -3,7 +3,6 @@ import { View, KeyboardAvoidingView, StyleSheet } from 'react-native'
 import { Button, Input, Text } from "react-native-elements"
 import { StatusBar } from 'expo-status-bar'
 import { auth } from "../firebase"
-
 const RegisterScreen = ({ navigation }) => {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
