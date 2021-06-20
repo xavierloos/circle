@@ -14,7 +14,6 @@ const RegisterScreen = ({ navigation }) => {
       headerBackTitle: "Login",
     });
   }, [navigation])
-
   const register = () => {
     auth
       .createUserWithEmailAndPassword(email, password)
