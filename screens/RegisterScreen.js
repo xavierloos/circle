@@ -44,7 +44,6 @@ const RegisterScreen = ({ navigation }) => {
     </KeyboardAvoidingView>
   )
 }
-
 export default RegisterScreen;
 const styles = StyleSheet.create({
   container: {
