@@ -9,5 +9,4 @@ const ChatInfoScreen = () => {
   )
 }
 export default ChatInfoScreen
-
 const styles = StyleSheet.create({})
