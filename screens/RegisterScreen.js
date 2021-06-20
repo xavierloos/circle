@@ -27,7 +27,7 @@ const RegisterScreen = ({ navigation }) => {
       })
       .catch((error) => alert(error.message))
   }
-  
+
   return (
     <KeyboardAvoidingView behavior="padding" style={styles.container}>
       <StatusBar style="light" />
@@ -46,7 +46,6 @@ const RegisterScreen = ({ navigation }) => {
 }
 
 export default RegisterScreen;
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
