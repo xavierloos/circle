@@ -8,7 +8,6 @@ const ChatInfoScreen = () => {
     </View>
   )
 }
-
 export default ChatInfoScreen
 
 const styles = StyleSheet.create({})
