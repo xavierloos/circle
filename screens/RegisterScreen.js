@@ -9,7 +9,6 @@ const RegisterScreen = ({ navigation }) => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [imageUrl, setImageUrl] = useState("")
-
   useLayoutEffect(() => {
     navigation.setOptions({
       headerBackTitle: "Login",
