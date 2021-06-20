@@ -28,7 +28,6 @@ const AddChatScreen = ({ navigation }) => {
     </View>
   )
 }
-
 export default AddChatScreen
 
 const styles = StyleSheet.create({
