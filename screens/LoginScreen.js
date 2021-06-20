@@ -42,7 +42,6 @@ const LoginScreen = ({ navigation }) => {
   )
 }
 export default LoginScreen
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
