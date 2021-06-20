@@ -10,7 +10,6 @@ const AddChatScreen = ({ navigation }) => {
       headerBackTitle: "Cancel",
     });
   }, [navigation])
-
   const createChat = async () => {
     await db.collection("chats").add({ chatName: chatname, })
       .then(() => {
