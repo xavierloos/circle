@@ -24,7 +24,7 @@ const ChatScreen = ({ navigation, route }) => {
         </View>
       )
     })
-  }, [navigation])
+  }, [navigation, messages])
 
   const sendMessage = () => {
     Keyboard.dismiss()
