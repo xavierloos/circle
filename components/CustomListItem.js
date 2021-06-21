@@ -7,7 +7,14 @@ const CustomListItem = ({ id, chatName, enterChat }) => {
   const [lastMessage, setLastMessage] = useState([])
 
   useEffect(() => {
-    
+    const unsubscribe = db
+      .collection("chats")
+      .doc(id)
+      .collection("messages")
+      .orderBy("timestamp", "desc")
+      .onSnapshot((snapshot) =>
+        setLastMessage(snapshot.docs.map((doc) => doc.data()))
+      );
   })
   return (
     <ListItem onPress={()=>enterChat(id,chatName)} key={id} bottomDivider>
