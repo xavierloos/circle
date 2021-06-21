@@ -18,7 +18,7 @@ const CustomListItem = ({ id, chatName, enterChat }) => {
     return unsubscribe
   })
   return (
-    <ListItem onPress={()=>enterChat(id,chatName)} key={id} bottomDivider>
+    <ListItem key={id} onPress={()=>enterChat(id,chatName)} key={id} bottomDivider>
       <Avatar rounded source={{ uri: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.9LeJajtN75YM4qNKou-0ewHaHa%26pid%3DApi&f=1" }} />
       <ListItem.Content>
         <ListItem.Title style={{ fontWeight: "600" }}>{chatName}</ListItem.Title>
