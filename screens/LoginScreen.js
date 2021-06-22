@@ -34,7 +34,7 @@ const LoginScreen = ({ navigation }) => {
   return (
     <KeyboardAvoidingView behavior="padding" style={styles.container}>
       <StatusBar style="light" />
-      <Text h2>Login</Text>
+      <Text h2 style={styles.title}>Login</Text>
       <View style={styles.inputContainer}>
         <Input type="email" placeholder="Email" autoFocus value={email} onChangeText={(text) => setEmail(text)} />
         <Input type="password" placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} onSubmitEditing={singIn} />
@@ -53,9 +53,10 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: "white"
   },
-  logo: {
-    width: 200,
-    height: 200,
+  title: {
+    marginBottom: 50,
+    fontWeight: "700",
+    color: "#D50000"
   },
   inputContainer: {
     width: 300,
