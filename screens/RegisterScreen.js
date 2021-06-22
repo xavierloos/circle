@@ -5,7 +5,7 @@ import { StatusBar } from 'expo-status-bar'
 import { auth } from "../firebase"
 const RegisterScreen = ({ navigation }) => {
   const [firstName, setFirstName] = useState("")
-  const [surname, setSurname] = useState("")
+  const [surname, setSuname] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [imageUrl, setImageUrl] = useState("")
@@ -36,14 +36,14 @@ const RegisterScreen = ({ navigation }) => {
       <StatusBar style="light" />
       <Text h3 style={styles.title}>Register</Text>
       <View style={styles.inputContainer}>
-        <Input type="text" placeholder="First name" autoFocus value={firstName} onChangeText={(text) => setName(text)} />
-        <Input type="text" placeholder="Surname" autoFocus value={surname} onChangeText={(text) => setName(text)} />
+        <Input type="text" placeholder="First name" autoFocus value={firstName} onChangeText={(text) => setFirstName(text)} />
+        <Input type="text" placeholder="Surname" autoFocus value={surname} onChangeText={(text) => setSurname(text)} />
         <Input type="email" placeholder="Email" value={email} onChangeText={(text) => setEmail(text)} />
         {/* secureTextEntry */}
         <Input type="password" placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} />
         <Input type="text" placeholder="Profile picture URL" value={imageUrl} onChangeText={(text) => setImageUrl(text)} onSubmitEditing={register} />
       </View>
-      <Button containerStyle={styles.button} raised onPress={register} title="Register" />
+      <Button disabled={!password} containerStyle={styles.button} raised onPress={register} title="Register" />
       <View style={{ height: 100 }} />
     </KeyboardAvoidingView>
   )
@@ -64,7 +64,6 @@ const styles = StyleSheet.create({
     width: 300
   },
   button: {
-
     width: 200,
     marginTop: 10,
   }
