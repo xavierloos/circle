@@ -37,7 +37,7 @@ const RegisterScreen = ({ navigation }) => {
       <StatusBar style="light" />
       <Text h3 style={styles.title}>Register</Text>
       <View style={styles.inputContainer}>
-        <Input type="text" placeholder="First name" autoFocus value={firstName} onChangeText={(text) => setFirstName(text)} />
+        <Input style={styles.input} type="text" placeholder="First name" autoFocus value={firstName} onChangeText={(text) => setFirstName(text)} />
         <Input type="text" placeholder="Surname" autoFocus value={surname} onChangeText={(text) => setSurname(text)} />
         <Input type="email" placeholder="Email" value={email} onChangeText={(text) => setEmail(text)} />
         {/* secureTextEntry */}
@@ -60,11 +60,13 @@ const styles = StyleSheet.create({
   },
   title: {
     marginBottom: 50,
-    fontWeight:"700",
+    fontWeight: "700",
     color: "#D50000"
   },
   inputContainer: {
     width: 300
+  },
+  input: {
   },
   button: {
     width: 200,
