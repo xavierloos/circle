@@ -6,6 +6,10 @@ const AddChatScreen = ({ navigation }) => {
   const [chatname, setChatname] = useState("")
   useLayoutEffect(() => {
     navigation.setOptions({
+      headerTitle: "ЯƎD",
+      headerStyle: { backgroundColor: "#D50000" },
+      headerTitleStyle: { color: "white" },
+      headerTintColor: "white",
       title: "Add a new chat",
       headerBackTitle: "Cancel",
     });
