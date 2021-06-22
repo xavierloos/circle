@@ -3,6 +3,7 @@ import { View, KeyboardAvoidingView, StyleSheet } from 'react-native'
 import { Button, Input, Text } from "react-native-elements"
 import { StatusBar } from 'expo-status-bar'
 import { auth } from "../firebase"
+import { color } from 'react-native-reanimated'
 const RegisterScreen = ({ navigation }) => {
   const [firstName, setFirstName] = useState("")
   const [surname, setSuname] = useState("")
@@ -58,7 +59,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   title: {
-    marginBottom: 50
+    marginBottom: 50,
+    fontWeight:"700",
+    color: "#D50000"
   },
   inputContainer: {
     width: 300
