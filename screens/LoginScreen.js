@@ -22,11 +22,6 @@ const LoginScreen = ({ navigation }) => {
       headerStyle: { backgroundColor: "#D50000" },
       headerTitleStyle: { color: "white" },
       headerTintColor: "white",
-      headerRight: () => (
-        <View style={{ marginRight: 10, flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
-
-        </View>
-      )
     })
   }, [navigation])
 

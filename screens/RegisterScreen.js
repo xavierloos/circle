@@ -9,9 +9,13 @@ const RegisterScreen = ({ navigation }) => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [imageUrl, setImageUrl] = useState("")
-  
+
   useLayoutEffect(() => {
     navigation.setOptions({
+      headerTitle: "ЯƎD",
+      headerStyle: { backgroundColor: "#D50000" },
+      headerTitleStyle: { color: "white" },
+      headerTintColor: "white",
       headerBackTitle: "Login",
     });
   }, [navigation])
@@ -32,7 +36,7 @@ const RegisterScreen = ({ navigation }) => {
       <StatusBar style="light" />
       <Text h3 style={styles.title}>Create an account</Text>
       <View style={styles.inputContainer}>
-      <Input type="text" placeholder="First name" autoFocus value={firstName} onChangeText={(text) => setName(text)} />
+        <Input type="text" placeholder="First name" autoFocus value={firstName} onChangeText={(text) => setName(text)} />
         <Input type="text" placeholder="Surname" autoFocus value={surname} onChangeText={(text) => setName(text)} />
         <Input type="email" placeholder="Email" value={email} onChangeText={(text) => setEmail(text)} />
         {/* secureTextEntry */}
