@@ -34,7 +34,7 @@ const RegisterScreen = ({ navigation }) => {
   return (
     <KeyboardAvoidingView behavior="padding" style={styles.container}>
       <StatusBar style="light" />
-      <Text h3 style={styles.title}>Create an account</Text>
+      <Text h3 style={styles.title}>Register</Text>
       <View style={styles.inputContainer}>
         <Input type="text" placeholder="First name" autoFocus value={firstName} onChangeText={(text) => setName(text)} />
         <Input type="text" placeholder="Surname" autoFocus value={surname} onChangeText={(text) => setName(text)} />
