@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useLayoutEffect } from 'react'
 import { StyleSheet, View, KeyboardAvoidingView } from 'react-native';
 import { Button, Input, Image, Text } from "react-native-elements"
 import { StatusBar } from "expo-status-bar";
@@ -15,6 +15,20 @@ const LoginScreen = ({ navigation }) => {
     })
     return unsubscribe
   }, [])
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerTitle: "ЯƎD",
+      headerStyle: { backgroundColor: "#D50000" },
+      headerTitleStyle: { color: "white" },
+      headerTintColor: "white",
+      headerRight: () => (
+        <View style={{ marginRight: 10, flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
+
+        </View>
+      )
+    })
+  }, [navigation])
 
   const singIn = () => {
     auth
@@ -34,7 +48,7 @@ const LoginScreen = ({ navigation }) => {
       <Text h2>Mate</Text>
       <View style={styles.inputContainer}>
         <Input type="email" placeholder="Email" autoFocus value={email} onChangeText={(text) => setEmail(text)} />
-        <Input type="password" placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} onSubmitEditing={singIn}/>
+        <Input type="password" placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} onSubmitEditing={singIn} />
       </View>
       <Button title="Login" containerStyle={styles.button} onPress={singIn} />
       <Button title="Register" type="outline" containerStyle={styles.button} onPress={() => navigation.navigate("Register")} />
