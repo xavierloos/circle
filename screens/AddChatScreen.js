@@ -6,7 +6,7 @@ const AddChatScreen = ({ navigation }) => {
   const [chatname, setChatname] = useState("")
   useLayoutEffect(() => {
     navigation.setOptions({
-      headerTitle: "Circle",
+      headerTitle: "CIRCLE",
       headerStyle: { backgroundColor: "#D50000" },
       headerTitleStyle: { color: "white" },
       headerTintColor: "white",
