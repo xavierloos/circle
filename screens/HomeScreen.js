@@ -16,11 +16,8 @@ const HomeScreen = ({ navigation }) => {
   // }
 
   const profile = () => {
-    auth.signOut().then(() => {
-      navigation.replace("Login")
-    })
   }
-  
+
   useLayoutEffect(() => {
     navigation.setOptions({
       title: "CIRCLE",
