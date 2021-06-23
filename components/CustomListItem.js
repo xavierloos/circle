@@ -6,17 +6,17 @@ import { db } from "../firebase"
 const CustomListItem = ({ id, chatName, enterChat }) => {
   const [lastMessage, setLastMessage] = useState([])
 
-  // useEffect(() => {
-  //   const unsubscribe = db
-  //     .collection("chats")
-  //     .doc(id)
-  //     .collection("messages")
-  //     // .orderBy("timestamp", "desc")
-  //     .onSnapshot((snapshot) =>
-  //       setLastMessage(snapshot.docs.map(doc => doc.data()))
-  //     );
-  //   return unsubscribe
-  // })
+  useEffect(() => {
+    const unsubscribe = db
+      .collection("chats")
+      .doc(id)
+      .collection("messages")
+      // .orderBy("timestamp", "desc")
+      .onSnapshot((snapshot) =>
+        setLastMessage(snapshot.docs.map(doc => doc.data()))
+      );
+    return unsubscribe
+  })
 
   // const messageInfo = `${lastMessage?.[0]?.displayName}: ${lastMessage?.[0]?.message}`
 
