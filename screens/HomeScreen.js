@@ -22,6 +22,15 @@ const HomeScreen = ({ navigation }) => {
       headerTintColor: "white",
       headerRight: () => (
         <View style={{ marginRight: 20, flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
+          <TouchableOpacity activeOpacity={0.5} style={{ marginLeft: 5 }}>
+            {
+              (auth?.currentUser?.photoURL === null) ? <SimpleLineIcons name="user" size={24} color="white" onPress={signOut} /> : <Avatar rounded source={{ uri: auth?.currentUser?.photoURL }} onPress={signOut} />
+            }
+          </TouchableOpacity>
+        </View>
+      ),
+      headerLeft: () => (
+        <View style={{ marginLeft: 20, flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
           {/* <TouchableOpacity activeOpacity={0.5} style={{ marginLeft: 5 }}>
             <SimpleLineIcons name="camera" size={24} color="white" />
           </TouchableOpacity> */}
@@ -29,15 +38,7 @@ const HomeScreen = ({ navigation }) => {
             <SimpleLineIcons name="plus" size={24} color="white" />
           </TouchableOpacity>
         </View>
-      ),
-      headerLeft: () => (
-        <View style={{ marginLeft: 10, flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
-          <TouchableOpacity activeOpacity={0.5} style={{ marginLeft: 5 }}>
-            {
-              (auth?.currentUser?.photoURL === null) ? <SimpleLineIcons name="user" size={24} color="white" onPress={signOut} /> : <Avatar rounded source={{ uri: auth?.currentUser?.photoURL }} onPress={signOut} />
-            }
-          </TouchableOpacity>
-        </View>
+
       ),
     })
   }, [])
