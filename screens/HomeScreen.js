@@ -16,15 +16,15 @@ const HomeScreen = ({ navigation }) => {
   }
   useLayoutEffect(() => {
     navigation.setOptions({
-      title: "hiMate Chat",
+      title: "CIRCLE",
       headerStyle: { backgroundColor: "#D50000" },
       headerTitleStyle: { color: "white" },
-      headerTintColor: "black",
+      headerTintColor: "white",
       headerRight: () => (
         <View style={{ marginRight: 10, flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
-          <TouchableOpacity activeOpacity={0.5} style={{ marginLeft: 5 }}>
+          {/* <TouchableOpacity activeOpacity={0.5} style={{ marginLeft: 5 }}>
             <SimpleLineIcons name="camera" size={24} color="white" />
-          </TouchableOpacity>
+          </TouchableOpacity> */}
           <TouchableOpacity onPress={() => navigation.navigate("AddChat")} activeOpacity={0.5} style={{ marginLeft: 5 }}>
             <SimpleLineIcons name="pencil" size={24} color="white" />
           </TouchableOpacity>
