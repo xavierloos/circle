@@ -11,6 +11,7 @@ const ChatScreen = ({ navigation, route }) => {
 
   useLayoutEffect(() => {
     navigation.setOptions({
+      headerTitle: "CIRCLE",
       headerStyle: { backgroundColor: "#D50000" },
       headerTitleStyle: { color: "#D50000" },
       headerTintColor: "white",
