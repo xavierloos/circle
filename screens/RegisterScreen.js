@@ -13,7 +13,7 @@ const RegisterScreen = ({ navigation }) => {
 
   useLayoutEffect(() => {
     navigation.setOptions({
-      headerTitle: "ЯƎD",
+      headerTitle: "CIRCLE",
       headerStyle: { backgroundColor: "#D50000" },
       headerTitleStyle: { color: "white" },
       headerTintColor: "white",
