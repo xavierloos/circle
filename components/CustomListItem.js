@@ -18,7 +18,7 @@ const CustomListItem = ({ id, chatName, enterChat }) => {
     return unsubscribe
   })
 
-  // const messageInfo = `${lastMessage?.[0]?.displayName}: ${lastMessage?.[0]?.message}`
+  const messageInfo = `${lastMessage?.[0]?.displayName}: ${lastMessage?.[0]?.message}`
 
   return (
     <ListItem onPress={() => enterChat(id, chatName)} key={id} bottomDivider>
