@@ -26,8 +26,7 @@ const CustomListItem = ({ id, chatName, enterChat }) => {
       <ListItem.Content>
         <ListItem.Title style={{ fontWeight: "600" }}>{chatName}</ListItem.Title>
         <ListItem.Subtitle numberOfLines={1} ellipsizeMode="tail" style={{ fontWeight: "400" }}>
-          Chat description
-          {/* {(typeof lastMessage[0]?.displayName === 'undefined') ? 'No messages yet' : messageInfo} */}
+          {(typeof lastMessage[0]?.displayName === 'undefined') ? 'No messages yet' : messageInfo}
         </ListItem.Subtitle>
       </ListItem.Content>
     </ListItem>
