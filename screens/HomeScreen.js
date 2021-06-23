@@ -14,6 +14,12 @@ const HomeScreen = ({ navigation }) => {
   //     navigation.replace("Login")
   //   })
   // }
+
+  const profile = () => {
+    auth.signOut().then(() => {
+      navigation.replace("Login")
+    })
+  }
   
   useLayoutEffect(() => {
     navigation.setOptions({
