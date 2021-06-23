@@ -9,11 +9,12 @@ import { auth, db } from '../firebase'
 const HomeScreen = ({ navigation }) => {
   const [chats, setChats] = useState([]);
 
-  const signOut = () => {
-    auth.signOut().then(() => {
-      navigation.replace("Login")
-    })
-  }
+  // const signOut = () => {
+  //   auth.signOut().then(() => {
+  //     navigation.replace("Login")
+  //   })
+  // }
+  
   useLayoutEffect(() => {
     navigation.setOptions({
       title: "CIRCLE",
@@ -24,7 +25,7 @@ const HomeScreen = ({ navigation }) => {
         <View style={{ marginRight: 20, flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
           <TouchableOpacity activeOpacity={0.5} style={{ marginLeft: 5 }}>
             {
-              (auth?.currentUser?.photoURL === null) ? <SimpleLineIcons name="user" size={24} color="white" onPress={signOut} /> : <Avatar rounded source={{ uri: auth?.currentUser?.photoURL }} onPress={signOut} />
+              (auth?.currentUser?.photoURL === null) ? <SimpleLineIcons name="user" size={24} color="white" onPress={profile} /> : <Avatar rounded source={{ uri: auth?.currentUser?.photoURL }} onPress={profile} />
             }
           </TouchableOpacity>
         </View>
