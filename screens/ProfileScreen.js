@@ -15,8 +15,9 @@ const ProfileScreen = ({ navigation }) => {
 
   return (
     <View>
-      
+
       <Avatar size={100} rounded source={{ uri: auth?.currentUser?.photoURL }} />
+      <Text>{auth?.currentUser?.displayName}</Text>
     </View>
   )
 }
