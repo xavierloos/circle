@@ -14,15 +14,28 @@ const ProfileScreen = ({ navigation }) => {
   }, [])
 
   return (
-    <View>
+    <View style={styles.container}>
       {console.log(auth?.currentUser)}
       <Avatar size={100} rounded source={{ uri: auth?.currentUser?.photoURL }} />
-      <Text>{auth?.currentUser?.displayName}</Text>
-      <Text>{auth?.currentUser?.email}</Text>
+      <Text style={styles.text}>{auth?.currentUser?.displayName}</Text>
+      <Text style={styles.text}>{auth?.currentUser?.email}</Text>
     </View>
   )
 }
 
 export default ProfileScreen
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 10,
+    backgroundColor: "white"
+  },
+  text: {
+    fontWeight: "600",
+    fontSize: 16,
+    marginTop: 20
+  },
+})
