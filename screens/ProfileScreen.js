@@ -1,5 +1,7 @@
 import React, { useLayoutEffect } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
+import { Avatar } from 'react-native-elements'
+import { auth, db } from '../firebase'
 
 const ProfileScreen = ({ navigation }) => {
   useLayoutEffect(() => {
@@ -13,7 +15,8 @@ const ProfileScreen = ({ navigation }) => {
 
   return (
     <View>
-      <Text>Profile screen</Text>
+      
+      <Avatar size={100} rounded source={{ uri: auth?.currentUser?.photoURL }} />
     </View>
   )
 }
