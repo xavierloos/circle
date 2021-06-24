@@ -1,6 +1,6 @@
 import React, { useLayoutEffect } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import { Avatar } from 'react-native-elements'
+import { Avatar, Icon } from 'react-native-elements'
 import { SimpleLineIcons } from "@expo/vector-icons"
 import { auth, db } from '../firebase'
 
@@ -21,8 +21,14 @@ const ProfileScreen = ({ navigation }) => {
       <View style={styles.infoContainer}>
         <SimpleLineIcons name="user" size={20} color="white" style={{ marginRight: 5 }} /><Text style={styles.text}>{auth?.currentUser?.displayName}</Text>
       </View>
+      <View style={styles.infoContainer}>
+        <Icon
+          raised
+          name='envelope'
+          type='font-awesome'
+          color='#D50000' /><Text style={styles.text}>{auth?.currentUser?.email}</Text>
+      </View>
 
-      <Text style={styles.text}>{auth?.currentUser?.email}</Text>
     </View>
   )
 }
