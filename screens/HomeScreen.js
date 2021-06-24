@@ -27,8 +27,9 @@ const HomeScreen = ({ navigation }) => {
       headerRight: () => (
         <View style={{ marginRight: 20, flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
           <TouchableOpacity activeOpacity={0.5} style={{ marginLeft: 5 }}>
+            {console.log(auth?.currentUser?.photoURL)}
             {
-              (auth?.currentUser?.photoURL === null) ? <SimpleLineIcons name="user" size={24} color="white" onPress={profile} /> : <Avatar rounded source={{ uri: auth?.currentUser?.photoURL }} onPress={profile} />
+              (auth?.currentUser?.photoURL === null) ? <SimpleLineIcons name="plus" size={24} color="white" onPress={profile} /> : <Avatar rounded source={{ uri: auth?.currentUser?.photoURL }} onPress={profile} />
             }
           </TouchableOpacity>
         </View>
