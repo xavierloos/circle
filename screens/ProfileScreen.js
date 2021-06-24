@@ -15,7 +15,9 @@ const ProfileScreen = ({ navigation }) => {
   }, [])
 
   const logout = () => {
-
+    auth.signOut().then(() => {
+      navigation.replace("Login")
+    })
   }
 
   return (
