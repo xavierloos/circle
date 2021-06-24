@@ -1,6 +1,6 @@
 import React, { useLayoutEffect } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import { Avatar, Icon } from 'react-native-elements'
+import { Avatar, Icon, Button } from 'react-native-elements'
 import { SimpleLineIcons } from "@expo/vector-icons"
 import { auth, db } from '../firebase'
 
@@ -13,6 +13,10 @@ const ProfileScreen = ({ navigation }) => {
       headerTintColor: "white",
     })
   }, [])
+
+  const logout = () => {
+
+  }
 
   return (
     <View style={styles.container}>
@@ -30,6 +34,7 @@ const ProfileScreen = ({ navigation }) => {
           type='font-awesome'
           color='#D50000' /><Text style={styles.text}>{auth?.currentUser?.email}</Text>
       </View>
+      <Button title="Logout" type="outline" containerStyle={styles.button} onPress={logout} />
 
     </View>
   )
