@@ -19,11 +19,13 @@ const ProfileScreen = ({ navigation }) => {
       {console.log(auth?.currentUser)}
       <Avatar size={100} rounded source={{ uri: auth?.currentUser?.photoURL }} />
       <View style={styles.infoContainer}>
-        <SimpleLineIcons name="user" size={20} color="white" style={{ marginRight: 5 }} /><Text style={styles.text}>{auth?.currentUser?.displayName}</Text>
+        <Icon style={styles.icon}
+          name='user'
+          type='font-awesome'
+          color='#D50000' /><Text style={styles.text}>{auth?.currentUser?.displayName}</Text>
       </View>
       <View style={styles.infoContainer}>
-        <Icon
-          raised
+        <Icon style={styles.icon}
           name='envelope'
           type='font-awesome'
           color='#D50000' /><Text style={styles.text}>{auth?.currentUser?.email}</Text>
@@ -48,6 +50,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: 'baseline',
     justifyContent: 'center',
+  },
+  icon: {
+    marginRight: 10
   },
   text: {
     fontWeight: "600",
