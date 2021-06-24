@@ -15,9 +15,10 @@ const ProfileScreen = ({ navigation }) => {
 
   return (
     <View>
-
+      {console.log(auth?.currentUser)}
       <Avatar size={100} rounded source={{ uri: auth?.currentUser?.photoURL }} />
       <Text>{auth?.currentUser?.displayName}</Text>
+      <Text>{auth?.currentUser?.email}</Text>
     </View>
   )
 }
