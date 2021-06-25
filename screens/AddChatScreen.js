@@ -6,6 +6,7 @@ import { ImagePicker } from "expo"
 
 const AddChatScreen = ({ navigation }) => {
   const [chatname, setChatname] = useState("")
+
   useLayoutEffect(() => {
     navigation.setOptions({
       headerTitle: "CIRCLE",
@@ -16,6 +17,7 @@ const AddChatScreen = ({ navigation }) => {
       headerBackTitle: "Cancel",
     });
   }, [navigation])
+
   const createChat = async () => {
     await db.collection("chats").add({ chatName: chatname, })
       .then(() => {
@@ -23,7 +25,9 @@ const AddChatScreen = ({ navigation }) => {
       })
       .catch((e) => alert(e))
   }
+
   const chooseImage = () => { }
+
   return (
     <View style={styles.container}>
       <View style={styles.inputContainer}>
@@ -36,7 +40,9 @@ const AddChatScreen = ({ navigation }) => {
     </View>
   )
 }
+
 export default AddChatScreen
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
