@@ -1,5 +1,5 @@
 import React, { useLayoutEffect, useState } from 'react'
-import { StyleSheet, View } from 'react-native'
+import { StyleSheet, View, Alert } from 'react-native'
 import { Input, Icon, Button } from 'react-native-elements';
 import { db } from '../firebase';
 import { ImagePicker } from "expo"
@@ -28,8 +28,14 @@ const AddChatScreen = ({ navigation }) => {
 
   const chooseImage = async () => {
     let result = await ImagePicker.launchCameraAsync();
-    if (!result.cancelled) { this.uploadImage(result.uri) }
+    if (!result.cancelled) {
+      this.uploadImage(result.uri, "test-img")
+        .then(() => {
+          Alert.alert("Image uploaded")
+        })
+    }
   }
+
   uploadImage = async (uri, imageName) => {
     const response = await fetch(uri)
     const blob = await response.blob()
