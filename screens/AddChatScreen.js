@@ -31,7 +31,7 @@ const AddChatScreen = ({ navigation }) => {
     if (!result.cancelled) { this.uploadImage(result.uri) }
   }
   uploadImage = async (uri) => {
-    
+    const response = await fetch(uri)
   }
 
   return (
