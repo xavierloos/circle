@@ -33,7 +33,8 @@ const AddChatScreen = ({ navigation }) => {
   uploadImage = async (uri, imageName) => {
     const response = await fetch(uri)
     const blob = await response.blob()
-    var ref = firebase.storage().ref().child("images/"+imageName)
+    var ref = db.storage().ref().child("images/" + imageName)
+    return ref.put(blob)
   }
 
   return (
