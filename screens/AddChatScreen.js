@@ -26,7 +26,9 @@ const AddChatScreen = ({ navigation }) => {
       .catch((e) => alert(e))
   }
 
-  const chooseImage = () => { }
+  const chooseImage = async () => {
+    let result = await ImagePicker.launchCameraAsync();
+  }
 
   return (
     <View style={styles.container}>
