@@ -23,13 +23,14 @@ const AddChatScreen = ({ navigation }) => {
       })
       .catch((e) => alert(e))
   }
+  const chooseImage = () => { }
   return (
     <View style={styles.container}>
       <View style={styles.inputContainer}>
         <Input placeholder="Chat name" value={chatname} onChangeText={(text) => setChatname(text)} leftIcon={
           <Icon name="wechat" type="antdesign" size={30} color="black" required />
         } onSubmitEditing={createChat} />
-        <Button style={styles.button} onPress={createChat} title="Choose image" />
+        <Button style={styles.button} onPress={chooseImage} title="Choose image" />
       </View>
       <Button disabled={!chatname} style={styles.button} onPress={createChat} title="Create chat" />
     </View>
