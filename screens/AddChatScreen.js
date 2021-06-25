@@ -2,6 +2,8 @@ import React, { useLayoutEffect, useState } from 'react'
 import { StyleSheet, View } from 'react-native'
 import { Input, Icon, Button } from 'react-native-elements';
 import { db } from '../firebase';
+import { ImagePicker } from "expo"
+
 const AddChatScreen = ({ navigation }) => {
   const [chatname, setChatname] = useState("")
   useLayoutEffect(() => {
@@ -27,6 +29,7 @@ const AddChatScreen = ({ navigation }) => {
         <Input placeholder="Chat name" value={chatname} onChangeText={(text) => setChatname(text)} leftIcon={
           <Icon name="wechat" type="antdesign" size={30} color="black" required />
         } onSubmitEditing={createChat} />
+        <Button style={styles.button} onPress={createChat} title="Choose image" />
       </View>
       <Button disabled={!chatname} style={styles.button} onPress={createChat} title="Create chat" />
     </View>
