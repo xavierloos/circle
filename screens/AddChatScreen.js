@@ -33,6 +33,9 @@ const AddChatScreen = ({ navigation }) => {
         .then(() => {
           Alert.alert("Image uploaded")
         })
+        .catch((e) => {
+          Alert.alert(e)
+        })
     }
   }
 
