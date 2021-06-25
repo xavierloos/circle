@@ -2,7 +2,7 @@ import React, { useLayoutEffect, useState } from 'react'
 import { StyleSheet, View, Alert } from 'react-native'
 import { Input, Icon, Button } from 'react-native-elements';
 import { db } from '../firebase';
-import { ImagePicker } from "expo"
+import * as ImagePicker from 'expo-image-picker';
 
 const AddChatScreen = ({ navigation }) => {
   const [chatname, setChatname] = useState("")
@@ -39,7 +39,7 @@ const AddChatScreen = ({ navigation }) => {
     }
   }
 
-  uploadImage = async (uri, imageName) => {
+  const uploadImage = async (uri, imageName) => {
     const response = await fetch(uri)
     const blob = await response.blob()
     var ref = db.storage().ref().child("images/" + imageName)
