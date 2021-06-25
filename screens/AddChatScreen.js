@@ -30,7 +30,7 @@ const AddChatScreen = ({ navigation }) => {
     let result = await ImagePicker.launchCameraAsync();
     if (!result.cancelled) { this.uploadImage(result.uri) }
   }
-  uploadImage = async (uri) => {
+  uploadImage = async (uri, imageName) => {
     const response = await fetch(uri)
     const blob = await response.blob()
   }
