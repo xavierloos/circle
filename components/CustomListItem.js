@@ -62,14 +62,15 @@ const styles = StyleSheet.create({
     // alignItems: "flex-start",
 
     // backgroundColor: "red !important"
-    height: "300px !important",
+    height: "300px",
   },
   item: {
     borderWidth: 1,
     borderColor: "red",
-
+    height: "300px",
     margin: "10px",
   },
   avatar: {
+    width: "100px"
   }
 })
