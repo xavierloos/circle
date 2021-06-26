@@ -44,7 +44,10 @@ const CustomListItem = () => {
 export default CustomListItem
 const styles = StyleSheet.create({
   itemConteiner: {
-    backgroundColor:"red"
+    display: "flex",
+    flexDirection: "row",
+    justifyContent:"space-evenly",
+    width: "50%"
 
   }
 })
