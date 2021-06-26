@@ -31,7 +31,7 @@ const CustomListItem = () => {
     //   </ListItem.Content>
     // </ListItem>
     <View style={styles.itemsConteiner}>
-      <ListItem bottomDivider style={styles.item}>
+      <ListItem style={styles.item}>
         <Avatar rounded source={{ uri: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.9LeJajtN75YM4qNKou-0ewHaHa%26pid%3DApi&f=1" }} />
         <ListItem.Content>
           <ListItem.Title style={{ fontWeight: "600" }}>hello</ListItem.Title>
@@ -40,7 +40,7 @@ const CustomListItem = () => {
       </ListItem.Subtitle>
         </ListItem.Content>
       </ListItem>
-      <ListItem bottomDivider style={styles.item}>
+      <ListItem style={styles.item}>
         <Avatar rounded source={{ uri: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.9LeJajtN75YM4qNKou-0ewHaHa%26pid%3DApi&f=1" }} containerStyle={styles.avatar} />
         <ListItem.Content>
           <ListItem.Title style={{ fontWeight: "600" }}>hello</ListItem.Title>
@@ -60,16 +60,17 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-evenly",
     alignItems: "flex-start",
-
+    margin: "10px",
     backgroundColor: "red !important"
 
   },
   item: {
     display: "flex",
     flexDirection: "row",
-    backgroundColor: "red !important",
+    borderWidth: 1,
+    borderColor: "red",
     height: "100px"
-  
+
   },
   avatar: {
   }
