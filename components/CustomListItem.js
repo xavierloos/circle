@@ -41,7 +41,7 @@ const CustomListItem = () => {
         </ListItem.Content>
       </ListItem>
       <ListItem bottomDivider style={styles.item}>
-        <Avatar style={styles.avatar} rounded source={{ uri: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.9LeJajtN75YM4qNKou-0ewHaHa%26pid%3DApi&f=1" }} />
+        <Avatar rounded source={{ uri: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.9LeJajtN75YM4qNKou-0ewHaHa%26pid%3DApi&f=1" }} containerStyle={styles.avatar} />
         <ListItem.Content>
           <ListItem.Title style={{ fontWeight: "600" }}>hello</ListItem.Title>
           <ListItem.Subtitle numberOfLines={1} ellipsizeMode="tail" style={{ fontWeight: "400" }}>
@@ -67,7 +67,10 @@ const styles = StyleSheet.create({
   item: {
     display: "flex",
     flexDirection: "row",
-    backgroundColor: "red !important"
+    backgroundColor: "red !important",
+    height: "100px"
+  
   },
-  avatar:{}
+  avatar: {
+  }
 })
