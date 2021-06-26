@@ -30,6 +30,7 @@ const CustomListItem = () => {
     //     </ListItem.Subtitle>
     //   </ListItem.Content>
     // </ListItem>
+    <View></View>
     <ListItem bottomDivider style={styles.itemConteiner}>
       <Avatar rounded source={{ uri: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.9LeJajtN75YM4qNKou-0ewHaHa%26pid%3DApi&f=1" }} />
       <ListItem.Content>
