@@ -62,14 +62,12 @@ const styles = StyleSheet.create({
     // alignItems: "flex-start",
 
     // backgroundColor: "red !important"
-
+    height: "300px !important",
   },
   item: {
-    display: "flex",
-    flexDirection: "row",
     borderWidth: 1,
     borderColor: "red",
-    height: "100px",
+
     margin: "10px",
   },
   avatar: {
