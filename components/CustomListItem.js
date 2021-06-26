@@ -56,12 +56,12 @@ const CustomListItem = () => {
 export default CustomListItem
 const styles = StyleSheet.create({
   itemsContainer: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-evenly",
-    alignItems: "flex-start",
-    margin: "10px",
-    backgroundColor: "red !important"
+    // display: "flex",
+    // flexDirection: "row",
+    // justifyContent: "space-evenly",
+    // alignItems: "flex-start",
+
+    // backgroundColor: "red !important"
 
   },
   item: {
@@ -69,8 +69,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     borderWidth: 1,
     borderColor: "red",
-    height: "100px"
-
+    height: "100px",
+    margin: "10px",
   },
   avatar: {
   }
