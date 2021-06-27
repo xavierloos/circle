@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { ListItem, Avatar } from "react-native-elements"
-import { db } from "../firebase"
+// import { db } from "../firebase"
 // const CustomListItem = ({ id, chatName, enterChat }) => {
 const CustomListItem = () => {
   const [lastMessage, setLastMessage] = useState([])
