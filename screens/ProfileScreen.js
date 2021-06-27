@@ -18,7 +18,6 @@ const ProfileScreen = ({ navigation }) => {
       navigation.replace("Login")
     })
   }
-
   return (
     <View style={styles.container}>
       {console.log(auth?.currentUser)}
