@@ -8,7 +8,6 @@ import { auth, db } from '../firebase'
 
 const HomeScreen = ({ navigation }) => {
   const [chats, setChats] = useState([]);
-
   const profile = () => {
   }
 
