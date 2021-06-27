@@ -13,7 +13,6 @@ const ProfileScreen = ({ navigation }) => {
       headerTintColor: "white",
     })
   }, [])
-
   const logout = () => {
     auth.signOut().then(() => {
       navigation.replace("Login")
