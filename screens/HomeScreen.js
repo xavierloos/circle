@@ -9,12 +9,6 @@ import { auth, db } from '../firebase'
 const HomeScreen = ({ navigation }) => {
   const [chats, setChats] = useState([]);
 
-  // const signOut = () => {
-  //   auth.signOut().then(() => {
-  //     navigation.replace("Login")
-  //   })
-  // }
-
   const profile = () => {
   }
 
