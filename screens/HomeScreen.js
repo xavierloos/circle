@@ -10,7 +10,6 @@ const HomeScreen = ({ navigation }) => {
   const [chats, setChats] = useState([]);
   const profile = () => {
   }
-
   useLayoutEffect(() => {
     navigation.setOptions({
       title: "CIRCLE",
