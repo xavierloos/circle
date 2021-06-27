@@ -54,6 +54,7 @@ const CustomListItem = () => {
   )
 }
 export default CustomListItem
+
 const styles = StyleSheet.create({
   itemsContainer: {
     // display: "flex",
