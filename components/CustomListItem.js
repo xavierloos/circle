@@ -50,7 +50,6 @@ const CustomListItem = () => {
         </ListItem.Content>
       </ListItem>
     </View>
-
   )
 }
 export default CustomListItem
