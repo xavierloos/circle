@@ -35,7 +35,6 @@ const HomeScreen = ({ navigation }) => {
             <SimpleLineIcons name="plus" size={24} color="white" />
           </TouchableOpacity>
         </View>
-
       ),
     })
   }, [])
