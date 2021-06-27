@@ -6,7 +6,6 @@ import { db } from "../firebase"
 // const CustomListItem = ({ id, chatName, enterChat }) => {
 const CustomListItem = () => {
   const [lastMessage, setLastMessage] = useState([])
-
   // useEffect(() => {
   //   const unsubscribe = db
   //     .collection("chats")
