@@ -3,7 +3,6 @@ import { StyleSheet, Text, View } from 'react-native'
 import { Avatar, Icon, Button } from 'react-native-elements'
 import { SimpleLineIcons } from "@expo/vector-icons"
 import { auth, db } from '../firebase'
-
 const ProfileScreen = ({ navigation }) => {
   useLayoutEffect(() => {
     navigation.setOptions({
