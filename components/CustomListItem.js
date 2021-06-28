@@ -30,7 +30,19 @@ const CustomListItem = () => {
     //   </ListItem.Content>
     // </ListItem>
     <View style={styles.itemsContainer}>
+      <Card>
+        <Card.Title>CARD WITH DIVIDER</Card.Title>
+        <Card.Divider />
+        <View style={styles.user}>
+          <Image
+            style={styles.image}
+            resizeMode="cover"
+            source={{ uri: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.9LeJajtN75YM4qNKou-0ewHaHa%26pid%3DApi&f=1" }}
+          />
+          <Text style={styles.name}>Javier</Text>
+        </View>
 
+      </Card>
       <ListItem
         Component={TouchableScale}
         friction={90} //
@@ -81,17 +93,18 @@ const styles = StyleSheet.create({
     // paddingLeft: 10
   },
   item: {
-    // display: "flex",
-    // flexDirection: "column",
+    display: "flex",
+    flexDirection: "column",
     width: "47%",
     borderWidth: 1,
     borderColor: "red",
     marginRight: "auto",
     marginLeft: "auto",
-    marginTop: 10
+    marginTop: 10,
+    height: 100
   },
-  // avatar: {
-  //   width: 100,
-  //   position: "relative"
-  // }
+  image: {
+    width: 100,
+    position: "relative"
+  }
 })
