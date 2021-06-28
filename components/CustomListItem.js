@@ -70,6 +70,8 @@ const styles = StyleSheet.create({
     paddingLeft: 10
   },
   item: {
+    display: "flex",
+    flexDirection: "column",
     width: "50%",
     borderWidth: 1,
     borderColor: "red",
