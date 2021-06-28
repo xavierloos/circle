@@ -30,7 +30,25 @@ const CustomListItem = () => {
     //   </ListItem.Content>
     // </ListItem>
     <View style={styles.itemsConteiner}>
-      <Card>
+      <Card
+        Component={TouchableScale}
+        friction={90} //
+        tension={100} // These props are passed to the parent component (here TouchableScale)
+        activeScale={0.95} //
+        containerStyle={{ margin: 10 }} >
+        <Card.Title>CARD WITH DIVIDER</Card.Title>
+        <View style={styles.user}>
+          {/* <Avatar rounded source={{ uri: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.9LeJajtN75YM4qNKou-0ewHaHa%26pid%3DApi&f=1" }} containerStyle={styles.avatar} /> */}
+          <Image
+            style={styles.image}
+            resizeMode="cover"
+            source={{ uri: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.9LeJajtN75YM4qNKou-0ewHaHa%26pid%3DApi&f=1" }}
+          />
+          <Text style={styles.name}>Javi</Text>
+        </View>
+
+      </Card>
+      <Card containerStyle={{ margin: 10 }} >
         <Card.Title>CARD WITH DIVIDER</Card.Title>
         <View style={styles.user}>
           <Image
@@ -42,7 +60,7 @@ const CustomListItem = () => {
         </View>
 
       </Card>
-      <ListItem
+      {/* <ListItem
         Component={TouchableScale}
         friction={90} //
         tension={100} // These props are passed to the parent component (here TouchableScale)
@@ -64,7 +82,7 @@ const CustomListItem = () => {
             description
       </ListItem.Subtitle>
         </ListItem.Content>
-      </ListItem>
+      </ListItem> */}
     </View>
   )
 }
@@ -86,8 +104,8 @@ const styles = StyleSheet.create({
   //   height: 300,
   //   margin: 10,
   // },
-  // avatar: {
-  //   width: 100,
-  //   position: "relative"
-  // }
+  image: {
+    width: 50,
+    // position: "relative"
+  }
 })
