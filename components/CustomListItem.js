@@ -43,7 +43,7 @@ const CustomListItem = () => {
         </View>
 
       </Card>
-      <ListItem
+      {/* <ListItem
         Component={TouchableScale}
         friction={90} //
         tension={100} // These props are passed to the parent component (here TouchableScale)
@@ -75,7 +75,7 @@ const CustomListItem = () => {
             description with long description
       </ListItem.Subtitle>
         </ListItem.Content>
-      </ListItem>
+      </ListItem> */}
     </View>
   )
 }
