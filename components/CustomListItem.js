@@ -50,7 +50,7 @@ const CustomListItem = () => {
         <ListItem.Content>
           <ListItem.Title style={{ fontWeight: "600" }}>hello</ListItem.Title>
           <ListItem.Subtitle numberOfLines={1} ellipsizeMode="tail" style={{ fontWeight: "400" }}>
-            description
+            description with long description
       </ListItem.Subtitle>
         </ListItem.Content>
       </ListItem>
