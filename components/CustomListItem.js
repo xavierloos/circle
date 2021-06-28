@@ -30,33 +30,37 @@ const CustomListItem = () => {
     //   </ListItem.Content>
     // </ListItem>
     <View style={styles.itemsConteiner}>
-      <Card
-        containerStyle={{ width: "45%" }} >
-        <Card.Title>CARD WITH DIVIDER</Card.Title>
-        <Image
-          style={{ width: "100%", height: 200 }}
-          resizeMode="cover"
-          source={{ uri: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.9LeJajtN75YM4qNKou-0ewHaHa%26pid%3DApi&f=1" }}
-        />
-        <View style={styles.user}>
-          {/* <Avatar rounded source={{ uri: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.9LeJajtN75YM4qNKou-0ewHaHa%26pid%3DApi&f=1" }} containerStyle={styles.avatar} /> */}
+      <View style={[styles.box, { backgroundColor: "red" }]}>
 
-          <Text style={styles.name}>Javi</Text>
-        </View>
+      </View>
+      <View style={[styles.box, { backgroundColor: "red" }]}>
 
-      </Card>
-      <Card containerStyle={{ margin: 10 }} >
-        <Card.Title>CARD WITH DIVIDER</Card.Title>
-        <View style={styles.user}>
-          <Image
-            style={styles.image}
-            resizeMode="cover"
-            source={{ uri: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg' }}
-          />
-          <Text style={styles.name}>Javi</Text>
-        </View>
+      </View>
+      <View style={[styles.box, { backgroundColor: "red" }]}>
 
-      </Card>
+      </View>
+      <View style={[styles.box, { backgroundColor: "red" }]}>
+
+      </View>
+      <View style={[styles.box, { backgroundColor: "red" }]}>
+
+      </View>
+      <View style={[styles.box, { backgroundColor: "red" }]}>
+
+      </View>
+      <View style={[styles.box, { backgroundColor: "red" }]}>
+
+      </View>
+      <View style={[styles.box, { backgroundColor: "red" }]}>
+
+      </View>
+      <View style={[styles.box, { backgroundColor: "red" }]}>
+
+      </View>
+      <View style={[styles.box, { backgroundColor: "red" }]}>
+
+      </View>
+
       {/* <ListItem
         Component={TouchableScale}
         friction={90} //
@@ -87,13 +91,16 @@ export default CustomListItem
 
 const styles = StyleSheet.create({
   itemsContainer: {
-    // display: "flex",
-    // flexDirection: "row",
-    // justifyContent: "space-evenly",
-    // alignItems: "flex-start",
-
+    display: "flex",
+    flexDirection: "column",
+    flexWrap:"wrap"
     // backgroundColor: "red !important"
     // height: 300,
+  },
+  box: {
+    width: 50,
+    height: 80,
+    margin: 10
   },
   // item: {
   //   borderWidth: 1,
