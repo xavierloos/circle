@@ -60,16 +60,16 @@ const styles = StyleSheet.create({
     // alignItems: "flex-start",
 
     // backgroundColor: "red !important"
-    height: "300",
+    height: 300,
   },
   item: {
     borderWidth: 1,
     borderColor: "red",
-    height: "300",
-    margin: "10px",
+    height: 300,
+    margin: 10,
   },
   avatar: {
-    width: "100px",
+    width: 100,
     position: "relative"
   }
 })
