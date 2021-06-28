@@ -29,38 +29,37 @@ const CustomListItem = () => {
     //     </ListItem.Subtitle>
     //   </ListItem.Content>
     // </ListItem>
-    <View style={styles.itemsConteiner}>
-      <View style={[styles.box, { backgroundColor: "red" }]}>
+    <View style={styles.itemsContainer}>
+      <Card
+        containerStyle={{ width: "40%" }} >
+        <Card.Title>CARD WITH DIVIDER</Card.Title>
+        <Image
+          style={{ width: "100%", height: 200 }}
+          resizeMode="cover"
+          source={{ uri: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.9LeJajtN75YM4qNKou-0ewHaHa%26pid%3DApi&f=1" }}
+        />
+        <View style={styles.user}>
+          {/* <Avatar rounded source={{ uri: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.9LeJajtN75YM4qNKou-0ewHaHa%26pid%3DApi&f=1" }} containerStyle={styles.avatar} /> */}
 
-      </View>
-      <View style={[styles.box, { backgroundColor: "red" }]}>
+          <Text style={styles.name}>Javi</Text>
+        </View>
 
-      </View>
-      <View style={[styles.box, { backgroundColor: "red" }]}>
+      </Card>
+      <Card
+        containerStyle={{ width: "40%" }} >
+        <Card.Title>CARD WITH DIVIDER</Card.Title>
+        <Image
+          style={{ width: "100%", height: 200 }}
+          resizeMode="cover"
+          source={{ uri: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.9LeJajtN75YM4qNKou-0ewHaHa%26pid%3DApi&f=1" }}
+        />
+        <View style={styles.user}>
+          {/* <Avatar rounded source={{ uri: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.9LeJajtN75YM4qNKou-0ewHaHa%26pid%3DApi&f=1" }} containerStyle={styles.avatar} /> */}
 
-      </View>
-      <View style={[styles.box, { backgroundColor: "red" }]}>
+          <Text style={styles.name}>Javi</Text>
+        </View>
 
-      </View>
-      <View style={[styles.box, { backgroundColor: "red" }]}>
-
-      </View>
-      <View style={[styles.box, { backgroundColor: "red" }]}>
-
-      </View>
-      <View style={[styles.box, { backgroundColor: "red" }]}>
-
-      </View>
-      <View style={[styles.box, { backgroundColor: "red" }]}>
-
-      </View>
-      <View style={[styles.box, { backgroundColor: "red" }]}>
-
-      </View>
-      <View style={[styles.box, { backgroundColor: "red" }]}>
-
-      </View>
-
+      </Card>
       {/* <ListItem
         Component={TouchableScale}
         friction={90} //
@@ -91,16 +90,15 @@ export default CustomListItem
 
 const styles = StyleSheet.create({
   itemsContainer: {
+    flex: 1,
     display: "flex",
-    flexDirection: "column",
-    flexWrap:"wrap"
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
+    alignItems: "flex-start",
+
     // backgroundColor: "red !important"
     // height: 300,
-  },
-  box: {
-    width: 50,
-    height: 80,
-    margin: 10
   },
   // item: {
   //   borderWidth: 1,
