@@ -30,37 +30,8 @@ const CustomListItem = () => {
     //   </ListItem.Content>
     // </ListItem>
     <View style={styles.itemsContainer}>
-      <Card
-        containerStyle={{ width: "40%" }} >
-        <Card.Title>CARD WITH DIVIDER</Card.Title>
-        <Image
-          style={{ width: "100%", height: 200 }}
-          resizeMode="cover"
-          source={{ uri: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.9LeJajtN75YM4qNKou-0ewHaHa%26pid%3DApi&f=1" }}
-        />
-        <View style={styles.user}>
-          {/* <Avatar rounded source={{ uri: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.9LeJajtN75YM4qNKou-0ewHaHa%26pid%3DApi&f=1" }} containerStyle={styles.avatar} /> */}
 
-          <Text style={styles.name}>Javi</Text>
-        </View>
-
-      </Card>
-      <Card
-        containerStyle={{ width: "40%" }} >
-        <Card.Title>CARD WITH DIVIDER</Card.Title>
-        <Image
-          style={{ width: "100%", height: 200 }}
-          resizeMode="cover"
-          source={{ uri: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.9LeJajtN75YM4qNKou-0ewHaHa%26pid%3DApi&f=1" }}
-        />
-        <View style={styles.user}>
-          {/* <Avatar rounded source={{ uri: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.9LeJajtN75YM4qNKou-0ewHaHa%26pid%3DApi&f=1" }} containerStyle={styles.avatar} /> */}
-
-          <Text style={styles.name}>Javi</Text>
-        </View>
-
-      </Card>
-      {/* <ListItem
+      <ListItem
         Component={TouchableScale}
         friction={90} //
         tension={100} // These props are passed to the parent component (here TouchableScale)
@@ -82,7 +53,7 @@ const CustomListItem = () => {
             description
       </ListItem.Subtitle>
         </ListItem.Content>
-      </ListItem> */}
+      </ListItem>
     </View>
   )
 }
@@ -90,24 +61,20 @@ export default CustomListItem
 
 const styles = StyleSheet.create({
   itemsContainer: {
-    flex: 1,
     display: "flex",
     flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "space-between",
+    justifyContent: "space-evenly",
     alignItems: "flex-start",
-
-    // backgroundColor: "red !important"
-    // height: 300,
+    height: 300,
   },
-  // item: {
-  //   borderWidth: 1,
-  //   borderColor: "red",
-  //   height: 300,
-  //   margin: 10,
-  // },
-  image: {
-    width: 50,
-    // position: "relative"
-  }
+  item: {
+    width: "50%",
+    borderWidth: 1,
+    borderColor: "red",
+    margin: 10,
+  },
+  // avatar: {
+  //   width: 100,
+  //   position: "relative"
+  // }
 })
