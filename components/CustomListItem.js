@@ -31,19 +31,16 @@ const CustomListItem = () => {
     // </ListItem>
     <View style={styles.itemsConteiner}>
       <Card
-        Component={TouchableScale}
-        friction={90} //
-        tension={100} // These props are passed to the parent component (here TouchableScale)
-        activeScale={0.95} //
-        containerStyle={{ margin: 10 }} >
+        containerStyle={{ width: "45%" }} >
         <Card.Title>CARD WITH DIVIDER</Card.Title>
+        <Image
+          style={{ width: "100%", height: 200 }}
+          resizeMode="cover"
+          source={{ uri: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.9LeJajtN75YM4qNKou-0ewHaHa%26pid%3DApi&f=1" }}
+        />
         <View style={styles.user}>
           {/* <Avatar rounded source={{ uri: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.9LeJajtN75YM4qNKou-0ewHaHa%26pid%3DApi&f=1" }} containerStyle={styles.avatar} /> */}
-          <Image
-            style={styles.image}
-            resizeMode="cover"
-            source={{ uri: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.9LeJajtN75YM4qNKou-0ewHaHa%26pid%3DApi&f=1" }}
-          />
+
           <Text style={styles.name}>Javi</Text>
         </View>
 
