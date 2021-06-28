@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { StyleSheet, View } from 'react-native'
-import { ListItem, Avatar } from "react-native-elements"
+import { StyleSheet, View, Text, Image } from 'react-native'
+import { ListItem, Avatar, Card } from "react-native-elements"
+import TouchableScale from 'react-native-touchable-scale'
 // import { db } from "../firebase"
 // const CustomListItem = ({ id, chatName, enterChat }) => {
 const CustomListItem = () => {
@@ -29,7 +30,24 @@ const CustomListItem = () => {
     //   </ListItem.Content>
     // </ListItem>
     <View style={styles.itemsConteiner}>
-      <ListItem style={styles.item}>
+      <Card>
+        <Card.Title>CARD WITH DIVIDER</Card.Title>
+        <View style={styles.user}>
+          <Image
+            style={styles.image}
+            resizeMode="cover"
+            source={{ uri: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg' }}
+          />
+          <Text style={styles.name}>Javi</Text>
+        </View>
+
+      </Card>
+      <ListItem
+        Component={TouchableScale}
+        friction={90} //
+        tension={100} // These props are passed to the parent component (here TouchableScale)
+        activeScale={0.95} //
+        style={styles.item}>
         <Avatar rounded source={{ uri: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.9LeJajtN75YM4qNKou-0ewHaHa%26pid%3DApi&f=1" }} />
         <ListItem.Content>
           <ListItem.Title style={{ fontWeight: "600" }}>hello</ListItem.Title>
@@ -60,16 +78,16 @@ const styles = StyleSheet.create({
     // alignItems: "flex-start",
 
     // backgroundColor: "red !important"
-    height: 300,
+    // height: 300,
   },
-  item: {
-    borderWidth: 1,
-    borderColor: "red",
-    height: 300,
-    margin: 10,
-  },
-  avatar: {
-    width: 100,
-    position: "relative"
-  }
+  // item: {
+  //   borderWidth: 1,
+  //   borderColor: "red",
+  //   height: 300,
+  //   margin: 10,
+  // },
+  // avatar: {
+  //   width: 100,
+  //   position: "relative"
+  // }
 })
