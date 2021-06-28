@@ -55,6 +55,15 @@ const CustomListItem = () => {
       </ListItem.Subtitle>
         </ListItem.Content>
       </ListItem>
+      <ListItem style={styles.item}>
+        <Avatar rounded source={{ uri: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.9LeJajtN75YM4qNKou-0ewHaHa%26pid%3DApi&f=1" }} containerStyle={styles.avatar} />
+        <ListItem.Content>
+          <ListItem.Title style={{ fontWeight: "600" }}>hello</ListItem.Title>
+          <ListItem.Subtitle numberOfLines={1} ellipsizeMode="tail" style={{ fontWeight: "400" }}>
+            description with long description
+      </ListItem.Subtitle>
+        </ListItem.Content>
+      </ListItem>
     </View>
   )
 }
@@ -65,18 +74,21 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-evenly",
-    alignItems: "flex-start",
+    alignContent: "flex-start",
+    flexWrap: "wrap",
     height: 300,
-    paddingRight: 10,
-    paddingLeft: 10
+    // paddingRight: 10,
+    // paddingLeft: 10
   },
   item: {
-    display: "flex",
-    flexDirection: "column",
-    width: "50%",
+    // display: "flex",
+    // flexDirection: "column",
+    width: "47%",
     borderWidth: 1,
     borderColor: "red",
-    margin: 10,
+    marginRight: "auto",
+    marginLeft: "auto",
+    marginTop: 10
   },
   // avatar: {
   //   width: 100,
