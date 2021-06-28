@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { StyleSheet, View, Text, Image } from 'react-native'
-import { ListItem, Avatar, Card } from "react-native-elements"
+import { ListItem, Avatar, Card, Button } from "react-native-elements"
 import TouchableScale from 'react-native-touchable-scale'
 // import { db } from "../firebase"
 // const CustomListItem = ({ id, chatName, enterChat }) => {
@@ -44,6 +44,7 @@ const CustomListItem = () => {
             description
       </ListItem.Subtitle>
         </ListItem.Content>
+        <Button title="Join" />
       </ListItem>
       <ListItem style={styles.item}>
         <Avatar rounded source={{ uri: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.9LeJajtN75YM4qNKou-0ewHaHa%26pid%3DApi&f=1" }} containerStyle={styles.avatar} />
