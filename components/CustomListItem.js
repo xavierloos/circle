@@ -32,12 +32,12 @@ const CustomListItem = () => {
     <View style={styles.itemsContainer}>
       <Card>
         <Card.Title>CARD WITH DIVIDER</Card.Title>
-        <Card.Divider />
+
         <View style={styles.user}>
           <Image
             style={styles.image}
             resizeMode="cover"
-            source={{ uri: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.9LeJajtN75YM4qNKou-0ewHaHa%26pid%3DApi&f=1" }}
+            source={{ uri: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.9LeJajtN75YM4qNKou-0ewHaHa%26pid%3DApi&f=1' }}
           />
           <Text style={styles.name}>Javier</Text>
         </View>
@@ -101,10 +101,9 @@ const styles = StyleSheet.create({
     marginRight: "auto",
     marginLeft: "auto",
     marginTop: 10,
-    height: 100
   },
   image: {
     width: 100,
-    position: "relative"
+    // position: "relative"
   }
 })
