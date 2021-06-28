@@ -66,6 +66,8 @@ const styles = StyleSheet.create({
     justifyContent: "space-evenly",
     alignItems: "flex-start",
     height: 300,
+    paddingRight: 10,
+    paddingLeft: 10
   },
   item: {
     width: "50%",
