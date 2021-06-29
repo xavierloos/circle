@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { StyleSheet, View, } from 'react-native'
+import { StyleSheet, View, Touchable } from 'react-native'
 import { ListItem, Avatar, Card, Image, Text, Button } from "react-native-elements"
 import TouchableScale from 'react-native-touchable-scale'
 import { color } from 'react-native-reanimated'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 // import { db } from "../firebase"
 // const CustomListItem = ({ id, chatName, enterChat }) => {
 const CustomListItem = () => {
@@ -31,46 +32,68 @@ const CustomListItem = () => {
     //   </ListItem.Content>
     // </ListItem>
     <View style={styles.itemsContainer}>
-      <View style={styles.card}>
-        <Image
-          style={styles.image}
-          resizeMode="cover"
-          source={{ uri: 'https://miro.medium.com/max/1178/1*rishAJIUgRCz_VzJV-vZuA.png' }}
-        />
-        <Text h5 style={styles.title} numberOfLines={1}>Title long title long title</Text>
-        <Text h6 style={styles.description} numberOfLines={1}>Long long description long description long description long long description</Text>
-        <Text h6 style={styles.enter} numberOfLines={1}>Chat now</Text>
-      </View>
-      <View style={styles.card}>
-        <Image
-          style={styles.image}
-          resizeMode="cover"
-          source={{ uri: 'https://miro.medium.com/max/1178/1*rishAJIUgRCz_VzJV-vZuA.png' }}
-        />
-        <Text h5 style={styles.title} numberOfLines={1}>Title long title long title</Text>
-        <Text h6 style={styles.description} numberOfLines={1}>Long long description long description long description long long description</Text>
-        <Text h6 style={styles.enter} numberOfLines={1}>Chat now</Text>
-      </View>
-      <View style={styles.card}>
-        <Image
-          style={styles.image}
-          resizeMode="cover"
-          source={{ uri: 'https://miro.medium.com/max/1178/1*rishAJIUgRCz_VzJV-vZuA.png' }}
-        />
-        <Text h5 style={styles.title} numberOfLines={1}>Title long title long title</Text>
-        <Text h6 style={styles.description} numberOfLines={1}>Long long description long description long description long long description</Text>
-        <Text h6 style={styles.enter} numberOfLines={1}>Chat now</Text>
-      </View>
-      <View style={styles.card}>
-        <Image
-          style={styles.image}
-          resizeMode="cover"
-          source={{ uri: 'https://miro.medium.com/max/1178/1*rishAJIUgRCz_VzJV-vZuA.png' }}
-        />
-        <Text h5 style={styles.title} numberOfLines={1}>Title long title long title</Text>
-        <Text h6 style={styles.description} numberOfLines={1}>Long long description long description long description long long description</Text>
-        <Text h6 style={styles.enter} numberOfLines={1}>Chat now</Text>
-      </View>
+      {/* <TouchableOpacity activeOpacity={0.5} style={{ marginLeft: 5 }} onPress={() => navigation.navigate("Profile")}> */}
+      <TouchableOpacity activeOpacity={0.5} style={styles.cardTouchable}>
+        <View style={styles.card}>
+          <Image
+            style={styles.image}
+            resizeMode="cover"
+            source={{ uri: 'https://miro.medium.com/max/1178/1*rishAJIUgRCz_VzJV-vZuA.png' }}
+          />
+          <Text h5 style={styles.title} numberOfLines={1}>Title long title long title</Text>
+          <Text h6 style={styles.description} numberOfLines={2}>Long long description long description long description long long description</Text>
+          <Text h6 style={styles.enter} numberOfLines={1}>Chat now</Text>
+        </View>
+      </TouchableOpacity>
+      <TouchableOpacity activeOpacity={0.5} style={styles.cardTouchable}>
+        <View style={styles.card}>
+          <Image
+            style={styles.image}
+            resizeMode="cover"
+            source={{ uri: 'https://miro.medium.com/max/1178/1*rishAJIUgRCz_VzJV-vZuA.png' }}
+          />
+          <Text h5 style={styles.title} numberOfLines={1}>Title long title long title</Text>
+          <Text h6 style={styles.description} numberOfLines={1}>Long long description long description long description long long description</Text>
+          <Text h6 style={styles.enter} numberOfLines={1}>Chat now</Text>
+        </View>
+      </TouchableOpacity>
+      <TouchableOpacity activeOpacity={0.5} style={styles.cardTouchable}>
+        <View style={styles.card}>
+          <Image
+            style={styles.image}
+            resizeMode="cover"
+            source={{ uri: 'https://miro.medium.com/max/1178/1*rishAJIUgRCz_VzJV-vZuA.png' }}
+          />
+          <Text h5 style={styles.title} numberOfLines={1}>Title long title long title</Text>
+          <Text h6 style={styles.description} numberOfLines={1}>Long long description long description long description long long description</Text>
+          <Text h6 style={styles.enter} numberOfLines={1}>Chat now</Text>
+        </View>
+      </TouchableOpacity>
+      <TouchableOpacity activeOpacity={0.5} style={styles.cardTouchable}>
+        <View style={styles.card}>
+          <Image
+            style={styles.image}
+            resizeMode="cover"
+            source={{ uri: 'https://miro.medium.com/max/1178/1*rishAJIUgRCz_VzJV-vZuA.png' }}
+          />
+          <Text h5 style={styles.title} numberOfLines={1}>Title long title long title</Text>
+          <Text h6 style={styles.description} numberOfLines={1}>Long long description long description long description long long description</Text>
+          <Text h6 style={styles.enter} numberOfLines={1}>Chat now</Text>
+        </View>
+      </TouchableOpacity>
+      <TouchableOpacity activeOpacity={0.5} style={styles.cardTouchable}>
+        <View style={styles.card}>
+          <Image
+            style={styles.image}
+            resizeMode="cover"
+            source={{ uri: 'https://miro.medium.com/max/1178/1*rishAJIUgRCz_VzJV-vZuA.png' }}
+          />
+          <Text h5 style={styles.title} numberOfLines={1}>Title long title long title</Text>
+          <Text h6 style={styles.description} numberOfLines={1}>Long long description long description long description long long description</Text>
+          <Text h6 style={styles.enter} numberOfLines={1}>Chat now</Text>
+        </View>
+      </TouchableOpacity>
+
 
       {/* <ListItem
         Component={TouchableScale}
@@ -121,16 +144,19 @@ const styles = StyleSheet.create({
     // paddingRight: 10,
     // paddingLeft: 10
   },
+  cardTouchable: {
+    margin: 2
+  },
   card: {
     padding: 0,
     display: "flex",
     flexDirection: "column",
-    width: 150,
-    height: 150,
+    width: 200,
+    height: 200,
     borderRadius: 200,
-    marginRight: "auto",
-    marginLeft: "auto",
-    marginTop: 10,
+    borderWidth: 2,
+    borderColor:"#D50000",
+    marginTop:5,
     shadowOffset: {
       width: 0,
       height: 3
@@ -141,8 +167,9 @@ const styles = StyleSheet.create({
     color: "white"
   },
   image: {
+    textAlign: "center",
     width: "100%",
-    height: 75,
+    height: 100,
     borderTopLeftRadius: 200,
     borderTopRightRadius: 200,
     // position: "relative"
@@ -156,8 +183,10 @@ const styles = StyleSheet.create({
   description: {
     textAlign: "center",
     color: "white",
-    paddingRight: 15,
-    paddingLeft: 15
+    marginRight: 20,
+    marginLeft:20
+    // paddingRight: 15,
+    // paddingLeft: 15
   },
   enter: {
     textAlign: "center",
