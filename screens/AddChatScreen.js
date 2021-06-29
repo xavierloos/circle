@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useState } from 'react'
 import { StyleSheet, View, Alert } from 'react-native'
-import { Input, Icon, Button } from 'react-native-elements';
-import { db } from '../firebase';
+import { Input, Icon, Button, Text } from 'react-native-elements';
+import { auth, db } from '../firebase';
 import * as ImagePicker from 'expo-image-picker';
 
 const AddChatScreen = ({ navigation }) => {
@@ -50,6 +50,7 @@ const AddChatScreen = ({ navigation }) => {
   }
 
   return (
+
     <View style={styles.container}>
       <View style={styles.inputContainer}>
         <Input
@@ -67,6 +68,7 @@ const AddChatScreen = ({ navigation }) => {
           onSubmitEditing={createChat}
         />
         <Button style={styles.button} onPress={chooseImage} title="Choose image" />
+        <Text>Created by: {auth?.currentUser?.displayName}</Text>
       </View>
       <Button disabled={!chatname} style={styles.button} onPress={createChat} title="Create chat" />
     </View>
