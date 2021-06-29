@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { StyleSheet, View, Text, } from 'react-native'
-import { ListItem, Avatar, Card, Image, Button } from "react-native-elements"
+import { StyleSheet, View, } from 'react-native'
+import { ListItem, Avatar, Card, Image, Text, Button } from "react-native-elements"
 import TouchableScale from 'react-native-touchable-scale'
 // import { db } from "../firebase"
 // const CustomListItem = ({ id, chatName, enterChat }) => {
@@ -30,17 +30,19 @@ const CustomListItem = () => {
     //   </ListItem.Content>
     // </ListItem>
     <View style={styles.itemsContainer}>
-      <Card>
-        <Card.Title>CARD WITH DIVIDER</Card.Title>
-        <View style={styles.user}>
+      <View style={styles.card}>
+        <View>
           <Image
             style={styles.image}
             resizeMode="cover"
             source={{ uri: 'https://miro.medium.com/max/1178/1*rishAJIUgRCz_VzJV-vZuA.png' }}
           />
-          <Text style={styles.name}>Javier</Text>
+          <Text h3>Title</Text>
         </View>
-      </Card>
+        <Text>
+          <Text style={styles.name}>Javier</Text>
+        </Text>
+      </View>
       {/* <ListItem
         Component={TouchableScale}
         friction={90} //
@@ -83,17 +85,19 @@ const styles = StyleSheet.create({
   itemsContainer: {
     display: "flex",
     flexDirection: "row",
-    justifyContent: "space-evenly",
+    // justifyContent: "space-evenly",
     alignContent: "flex-start",
     flexWrap: "wrap",
-    height: 300,
+    // height: 300,
     // paddingRight: 10,
     // paddingLeft: 10
   },
-  item: {
+  card: {
+    padding: 0,
     display: "flex",
     flexDirection: "column",
-    width: "47%",
+    width: "45%",
+    borderRadius: 10,
     borderWidth: 1,
     borderColor: "red",
     marginRight: "auto",
@@ -101,7 +105,9 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   image: {
-    width: "100%", height: 100
+    width: "100%",
+    height: 100,
+    borderRadius: 10,
     // position: "relative"
   }
 })
