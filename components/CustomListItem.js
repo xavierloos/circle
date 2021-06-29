@@ -45,54 +45,6 @@ const CustomListItem = () => {
           <Text h6 style={styles.enter} numberOfLines={1}>Chat now</Text>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity activeOpacity={0.5} style={styles.cardTouchable}>
-        <View style={styles.card}>
-          <Image
-            style={styles.image}
-            resizeMode="cover"
-            source={{ uri: 'https://miro.medium.com/max/1178/1*rishAJIUgRCz_VzJV-vZuA.png' }}
-          />
-          <Text h5 style={styles.title} numberOfLines={1}>Title long title long title</Text>
-          <Text h6 style={styles.description} numberOfLines={1}>Long long description long description long description long long description</Text>
-          <Text h6 style={styles.enter} numberOfLines={1}>Chat now</Text>
-        </View>
-      </TouchableOpacity>
-      <TouchableOpacity activeOpacity={0.5} style={styles.cardTouchable}>
-        <View style={styles.card}>
-          <Image
-            style={styles.image}
-            resizeMode="cover"
-            source={{ uri: 'https://miro.medium.com/max/1178/1*rishAJIUgRCz_VzJV-vZuA.png' }}
-          />
-          <Text h5 style={styles.title} numberOfLines={1}>Title long title long title</Text>
-          <Text h6 style={styles.description} numberOfLines={1}>Long long description long description long description long long description</Text>
-          <Text h6 style={styles.enter} numberOfLines={1}>Chat now</Text>
-        </View>
-      </TouchableOpacity>
-      <TouchableOpacity activeOpacity={0.5} style={styles.cardTouchable}>
-        <View style={styles.card}>
-          <Image
-            style={styles.image}
-            resizeMode="cover"
-            source={{ uri: 'https://miro.medium.com/max/1178/1*rishAJIUgRCz_VzJV-vZuA.png' }}
-          />
-          <Text h5 style={styles.title} numberOfLines={1}>Title long title long title</Text>
-          <Text h6 style={styles.description} numberOfLines={1}>Long long description long description long description long long description</Text>
-          <Text h6 style={styles.enter} numberOfLines={1}>Chat now</Text>
-        </View>
-      </TouchableOpacity>
-      <TouchableOpacity activeOpacity={0.5} style={styles.cardTouchable}>
-        <View style={styles.card}>
-          <Image
-            style={styles.image}
-            resizeMode="cover"
-            source={{ uri: 'https://miro.medium.com/max/1178/1*rishAJIUgRCz_VzJV-vZuA.png' }}
-          />
-          <Text h5 style={styles.title} numberOfLines={1}>Title long title long title</Text>
-          <Text h6 style={styles.description} numberOfLines={1}>Long long description long description long description long long description</Text>
-          <Text h6 style={styles.enter} numberOfLines={1}>Chat now</Text>
-        </View>
-      </TouchableOpacity>
 
 
       {/* <ListItem
