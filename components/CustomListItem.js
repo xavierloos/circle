@@ -38,11 +38,8 @@ const CustomListItem = () => {
           resizeMode="cover"
           source={{ uri: 'https://miro.medium.com/max/1178/1*rishAJIUgRCz_VzJV-vZuA.png' }}
         />
-        <Text h4>Title</Text>
-        {/* </View> */}
-        <Text>
-          <Text style={styles.name}>Javier</Text>
-        </Text>
+        <Text h4 style={styles.title}>Title</Text>
+        <Text style={styles.description}>Javier</Text>
       </View>
       <View style={styles.card}>
         {/* <View> */}
@@ -144,5 +141,10 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 200,
     borderTopRightRadius: 200,
     // position: "relative"
+  },
+  title: {
+    textAlign: "center",
+    color: "white",
+    fontWeight: "600",
   }
 })
