@@ -52,9 +52,13 @@ const AddChatScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.inputContainer}>
-        <Input placeholder="Chat name" value={chatname} onChangeText={(text) => setChatname(text)} leftIcon={
-          <Icon name="wechat" type="antdesign" size={30} color="black" required />
-        } onSubmitEditing={createChat} />
+        <Input
+          placeholder="Circle Name"
+          value={chatname}
+          onChangeText={(text) => setChatname(text)}
+          leftIcon={<Icon name="comment" type="font-awesome" size={30} color="#D50000" required />}
+          onSubmitEditing={createChat}
+        />
         <Button style={styles.button} onPress={chooseImage} title="Choose image" />
       </View>
       <Button disabled={!chatname} style={styles.button} onPress={createChat} title="Create chat" />
