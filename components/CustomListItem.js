@@ -124,6 +124,8 @@ const styles = StyleSheet.create({
   },
   title: {
     textAlign: "center",
+    textTransform: "uppercase",
+    fontWeight:"900",
     color: "white",
     padding: 5
   },
