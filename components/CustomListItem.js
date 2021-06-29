@@ -32,41 +32,46 @@ const CustomListItem = () => {
     // </ListItem>
     <View style={styles.itemsContainer}>
       <View style={styles.card}>
-        {/* <View> */}
         <Image
           style={styles.image}
           resizeMode="cover"
           source={{ uri: 'https://miro.medium.com/max/1178/1*rishAJIUgRCz_VzJV-vZuA.png' }}
         />
-        <Text h4 style={styles.title}>Title</Text>
-        <Text style={styles.description}>Javier</Text>
+        <Text h5 style={styles.title} numberOfLines={1}>Title long title long title</Text>
+        <Text h6 style={styles.description} numberOfLines={1}>Long long description long description long description long long description</Text>
+        <Text h6 style={styles.enter} numberOfLines={1}>Chat now</Text>
       </View>
       <View style={styles.card}>
-        {/* <View> */}
         <Image
           style={styles.image}
           resizeMode="cover"
           source={{ uri: 'https://miro.medium.com/max/1178/1*rishAJIUgRCz_VzJV-vZuA.png' }}
         />
-        <Text h4>Title</Text>
-        {/* </View> */}
-        <Text>
-          <Text style={styles.name}>Javier</Text>
-        </Text>
+        <Text h5 style={styles.title} numberOfLines={1}>Title long title long title</Text>
+        <Text h6 style={styles.description} numberOfLines={1}>Long long description long description long description long long description</Text>
+        <Text h6 style={styles.enter} numberOfLines={1}>Chat now</Text>
       </View>
       <View style={styles.card}>
-        {/* <View> */}
         <Image
           style={styles.image}
           resizeMode="cover"
           source={{ uri: 'https://miro.medium.com/max/1178/1*rishAJIUgRCz_VzJV-vZuA.png' }}
         />
-        <Text h4>Title</Text>
-        {/* </View> */}
-        <Text>
-          <Text style={styles.name}>Javier</Text>
-        </Text>
+        <Text h5 style={styles.title} numberOfLines={1}>Title long title long title</Text>
+        <Text h6 style={styles.description} numberOfLines={1}>Long long description long description long description long long description</Text>
+        <Text h6 style={styles.enter} numberOfLines={1}>Chat now</Text>
       </View>
+      <View style={styles.card}>
+        <Image
+          style={styles.image}
+          resizeMode="cover"
+          source={{ uri: 'https://miro.medium.com/max/1178/1*rishAJIUgRCz_VzJV-vZuA.png' }}
+        />
+        <Text h5 style={styles.title} numberOfLines={1}>Title long title long title</Text>
+        <Text h6 style={styles.description} numberOfLines={1}>Long long description long description long description long long description</Text>
+        <Text h6 style={styles.enter} numberOfLines={1}>Chat now</Text>
+      </View>
+
       {/* <ListItem
         Component={TouchableScale}
         friction={90} //
@@ -145,11 +150,18 @@ const styles = StyleSheet.create({
   title: {
     textAlign: "center",
     color: "white",
-    fontWeight: "600",
+    // fontWeight: "800",
+    padding: 5
   },
   description: {
     textAlign: "center",
     color: "white",
-    fontWeight: "600",
+    paddingRight: 15,
+    paddingLeft: 15
+  },
+  enter: {
+    textAlign: "center",
+    color: "white",
+    paddingTop: 5,
   }
 })
