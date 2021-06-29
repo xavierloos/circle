@@ -4,21 +4,21 @@ import { ListItem, Avatar, Card, Image, Text, Button } from "react-native-elemen
 import TouchableScale from 'react-native-touchable-scale'
 import { color } from 'react-native-reanimated'
 import { TouchableOpacity } from 'react-native-gesture-handler'
-// import { db } from "../firebase"
-// const CustomListItem = ({ id, chatName, enterChat }) => {
-const CustomListItem = () => {
+import { db } from "../firebase"
+
+const CustomListItem = ({ id, chatName, enterChat }) => {
   const [lastMessage, setLastMessage] = useState([])
-  // useEffect(() => {
-  //   const unsubscribe = db
-  //     .collection("chats")
-  //     .doc(id)
-  //     .collection("messages")
-  //     .orderBy("timestamp", "desc")
-  //     .onSnapshot((snapshot) =>
-  //       setLastMessage(snapshot.docs.map((doc) => doc.data()))
-  //     );
-  //   return unsubscribe
-  // })
+  useEffect(() => {
+    const unsubscribe = db
+      .collection("chats")
+      .doc(id)
+      .collection("messages")
+      .orderBy("timestamp", "desc")
+      .onSnapshot((snapshot) =>
+        setLastMessage(snapshot.docs.map((doc) => doc.data()))
+      );
+    return unsubscribe
+  })
 
   const messageInfo = `${lastMessage?.[0]?.displayName}: ${lastMessage?.[0]?.message}`
   return (
@@ -33,14 +33,14 @@ const CustomListItem = () => {
     // </ListItem>
     <View style={styles.itemsContainer}>
       {/* <TouchableOpacity activeOpacity={0.5} style={{ marginLeft: 5 }} onPress={() => navigation.navigate("Profile")}> */}
-      <TouchableOpacity activeOpacity={0.5} style={styles.cardTouchable}>
+      <TouchableOpacity activeOpacity={0.5} style={styles.cardTouchable} key={id} onPress={() => enterChat(id, chatName)}>
         <View style={styles.card}>
           <Image
             style={styles.image}
             resizeMode="cover"
             source={{ uri: 'https://miro.medium.com/max/1178/1*rishAJIUgRCz_VzJV-vZuA.png' }}
           />
-          <Text h5 style={styles.title} numberOfLines={1}>Title long title long title</Text>
+          <Text h5 style={styles.title} numberOfLines={1}>{chatName}</Text>
           <Text h6 style={styles.description} numberOfLines={2}>Long long description long description long description long long description</Text>
           <Text h6 style={styles.enter} numberOfLines={1}>Chat now</Text>
         </View>
