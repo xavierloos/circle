@@ -6,6 +6,7 @@ import * as ImagePicker from 'expo-image-picker';
 
 const AddChatScreen = ({ navigation }) => {
   const [chatname, setChatname] = useState("")
+  const [chatDescription, setChatDescription] = useState("")
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -58,19 +59,18 @@ const AddChatScreen = ({ navigation }) => {
           value={chatname}
           onChangeText={(text) => setChatname(text)}
           leftIcon={<Icon name="comment" type="font-awesome" size={30} color="#D50000" required />}
-          onSubmitEditing={createChat}
         />
         <Input
           placeholder="Circle description"
-          value={chatname}
-          onChangeText={(text) => setChatname(text)}
+          value={chatDescription}
+          onChangeText={(text) => setChatDescription(text)}
           leftIcon={<Icon name="comments" type="font-awesome" size={30} color="#D50000" required />}
           onSubmitEditing={createChat}
         />
         <Button style={styles.button} onPress={chooseImage} title="Choose image" />
         <Text>Created by: {auth?.currentUser?.displayName}</Text>
       </View>
-      <Button disabled={!chatname} style={styles.button} onPress={createChat} title="Create Circle" />
+      <Button disabled={!chatDescription} style={styles.button} onPress={createChat} title="Create Circle" />
     </View>
   )
 }
