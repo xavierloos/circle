@@ -59,6 +59,13 @@ const AddChatScreen = ({ navigation }) => {
           leftIcon={<Icon name="comment" type="font-awesome" size={30} color="#D50000" required />}
           onSubmitEditing={createChat}
         />
+        <Input
+          placeholder="Circle description"
+          value={chatname}
+          onChangeText={(text) => setChatname(text)}
+          leftIcon={<Icon name="comments" type="font-awesome" size={30} color="#D50000" required />}
+          onSubmitEditing={createChat}
+        />
         <Button style={styles.button} onPress={chooseImage} title="Choose image" />
       </View>
       <Button disabled={!chatname} style={styles.button} onPress={createChat} title="Create chat" />
