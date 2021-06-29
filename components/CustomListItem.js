@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { StyleSheet, View, } from 'react-native'
 import { ListItem, Avatar, Card, Image, Text, Button } from "react-native-elements"
 import TouchableScale from 'react-native-touchable-scale'
+import { color } from 'react-native-reanimated'
 // import { db } from "../firebase"
 // const CustomListItem = ({ id, chatName, enterChat }) => {
 const CustomListItem = () => {
@@ -31,14 +32,40 @@ const CustomListItem = () => {
     // </ListItem>
     <View style={styles.itemsContainer}>
       <View style={styles.card}>
-        <View>
-          <Image
-            style={styles.image}
-            resizeMode="cover"
-            source={{ uri: 'https://miro.medium.com/max/1178/1*rishAJIUgRCz_VzJV-vZuA.png' }}
-          />
-          <Text h4>Title</Text>
-        </View>
+        {/* <View> */}
+        <Image
+          style={styles.image}
+          resizeMode="cover"
+          source={{ uri: 'https://miro.medium.com/max/1178/1*rishAJIUgRCz_VzJV-vZuA.png' }}
+        />
+        <Text h4>Title</Text>
+        {/* </View> */}
+        <Text>
+          <Text style={styles.name}>Javier</Text>
+        </Text>
+      </View>
+      <View style={styles.card}>
+        {/* <View> */}
+        <Image
+          style={styles.image}
+          resizeMode="cover"
+          source={{ uri: 'https://miro.medium.com/max/1178/1*rishAJIUgRCz_VzJV-vZuA.png' }}
+        />
+        <Text h4>Title</Text>
+        {/* </View> */}
+        <Text>
+          <Text style={styles.name}>Javier</Text>
+        </Text>
+      </View>
+      <View style={styles.card}>
+        {/* <View> */}
+        <Image
+          style={styles.image}
+          resizeMode="cover"
+          source={{ uri: 'https://miro.medium.com/max/1178/1*rishAJIUgRCz_VzJV-vZuA.png' }}
+        />
+        <Text h4>Title</Text>
+        {/* </View> */}
         <Text>
           <Text style={styles.name}>Javier</Text>
         </Text>
@@ -85,8 +112,8 @@ const styles = StyleSheet.create({
   itemsContainer: {
     display: "flex",
     flexDirection: "row",
-    // justifyContent: "space-evenly",
-    alignContent: "flex-start",
+    justifyContent: "space-between",
+    alignContent: "flex-end",
     flexWrap: "wrap",
     // height: 300,
     // paddingRight: 10,
@@ -96,17 +123,26 @@ const styles = StyleSheet.create({
     padding: 0,
     display: "flex",
     flexDirection: "column",
-    width: "45%",
-    borderRadius: 10,
+    width: 150,
+    height: 150,
+    borderRadius: 200,
     marginRight: "auto",
     marginLeft: "auto",
     marginTop: 10,
+    shadowOffset: {
+      width: 0,
+      height: 3
+    },
+    shadowOpacity: 0.5,
+    shadowRadius: 5,
+    backgroundColor: "red",
+    color: "white"
   },
   image: {
     width: "100%",
-    height: 100,
-    borderTopLeftRadius: 10,
-    borderTopRightRadius: 10,
+    height: 75,
+    borderTopLeftRadius: 200,
+    borderTopRightRadius: 200,
     // position: "relative"
   }
 })
