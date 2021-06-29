@@ -140,9 +140,6 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignContent: "flex-end",
     flexWrap: "wrap",
-    // height: 300,
-    // paddingRight: 10,
-    // paddingLeft: 10
   },
   cardTouchable: {
     margin: 2
@@ -154,16 +151,16 @@ const styles = StyleSheet.create({
     width: 200,
     height: 200,
     borderRadius: 200,
-    borderWidth: 2,
-    borderColor:"#D50000",
-    marginTop:5,
+    borderWidth: 4,
+    borderColor: "#D50000",
+    marginTop: 5,
     shadowOffset: {
       width: 0,
       height: 3
     },
     shadowOpacity: 0.5,
     shadowRadius: 5,
-    backgroundColor: "red",
+    backgroundColor: "#D50000",
     color: "white"
   },
   image: {
@@ -172,21 +169,17 @@ const styles = StyleSheet.create({
     height: 100,
     borderTopLeftRadius: 200,
     borderTopRightRadius: 200,
-    // position: "relative"
   },
   title: {
     textAlign: "center",
     color: "white",
-    // fontWeight: "800",
     padding: 5
   },
   description: {
-    textAlign: "center",
+    textAlign: "justify",
     color: "white",
     marginRight: 20,
-    marginLeft:20
-    // paddingRight: 15,
-    // paddingLeft: 15
+    marginLeft: 20
   },
   enter: {
     textAlign: "center",
