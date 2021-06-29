@@ -70,7 +70,7 @@ const AddChatScreen = ({ navigation }) => {
         <Button style={styles.button} onPress={chooseImage} title="Choose image" />
         <Text>Created by: {auth?.currentUser?.displayName}</Text>
       </View>
-      <Button disabled={!chatname} style={styles.button} onPress={createChat} title="Create chat" />
+      <Button disabled={!chatname} style={styles.button} onPress={createChat} title="Create Circle" />
     </View>
   )
 }
