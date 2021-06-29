@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { StyleSheet, View, Text, Image } from 'react-native'
-import { ListItem, Avatar, Card, Button } from "react-native-elements"
+import { StyleSheet, View, Text, } from 'react-native'
+import { ListItem, Avatar, Card, Image, Button } from "react-native-elements"
 import TouchableScale from 'react-native-touchable-scale'
 // import { db } from "../firebase"
 // const CustomListItem = ({ id, chatName, enterChat }) => {
@@ -32,16 +32,14 @@ const CustomListItem = () => {
     <View style={styles.itemsContainer}>
       <Card>
         <Card.Title>CARD WITH DIVIDER</Card.Title>
-
         <View style={styles.user}>
           <Image
             style={styles.image}
             resizeMode="cover"
-            source={{ uri: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.9LeJajtN75YM4qNKou-0ewHaHa%26pid%3DApi&f=1' }}
+            source={{ uri: 'https://miro.medium.com/max/1178/1*rishAJIUgRCz_VzJV-vZuA.png' }}
           />
           <Text style={styles.name}>Javier</Text>
         </View>
-
       </Card>
       {/* <ListItem
         Component={TouchableScale}
@@ -103,7 +101,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   image: {
-    width: 100,
+    width: "100%", height: 100
     // position: "relative"
   }
 })
