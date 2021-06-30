@@ -1,6 +1,6 @@
 import React, { useState, useLayoutEffect } from 'react'
 import { View, KeyboardAvoidingView, StyleSheet } from 'react-native'
-import { Button, Input, Text } from "react-native-elements"
+import { Button, Input, Text, Icon } from "react-native-elements"
 import { StatusBar } from 'expo-status-bar'
 import { auth } from "../firebase"
 import { color } from 'react-native-reanimated'
@@ -37,12 +37,12 @@ const RegisterScreen = ({ navigation }) => {
       <StatusBar style="light" />
       <Text h2 style={styles.title}>Register</Text>
       <View style={styles.inputContainer}>
-        <Input style={styles.input} type="text" placeholder="First name" autoFocus value={firstName} onChangeText={(text) => setFirstName(text)} />
-        <Input type="text" placeholder="Surname" autoFocus value={surname} onChangeText={(text) => setSurname(text)} />
-        <Input type="email" placeholder="Email" value={email} onChangeText={(text) => setEmail(text)} />
+        <Input style={styles.input} type="text" placeholder="First name" autoFocus value={firstName} onChangeText={(text) => setFirstName(text)} leftIcon={<Icon name="user" type="font-awesome" size={30} color="#D50000" style={{marginRight:10}}/>} />
+        <Input type="text" placeholder="Surname" autoFocus value={surname} onChangeText={(text) => setSurname(text)} leftIcon={<Icon name="id-card" type="font-awesome" size={30} color="#D50000" style={{marginRight:10}}/>}/>
+        <Input type="email" placeholder="Email" value={email} onChangeText={(text) => setEmail(text)} leftIcon={<Icon name="at" type="font-awesome" size={30} color="#D50000" style={{marginRight:10}}/>}/>
         {/* secureTextEntry */}
-        <Input type="password" placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} />
-        <Input type="text" placeholder="Profile picture URL" value={imageUrl} onChangeText={(text) => setImageUrl(text)} onSubmitEditing={register} />
+        <Input type="password" placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} leftIcon={<Icon name="lock" type="font-awesome" size={30} color="#D50000" style={{marginRight:10}} />}/>
+        <Input type="text" placeholder="Profile picture URL" value={imageUrl} onChangeText={(text) => setImageUrl(text)} onSubmitEditing={register} leftIcon={<Icon name="photo" type="font-awesome" size={30} color="#D50000" style={{marginRight:10}} />}/>
       </View>
       <Button disabled={!password} containerStyle={styles.button} raised onPress={register} title="Register" />
       <View style={{ height: 100 }} />
