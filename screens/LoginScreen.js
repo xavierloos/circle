@@ -40,7 +40,7 @@ const LoginScreen = ({ navigation }) => {
         <Input type="password" placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} onSubmitEditing={singIn} leftIcon={<Icon name="lock" type="font-awesome" size={30} color="#D50000" />} />
       </View>
       <Button disabled={!password} title="Login" containerStyle={styles.button} onPress={singIn} />
-      <Button title="Register" type="outline" containerStyle={styles.button} onPress={() => navigation.navigate("Register")} />
+      <Button raised title="Register" type="outline" containerStyle={styles.button} onPress={() => navigation.navigate("Register")} />
     </KeyboardAvoidingView>
   )
 }
