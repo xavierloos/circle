@@ -4,7 +4,7 @@ import { ListItem, Avatar, Card, Image, Text, Button, Icon } from "react-native-
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { db } from "../firebase"
 
-const CustomListItem = ({ id, chatName, enterChat }) => {
+const CustomListItem = ({ id, chatName, chatDescription, enterChat }) => {
   const [lastMessage, setLastMessage] = useState([])
   useEffect(() => {
     const unsubscribe = db
@@ -25,7 +25,7 @@ const CustomListItem = ({ id, chatName, enterChat }) => {
         <View style={styles.card}>
           <Image style={styles.image} source={{ uri: 'https://miro.medium.com/max/1178/1*rishAJIUgRCz_VzJV-vZuA.png' }} />
           <Text h5 style={styles.title} numberOfLines={1}>{chatName}</Text>
-          <Text h6 style={styles.description} numberOfLines={2}>Long long description long description long description long long description</Text>
+          <Text h6 style={styles.description} numberOfLines={2}>{chatDescription}</Text>
           <Text h6 style={styles.enter} numberOfLines={1}>Chat now</Text>
         </View>
       </TouchableOpacity>
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
   title: {
     textAlign: "center",
     textTransform: "uppercase",
-    fontWeight:"900",
+    fontWeight: "900",
     color: "white",
     padding: 5
   },
