@@ -67,8 +67,9 @@ const AddChatScreen = ({ navigation }) => {
           leftIcon={<Icon name="comments" type="font-awesome" size={30} color="#D50000" required />}
           onSubmitEditing={createChat}
         />
+        <Text style={styles.creator}>Created by: {auth?.currentUser?.displayName}</Text>
         <Button style={styles.button} onPress={chooseImage} title="Choose image" />
-        <Text>Created by: {auth?.currentUser?.displayName}</Text>
+        
       </View>
       <Button disabled={!chatDescription} style={styles.button} onPress={createChat} title="Create Circle" />
     </View>
@@ -91,5 +92,9 @@ const styles = StyleSheet.create({
   button: {
     width: 200,
     marginTop: 10,
+  },
+  creator: {
+    textAlign: "center",
+    color:"gray"
   }
 })

@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     padding: 5
   },
   description: {
-    textAlign: "justify",
+    textAlign: "center",
     color: "white",
     marginRight: 20,
     marginLeft: 20
