@@ -44,7 +44,7 @@ const RegisterScreen = ({ navigation }) => {
         <Input type="password" placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} leftIcon={<Icon name="lock" type="font-awesome" size={30} color="#D50000" style={{marginRight:10}} />}/>
         <Input type="text" placeholder="Profile picture URL" value={imageUrl} onChangeText={(text) => setImageUrl(text)} onSubmitEditing={register} leftIcon={<Icon name="photo" type="font-awesome" size={30} color="#D50000" style={{marginRight:10}} />}/>
       </View>
-      <Button disabled={!password} containerStyle={styles.button} raised onPress={register} title="Register" />
+      <Button raised disabled={!password} containerStyle={styles.button} raised onPress={register} title="Register" />
       <View style={{ height: 100 }} />
     </KeyboardAvoidingView>
   )
