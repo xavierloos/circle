@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useLayoutEffect } from 'react'
 import { StyleSheet, View, KeyboardAvoidingView } from 'react-native';
-import { Button, Input, Image, Text } from "react-native-elements"
+import { Button, Input, Icon, Text } from "react-native-elements"
 import { StatusBar } from "expo-status-bar";
 import { auth } from "../firebase"
 
@@ -36,7 +36,7 @@ const LoginScreen = ({ navigation }) => {
       <StatusBar style="light" />
       <Text h2 style={styles.title}>Login</Text>
       <View style={styles.inputContainer}>
-        <Input type="email" placeholder="Email" autoFocus value={email} onChangeText={(text) => setEmail(text)} />
+        <Input type="email" placeholder="Email" autoFocus value={email} onChangeText={(text) => setEmail(text)} leftIcon={<Icon name="at" type="font-awesome" size={30} color="#D50000" />} />
         <Input type="password" placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} onSubmitEditing={singIn} />
       </View>
       <Button disabled={!password} title="Login" containerStyle={styles.button} onPress={singIn} />
