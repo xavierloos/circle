@@ -20,11 +20,20 @@ const CustomListItem = ({ id, chatName, chatDescription, enterChat }) => {
   const messageInfo = `${lastMessage?.[0]?.displayName}: ${lastMessage?.[0]?.message}`
   return (
     <View style={styles.itemsContainer}>
-      <TouchableOpacity activeOpacity={0.5} style={styles.cardTouchable} key={id} onPress={() => enterChat(id, chatName)}>
+      <TouchableOpacity activeOpacity={0.5} style={styles.cardTouchable}
+        // key={id}
+        // onPress={() => enterChat(id, chatName)}
+      >
         <View style={styles.card}>
           <Image style={styles.image} source={{ uri: 'https://miro.medium.com/max/1178/1*rishAJIUgRCz_VzJV-vZuA.png' }} />
-          <Text h5 style={styles.title} numberOfLines={1}>{chatName}</Text>
-          <Text h6 style={styles.description} numberOfLines={2}>{chatDescription}</Text>
+          <Text h5 style={styles.title} numberOfLines={1}>
+            {/* {chatName} */}
+            Helllo
+          </Text>
+          <Text h6 style={styles.description} numberOfLines={2}>
+            {/* {chatDescription} */}
+            description
+          </Text>
           <Text h6 style={styles.enter} numberOfLines={1}>Chat now</Text>
         </View>
       </TouchableOpacity>
@@ -45,12 +54,12 @@ const styles = StyleSheet.create({
     margin: 2
   },
   card: {
-    width: 150,
-    height: 200,
+    width: 190,
+    height: 190,
     borderRadius: 100,
     borderWidth: 4,
     borderColor: "#D50000",
-    marginTop: 5,
+    margin: 5,
     shadowOffset: {
       width: 0,
       height: 3

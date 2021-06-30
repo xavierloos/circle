@@ -62,10 +62,15 @@ const HomeScreen = ({ navigation }) => {
     <SafeAreaView>
       <StatusBar style="light" />
       <ScrollView style={styles.container}>
+        <View style={styles.items}>
+          <CustomListItem style={styles.item}/>
+          <CustomListItem style={styles.item}/>
+        </View>
+
         {/* <View style={styles.items}> */}
-          {chats.map(({ id, data: { chatName, chatDescription } }) => (
-            <CustomListItem key={id} id={id} chatName={chatName} chatDescription={chatDescription} enterChat={enterChat} style={styles.itemContainer} />
-          ))}
+        {chats.map(({ id, data: { chatName, chatDescription } }) => (
+          <CustomListItem key={id} id={id} chatName={chatName} chatDescription={chatDescription} enterChat={enterChat} style={styles.itemContainer} />
+        ))}
         {/* </View> */}
 
       </ScrollView>
@@ -80,13 +85,14 @@ const styles = StyleSheet.create({
     height: "100%"
   },
   items: {
+    width:"100%",
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
     alignContent: "flex-end",
     flexWrap: "wrap",
   },
-  itemsContainer: {
-    width: 100
+  item: {
+    width: "100%"
   },
 })
