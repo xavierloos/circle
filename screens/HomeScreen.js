@@ -63,25 +63,10 @@ const HomeScreen = ({ navigation }) => {
       <StatusBar style="light" />
       <ScrollView style={styles.container}>
         <View style={styles.items}>
-          <CustomListItem style={styles.item} />
-          <CustomListItem style={styles.item} />
-          <CustomListItem style={styles.item} />
-          <CustomListItem style={styles.item} />
-          <CustomListItem style={styles.item} />
-          <CustomListItem style={styles.item} />
-          <CustomListItem style={styles.item} />
-          <CustomListItem style={styles.item} />
-          <CustomListItem style={styles.item} />
-          <CustomListItem style={styles.item} />
-          <CustomListItem style={styles.item} />
+          {chats.map(({ id, data: { chatName, chatDescription } }) => (
+            <CustomListItem key={id} id={id} chatName={chatName} chatDescription={chatDescription} enterChat={enterChat} />
+          ))}
         </View>
-
-        {/* <View style={styles.items}> */}
-        {chats.map(({ id, data: { chatName, chatDescription } }) => (
-          <CustomListItem key={id} id={id} chatName={chatName} chatDescription={chatDescription} enterChat={enterChat} style={styles.itemContainer} />
-        ))}
-        {/* </View> */}
-
       </ScrollView>
     </SafeAreaView>
   )
@@ -99,8 +84,5 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignContent: "flex-end",
     flexWrap: "wrap",
-  },
-  item: {
-    width: "100%"
-  },
+  }
 })

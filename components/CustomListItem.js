@@ -20,20 +20,11 @@ const CustomListItem = ({ id, chatName, chatDescription, enterChat }) => {
   const messageInfo = `${lastMessage?.[0]?.displayName}: ${lastMessage?.[0]?.message}`
   return (
     <View>
-      <TouchableOpacity activeOpacity={0.5} style={styles.cardTouchable}
-        // key={id}
-        // onPress={() => enterChat(id, chatName)}
-      >
+      <TouchableOpacity activeOpacity={0.5} style={styles.cardTouchable} key={id} onPress={() => enterChat(id, chatName)} >
         <View style={styles.card}>
           <Image style={styles.image} source={{ uri: 'https://miro.medium.com/max/1178/1*rishAJIUgRCz_VzJV-vZuA.png' }} />
-          <Text h5 style={styles.title} numberOfLines={1}>
-            {/* {chatName} */}
-            Helllo
-          </Text>
-          <Text h6 style={styles.description} numberOfLines={2}>
-            {/* {chatDescription} */}
-            description
-          </Text>
+          <Text h5 style={styles.title} numberOfLines={1}> {chatName} </Text>
+          <Text h6 style={styles.description} numberOfLines={2}> {chatDescription} </Text>
           <Text h6 style={styles.enter} numberOfLines={1}>Chat now</Text>
         </View>
       </TouchableOpacity>
