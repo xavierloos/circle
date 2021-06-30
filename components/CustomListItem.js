@@ -19,7 +19,7 @@ const CustomListItem = ({ id, chatName, chatDescription, enterChat }) => {
 
   const messageInfo = `${lastMessage?.[0]?.displayName}: ${lastMessage?.[0]?.message}`
   return (
-    <View style={styles.itemsContainer}>
+    <View>
       <TouchableOpacity activeOpacity={0.5} style={styles.cardTouchable}
         // key={id}
         // onPress={() => enterChat(id, chatName)}
@@ -43,13 +43,6 @@ const CustomListItem = ({ id, chatName, chatDescription, enterChat }) => {
 export default CustomListItem
 
 const styles = StyleSheet.create({
-  itemsContainer: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignContent: "flex-end",
-    flexWrap: "wrap",
-  },
   cardTouchable: {
     margin: 2
   },

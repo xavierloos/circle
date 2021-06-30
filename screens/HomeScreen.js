@@ -63,8 +63,17 @@ const HomeScreen = ({ navigation }) => {
       <StatusBar style="light" />
       <ScrollView style={styles.container}>
         <View style={styles.items}>
-          <CustomListItem style={styles.item}/>
-          <CustomListItem style={styles.item}/>
+          <CustomListItem style={styles.item} />
+          <CustomListItem style={styles.item} />
+          <CustomListItem style={styles.item} />
+          <CustomListItem style={styles.item} />
+          <CustomListItem style={styles.item} />
+          <CustomListItem style={styles.item} />
+          <CustomListItem style={styles.item} />
+          <CustomListItem style={styles.item} />
+          <CustomListItem style={styles.item} />
+          <CustomListItem style={styles.item} />
+          <CustomListItem style={styles.item} />
         </View>
 
         {/* <View style={styles.items}> */}
@@ -85,7 +94,6 @@ const styles = StyleSheet.create({
     height: "100%"
   },
   items: {
-    width:"100%",
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
