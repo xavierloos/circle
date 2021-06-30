@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { StyleSheet, View, Touchable } from 'react-native'
-import { ListItem, Avatar, Card, Image, Text, Button, Icon } from "react-native-elements"
-import { TouchableOpacity } from 'react-native-gesture-handler'
+import { StyleSheet, View, TouchableOpacity } from 'react-native'
+import { Image, Text } from "react-native-elements"
 import { db } from "../firebase"
 
 const CustomListItem = ({ id, chatName, chatDescription, enterChat }) => {
@@ -46,12 +45,9 @@ const styles = StyleSheet.create({
     margin: 2
   },
   card: {
-    padding: 0,
-    display: "flex",
-    flexDirection: "column",
-    width: 200,
+    width: 150,
     height: 200,
-    borderRadius: 200,
+    borderRadius: 100,
     borderWidth: 4,
     borderColor: "#D50000",
     marginTop: 5,

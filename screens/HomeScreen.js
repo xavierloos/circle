@@ -62,9 +62,12 @@ const HomeScreen = ({ navigation }) => {
     <SafeAreaView>
       <StatusBar style="light" />
       <ScrollView style={styles.container}>
-        {chats.map(({ id, data: { chatName, chatDescription } }) => (
-          <CustomListItem key={id} id={id} chatName={chatName} chatDescription={chatDescription} enterChat={enterChat} />
-        ))}
+        {/* <View style={styles.items}> */}
+          {chats.map(({ id, data: { chatName, chatDescription } }) => (
+            <CustomListItem key={id} id={id} chatName={chatName} chatDescription={chatDescription} enterChat={enterChat} style={styles.itemContainer} />
+          ))}
+        {/* </View> */}
+
       </ScrollView>
     </SafeAreaView>
   )
@@ -75,5 +78,15 @@ export default HomeScreen
 const styles = StyleSheet.create({
   container: {
     height: "100%"
-  }
+  },
+  items: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignContent: "flex-end",
+    flexWrap: "wrap",
+  },
+  itemsContainer: {
+    width: 100
+  },
 })
