@@ -1,5 +1,6 @@
 import React, { useLayoutEffect } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
+import { auth, db } from '../firebase'
 
 const ChatInfoScreen = ({ navigation }) => {
   useLayoutEffect(() => {
@@ -8,7 +9,7 @@ const ChatInfoScreen = ({ navigation }) => {
       headerStyle: { backgroundColor: "#D50000" },
       headerTitleStyle: { color: "white" },
       headerTintColor: "white",
-    })
+    }) 
   }, [])
   return (
     <View>
