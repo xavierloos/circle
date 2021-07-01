@@ -1,11 +1,12 @@
 import React, { useLayoutEffect, useState } from 'react'
 import { StyleSheet, View, Alert } from 'react-native'
-import { Input, Icon, Button } from 'react-native-elements';
-import { db } from '../firebase';
+import { Input, Icon, Button, Text } from 'react-native-elements';
+import { auth, db } from '../firebase';
 import * as ImagePicker from 'expo-image-picker';
 
 const AddChatScreen = ({ navigation }) => {
   const [chatname, setChatname] = useState("")
+  const [chatDescription, setChatDescription] = useState("")
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -19,7 +20,7 @@ const AddChatScreen = ({ navigation }) => {
   }, [navigation])
 
   const createChat = async () => {
-    await db.collection("chats").add({ chatName: chatname, })
+    await db.collection("chats").add({ chatName: chatname, chatDescription: chatDescription, chatCreator: auth?.currentUser?.displayName, })
       .then(() => {
         navigation.goBack()
       })
@@ -31,6 +32,7 @@ const AddChatScreen = ({ navigation }) => {
     if (!result.cancelled) {
       uploadImage(result.uri, "test-img")
         .then(() => {
+          console.log("uploadImage(result.uri)")
           console.log(uploadImage(result.uri))
           Alert.alert("Image uploaded")
         })
@@ -49,14 +51,27 @@ const AddChatScreen = ({ navigation }) => {
   }
 
   return (
+
     <View style={styles.container}>
       <View style={styles.inputContainer}>
-        <Input placeholder="Chat name" value={chatname} onChangeText={(text) => setChatname(text)} leftIcon={
-          <Icon name="wechat" type="antdesign" size={30} color="black" required />
-        } onSubmitEditing={createChat} />
+        <Input
+          placeholder="Circle Name"
+          value={chatname}
+          onChangeText={(text) => setChatname(text)}
+          leftIcon={<Icon name="comment" type="font-awesome" size={30} color="#D50000" required />}
+        />
+        <Input
+          placeholder="Circle description"
+          value={chatDescription}
+          onChangeText={(text) => setChatDescription(text)}
+          leftIcon={<Icon name="comments" type="font-awesome" size={30} color="#D50000" required />}
+          onSubmitEditing={createChat}
+        />
+        <Text style={styles.creator}>Created by: {auth?.currentUser?.displayName}</Text>
         <Button style={styles.button} onPress={chooseImage} title="Choose image" />
+        
       </View>
-      <Button disabled={!chatname} style={styles.button} onPress={createChat} title="Create chat" />
+      <Button disabled={!chatDescription} style={styles.button} onPress={createChat} title="Create Circle" />
     </View>
   )
 }
@@ -77,5 +92,9 @@ const styles = StyleSheet.create({
   button: {
     width: 200,
     marginTop: 10,
+  },
+  creator: {
+    textAlign: "center",
+    color:"gray"
   }
 })
