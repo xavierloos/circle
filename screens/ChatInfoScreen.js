@@ -28,7 +28,7 @@ const ChatInfoScreen = ({ navigation, route, chatName }) => {
   return (
     <View>
       {console.log("THIS")}
-      {console.log(chats)}
+      {console.log(chatName)}
       {console.log(route)}
       <View>
         <Icon style={styles.icon}
