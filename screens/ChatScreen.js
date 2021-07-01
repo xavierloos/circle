@@ -19,7 +19,7 @@ const ChatScreen = ({ navigation, route }) => {
       headerRight: () => (
         <View style={{ marginRight: 10, flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
           <Text style={styles.chatTitle}>{route.params.chatName}</Text>
-          <TouchableOpacity activeOpacity={0.5} style={{ marginLeft: 5 }} >
+          <TouchableOpacity activeOpacity={0.5} style={{ marginLeft: 5 }} onPress={() => navigation.navigate("ChatInfo")}>
             {(auth?.currentUser?.photoURL === null) ? <SimpleLineIcons name="user" size={24} color="white" /> : <Avatar rounded source={{ uri: auth?.currentUser?.photoURL }} />}
           </TouchableOpacity>
         </View>
