@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-const ChatInfoScreen = () => {
+
+const ChatInfoScreen = ({navigation}) => {
   return (
     <View>
       <Text>Chat information</Text>
