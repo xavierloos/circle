@@ -14,11 +14,12 @@ const ChatInfoScreen = ({ navigation, route }) => {
   }, [])
   return (
     <View>
+      {console.log(db)}
       <View>
         <Icon style={styles.icon}
           name='user'
           type='font-awesome'
-          color='#D50000' /><Text style={styles.text}>{route.params.chatName}</Text>
+          color='#D50000' /><Text style={styles.text}></Text>
       </View>
     </View>
   )
