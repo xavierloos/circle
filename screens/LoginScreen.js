@@ -45,7 +45,6 @@ const LoginScreen = ({ navigation }) => {
         <Button raised title="Register" type="outline" containerStyle={styles.button} onPress={() => navigation.navigate("Register")} />
       </KeyboardAvoidingView>
     </ScrollView>
-
   )
 }
 export default LoginScreen
