@@ -23,18 +23,18 @@ const ChatInfoScreen = ({ navigation, route, id }) => {
       )
     )
 
-    // return unsubscribe
+    return unsubscribe
   }, [])
   return (
     <View>
       {console.log("THIS")}
-      {console.log(chatName)}
+      {/* {console.log(chatName)} */}
       {console.log(id)}
       <View>
         <Icon style={styles.icon}
           name='user'
           type='font-awesome'
-          color='#D50000' /><Text style={styles.text}>{chatName}</Text>
+          color='#D50000' /><Text style={styles.text}>{id}</Text>
       </View>
     </View>
   )

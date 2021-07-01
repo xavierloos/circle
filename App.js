@@ -22,6 +22,7 @@ const globalScreenOptions = {
 
 export default function App() {
   console.disableYellowBox = true;
+  const id = ""
   return (
     <NavigationContainer>
       <Stack.Navigator
