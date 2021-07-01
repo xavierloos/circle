@@ -3,6 +3,7 @@ import { StyleSheet, View, KeyboardAvoidingView, ScrollView } from 'react-native
 import { Button, Input, Icon, Text } from "react-native-elements"
 import { StatusBar } from "expo-status-bar";
 import { auth } from "../firebase"
+import { color } from 'react-native-reanimated';
 
 const LoginScreen = ({ navigation }) => {
 
@@ -41,7 +42,7 @@ const LoginScreen = ({ navigation }) => {
           <Input type="password" placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} onSubmitEditing={singIn} leftIcon={<Icon name="lock" type="font-awesome" size={30} color="#D50000" />} />
         </View>
         <Button raised disabled={!password && !email} title="Login" containerStyle={styles.button} onPress={singIn} />
-        <Button raised title="Register" type="outline" containerStyle={styles.button} onPress={() => navigation.navigate("Register")}/>
+        <Button raised title="Register" type="outline" containerStyle={styles.button} onPress={() => navigation.navigate("Register")} />
       </KeyboardAvoidingView>
     </ScrollView>
 
@@ -71,5 +72,6 @@ const styles = StyleSheet.create({
   button: {
     width: 200,
     marginTop: 10,
+    color: "red"
   }
 })
