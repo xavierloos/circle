@@ -56,7 +56,7 @@ export default RegisterScreen;
 const styles = StyleSheet.create({
   scroll: {
     backgroundColor: "white",
-    paddingTop:100
+    paddingTop:50
   },
   container: {
     flex: 1,
