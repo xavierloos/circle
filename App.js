@@ -17,7 +17,7 @@ const Stack = createStackNavigator();
 const globalScreenOptions = {
   headerStyle: { backgroundColor: "#2c6bed" },
   headerTitleStyle: { color: "white" },
-  headerTintColor: "whi"
+  headerTintColor: "white"
 }
 
 export default function App() {
@@ -32,7 +32,7 @@ export default function App() {
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="AddChat" component={AddChatScreen} />
         <Stack.Screen name="Chat" component={ChatScreen} />
-        <Stack.Screen name="ChatInfo" component={ChatInfoScreen} />
+        <Stack.Screen name="ChatInfo" component={ChatInfoScreen} routeId={id} />
         <Stack.Screen name="Profile" component={ProfileScreen} />
       </Stack.Navigator>
     </NavigationContainer>

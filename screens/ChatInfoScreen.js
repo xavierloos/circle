@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import { Icon } from 'react-native-elements'
 import { auth, db } from '../firebase'
 
-const ChatInfoScreen = ({ navigation, route, chatName }) => {
+const ChatInfoScreen = ({ navigation, route, id }) => {
   const [chats, setChats] = useState([]);
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -29,7 +29,7 @@ const ChatInfoScreen = ({ navigation, route, chatName }) => {
     <View>
       {console.log("THIS")}
       {console.log(chatName)}
-      {console.log(route)}
+      {console.log(id)}
       <View>
         <Icon style={styles.icon}
           name='user'
