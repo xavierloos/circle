@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useState, useEffect } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { Icon } from 'react-native-elements'
-import { auth, db } from '../firebase'
+import { db } from '../firebase'
 
 const ChatInfoScreen = ({ navigation, route}) => { 
 
