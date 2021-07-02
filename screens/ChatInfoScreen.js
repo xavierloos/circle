@@ -20,12 +20,6 @@ const ChatInfoScreen = ({ navigation, route, id }) => {
     return unsubscribe
   }, [route])
 
-  const enterChatInfo = (id = route.params, chatCreator) => {
-    navigation.navigate("Chat", {
-      id: id,
-      chatCreator: chatCreator,
-    })
-  }
 
   return (
     <View>
