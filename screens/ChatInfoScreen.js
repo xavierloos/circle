@@ -1,10 +1,10 @@
 import React, { useLayoutEffect, useState, useEffect } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { Icon } from 'react-native-elements'
-import { auth, db } from '../firebase'
+import { db } from '../firebase'
 
-const ChatInfoScreen = ({ navigation, route, id }) => {
-  const [chats, setChats] = useState([]);
+const ChatInfoScreen = ({ navigation, route}) => { 
+
   useLayoutEffect(() => {
     navigation.setOptions({
       title: "CIRCLE: Info",
@@ -13,28 +13,18 @@ const ChatInfoScreen = ({ navigation, route, id }) => {
       headerTintColor: "white",
     })
   }, [])
-  useEffect(() => {
-    const unsubscribe = db.collection("chats").onSnapshot((snapshot) =>
-      setChats(
-        snapshot.docs.map((doc) => ({
-          id: doc.id,
-          data: doc.data(),
-        }))
-      )
-    )
 
-    return unsubscribe
-  }, [])
   return (
     <View>
-      {console.log("THIS")}
-      {/* {console.log(chatName)} */}
-      {console.log(id)}
+      {console.log(
+        db.collection('chats').doc(route.params).on("value")
+      )}
+      {console.log(enterChatInfo)}
       <View>
         <Icon style={styles.icon}
           name='user'
           type='font-awesome'
-          color='#D50000' /><Text style={styles.text}>{id}</Text>
+          color='#D50000' /><Text style={styles.text}></Text>
       </View>
     </View>
   )
