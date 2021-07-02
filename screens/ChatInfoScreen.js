@@ -29,14 +29,10 @@ const ChatInfoScreen = ({ navigation, route, id }) => {
 
   return (
     <View>
-      {console.log("THIS")}
-      {/* {console.log(chatName)} */}
-      {console.log(route.params)}
+      
       {console.log(
         db.collection('chats').doc(route.params).on("value")
       )}
-      {console.log(chatInfo.map(({ id, data: { chatCreator } }) => chatCreator
-      ))}
       {console.log(enterChatInfo)}
       <View>
         <Icon style={styles.icon}
