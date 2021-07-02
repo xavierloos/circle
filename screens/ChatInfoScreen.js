@@ -26,7 +26,7 @@ const ChatInfoScreen = ({ navigation, route, id }) => {
         <Icon style={styles.icon}
           name='user'
           type='font-awesome'
-          color='#D50000' /><Text style={styles.text}>{id}</Text>
+          color='#D50000' /><Text style={styles.text}></Text>
       </View>
     </View>
   )
