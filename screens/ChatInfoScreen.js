@@ -4,7 +4,7 @@ import { Icon } from 'react-native-elements'
 import { auth, db } from '../firebase'
 
 const ChatInfoScreen = ({ navigation, route, id }) => {
-  
+  const [chatInfo, setChatInfo] = useState([]);
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -17,7 +17,7 @@ const ChatInfoScreen = ({ navigation, route, id }) => {
 
   useEffect(() => {
     const unsubscribe = db.collection("chats").doc(route.params.id).onSnapshot(snapshot =>
-      setMessages(
+      setChatInfo(
         snapshot.docs.map(doc => ({
           id: doc.id,
           data: doc.data()
