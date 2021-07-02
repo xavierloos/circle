@@ -15,21 +15,29 @@ const ChatInfoScreen = ({ navigation, route, id }) => {
     })
   }, [])
 
-  useEffect(() => {
-    const unsubscribe = db.collection("chats").doc(route.params.id).onSnapshot(snapshot =>
-      setChatInfo(
-        snapshot.docs.map(doc => ({
-          id: doc.id,
-          data: doc.data()
-        }))))
+  useLayoutEffect(() => {
+    const unsubscribe = db.collection("chats").doc(route.params)
     return unsubscribe
   }, [route])
+
+  const enterChatInfo = (id = route.params, chatCreator) => {
+    navigation.navigate("Chat", {
+      id: id,
+      chatCreator: chatCreator,
+    })
+  }
 
   return (
     <View>
       {console.log("THIS")}
       {/* {console.log(chatName)} */}
-      {console.log(route)}
+      {console.log(route.params)}
+      {console.log(
+        db.collection('chats').doc(route.params).on("value")
+      )}
+      {console.log(chatInfo.map(({ id, data: { chatCreator } }) => chatCreator
+      ))}
+      {console.log(enterChatInfo)}
       <View>
         <Icon style={styles.icon}
           name='user'
