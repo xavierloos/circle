@@ -15,12 +15,6 @@ const ChatInfoScreen = ({ navigation, route, id }) => {
     })
   }, [])
 
-  useLayoutEffect(() => {
-    const unsubscribe = db.collection("chats").doc(route.params)
-    return unsubscribe
-  }, [route])
-
-
   return (
     <View>
       
