@@ -14,22 +14,15 @@ const ChatInfoScreen = ({ navigation, route, id }) => {
     })
   }, [])
   useEffect(() => {
-    const unsubscribe = db.collection("chats").onSnapshot((snapshot) =>
-      setChats(
-        snapshot.docs.map((doc) => ({
-          id: doc.id,
-          data: doc.data(),
-        }))
-      )
-    )
-
+    const unsubscribe = db.collection("chats").doc(route.params.id)
     return unsubscribe
   }, [])
+  
   return (
     <View>
       {console.log("THIS")}
       {/* {console.log(chatName)} */}
-      {console.log(id)}
+      {console.log(route)}
       <View>
         <Icon style={styles.icon}
           name='user'
