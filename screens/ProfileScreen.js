@@ -1,10 +1,10 @@
 import React, { useLayoutEffect } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { Avatar, Icon, Button } from 'react-native-elements'
-import Expo from "expo";
+import Expo from "expo"
+import { auth, db } from '../firebase'
 // import { SimpleLineIcons } from "@expo/vector-icons"
 
-import { auth, db } from '../firebase'
 const ProfileScreen = ({ navigation }) => {
 
   useLayoutEffect(() => {
