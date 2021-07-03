@@ -33,7 +33,7 @@ const LoginScreen = ({ navigation }) => {
   }
 
   const loginFacebook = async () => {
-    
+
   }
 
   return (
@@ -47,7 +47,7 @@ const LoginScreen = ({ navigation }) => {
         </View>
         <Button raised disabled={!password && !email} title="Login" containerStyle={styles.button} onPress={singIn} />
         <Button raised title="Register" type="outline" containerStyle={styles.button} onPress={() => navigation.navigate("Register")} />
-        <Button title="Facebook" type="outline" containerStyle={styles.button} />
+        <Button title="Facebook" type="outline" containerStyle={styles.button} onPress={loginFacebook} />
       </KeyboardAvoidingView>
     </ScrollView>
   )

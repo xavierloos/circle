@@ -6,6 +6,7 @@ import { Facebook } from "expo";
 
 import { auth, db } from '../firebase'
 const ProfileScreen = ({ navigation }) => {
+
   useLayoutEffect(() => {
     navigation.setOptions({
       title: "CIRCLE: Profile",
@@ -14,17 +15,13 @@ const ProfileScreen = ({ navigation }) => {
       headerTintColor: "white",
     })
   }, [])
+
   const logout = () => {
     auth.signOut().then(() => {
       navigation.replace("Login")
     })
   }
-  Facebooklogin = (async) => { }
-  const { type, token } = await Facebook.logInWithReadPermissionsAsync(
-       "342823069910303",{
-              permission: "public_profile"
-    } 
-);
+
   return (
     <View style={styles.container}>
       {console.log(auth?.currentUser)}
