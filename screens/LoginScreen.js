@@ -34,7 +34,7 @@ const LoginScreen = ({ navigation }) => {
   }
 
   const loginFacebook = async () => {
-    await Expo.Facebook.logInWithReadPermissionsAsync(id, {permissions:['public-profile']})
+    await Expo.Facebook.logInWithReadPermissionsAsync(id, {permissions:['public-profile', 'email']})
   }
 
   return (
