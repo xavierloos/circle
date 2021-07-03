@@ -1,6 +1,7 @@
 import React, { useLayoutEffect } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { Avatar, Icon, Button } from 'react-native-elements'
+import { Facebook } from "expo";
 // import { SimpleLineIcons } from "@expo/vector-icons"
 import { auth, db } from '../firebase'
 const ProfileScreen = ({ navigation }) => {
