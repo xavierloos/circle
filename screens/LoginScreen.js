@@ -4,7 +4,9 @@ import { Button, Input, Icon, Text } from "react-native-elements"
 import { StatusBar } from "expo-status-bar";
 import { auth } from "../firebase"
 import { color } from 'react-native-reanimated'
+import { Constants } from "expo"
 import Expo from "expo"
+
 const id = 165654778951149
 const LoginScreen = ({ navigation }) => {
 
