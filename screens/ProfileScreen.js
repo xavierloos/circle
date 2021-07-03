@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import { Avatar, Icon, Button } from 'react-native-elements'
 import { Facebook } from "expo";
 // import { SimpleLineIcons } from "@expo/vector-icons"
+
 import { auth, db } from '../firebase'
 const ProfileScreen = ({ navigation }) => {
   useLayoutEffect(() => {
@@ -18,6 +19,12 @@ const ProfileScreen = ({ navigation }) => {
       navigation.replace("Login")
     })
   }
+  Facebooklogin = (async) => { }
+  const { type, token } = await Facebook.logInWithReadPermissionsAsync(
+       "342823069910303",{
+              permission: "public_profile"
+    } 
+);
   return (
     <View style={styles.container}>
       {console.log(auth?.currentUser)}

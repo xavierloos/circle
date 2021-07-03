@@ -32,6 +32,10 @@ const LoginScreen = ({ navigation }) => {
       .catch((error) => alert(error))
   }
 
+  const loginFacebook = async () => {
+    
+  }
+
   return (
     <ScrollView style={styles.scroll}>
       <KeyboardAvoidingView behavior="padding" style={styles.container}>
