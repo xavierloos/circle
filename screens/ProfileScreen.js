@@ -1,9 +1,11 @@
 import React, { useLayoutEffect } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { Avatar, Icon, Button } from 'react-native-elements'
-// import { SimpleLineIcons } from "@expo/vector-icons"
 import { auth, db } from '../firebase'
+// import { SimpleLineIcons } from "@expo/vector-icons"
+
 const ProfileScreen = ({ navigation }) => {
+
   useLayoutEffect(() => {
     navigation.setOptions({
       title: "CIRCLE: Profile",
@@ -12,11 +14,13 @@ const ProfileScreen = ({ navigation }) => {
       headerTintColor: "white",
     })
   }, [])
+
   const logout = () => {
     auth.signOut().then(() => {
       navigation.replace("Login")
     })
   }
+
   return (
     <View style={styles.container}>
       {console.log(auth?.currentUser)}
