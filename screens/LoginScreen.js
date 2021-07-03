@@ -5,7 +5,7 @@ import { StatusBar } from "expo-status-bar";
 import { auth } from "../firebase"
 import { color } from 'react-native-reanimated'
 import Expo from "expo"
-
+const id = 165654778951149
 const LoginScreen = ({ navigation }) => {
 
   const [email, setEmail] = useState("")
@@ -35,6 +35,12 @@ const LoginScreen = ({ navigation }) => {
 
   const loginFacebook = async () => {
     const { type, token } = await Expo.Facebook.logInWithReadPermissionsAsync(id, { permissions: ['public-profile', 'email'] })
+
+    if (type === 'success') {
+
+    } else {
+      alert(type)
+    }
   }
 
   return (
