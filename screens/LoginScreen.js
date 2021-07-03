@@ -34,7 +34,7 @@ const LoginScreen = ({ navigation }) => {
   }
 
   const loginFacebook = async () => {
-
+    await Expo.Facebook.logInWithReadPermissionsAsync()
   }
 
   return (
