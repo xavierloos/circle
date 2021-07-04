@@ -1,11 +1,8 @@
-import React, { useState, useEffect, useLayoutEffect } from 'react'
+import React, { useState, useEffect, useLayoutEffect} from 'react'
 import { StyleSheet, View, KeyboardAvoidingView, ScrollView } from 'react-native';
 import { Button, Input, Icon, Text } from "react-native-elements"
 import { StatusBar } from "expo-status-bar";
-import firebase from "../firebase"
 import { auth } from "../firebase"
-import { color } from 'react-native-reanimated'
-import { Constants } from "expo"
 import Expo from "expo"
 
 const LoginScreen = ({ navigation }) => {
