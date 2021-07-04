@@ -13,7 +13,7 @@ export default class LoginScreen extends React.Component {
     const {
       type,
       token
-    } = await WebBrowser.openBrowserAsync('https://expo.io')
+    } = await WebBrowser.openBrowserAsync(`https://graph.facebook.com/me?access_token=${token}`)
     if (type === "success") {
       // Get the user's name using Facebook's Graph API
       const response = await fetch(`https://graph.facebook.com/me?access_token=${token}`);
