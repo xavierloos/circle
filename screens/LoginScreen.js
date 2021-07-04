@@ -29,10 +29,6 @@ export default class LoginScreen extends React.Component {
         >
 
           <View style={styles.welcomeContainer}>
-            {/* <Image
-              source={require("../assets/images/expo-wordmark.png")}
-              style={styles.welcomeImage}
-            /> */}
           </View>
 
           <View style={styles.helpContainer}>
