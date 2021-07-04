@@ -2,12 +2,12 @@ import React, { useState, useEffect, useLayoutEffect } from 'react'
 import { StyleSheet, View, KeyboardAvoidingView, ScrollView } from 'react-native';
 import { Button, Input, Icon, Text } from "react-native-elements"
 import { StatusBar } from "expo-status-bar";
+import firebase from "../firebase"
 import { auth } from "../firebase"
 import { color } from 'react-native-reanimated'
 import { Constants } from "expo"
 import Expo from "expo"
 
-const id = '165654778951149'
 const LoginScreen = ({ navigation }) => {
 
   const [email, setEmail] = useState("")
@@ -36,8 +36,13 @@ const LoginScreen = ({ navigation }) => {
   }
 
   const loginFacebook = async () => {
-    const { type, token } = await Expo.Facebook.logInWithReadPermissionsAsync(id, { permissions: ['public-profile', 'email'] })
-
+    // const { type, token } = await Expo.Facebook.logInWithReadPermissionsAsync('165654778951149', { permissions: ['public-profile', 'email'] })
+    console.log("this:" + token)
+    const { type, token } = await Expo.Facebook.logInWithReadPermissionsAsync(
+      "165654778951149", { permissions: ["public_profile"] }
+    );
+    console.log("this:" + token)
+    console.log(type)
     if (type === 'success') {
 
     } else {
