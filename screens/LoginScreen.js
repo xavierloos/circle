@@ -32,7 +32,7 @@ const LoginScreen = ({ navigation }) => {
       .catch((error) => alert(error))
   }
 
-  const loginFacebook = async () => {
+  let loginFacebook = async () => {
     // const { type, token } = await Expo.Facebook.logInWithReadPermissionsAsync('165654778951149', { permissions: ['public-profile', 'email'] })
     console.log("this:" + token + type)
     const { type, token } = await Expo.Facebook.logInWithReadPermissionsAsync(
