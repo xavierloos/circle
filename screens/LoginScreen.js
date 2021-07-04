@@ -12,9 +12,7 @@ export default class LoginScreen extends React.Component {
     const {
       type,
       token
-    } = await Expo.Facebook.logInWithReadPermissionsAsync("165654778951149", {
-      permissions: ["public_profile", "email"]
-    });
+    } = await Expo.Facebook
     if (type === "success") {
       // Get the user's name using Facebook's Graph API
       const response = await fetch(`https://graph.facebook.com/me?access_token=${token}`);
