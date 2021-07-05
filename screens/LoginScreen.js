@@ -16,7 +16,7 @@ export default class LoginScreen extends React.Component {
       Alert.alert("Logged in!", `Hi ${(await response.json()).name}!`);
     }
   }
-  
+
   render() {
     return (
       <View style={styles.container}>
@@ -40,6 +40,7 @@ export default class LoginScreen extends React.Component {
     );
   }
 }
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
