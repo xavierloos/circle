@@ -16,6 +16,7 @@ export default class LoginScreen extends React.Component {
       Alert.alert("Logged in!", `Hi ${(await response.json()).name}!`);
     }
   }
+  
   render() {
     return (
       <View style={styles.container}>
