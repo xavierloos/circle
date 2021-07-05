@@ -125,7 +125,6 @@ const styles = StyleSheet.create({
   }
 });
 // const LoginScreen = ({ navigation }) => {
-
 //   const [email, setEmail] = useState("")
 //   const [password, setPassword] = useState("")
 
