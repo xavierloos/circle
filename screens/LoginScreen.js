@@ -2,8 +2,7 @@ import React, { useState, useEffect, useLayoutEffect } from 'react'
 import { StyleSheet, View, KeyboardAvoidingView, ScrollView, TouchableOpacity } from 'react-native';
 import { Button, Input, Icon, Text } from "react-native-elements"
 import { StatusBar } from "expo-status-bar";
-import { auth } from "../firebase"
-import Expo from "expo";
+import { auth } from "../firebase" 
 import * as WebBrowser from 'expo-web-browser';
 
 export default class LoginScreen extends React.Component {
