@@ -26,7 +26,6 @@ export default class LoginScreen extends React.Component {
           style={styles.container}
           contentContainerStyle={styles.contentContainer}
         >
-
           <View style={styles.welcomeContainer}>
           </View>
 
