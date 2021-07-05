@@ -124,7 +124,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#3b5998"
   }
 });
-
 // const LoginScreen = ({ navigation }) => {
 
 //   const [email, setEmail] = useState("")
