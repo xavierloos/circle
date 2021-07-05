@@ -24,7 +24,6 @@ export default class LoginScreen extends React.Component {
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer} >
           <View style={styles.welcomeContainer}>
           </View>
-
           <View style={styles.helpContainer}>
             <TouchableOpacity onPress={() => this.logIn()} style={styles.helpLink}>
               <Text style={styles.helpLinkText}>
