@@ -4,7 +4,6 @@ import { Button, Input, Icon, Text } from "react-native-elements"
 import { StatusBar } from "expo-status-bar";
 import { auth } from "../firebase"
 import Expo from "expo";
-import { Facebook } from "expo";
 import * as WebBrowser from 'expo-web-browser';
 
 export default class LoginScreen extends React.Component {
