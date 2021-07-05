@@ -21,8 +21,7 @@ export default class LoginScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}
-        >
+        <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer} >
           <View style={styles.welcomeContainer}>
           </View>
 
