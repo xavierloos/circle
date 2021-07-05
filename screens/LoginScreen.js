@@ -38,7 +38,6 @@ export default class LoginScreen extends React.Component {
             </TouchableOpacity>
           </View>
         </ScrollView>
-
         <View style={styles.tabBarInfoContainer}>
           <Text style={styles.tabBarInfoText}>
             Exponent Facebook Login
