@@ -2,7 +2,7 @@ import React, { useState, useEffect, useLayoutEffect } from 'react'
 import { StyleSheet, View, KeyboardAvoidingView, ScrollView, TouchableOpacity } from 'react-native';
 import { Button, Input, Icon, Text } from "react-native-elements"
 import { StatusBar } from "expo-status-bar";
-import { auth } from "../firebase" 
+import { auth } from "../firebase"
 import * as WebBrowser from 'expo-web-browser';
 import * as Facebook from 'expo-facebook'
 
@@ -11,7 +11,10 @@ export default class LoginScreen extends React.Component {
     const {
       type,
       token
-    } = await WebBrowser.openBrowserAsync(`https://graph.facebook.com/me?access_token=165654778951149`)
+    } = await Facebook.logInWithReadPermissionsAsync(APP_ID, {
+      permissions: ['public_profile']
+    })
+
     if (type === "success") {
       const response = await fetch(`https://graph.facebook.com/me?access_token=${token}`);
       Alert.alert("Logged in!", `Hi ${(await response.json()).name}!`);
