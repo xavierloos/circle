@@ -76,6 +76,7 @@ const LoginScreen = ({ navigation }) => {
   const loginFacebook = async () => {
     try {
       await Facebook.initializeAsync({ appId: '165654778951149', });
+      const { type,  token } = await Facebook.logInWithReadPermissionsAsync({ permissions: ['public_profile']});
     } catch ({ message }) {
       console.log(`Facebook Login Error: ${message}`);
     }
