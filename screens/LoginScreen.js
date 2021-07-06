@@ -8,19 +8,9 @@ import * as Facebook from 'expo-facebook'
 
 // export default class LoginScreen extends React.Component {
 //   async logIn() {
-//     try {
-//       await Facebook.initializeAsync({
-//         appId: '165654778951149',
-//       });
-//       const {
-//         type,
-//         token,
-//         expirationDate,
-//         permissions,
-//         declinedPermissions,
-//       } = await Facebook.logInWithReadPermissionsAsync({
-//         permissions: ['public_profile'],
-//       });
+//     try { 
+//       await Facebook.initializeAsync({ appId: '165654778951149', });
+//       const { type,  token } = await Facebook.logInWithReadPermissionsAsync({ permissions: ['public_profile']});
 //       if (type === 'success') {
 //         // Get the user's name using Facebook's Graph API
 //         const response = await fetch(`https://graph.facebook.com/me?access_token=${token}`);
@@ -83,18 +73,11 @@ const LoginScreen = ({ navigation }) => {
       .catch((error) => alert(error))
   }
 
-  let loginFacebook = async () => {
-    // const { type, token } = await Expo.Facebook.logInWithReadPermissionsAsync('165654778951149', { permissions: ['public-profile', 'email'] })
-    console.log("this:" + token + type)
-    const { type, token } = await Expo.Facebook.logInWithReadPermissionsAsync(
-      "165654778951149", { permissions: ["public_profile"] }
-    );
-    console.log("this:" + token + type)
-    console.log(type)
-    if (type === 'success') {
-
-    } else {
-      alert(type)
+  const loginFacebook = async () => {
+    try {
+      await Facebook.initializeAsync({ appId: '165654778951149', });
+    } catch ({ message }) {
+      console.log(`Facebook Login Error: ${message}`);
     }
   }
 
