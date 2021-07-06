@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useLayoutEffect } from 'react'
-import { StyleSheet, View, KeyboardAvoidingView, ScrollView, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, KeyboardAvoidingView, ScrollView, TouchableOpacity, Platform } from 'react-native';
 import { Button, Input, Icon, Text } from "react-native-elements"
 import { StatusBar } from "expo-status-bar";
 import { auth } from "../firebase"
@@ -57,8 +57,10 @@ const LoginScreen = ({ navigation }) => {
         </View>
         <Button raised disabled={!password && !email} title="Login" containerStyle={styles.button} onPress={singIn} />
         <Button raised title="Register" type="outline" containerStyle={styles.button} onPress={() => navigation.navigate("Register")} />
+        {Platform.OS === 'ios' && <>
+          <Button title="Facebook" type="outline" containerStyle={styles.button} onPress={loginFacebook} />
+        </>}
 
-        <Button title="Facebook" type="outline" containerStyle={styles.button} onPress={loginFacebook} />
       </KeyboardAvoidingView>
     </ScrollView>
   )
