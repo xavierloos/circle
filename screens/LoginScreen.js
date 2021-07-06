@@ -3,49 +3,8 @@ import { StyleSheet, View, KeyboardAvoidingView, ScrollView, TouchableOpacity } 
 import { Button, Input, Icon, Text } from "react-native-elements"
 import { StatusBar } from "expo-status-bar";
 import { auth } from "../firebase"
-import * as WebBrowser from 'expo-web-browser';
-import * as Facebook from 'expo-facebook'
-
-// export default class LoginScreen extends React.Component {
-//   async logIn() {
-//     try { 
-//       await Facebook.initializeAsync({ appId: '165654778951149', });
-//       const { type,  token } = await Facebook.logInWithReadPermissionsAsync({ permissions: ['public_profile']});
-//       if (type === 'success') {
-//         // Get the user's name using Facebook's Graph API
-//         const response = await fetch(`https://graph.facebook.com/me?access_token=${token}`);
-//         console.log('Logged in!', `Hi ${(await response.json()).photoURL}!`);
-//       } else {
-//         // type === 'cancel'
-//       }
-//     } catch ({ message }) {
-//       console.log(`Facebook Login Error: ${message}`);
-//     }
-//   }
-
-//   render() {
-//     return (
-//       <View style={styles.container}>
-//         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer} >
-//           <View style={styles.welcomeContainer}>
-//           </View>
-//           <View style={styles.helpContainer}>
-//             <TouchableOpacity onPress={() => this.logIn()} style={styles.helpLink}>
-//               <Text style={styles.helpLinkText}>
-//                 Login with Facebook
-//               </Text>
-//             </TouchableOpacity>
-//           </View>
-//         </ScrollView>
-//         <View style={styles.tabBarInfoContainer}>
-//           <Text style={styles.tabBarInfoText}>
-//             Exponent Facebook Login
-//           </Text>
-//         </View>
-//       </View>
-//     );
-//   }
-// }
+// import * as Facebook from 'expo-facebook'
+import Expo from 'expo'
 
 const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState("")
@@ -75,8 +34,8 @@ const LoginScreen = ({ navigation }) => {
 
   const loginFacebook = async () => {
     try {
-      await Facebook.initializeAsync({ appId: '165654778951149', });
-      const { type, token } = await Facebook.logInWithReadPermissionsAsync({ permissions: ['public_profile'] });
+      await Expo.Facebook.initializeAsync({ appId: '165654778951149', });
+      const { type, token } = await Expo.Facebook.logInWithReadPermissionsAsync({ permissions: ['public_profile'] });
       if (type === 'success') {
         // Get the user's name using Facebook's Graph API
         const response = await fetch(`https://graph.facebook.com/me?access_token=${token}`);
