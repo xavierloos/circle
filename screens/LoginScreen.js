@@ -11,13 +11,13 @@ export default class LoginScreen extends React.Component {
     const {
       type,
       token
-    } = await Facebook.logInWithReadPermissionsAsync(APP_ID, {
+    } = await Facebook.logInWithReadPermissionsAsync('165654778951149', {
       permissions: ['public_profile']
     })
 
     if (type === "success") {
-      const response = await fetch(`https://graph.facebook.com/me?access_token=${token}`);
-      Alert.alert("Logged in!", `Hi ${(await response.json()).name}!`);
+      // const response = await fetch(`https://graph.facebook.com/me?access_token=${token}`);
+      Alert.alert("Logged in!");
     }
   }
 
