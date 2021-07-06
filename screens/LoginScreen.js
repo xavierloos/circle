@@ -58,6 +58,7 @@ const LoginScreen = ({ navigation }) => {
         <Button raised disabled={!password && !email} title="Login" containerStyle={styles.button} onPress={singIn} />
         <Button raised title="Register" type="outline" containerStyle={styles.button} onPress={() => navigation.navigate("Register")} />
         {Platform.OS === 'ios' && <>
+          <Text style={styles.textConnect}>Connect with: </Text>
           <Button title="Facebook" type="outline" containerStyle={styles.button} onPress={loginFacebook} />
         </>}
 
@@ -90,5 +91,10 @@ const styles = StyleSheet.create({
     width: 200,
     marginTop: 10,
     color: "red"
+  },
+  textConnect: {
+    marginTop: 20,
+    fontWeight: "500",
+    color: "#D50000"
   }
 })
