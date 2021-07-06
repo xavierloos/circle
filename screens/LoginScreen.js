@@ -3,8 +3,8 @@ import { StyleSheet, View, KeyboardAvoidingView, ScrollView, TouchableOpacity } 
 import { Button, Input, Icon, Text } from "react-native-elements"
 import { StatusBar } from "expo-status-bar";
 import { auth } from "../firebase"
-// import * as Facebook from 'expo-facebook'
-import Expo from 'expo'
+import * as Facebook from 'expo-facebook'
+// import Expo from 'expo'
 
 const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState("")
@@ -34,8 +34,8 @@ const LoginScreen = ({ navigation }) => {
 
   const loginFacebook = async () => {
     try {
-      await Expo.Facebook.initializeAsync({ appId: '165654778951149', });
-      const { type, token } = await Expo.Facebook.logInWithReadPermissionsAsync({ permissions: ['public_profile'] });
+      await Facebook.initializeAsync({ appId: '165654778951149', });
+      const { type, token } = await Facebook.logInWithReadPermissionsAsync({ permissions: ['public_profile'] });
       if (type === 'success') {
         // Get the user's name using Facebook's Graph API
         const response = await fetch(`https://graph.facebook.com/me?access_token=${token}`);
