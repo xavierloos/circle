@@ -4,6 +4,7 @@ import { Button, Input, Icon, Text } from "react-native-elements"
 import { StatusBar } from "expo-status-bar";
 import { auth } from "../firebase" 
 import * as WebBrowser from 'expo-web-browser';
+import * as Facebook from 'expo-facebook'
 
 export default class LoginScreen extends React.Component {
   async logIn() {
