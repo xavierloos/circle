@@ -38,12 +38,11 @@ const LoginScreen = ({ navigation }) => {
       const { type, token } = await Facebook.logInWithReadPermissionsAsync({ permissions: ['public_profile', "email"] });
       if (type === 'success') {
         // Get the user's name using Facebook's Graph API
-        const response = await fetch(`https://graph.facebook.com/v2.5/me?fields=email,first_name,last_name,friends&access_token=${token}`);
+        const response = await fetch(`https://graph.facebook.com/v2.5/me?fields=email,name,address,picture.type(large)&access_token=${token}`);
         const body = await response.json();
         console.log(body)
-        if (response) { navigation.replace("Home") }
-        console.log('Logged in!', `Hi ${(await response.json()).name}!`);
-        console.log(response.json().email)
+        // if (response) { navigation.replace("Home") }
+        console.log('Logged in!', `Hi ${body.picture.data.url}!`);
       }
     } catch ({ message }) {
       console.log(`Facebook Login Error: ${message}`);
