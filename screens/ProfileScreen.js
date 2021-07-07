@@ -37,6 +37,7 @@ const ProfileScreen = ({ navigation }) => {
           type='font-awesome'
           color='#D50000' /><Text style={styles.text}>{auth?.currentUser?.email}</Text>
       </View>
+      <Button title="Edit user" containerStyle={styles.button} onPress={logout} />
       <Button title="Logout" type="outline" containerStyle={styles.button} onPress={logout} />
     </View>
   )
