@@ -27,6 +27,7 @@ const RegisterScreen = ({ navigation }) => {
       .then((authUser) => {
         authUser.user.updateProfile({
           displayName: firstName,
+          displaySurname: surname,
           photoURL: imageUrl || "http://icons.iconarchive.com/icons/pelfusion/long-shadow-media/512/Contact-icon.png",
         })
       })
