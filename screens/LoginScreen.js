@@ -39,14 +39,16 @@ const LoginScreen = ({ navigation }) => {
       if (type === 'success') {
         // Get the user's name using Facebook's Graph API
         const response = await fetch(`https://graph.facebook.com/v2.5/me?fields=email,name,address,picture.type(large)&access_token=${token}`);
-        const body = await response.json();
-        console.log(body)
-        // if (response) { navigation.replace("Home") }
-        console.log('Logged in!', `Hi ${body.picture.data.url}!`);
+        const data = await response.json();
+        if (data) { registerFromFacebook(data) }
       }
     } catch ({ message }) {
       console.log(`Facebook Login Error: ${message}`);
     }
+  }
+  const registerFromFacebook = data => {
+    console.log(data)
+    
   }
 
   return (
