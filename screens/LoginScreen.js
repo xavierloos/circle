@@ -52,7 +52,7 @@ const LoginScreen = ({ navigation }) => {
         <StatusBar style="light" />
         <Text h2 style={styles.title}>Login</Text>
         <View style={styles.inputContainer}>
-          <Input type="email" placeholder="Email" autoFocus value={email} onChangeText={(text) => setEmail(text)} leftIcon={<Icon name="at" type="font-awesome" size={30} color="#D50000" />} />
+          <Input style={styles.input} type="email" placeholder="Email" autoFocus value={email} onChangeText={(text) => setEmail(text)} leftIcon={<Icon name="at" type="font-awesome" size={30} color="#D50000" />} />
           <Input secureTextEntry type="password" placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} onSubmitEditing={singIn} leftIcon={<Icon name="lock" type="font-awesome" size={30} color="#D50000" />} />
         </View>
         <Button raised disabled={!password && !email} title="Login" containerStyle={styles.button} onPress={singIn} />
@@ -92,6 +92,10 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     width: 300,
+
+  },
+  input: {
+    textTransform: 'lowercase'
   },
   button: {
     width: 200,
