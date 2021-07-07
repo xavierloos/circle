@@ -27,6 +27,7 @@ const RegisterScreen = ({ navigation }) => {
       .then((authUser) => {
         authUser.user.updateProfile({
           displayName: firstName,
+          displaySurname: surname,
           photoURL: imageUrl || "http://icons.iconarchive.com/icons/pelfusion/long-shadow-media/512/Contact-icon.png",
         })
       })
@@ -42,7 +43,7 @@ const RegisterScreen = ({ navigation }) => {
           <Input type="text" placeholder="Surname" autoFocus value={surname} onChangeText={(text) => setSurname(text)} leftIcon={<Icon name="id-card" type="font-awesome" size={30} color="#D50000" style={{ marginRight: 10 }} />} />
           <Input type="email" placeholder="Email" value={email} onChangeText={(text) => setEmail(text)} leftIcon={<Icon name="at" type="font-awesome" size={30} color="#D50000" style={{ marginRight: 10 }} />} />
           {/* secureTextEntry */}
-          <Input type="password" placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} leftIcon={<Icon name="lock" type="font-awesome" size={30} color="#D50000" style={{ marginRight: 10 }} />} />
+          <Input secureTextEntry type="password" placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} leftIcon={<Icon name="lock" type="font-awesome" size={30} color="#D50000" style={{ marginRight: 10 }} />} />
           <Input type="text" placeholder="Profile picture URL" value={imageUrl} onChangeText={(text) => setImageUrl(text)} onSubmitEditing={register} leftIcon={<Icon name="photo" type="font-awesome" size={30} color="#D50000" style={{ marginRight: 10 }} />} />
         </View>
         <Button raised disabled={!password} containerStyle={styles.button} raised onPress={register} title="Register" />

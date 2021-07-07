@@ -29,7 +29,7 @@ const ProfileScreen = ({ navigation }) => {
         <Icon style={styles.icon}
           name='user'
           type='font-awesome'
-          color='#D50000' /><Text style={styles.text}>{auth?.currentUser?.displayName}</Text>
+          color='#D50000' /><Text style={styles.text}>{auth?.currentUser?.displaySurname}</Text>
       </View>
       <View style={styles.infoContainer}>
         <Icon style={styles.icon}
@@ -37,7 +37,8 @@ const ProfileScreen = ({ navigation }) => {
           type='font-awesome'
           color='#D50000' /><Text style={styles.text}>{auth?.currentUser?.email}</Text>
       </View>
-      <Button title="Logout" type="outline" containerStyle={styles.button} onPress={logout} />
+      <Button raised title="Edit user" containerStyle={styles.button} onPress={logout} />
+      <Button raised title="Logout" type="outline" containerStyle={styles.button} onPress={logout} />
     </View>
   )
 }
