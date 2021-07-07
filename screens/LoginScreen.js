@@ -39,6 +39,7 @@ const LoginScreen = ({ navigation }) => {
       if (type === 'success') {
         // Get the user's name using Facebook's Graph API
         const response = await fetch(`https://graph.facebook.com/me?access_token=${token}`);
+        if (response) { navigation.replace("Home") }
         console.log('Logged in!', `Hi ${(await response.json()).name}!`);
       }
     } catch ({ message }) {
