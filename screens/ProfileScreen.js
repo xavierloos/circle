@@ -1,11 +1,17 @@
-import React, { useLayoutEffect, useState } from 'react'
+import React, { useLayoutEffect, useState, useRef, useEffect } from 'react'
 import { StyleSheet, View, Modal, TouchableOpacity } from 'react-native'
 import { Avatar, Icon, Button, Text } from 'react-native-elements'
 import { auth, db } from '../firebase'
+import Animated from 'react-native-reanimated'
 // import { SimpleLineIcons } from "@expo/vector-icons"
 
 const ProfileScreen = ({ navigation }) => {
   const [visible, setVisible] = useState(false)
+  const scaleValue = useRef(new Animated.Value(0)).current
+  
+  useEffect(() => {
+    toggleModal()
+  }, [visible])
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -32,13 +38,13 @@ const ProfileScreen = ({ navigation }) => {
     </Modal>
   }
 
-  // const toggleModal = () => {
-  //   if (visible) {
-  //     setShowModal(true)
-  //   } else {
-  //     setShowModal(false)
-  //   }
-  // }
+  const toggleModal = () => {
+    if (visible) {
+      setShowModal(true)
+    } else {
+      setShowModal(false)
+    }
+  }
 
   return (
     <View style={styles.container}>
