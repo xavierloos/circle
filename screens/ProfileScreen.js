@@ -8,7 +8,7 @@ import Animated from 'react-native-reanimated'
 const ProfileScreen = ({ navigation }) => {
   const [visible, setVisible] = useState(false)
   const scaleValue = useRef(new Animated.Value(0)).current
-  
+
   useEffect(() => {
     toggleModal()
   }, [visible])
@@ -41,6 +41,11 @@ const ProfileScreen = ({ navigation }) => {
   const toggleModal = () => {
     if (visible) {
       setShowModal(true)
+      Animated.spring(scaleValue, {
+        toValue: 1,
+        duration: 300,
+        useNaiveDriver:true,
+      })
     } else {
       setShowModal(false)
     }
