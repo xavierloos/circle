@@ -23,7 +23,9 @@ const ProfileScreen = ({ navigation }) => {
   }
   const ModalPoup = ({ visible, children }) => {
     const [showModal, setShowModal] = useState(visible)
-    return <Modal transparent visible={showModal}></Modal>
+    return <Modal transparent visible={true}>
+      <View style={styles.modalBg}></View>
+    </Modal>
   }
 
   return (
@@ -76,5 +78,11 @@ const styles = StyleSheet.create({
   button: {
     width: 100,
     marginTop: 20,
+  },
+  modalBg: {
+    flex: 1,
+    backgroundColor: "rgba(0,0,0,0.5)",
+    justifyContent: "center",
+    alignItems: "center"
   }
 })
