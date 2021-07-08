@@ -7,11 +7,6 @@ import Animated from 'react-native-reanimated'
 
 const ProfileScreen = ({ navigation }) => {
   const [visible, setVisible] = useState(false)
-  const scaleValue = useRef(new Animated.Value(0)).current
-
-  useEffect(() => {
-    toggleModal()
-  }, [visible])
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -29,26 +24,37 @@ const ProfileScreen = ({ navigation }) => {
   }
   const ModalPoup = ({ visible, children }) => {
     const [showModal, setShowModal] = useState(visible)
-    return <Modal transparent visible={showModal}>
-      <View style={styles.modalBg}>
-        <View style={[styles.modalContainer]}>
-          {children}
-        </View>
-      </View>
-    </Modal>
-  }
+    const scaleValue = useRef(new Animated.Value(0)).current
 
-  const toggleModal = () => {
-    if (visible) {
-      setShowModal(true)
-      Animated.spring(scaleValue, {
-        toValue: 1,
-        duration: 300,
-        useNaiveDriver:true,
-      })
-    } else {
-      setShowModal(false)
+    useEffect(() => {
+      toggleModal()
+    }, [visible])
+
+    var toggleModal = () => {
+      if (visible) {
+        setShowModal(true)
+        Animated.spring(scaleValue, {
+          toValue: 1,
+          duration: 300,
+          useNaiveDriver: true,
+        }).start()
+      } else {
+        setShowModal(false)
+        Animated.timing(scaleValue, {
+          toValue: 0,
+          duration: 300,
+          useNaiveDriver: true,
+        }).start()
+      }
     }
+
+    return (<Modal transparent visible={showModal}>
+      <View style={styles.modalBg}>
+        <Animated.View style={[styles.modalContainer, { transform: [{ scale: scaleValue }] }]}>
+          {children}
+        </Animated.View>
+      </View>
+    </Modal>)
   }
 
   return (
