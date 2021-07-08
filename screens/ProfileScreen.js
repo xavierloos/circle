@@ -20,6 +20,9 @@ const ProfileScreen = ({ navigation }) => {
       navigation.replace("Login")
     })
   }
+  const editUserModal = ({visible, children}) => {
+
+  }
 
   return (
     <View style={styles.container}>
