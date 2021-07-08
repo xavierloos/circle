@@ -1,10 +1,11 @@
-import React, { useLayoutEffect } from 'react'
+import React, { useLayoutEffect, useState } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { Avatar, Icon, Button } from 'react-native-elements'
 import { auth, db } from '../firebase'
 // import { SimpleLineIcons } from "@expo/vector-icons"
 
 const ProfileScreen = ({ navigation }) => {
+  const [visible, setVisible] = useState(false)
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -20,7 +21,7 @@ const ProfileScreen = ({ navigation }) => {
       navigation.replace("Login")
     })
   }
-  const editUserModal = ({visible, children}) => {
+  const editUserModal = ({ visible, children }) => {
 
   }
 
