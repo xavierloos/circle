@@ -22,6 +22,7 @@ const ProfileScreen = ({ navigation }) => {
     })
   }
   const ModalPoup = ({ visible, children }) => {
+    const [showModal, setShowModal] = useState(visible)
     return <Modal transparent visible={showModal}></Modal>
   }
 
