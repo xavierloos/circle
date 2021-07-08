@@ -1,5 +1,5 @@
 import React, { useLayoutEffect, useState } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, Modal } from 'react-native'
 import { Avatar, Icon, Button } from 'react-native-elements'
 import { auth, db } from '../firebase'
 // import { SimpleLineIcons } from "@expo/vector-icons"
@@ -21,8 +21,8 @@ const ProfileScreen = ({ navigation }) => {
       navigation.replace("Login")
     })
   }
-  const editUserModal = ({ visible, children }) => {
-
+  const ModalPoup = ({ visible, children }) => {
+    return <Modal transparent visible={showModal}></Modal>
   }
 
   return (
