@@ -61,6 +61,10 @@ const ProfileScreen = ({ navigation }) => {
         <View style={{ alignItems: "center" }}>
           <View style={styles.header}>
             <Text h4>Edit user</Text>
+            <Icon style={styles.icon}
+              name='times'
+              type='font-awesome'
+              color='#D50000' />
           </View>
           <View style={styles.content}>
           </View>
@@ -112,5 +116,11 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
     borderRadius: 20,
     elevation: 20
+  },
+  header: {
+    display: "flex",
+    flexDirection: "row",
+    width: '100%',
+    justifyContent: "space-between"
   }
 })
