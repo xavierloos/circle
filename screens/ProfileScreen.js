@@ -1,5 +1,5 @@
 import React, { useLayoutEffect, useState } from 'react'
-import { StyleSheet, View, Modal } from 'react-native'
+import { StyleSheet, View, Modal, TouchableOpacity } from 'react-native'
 import { Avatar, Icon, Button, Text } from 'react-native-elements'
 import { auth, db } from '../firebase'
 // import { SimpleLineIcons } from "@expo/vector-icons"
@@ -32,13 +32,13 @@ const ProfileScreen = ({ navigation }) => {
     </Modal>
   }
 
-  const toggleModal = () => {
-    if (visible) {
-      setShowModal(true)
-    } else {
-      setShowModal(false)
-    }
-  }
+  // const toggleModal = () => {
+  //   if (visible) {
+  //     setShowModal(true)
+  //   } else {
+  //     setShowModal(false)
+  //   }
+  // }
 
   return (
     <View style={styles.container}>
@@ -61,10 +61,12 @@ const ProfileScreen = ({ navigation }) => {
         <View style={{ alignItems: "center" }}>
           <View style={styles.header}>
             <Text h4>Edit user</Text>
-            <Icon style={styles.icon}
-              name='times'
-              type='font-awesome'
-              color='#D50000' />
+            <TouchableOpacity activeOpacity={0.5} onPress={() => setVisible(false)} >
+              <Icon style={styles.icon}
+                name='times'
+                type='font-awesome'
+                color='#D50000' />
+            </TouchableOpacity>
           </View>
           <View style={styles.content}>
           </View>
