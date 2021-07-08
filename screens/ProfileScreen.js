@@ -1,10 +1,11 @@
-import React, { useLayoutEffect } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-import { Avatar, Icon, Button } from 'react-native-elements'
+import React, { useLayoutEffect, useState, useRef, useEffect } from 'react'
+import { StyleSheet, View, Modal, TouchableOpacity, Animated } from 'react-native'
+import { Avatar, Icon, Button, Text } from 'react-native-elements'
 import { auth, db } from '../firebase'
 // import { SimpleLineIcons } from "@expo/vector-icons"
 
 const ProfileScreen = ({ navigation }) => {
+  const [visible, setVisible] = useState(false)
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -19,6 +20,40 @@ const ProfileScreen = ({ navigation }) => {
     auth.signOut().then(() => {
       navigation.replace("Login")
     })
+  }
+  const ModalPoup = ({ visible, children }) => {
+    const [showModal, setShowModal] = useState(visible)
+    const scaleValue = useRef(new Animated.Value(0)).current
+
+    useEffect(() => {
+      toggleModal()
+    }, [visible])
+
+    var toggleModal = () => {
+      if (visible) {
+        setShowModal(true)
+        Animated.spring(scaleValue, {
+          toValue: 1,
+          duration: 300,
+          useNaiveDriver: true,
+        }).start()
+      } else {
+        setTimeout(() => setShowModal(false), 200)
+        Animated.timing(scaleValue, {
+          toValue: 0,
+          duration: 300,
+          useNaiveDriver: true,
+        }).start()
+      }
+    }
+
+    return (<Modal transparent visible={showModal}>
+      <View style={styles.modalBg}>
+        <Animated.View style={[styles.modalContainer, { transform: [{ scale: scaleValue }] }]}>
+          {children}
+        </Animated.View>
+      </View>
+    </Modal>)
   }
 
   return (
@@ -37,7 +72,23 @@ const ProfileScreen = ({ navigation }) => {
           type='font-awesome'
           color='#D50000' /><Text style={styles.text}>{auth?.currentUser?.email}</Text>
       </View>
-      <Button raised title="Edit user" containerStyle={styles.button} onPress={logout} />
+      <Button raised title="Edit user" containerStyle={styles.button} onPress={() => setVisible(true)} />
+      <ModalPoup visible={visible}>
+        <View style={{ alignItems: "center" }}>
+          <View style={styles.header}>
+            <Text h4>Edit user</Text>
+            <TouchableOpacity activeOpacity={0.5} onPress={() => setVisible(false)} >
+              <Icon style={styles.icon}
+                name='times'
+                type='font-awesome'
+                color='#D50000' />
+            </TouchableOpacity>
+          </View>
+          <View style={styles.content}>
+            <Avatar size={100} rounded source={{ uri: auth?.currentUser?.photoURL }} />
+          </View>
+        </View>
+      </ModalPoup>
       <Button raised title="Logout" type="outline" containerStyle={styles.button} onPress={logout} />
     </View>
   )
@@ -70,5 +121,25 @@ const styles = StyleSheet.create({
   button: {
     width: 100,
     marginTop: 20,
+  },
+  modalBg: {
+    flex: 1,
+    backgroundColor: "rgba(0,0,0,0.5)",
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  modalContainer: {
+    width: "80%",
+    backgroundColor: "white",
+    paddingHorizontal: 20,
+    paddingVertical: 20,
+    borderRadius: 20,
+    elevation: 20
+  },
+  header: {
+    display: "flex",
+    flexDirection: "row",
+    width: '100%',
+    justifyContent: "space-between"
   }
 })
