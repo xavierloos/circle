@@ -1,6 +1,6 @@
 import React, { useLayoutEffect, useState } from 'react'
-import { StyleSheet, Text, View, Modal } from 'react-native'
-import { Avatar, Icon, Button } from 'react-native-elements'
+import { StyleSheet, View, Modal } from 'react-native'
+import { Avatar, Icon, Button, Text } from 'react-native-elements'
 import { auth, db } from '../firebase'
 // import { SimpleLineIcons } from "@expo/vector-icons"
 
@@ -26,7 +26,7 @@ const ProfileScreen = ({ navigation }) => {
     return <Modal transparent visible={true}>
       <View style={styles.modalBg}>
         <View style={[styles.modalContainer]}>
-
+          {children}
         </View>
       </View>
     </Modal>
@@ -49,7 +49,13 @@ const ProfileScreen = ({ navigation }) => {
           color='#D50000' /><Text style={styles.text}>{auth?.currentUser?.email}</Text>
       </View>
       <Button raised title="Edit user" containerStyle={styles.button} onPress={() => setVisible(true)} />
-      <ModalPoup visible={visible}></ModalPoup>
+      <ModalPoup visible={visible}>
+        <View style={{ alignItems: "center" }}>
+          <View style={styles.header}>
+            <Text h4>Edit user</Text>
+          </View>
+        </View>
+      </ModalPoup>
       <Button raised title="Logout" type="outline" containerStyle={styles.button} onPress={logout} />
     </View>
   )
@@ -95,6 +101,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingVertical: 20,
     borderRadius: 20,
-    elevation:20
+    elevation: 20
   }
 })
