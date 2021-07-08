@@ -41,7 +41,8 @@ const ProfileScreen = ({ navigation }) => {
           type='font-awesome'
           color='#D50000' /><Text style={styles.text}>{auth?.currentUser?.email}</Text>
       </View>
-      <Button raised title="Edit user" containerStyle={styles.button} onPress={logout} />
+      <Button raised title="Edit user" containerStyle={styles.button} onPress={} />
+      <ModalPoup visible={visible}></ModalPoup>
       <Button raised title="Logout" type="outline" containerStyle={styles.button} onPress={logout} />
     </View>
   )
