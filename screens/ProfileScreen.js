@@ -1,8 +1,7 @@
 import React, { useLayoutEffect, useState, useRef, useEffect } from 'react'
-import { StyleSheet, View, Modal, TouchableOpacity } from 'react-native'
+import { StyleSheet, View, Modal, TouchableOpacity, Animated } from 'react-native'
 import { Avatar, Icon, Button, Text } from 'react-native-elements'
 import { auth, db } from '../firebase'
-import Animated from 'react-native-reanimated'
 // import { SimpleLineIcons } from "@expo/vector-icons"
 
 const ProfileScreen = ({ navigation }) => {
@@ -39,7 +38,7 @@ const ProfileScreen = ({ navigation }) => {
           useNaiveDriver: true,
         }).start()
       } else {
-        setShowModal(false)
+        setTimeout(() => setShowModal(false), 200)
         Animated.timing(scaleValue, {
           toValue: 0,
           duration: 300,
@@ -86,6 +85,7 @@ const ProfileScreen = ({ navigation }) => {
             </TouchableOpacity>
           </View>
           <View style={styles.content}>
+            <Avatar size={100} rounded source={{ uri: auth?.currentUser?.photoURL }} />
           </View>
         </View>
       </ModalPoup>
