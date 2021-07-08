@@ -23,13 +23,17 @@ const ProfileScreen = ({ navigation }) => {
   }
   const ModalPoup = ({ visible, children }) => {
     const [showModal, setShowModal] = useState(visible)
-    return <Modal transparent visible={true}>
+    return <Modal transparent visible={showModal}>
       <View style={styles.modalBg}>
         <View style={[styles.modalContainer]}>
           {children}
         </View>
       </View>
     </Modal>
+  }
+
+  const toggleModal = () => {
+    
   }
 
   return (
@@ -53,6 +57,8 @@ const ProfileScreen = ({ navigation }) => {
         <View style={{ alignItems: "center" }}>
           <View style={styles.header}>
             <Text h4>Edit user</Text>
+          </View>
+          <View style={styles.content}>
           </View>
         </View>
       </ModalPoup>
