@@ -33,7 +33,11 @@ const ProfileScreen = ({ navigation }) => {
   }
 
   const toggleModal = () => {
-    
+    if (visible) {
+      setShowModal(true)
+    } else {
+      setShowModal(false)
+    }
   }
 
   return (
