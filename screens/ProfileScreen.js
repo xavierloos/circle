@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useState, useRef, useEffect } from 'react'
 import { StyleSheet, View, Modal, TouchableOpacity, Animated } from 'react-native'
 import { Avatar, Icon, Button, Text } from 'react-native-elements'
-import { auth, db } from '../firebase'
+import { auth } from '../firebase'
 
 const ProfileScreen = ({ navigation }) => {
   const [visible, setVisible] = useState(false)
