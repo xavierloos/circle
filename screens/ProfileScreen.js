@@ -3,9 +3,10 @@ import { StyleSheet, View, Modal, TouchableOpacity, Animated } from 'react-nativ
 import { Avatar, Icon, Button, Text } from 'react-native-elements'
 import { auth } from '../firebase'
 
+
 const ProfileScreen = ({ navigation }) => {
   const [visible, setVisible] = useState(false)
-  
+
   useLayoutEffect(() => {
     navigation.setOptions({
       title: "CIRCLE: Profile",
