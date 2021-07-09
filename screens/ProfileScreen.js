@@ -93,6 +93,7 @@ const ProfileScreen = ({ navigation }) => {
 }
 
 export default ProfileScreen
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
