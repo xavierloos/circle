@@ -45,7 +45,6 @@ const ProfileScreen = ({ navigation }) => {
         }).start()
       }
     }
-
     return (<Modal transparent visible={showModal}>
       <View style={styles.modalBg}>
         <Animated.View style={[styles.modalContainer, { transform: [{ scale: scaleValue }] }]}>
@@ -54,7 +53,7 @@ const ProfileScreen = ({ navigation }) => {
       </View>
     </Modal>)
   }
-  
+
   return (
     <View style={styles.container}>
       {console.log(auth?.currentUser)}
