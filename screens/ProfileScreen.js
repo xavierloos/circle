@@ -54,6 +54,7 @@ const ProfileScreen = ({ navigation }) => {
     </Modal>)
   }
 
+  
   return (
     <View style={styles.container}>
       {console.log(auth?.currentUser)}
