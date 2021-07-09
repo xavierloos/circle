@@ -5,7 +5,6 @@ import { auth } from '../firebase'
 
 const ProfileScreen = ({ navigation }) => {
   const [visible, setVisible] = useState(false)
-
   useLayoutEffect(() => {
     navigation.setOptions({
       title: "CIRCLE: Profile",
@@ -20,7 +19,7 @@ const ProfileScreen = ({ navigation }) => {
       navigation.replace("Login")
     })
   }
-  
+
   const ModalPoup = ({ visible, children }) => {
     const [showModal, setShowModal] = useState(visible)
     const scaleValue = useRef(new Animated.Value(0)).current
