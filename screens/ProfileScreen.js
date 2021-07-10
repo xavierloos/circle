@@ -35,14 +35,14 @@ const ProfileScreen = ({ navigation }) => {
         Animated.spring(scaleValue, {
           toValue: 1,
           duration: 300,
-          useNaiveDriver: true,
+          useNativeDriver: true,
         }).start()
       } else {
         setTimeout(() => setShowModal(false), 200)
         Animated.timing(scaleValue, {
           toValue: 0,
           duration: 300,
-          useNaiveDriver: true,
+          useNativeDriver: true,
         }).start()
       }
     }
@@ -88,8 +88,9 @@ const ProfileScreen = ({ navigation }) => {
           </View>
           <View style={styles.content}>
             <Avatar size={100} rounded source={{ uri: auth?.currentUser?.photoURL }} />
-            
+
           </View>
+        
         </View>
       </ModalPoup>
       <Button raised title="Logout" type="outline" containerStyle={styles.button} onPress={logout} />
