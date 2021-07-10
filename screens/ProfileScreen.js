@@ -75,7 +75,10 @@ const ProfileScreen = ({ navigation }) => {
       <ModalPoup visible={visible}>
         <View style={{ alignItems: "center" }}>
           <View style={styles.header}>
-            <Text h4>Edit user</Text>
+            <Text h4><Icon style={styles.icon}
+              name='pencil'
+              type='font-awesome'
+              color='#D50000' />Edit user</Text>
             <TouchableOpacity activeOpacity={0.5} onPress={() => setVisible(false)} >
               <Icon style={styles.icon}
                 name='times'
