@@ -1,6 +1,6 @@
 import React, { useLayoutEffect, useState, useRef, useEffect } from 'react'
 import { StyleSheet, View, Modal, TouchableOpacity, Animated } from 'react-native'
-import { Avatar, Icon, Button, Text } from 'react-native-elements'
+import { Avatar, Icon, Button, Text, Input } from 'react-native-elements'
 import { auth } from '../firebase'
 
 const ProfileScreen = ({ navigation }) => {
@@ -88,6 +88,7 @@ const ProfileScreen = ({ navigation }) => {
           </View>
           <View style={styles.content}>
             <Avatar size={100} rounded source={{ uri: auth?.currentUser?.photoURL }} />
+            
           </View>
         </View>
       </ModalPoup>
