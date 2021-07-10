@@ -91,7 +91,7 @@ const ProfileScreen = ({ navigation }) => {
 
           </View>
           <Input style={styles.input} type="email" placeholder={auth?.currentUser?.email} autoFocus leftIcon={<Icon name="at" type="font-awesome" size={30} color="#D50000" />} />
-          <Input style={styles.input} type="email" placeholder="Password" leftIcon={<Icon name="lock" type="font-awesome" size={30} color="#D50000" />} />
+          <Input style={styles.input} type="email" placeholder="Password" autoCapitalize="none" leftIcon={<Icon name="lock" type="font-awesome" size={30} color="#D50000" />} />
           <Input style={styles.input} type="email" placeholder="New Password" leftIcon={<Icon name="star" type="font-awesome" size={30} color="#D50000" />} />
         </View>
       </ModalPoup>
