@@ -4,6 +4,7 @@ import { Button, Input, Text, Icon } from "react-native-elements"
 import { StatusBar } from 'expo-status-bar'
 import { auth } from "../firebase"
 import { color } from 'react-native-reanimated'
+
 const RegisterScreen = ({ navigation }) => {
   const [firstName, setFirstName] = useState("")
   const [surname, setSurname] = useState("")
