@@ -56,6 +56,11 @@ const ProfileScreen = ({ navigation }) => {
     </Modal>)
   }
 
+  onChangePasswordPress = () => {
+    var user = auth().currentUser
+    console.log(user)
+  }
+
   return (
     <View style={styles.container}>
       {console.log(auth?.currentUser)}
