@@ -6,7 +6,8 @@ import firebase from "firebase"
 
 const ProfileScreen = ({ navigation }) => {
   const [visible, setVisible] = useState(false)
-  const [newPassword, setNewPassword] = useState('')
+  const [newPassword, setNewPassword] = useState("")
+  const [currentPassword, setCurrentPassword] = useState("")
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -103,8 +104,8 @@ const ProfileScreen = ({ navigation }) => {
             <Avatar size={100} rounded source={{ uri: auth?.currentUser?.photoURL }} />
           </View>
           <Input type="email" value={auth?.currentUser?.email} autoFocus autoCapitalize="none" leftIcon={<Icon name="at" type="font-awesome" size={30} color="#D50000" />} />
-          <Input secureTextEntry type="password" placeholder="Password" autoCapitalize="none" leftIcon={<Icon name="lock" type="font-awesome" size={30} color="#D50000" />} />
-          <Input secureTextEntry type="password" placeholder="New Password" autoCapitalize="none" leftIcon={<Icon name="star" type="font-awesome" size={30} color="#D50000" />} value={newPassword} onChangeText={(text) => setNewPassword(text)} onSubmitEditing={onChangePasswordPress}/>
+          <Input secureTextEntry type="password" placeholder="Current Password" autoCapitalize="none" leftIcon={<Icon name="lock" type="font-awesome" size={30} color="#D50000" />} value={currentPassword} onChangeText={(text) => setCurrentPassword(text)} />
+          <Input type="password" placeholder="New Password" autoCapitalize="none" leftIcon={<Icon name="star" type="font-awesome" size={30} color="#D50000" />} value={newPassword} onChangeText={(text) => setNewPassword(text)}/>
           <Button raised title="Update user" type="outline" onPress={onChangePasswordPress} />
         </View>
       </ModalPoup>
