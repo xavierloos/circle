@@ -91,7 +91,7 @@ const ProfileScreen = ({ navigation }) => {
             <Avatar size={100} rounded source={{ uri: auth?.currentUser?.photoURL }} />
 
           </View>
-          <Input style={styles.input} type="email" placeholder={auth?.currentUser?.email} autoFocus autoCapitalize="none" leftIcon={<Icon name="at" type="font-awesome" size={30} color="#D50000" />} />
+          <Input style={styles.input} type="email" value={auth?.currentUser?.email} autoFocus autoCapitalize="none" leftIcon={<Icon name="at" type="font-awesome" size={30} color="#D50000" />} />
           <Input secureTextEntry style={styles.input} type="email" placeholder="Password" autoCapitalize="none" leftIcon={<Icon name="lock" type="font-awesome" size={30} color="#D50000" />} />
           <Input secureTextEntry style={styles.input} type="email" placeholder="New Password" autoCapitalize="none" leftIcon={<Icon name="star" type="font-awesome" size={30} color="#D50000" />} onChangeText={(text) => setNewPassword(text)} />
         </View>
