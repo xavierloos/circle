@@ -2,6 +2,7 @@ import React, { useLayoutEffect, useState, useRef, useEffect } from 'react'
 import { StyleSheet, View, Modal, TouchableOpacity, Animated } from 'react-native'
 import { Avatar, Icon, Button, Text, Input } from 'react-native-elements'
 import { auth } from '../firebase'
+import firebase from "firebase"
 
 const ProfileScreen = ({ navigation }) => {
   const [visible, setVisible] = useState(false)
@@ -57,7 +58,7 @@ const ProfileScreen = ({ navigation }) => {
   }
 
   const onChangePasswordPress = () => {
-    var user = auth().currentUser
+    var user = firebase.auth().currentUser
     console.log(user)
   }
 
