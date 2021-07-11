@@ -56,7 +56,7 @@ const ProfileScreen = ({ navigation }) => {
     </Modal>)
   }
 
-  onChangePasswordPress = () => {
+  const onChangePasswordPress = () => {
     var user = auth().currentUser
     console.log(user)
   }
@@ -94,11 +94,11 @@ const ProfileScreen = ({ navigation }) => {
           </View>
           <View style={styles.content}>
             <Avatar size={100} rounded source={{ uri: auth?.currentUser?.photoURL }} />
-
           </View>
           <Input style={styles.input} type="email" value={auth?.currentUser?.email} autoFocus autoCapitalize="none" leftIcon={<Icon name="at" type="font-awesome" size={30} color="#D50000" />} />
           <Input secureTextEntry style={styles.input} type="email" placeholder="Password" autoCapitalize="none" leftIcon={<Icon name="lock" type="font-awesome" size={30} color="#D50000" />} />
           <Input secureTextEntry style={styles.input} type="email" placeholder="New Password" autoCapitalize="none" leftIcon={<Icon name="star" type="font-awesome" size={30} color="#D50000" />} onChangeText={(text) => setNewPassword(text)} />
+          <Button raised title="Update user" type="outline" onPress={onChangePasswordPress} />
         </View>
       </ModalPoup>
       <Button raised title="Logout" type="outline" containerStyle={styles.button} onPress={logout} />
