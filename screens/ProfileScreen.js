@@ -58,6 +58,10 @@ const ProfileScreen = ({ navigation }) => {
     </Modal>)
   }
 
+  const reauthenticate = currentPassword => {
+    var user = firebase.auth().currentUser
+  }
+
   const onChangePasswordPress = () => {
     var user = firebase.auth().currentUser
     console.log(user)
