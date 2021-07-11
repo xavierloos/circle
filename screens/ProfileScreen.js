@@ -63,6 +63,8 @@ const ProfileScreen = ({ navigation }) => {
     user.updatePassword(newPassword)
       .then(() => {
         Alert.alert("User details updated")
+      }).catch((e) => {
+        Alert.alert(e.message)
       })
   }
 
