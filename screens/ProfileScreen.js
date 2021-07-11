@@ -65,14 +65,18 @@ const ProfileScreen = ({ navigation }) => {
   }
 
   const onChangePasswordPress = () => {
-    var user = firebase.auth().currentUser
-    console.log(user)
-    user.updatePassword(newPassword)
+    reauthenticate(currentPassword)
       .then(() => {
-        Alert.alert("User details updated")
-      }).catch((e) => {
-        Alert.alert(e.message)
+        var user = firebase.auth().currentUser
+        console.log(user)
+        user.updatePassword(newPassword)
+          .then(() => {
+            Alert.alert("User details updated")
+          }).catch((e) => {
+            Alert.alert(e.message)
+          })
       })
+   
   }
 
   return (
@@ -111,7 +115,7 @@ const ProfileScreen = ({ navigation }) => {
           </View>
           <Input type="email" value={auth?.currentUser?.email} autoFocus autoCapitalize="none" leftIcon={<Icon name="at" type="font-awesome" size={30} color="#D50000" />} />
           <Input secureTextEntry type="password" placeholder="Current Password" autoCapitalize="none" leftIcon={<Icon name="lock" type="font-awesome" size={30} color="#D50000" />} value={currentPassword} onChangeText={(text) => setCurrentPassword(text)} />
-          <Input type="password" placeholder="New Password" autoCapitalize="none" leftIcon={<Icon name="star" type="font-awesome" size={30} color="#D50000" />} value={newPassword} onChangeText={(text) => setNewPassword(text)}/>
+          <Input type="password" placeholder="New Password" autoCapitalize="none" leftIcon={<Icon name="star" type="font-awesome" size={30} color="#D50000" />} value={newPassword} onChangeText={(text) => setNewPassword(text)} />
           <Button raised title="Update user" type="outline" onPress={onChangePasswordPress} />
         </View>
       </ModalPoup>
