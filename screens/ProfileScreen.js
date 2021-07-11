@@ -61,6 +61,7 @@ const ProfileScreen = ({ navigation }) => {
   const reauthenticate = currentPassword => {
     var user = firebase.auth().currentUser
     var cred = firebase.auth.EmailAuthProvider.credential(user.email, currentPassword)
+    return user.reauthenticateWithCredential(cred)
   }
 
   const onChangePasswordPress = () => {
