@@ -115,6 +115,7 @@ const ProfileScreen = ({ navigation }) => {
                 color='#D50000' />
             </TouchableOpacity>
           </View>
+          
           <View style={styles.content}>
             <Avatar size={100} rounded source={{ uri: auth?.currentUser?.photoURL }} />
           </View>
