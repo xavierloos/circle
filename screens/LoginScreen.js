@@ -4,7 +4,6 @@ import { Button, Input, Icon, Text } from "react-native-elements"
 import { StatusBar } from "expo-status-bar";
 import { auth } from "../firebase"
 import * as Facebook from 'expo-facebook'
-// import Expo from 'expo'
 
 const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState("")
