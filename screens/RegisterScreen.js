@@ -41,7 +41,6 @@ const RegisterScreen = ({ navigation }) => {
         <Text h2 style={styles.title}>Register</Text>
         <View style={styles.inputContainer}>
           <Input style={styles.input} type="text" placeholder="First name" autoFocus value={firstName} onChangeText={(text) => setFirstName(text)} leftIcon={<Icon name="user" type="font-awesome" size={30} color="#D50000" style={{ marginRight: 10 }} />} />
-          <Input type="text" placeholder="Surname" autoFocus value={surname} onChangeText={(text) => setSurname(text)} leftIcon={<Icon name="id-card" type="font-awesome" size={30} color="#D50000" style={{ marginRight: 10 }} />} />
           <Input type="email" placeholder="Email" value={email} onChangeText={(text) => setEmail(text)} leftIcon={<Icon name="at" type="font-awesome" size={30} color="#D50000" style={{ marginRight: 10 }} />} />
           {/* secureTextEntry */}
           <Input secureTextEntry autoCapitalize="none" type="password" placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} leftIcon={<Icon name="lock" type="font-awesome" size={30} color="#D50000" style={{ marginRight: 10 }} />} />
