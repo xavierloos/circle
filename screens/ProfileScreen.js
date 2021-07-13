@@ -122,8 +122,8 @@ const ProfileScreen = ({ navigation }) => {
         {auth?.currentUser?.phoneNumber !== null && <>
           <Text style={styles.text}>{auth?.currentUser?.email}</Text>
         </>}
-
       </View>
+
       <Button raised title="Edit user" containerStyle={styles.button} onPress={() => setVisible(true)} />
       <ModalPoup visible={visible}>
         <View style={{ alignItems: "center" }}>
@@ -152,6 +152,12 @@ const ProfileScreen = ({ navigation }) => {
         </View>
       </ModalPoup>
       <Button raised title="Logout" type="outline" containerStyle={styles.button} onPress={logout} />
+      <View style={styles.infoContainer}>
+        <Icon style={styles.icon}
+          name='info'
+          type='font-awesome'
+          color='#D50000' /><Text style={styles.text}>About</Text>
+      </View>
     </View>
   )
 }
@@ -169,9 +175,9 @@ const styles = StyleSheet.create({
   },
   avatarContainer: {
     display: "flex",
-    flexDirection: "row",
-    // alignItems: 'baseline',
-    justifyContent: 'center',
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center"
   },
   infoContainer: {
     display: "flex",
