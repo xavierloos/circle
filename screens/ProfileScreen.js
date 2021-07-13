@@ -109,7 +109,7 @@ const ProfileScreen = ({ navigation }) => {
         <Icon style={styles.icon}
           name='lock'
           type='font-awesome'
-          color='#D50000' /><Text style={styles.text}>Change password</Text>
+          color='#D50000' /><Text style={styles.text}>Password</Text>
       </View>
       <View style={styles.infoContainer}>
         <Icon style={styles.icon}
@@ -117,7 +117,7 @@ const ProfileScreen = ({ navigation }) => {
           type='font-awesome'
           color='#D50000' />
         {auth?.currentUser?.phoneNumber === null && <>
-          <Text style={styles.text}>Add telephone number</Text>
+          <Text style={styles.text}>No added yet</Text>
         </>}
         {auth?.currentUser?.phoneNumber !== null && <>
           <Text style={styles.text}>{auth?.currentUser?.email}</Text>
@@ -151,7 +151,12 @@ const ProfileScreen = ({ navigation }) => {
           <Button raised title="Update user" type="outline" onPress={onChangePasswordPress} />
         </View>
       </ModalPoup>
-      <Button raised title="Logout" type="outline" containerStyle={styles.button} onPress={logout} />
+      <View style={styles.infoContainer}>
+        <Icon style={styles.icon}
+          name='users'
+          type='font-awesome'
+          color='#D50000' /><Text style={styles.text}>Share with friends</Text>
+      </View>
       <View style={styles.infoContainer}>
         <Icon style={styles.icon}
           name='comment'
@@ -160,10 +165,23 @@ const ProfileScreen = ({ navigation }) => {
       </View>
       <View style={styles.infoContainer}>
         <Icon style={styles.icon}
-          name='info'
+          name='question-circle'
+          type='font-awesome'
+          color='#D50000' /><Text style={styles.text}>Help</Text>
+      </View>
+      <View style={styles.infoContainer}>
+        <Icon style={styles.icon}
+          name='info-circle'
           type='font-awesome'
           color='#D50000' /><Text style={styles.text}>About</Text>
       </View>
+      <TouchableOpacity onPress={logout} activeOpacity={0.5} style={styles.infoContainer}>
+        <Icon style={styles.icon}
+          name='info-circle'
+          type='font-awesome'
+          color='#D50000' /><Text style={styles.text}>Logout</Text>
+      </TouchableOpacity>
+
     </View>
   )
 }
