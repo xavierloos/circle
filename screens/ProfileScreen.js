@@ -28,6 +28,7 @@ const ProfileScreen = ({ navigation }) => {
   }
 
   const ModalPoup = ({ visible, children }) => {
+
     const [showModal, setShowModal] = useState(visible)
     const scaleValue = useRef(new Animated.Value(0)).current
 
@@ -85,8 +86,13 @@ const ProfileScreen = ({ navigation }) => {
   }
 
   return (
+
     <View style={styles.container}>
-      <Avatar size={100} rounded source={{ uri: auth?.currentUser?.photoURL }} />
+      {console.log(auth?.currentUser)}
+      <View style={styles.avatarContainer}>
+        <Avatar size={100} rounded source={{ uri: auth?.currentUser?.photoURL }} />
+      </View>
+
       <View style={styles.infoContainer}>
         <Icon style={styles.icon}
           name='user'
@@ -148,21 +154,33 @@ export default ProfileScreen
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: 'flex-start',
+    // alignItems: 'center',
     padding: 10,
     backgroundColor: "white"
+  },
+  avatarContainer: {
+    display: "flex",
+    flexDirection: "row",
+    // alignItems: 'baseline',
+    justifyContent: 'center',
   },
   infoContainer: {
     display: "flex",
     flexDirection: "row",
     alignItems: 'baseline',
-    justifyContent: 'center',
+    // justifyContent: 'center',
   },
   icon: {
-    marginRight: 10
+    marginRight: 10,
+    display: "flex",
+    flexDirection: "row",
+    alignItems: 'baseline',
+    justifyContent: 'center',
   },
+
   text: {
     fontWeight: "600",
     fontSize: 18,
