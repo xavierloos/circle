@@ -86,19 +86,31 @@ const ProfileScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      {console.log(auth?.currentUser)}
       <Avatar size={100} rounded source={{ uri: auth?.currentUser?.photoURL }} />
       <View style={styles.infoContainer}>
         <Icon style={styles.icon}
           name='user'
           type='font-awesome'
-          color='#D50000' /><Text style={styles.text}>{auth?.currentUser?.displaySurname}</Text>
+          color='#D50000' /><Text style={styles.text}>{auth?.currentUser?.displayName}</Text>
       </View>
       <View style={styles.infoContainer}>
         <Icon style={styles.icon}
           name='envelope'
           type='font-awesome'
           color='#D50000' /><Text style={styles.text}>{auth?.currentUser?.email}</Text>
+      </View>
+      <View style={styles.infoContainer}>
+        <Icon style={styles.icon}
+          name='phone'
+          type='font-awesome'
+          color='#D50000' />
+        {auth?.currentUser?.phoneNumber === null && <>
+          <Text style={styles.text}>Add telephone number</Text>
+        </>}
+        {auth?.currentUser?.phoneNumber !== null && <>
+          <Text style={styles.text}>{auth?.currentUser?.email}</Text>
+        </>}
+
       </View>
       <Button raised title="Edit user" containerStyle={styles.button} onPress={() => setVisible(true)} />
       <ModalPoup visible={visible}>
