@@ -107,6 +107,12 @@ const ProfileScreen = ({ navigation }) => {
       </View>
       <View style={styles.infoContainer}>
         <Icon style={styles.icon}
+          name='lock'
+          type='font-awesome'
+          color='#D50000' /><Text style={styles.text}>Change password</Text>
+      </View>
+      <View style={styles.infoContainer}>
+        <Icon style={styles.icon}
           name='phone'
           type='font-awesome'
           color='#D50000' />
