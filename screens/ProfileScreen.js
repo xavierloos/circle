@@ -177,7 +177,7 @@ const ProfileScreen = ({ navigation }) => {
       </View>
       <TouchableOpacity onPress={logout} activeOpacity={0.5} style={styles.infoContainer}>
         <Icon style={styles.icon}
-          name='info-circle'
+          name='sign-out'
           type='font-awesome'
           color='#D50000' /><Text style={styles.text}>Logout</Text>
       </TouchableOpacity>
@@ -195,7 +195,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     // alignItems: 'center',
     padding: 10,
-    backgroundColor: "white"
+    backgroundColor: "white",
   },
   avatarContainer: {
     display: "flex",
@@ -219,7 +219,7 @@ const styles = StyleSheet.create({
 
   text: {
     fontWeight: "600",
-    fontSize: 18,
+    fontSize: 26,
     marginTop: 20
   },
   button: {
