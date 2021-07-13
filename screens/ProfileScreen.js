@@ -154,6 +154,12 @@ const ProfileScreen = ({ navigation }) => {
       <Button raised title="Logout" type="outline" containerStyle={styles.button} onPress={logout} />
       <View style={styles.infoContainer}>
         <Icon style={styles.icon}
+          name='comment'
+          type='font-awesome'
+          color='#D50000' /><Text style={styles.text}>Feedback</Text>
+      </View>
+      <View style={styles.infoContainer}>
+        <Icon style={styles.icon}
           name='info'
           type='font-awesome'
           color='#D50000' /><Text style={styles.text}>About</Text>
