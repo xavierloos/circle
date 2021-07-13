@@ -124,7 +124,7 @@ const ProfileScreen = ({ navigation }) => {
         </>}
       </View>
 
-      <Button raised type="outline" title="Edit user" containerStyle={styles.button} onPress={() => setVisible(true)} />
+      <Button raised type="outline" title="Edit user" containerStyle={styles.button} onPress={() => navigation.navigate("EditProfile")} />
       <ModalPoup visible={visible}>
         <View style={{ alignItems: "center" }}>
           <View style={styles.header}>
@@ -196,7 +196,7 @@ const styles = StyleSheet.create({
     // alignItems: 'center',
     padding: 10,
     backgroundColor: "white",
-    
+
   },
   avatarContainer: {
     display: "flex",
