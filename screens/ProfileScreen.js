@@ -28,6 +28,7 @@ const ProfileScreen = ({ navigation }) => {
   }
 
   const ModalPoup = ({ visible, children }) => {
+
     const [showModal, setShowModal] = useState(visible)
     const scaleValue = useRef(new Animated.Value(0)).current
 
@@ -85,14 +86,18 @@ const ProfileScreen = ({ navigation }) => {
   }
 
   return (
+
     <View style={styles.container}>
       {console.log(auth?.currentUser)}
-      <Avatar size={100} rounded source={{ uri: auth?.currentUser?.photoURL }} />
+      <View style={styles.avatarContainer}>
+        <Avatar size={100} rounded source={{ uri: auth?.currentUser?.photoURL }} />
+      </View>
+
       <View style={styles.infoContainer}>
         <Icon style={styles.icon}
           name='user'
           type='font-awesome'
-          color='#D50000' /><Text style={styles.text}>{auth?.currentUser?.displaySurname}</Text>
+          color='#D50000' /><Text style={styles.text}>{auth?.currentUser?.displayName}</Text>
       </View>
       <View style={styles.infoContainer}>
         <Icon style={styles.icon}
@@ -100,7 +105,26 @@ const ProfileScreen = ({ navigation }) => {
           type='font-awesome'
           color='#D50000' /><Text style={styles.text}>{auth?.currentUser?.email}</Text>
       </View>
-      <Button raised title="Edit user" containerStyle={styles.button} onPress={() => setVisible(true)} />
+      <View style={styles.infoContainer}>
+        <Icon style={styles.icon}
+          name='lock'
+          type='font-awesome'
+          color='#D50000' /><Text style={styles.text}>Password</Text>
+      </View>
+      <View style={styles.infoContainer}>
+        <Icon style={styles.icon}
+          name='phone'
+          type='font-awesome'
+          color='#D50000' />
+        {auth?.currentUser?.phoneNumber === null && <>
+          <Text style={styles.text}>No added yet</Text>
+        </>}
+        {auth?.currentUser?.phoneNumber !== null && <>
+          <Text style={styles.text}>{auth?.currentUser?.email}</Text>
+        </>}
+      </View>
+
+      <Button raised type="outline" title="Edit user" containerStyle={styles.button} onPress={() => navigation.navigate("EditProfile")} />
       <ModalPoup visible={visible}>
         <View style={{ alignItems: "center" }}>
           <View style={styles.header}>
@@ -119,7 +143,7 @@ const ProfileScreen = ({ navigation }) => {
           <View style={styles.content}>
             <Avatar size={100} rounded source={{ uri: auth?.currentUser?.photoURL }} />
           </View>
-          <Input type="text" placeholder={auth?.currentUser?.displayName} value={newName} autoFocus autoCapitalize="none" leftIcon={<Icon name="user" type="font-awesome" size={30} color="#D50000" />}/>
+          <Input type="text" placeholder={auth?.currentUser?.displayName} value={newName} autoFocus autoCapitalize="none" leftIcon={<Icon name="user" type="font-awesome" size={30} color="#D50000" />} />
           <Input type="email" placeholder={auth?.currentUser?.email} value={newEmail} autoCapitalize="none" leftIcon={<Icon name="at" type="font-awesome" size={30} color="#D50000" />} keyboardType="email-address" />
           <Input type="text" placeholder="Profile picture URL" value={newAvatar} leftIcon={<Icon name="photo" type="font-awesome" size={30} color="#D50000" style={{ marginRight: 10 }} />} />
           <Input secureTextEntry type="password" placeholder="Current Password" autoCapitalize="none" leftIcon={<Icon name="lock" type="font-awesome" size={30} color="#D50000" />} value={currentPassword} onChangeText={(text) => setCurrentPassword(text)} />
@@ -127,7 +151,37 @@ const ProfileScreen = ({ navigation }) => {
           <Button raised title="Update user" type="outline" onPress={onChangePasswordPress} />
         </View>
       </ModalPoup>
-      <Button raised title="Logout" type="outline" containerStyle={styles.button} onPress={logout} />
+      <View style={styles.infoContainer}>
+        <Icon style={styles.icon}
+          name='users'
+          type='font-awesome'
+          color='#D50000' /><Text style={styles.text}>Share with friends</Text>
+      </View>
+      <View style={styles.infoContainer}>
+        <Icon style={styles.icon}
+          name='comment'
+          type='font-awesome'
+          color='#D50000' /><Text style={styles.text}>Feedback</Text>
+      </View>
+      <View style={styles.infoContainer}>
+        <Icon style={styles.icon}
+          name='question-circle'
+          type='font-awesome'
+          color='#D50000' /><Text style={styles.text}>Help</Text>
+      </View>
+      <View style={styles.infoContainer}>
+        <Icon style={styles.icon}
+          name='info-circle'
+          type='font-awesome'
+          color='#D50000' /><Text style={styles.text}>About</Text>
+      </View>
+      <TouchableOpacity onPress={logout} activeOpacity={0.5} style={styles.infoContainer}>
+        <Icon style={styles.icon}
+          name='sign-out'
+          type='font-awesome'
+          color='#D50000' /><Text style={styles.text}>Logout</Text>
+      </TouchableOpacity>
+
     </View>
   )
 }
@@ -136,28 +190,42 @@ export default ProfileScreen
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: 'flex-start',
+    // alignItems: 'center',
     padding: 10,
-    backgroundColor: "white"
+    backgroundColor: "white",
+
+  },
+  avatarContainer: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center"
   },
   infoContainer: {
     display: "flex",
     flexDirection: "row",
     alignItems: 'baseline',
-    justifyContent: 'center',
+    // padding:5,
+    // justifyContent: 'center',
   },
   icon: {
-    marginRight: 10
+    marginRight: 10,
+    display: "flex",
+    flexDirection: "row",
+    alignItems: 'baseline',
+    justifyContent: 'center',
   },
+
   text: {
     fontWeight: "600",
-    fontSize: 18,
+    fontSize: 26,
     marginTop: 20
   },
   button: {
-    width: 100,
+    width: "100%",
     marginTop: 20,
   },
   modalBg: {
