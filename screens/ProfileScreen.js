@@ -124,7 +124,7 @@ const ProfileScreen = ({ navigation }) => {
         </>}
       </View>
 
-      <Button raised title="Edit user" containerStyle={styles.button} onPress={() => setVisible(true)} />
+      <Button raised type="outline" title="Edit user" containerStyle={styles.button} onPress={() => setVisible(true)} />
       <ModalPoup visible={visible}>
         <View style={{ alignItems: "center" }}>
           <View style={styles.header}>
@@ -196,6 +196,7 @@ const styles = StyleSheet.create({
     // alignItems: 'center',
     padding: 10,
     backgroundColor: "white",
+    
   },
   avatarContainer: {
     display: "flex",
@@ -207,6 +208,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     alignItems: 'baseline',
+    // padding:5,
     // justifyContent: 'center',
   },
   icon: {
@@ -223,7 +225,7 @@ const styles = StyleSheet.create({
     marginTop: 20
   },
   button: {
-    width: 100,
+    width: "100%",
     marginTop: 20,
   },
   modalBg: {
