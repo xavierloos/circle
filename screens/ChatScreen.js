@@ -57,7 +57,6 @@ const ChatScreen = ({ navigation, route }) => {
           }))))
     return unsubscribe
   }, [route])
-
   return (
     <SafeAreaView >
       <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={styles.container} keyboardVerticalOffset={90} >
