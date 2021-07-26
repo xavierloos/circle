@@ -69,7 +69,6 @@ const AddChatScreen = ({ navigation }) => {
         />
         <Text style={styles.creator}>Created by: {auth?.currentUser?.displayName}</Text>
         <Button style={styles.button} onPress={chooseImage} title="Choose image" />
-        
       </View>
       <Button disabled={!chatDescription} style={styles.button} onPress={createChat} title="Create Circle" />
     </View>
@@ -95,6 +94,6 @@ const styles = StyleSheet.create({
   },
   creator: {
     textAlign: "center",
-    color:"gray"
+    color: "gray"
   }
 })
