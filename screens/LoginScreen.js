@@ -15,7 +15,6 @@ const LoginScreen = ({ navigation }) => {
     })
     return unsubscribe
   }, [])
-
   useLayoutEffect(() => {
     navigation.setOptions({
       headerTitle: "CIRCLE",
@@ -25,7 +24,7 @@ const LoginScreen = ({ navigation }) => {
       headerBackTitle: false,
     })
   }, [navigation])
-  
+
   const singIn = () => {
     auth
       .signInWithEmailAndPassword(email, password)
