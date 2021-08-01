@@ -6,7 +6,7 @@ import { auth } from "../firebase"
 import * as Facebook from 'expo-facebook'
 
 const LoginScreen = ({ navigation }) => {
-  
+
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
@@ -38,7 +38,6 @@ const LoginScreen = ({ navigation }) => {
       await Facebook.initializeAsync({ appId: '165654778951149', });
       const { type, token } = await Facebook.logInWithReadPermissionsAsync({ permissions: ['public_profile', "email"] });
       if (type === 'success') {
-        // Get the user's name using Facebook's Graph API
         const response = await fetch(`https://graph.facebook.com/v2.5/me?fields=email,name,address,picture.type(large)&access_token=${token}`);
         const data = await response.json();
         if (data) { navigation.replace("Home") }
