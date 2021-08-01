@@ -15,6 +15,7 @@ const LoginScreen = ({ navigation }) => {
     })
     return unsubscribe
   }, [])
+  
   useLayoutEffect(() => {
     navigation.setOptions({
       headerTitle: "CIRCLE",
