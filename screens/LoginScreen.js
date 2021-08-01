@@ -22,6 +22,7 @@ const LoginScreen = ({ navigation }) => {
       headerStyle: { backgroundColor: "#D50000" },
       headerTitleStyle: { color: "white" },
       headerTintColor: "white",
+      headerBackTitle: false,
     })
   }, [navigation])
 
@@ -59,7 +60,7 @@ const LoginScreen = ({ navigation }) => {
         <Button raised title="Register" type="outline" containerStyle={styles.button} onPress={() => navigation.navigate("Register")} />
         {Platform.OS === 'ios' && <>
           <Text style={styles.textConnect}>Connect with: </Text>
-          <Button type="clear" containerStyle={styles.buttonFacebook} onPress={loginFacebook} icon={<Icon name="facebook" size={40} color="red" /> } />
+          <Button type="clear" containerStyle={styles.buttonFacebook} onPress={loginFacebook} icon={<Icon name="facebook" size={40} color="red" />} />
         </>}
       </KeyboardAvoidingView>
     </ScrollView>
