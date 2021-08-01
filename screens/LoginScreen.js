@@ -66,6 +66,7 @@ const LoginScreen = ({ navigation }) => {
     </ScrollView>
   )
 }
+
 export default LoginScreen
 const styles = StyleSheet.create({
   scroll: {
