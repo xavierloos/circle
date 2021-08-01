@@ -43,7 +43,7 @@ const LoginScreen = ({ navigation }) => {
         if (data) { navigation.replace("Home") }
       }
     } catch ({ message }) {
-      console.log(`Facebook Login Error: ${message}`);
+      console.log(`Facebook Login Error: ${message}`)
     }
   }
 
