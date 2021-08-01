@@ -25,7 +25,6 @@ const LoginScreen = ({ navigation }) => {
       headerBackTitle: false,
     })
   }, [navigation])
-
   const singIn = () => {
     auth
       .signInWithEmailAndPassword(email, password)
