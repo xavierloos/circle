@@ -1,5 +1,4 @@
 import 'react-native-gesture-handler';
-// import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
@@ -10,6 +9,7 @@ import AddChatScreen from './screens/AddChatScreen';
 import ChatScreen from './screens/ChatScreen';
 import ChatInfoScreen from './screens/ChatInfoScreen';
 import ProfileScreen from './screens/ProfileScreen';
+import EditProfileScreen from './screens/EditProfileScreen';
 import { createStackNavigator } from "@react-navigation/stack";
 
 const Stack = createStackNavigator();
@@ -17,7 +17,7 @@ const Stack = createStackNavigator();
 const globalScreenOptions = {
   headerStyle: { backgroundColor: "#2c6bed" },
   headerTitleStyle: { color: "white" },
-  headerTintColor: "whi"
+  headerTintColor: "white"
 }
 
 export default function App() {
@@ -34,6 +34,7 @@ export default function App() {
         <Stack.Screen name="Chat" component={ChatScreen} />
         <Stack.Screen name="ChatInfo" component={ChatInfoScreen} />
         <Stack.Screen name="Profile" component={ProfileScreen} />
+        <Stack.Screen name="EditProfile" component={EditProfileScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
