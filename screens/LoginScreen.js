@@ -88,7 +88,6 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     width: 300,
-
   },
   input: {
     textTransform: 'lowercase'
