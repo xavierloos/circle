@@ -181,7 +181,6 @@ const ProfileScreen = ({ navigation }) => {
           type='font-awesome'
           color='#D50000' /><Text style={styles.text}>Logout</Text>
       </TouchableOpacity>
-
     </View>
   )
 }
