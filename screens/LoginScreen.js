@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     paddingTop: 50
   },
-  
+
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -82,6 +82,7 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: "white"
   },
+  
   title: {
     marginBottom: 50,
     fontWeight: "700",
