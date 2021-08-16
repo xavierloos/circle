@@ -70,6 +70,7 @@ const LoginScreen = ({ navigation }) => {
 export default LoginScreen
 
 const styles = StyleSheet.create({
+  
   scroll: {
     backgroundColor: "white",
     paddingTop: 50
@@ -82,7 +83,7 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: "white"
   },
-  
+
   title: {
     marginBottom: 50,
     fontWeight: "700",
