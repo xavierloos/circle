@@ -12,6 +12,7 @@ const EditProfileScreen = ({ navigation }) => {
       headerBackTitle: "Cancel",
     });
   }, [navigation])
+  
   return (
     <View>
       <Text>Edit profile</Text>
