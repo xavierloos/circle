@@ -20,5 +20,5 @@ const EditProfileScreen = ({navigation}) => {
 
 export default EditProfileScreen
 
-const styles = StyleSheet.create({})
+// const styles = StyleSheet.create({})
 
