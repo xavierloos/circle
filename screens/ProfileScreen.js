@@ -207,7 +207,6 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     alignItems: 'baseline',
-    // padding:5,
     // justifyContent: 'center',
   },
   icon: {
