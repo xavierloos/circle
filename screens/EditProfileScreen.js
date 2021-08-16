@@ -1,7 +1,8 @@
 import React, { useLayoutEffect } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
-const EditProfileScreen = ({navigation}) => {
+const EditProfileScreen = ({ navigation }) => {
+  
   useLayoutEffect(() => {
     navigation.setOptions({
       headerTitle: "Edit Profile",
