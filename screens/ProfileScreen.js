@@ -193,7 +193,6 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
     justifyContent: 'flex-start',
-    // alignItems: 'center',
     padding: 10,
     backgroundColor: "white",
 
