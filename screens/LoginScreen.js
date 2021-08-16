@@ -89,10 +89,11 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     color: "#D50000"
   },
-  
+
   inputContainer: {
     width: 300,
   },
+  
   input: {
     textTransform: 'lowercase'
   },
