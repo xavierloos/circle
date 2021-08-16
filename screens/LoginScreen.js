@@ -103,12 +103,13 @@ const styles = StyleSheet.create({
     marginTop: 10,
     color: "red"
   },
-  
+
   textConnect: {
     marginTop: 20,
     fontWeight: "500",
     color: "#D50000"
   },
+  
   buttonFacebook: {
     marginTop: 10,
     backgroundColor: "white"
