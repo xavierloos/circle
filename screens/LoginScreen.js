@@ -97,12 +97,13 @@ const styles = StyleSheet.create({
   input: {
     textTransform: 'lowercase'
   },
-  
+
   button: {
     width: 200,
     marginTop: 10,
     color: "red"
   },
+  
   textConnect: {
     marginTop: 20,
     fontWeight: "500",
