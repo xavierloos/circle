@@ -70,10 +70,12 @@ const LoginScreen = ({ navigation }) => {
 export default LoginScreen
 
 const styles = StyleSheet.create({
+
   scroll: {
     backgroundColor: "white",
     paddingTop: 50
   },
+
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -81,27 +83,33 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: "white"
   },
+
   title: {
     marginBottom: 50,
     fontWeight: "700",
     color: "#D50000"
   },
+
   inputContainer: {
     width: 300,
   },
+
   input: {
     textTransform: 'lowercase'
   },
+
   button: {
     width: 200,
     marginTop: 10,
     color: "red"
   },
+
   textConnect: {
     marginTop: 20,
     fontWeight: "500",
     color: "#D50000"
   },
+  
   buttonFacebook: {
     marginTop: 10,
     backgroundColor: "white"
