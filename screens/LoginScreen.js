@@ -93,10 +93,11 @@ const styles = StyleSheet.create({
   inputContainer: {
     width: 300,
   },
-  
+
   input: {
     textTransform: 'lowercase'
   },
+  
   button: {
     width: 200,
     marginTop: 10,
