@@ -1,4 +1,4 @@
-# hiMate
+# Circle
 
 Group chat app
 
