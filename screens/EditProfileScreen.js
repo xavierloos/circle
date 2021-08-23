@@ -4,6 +4,11 @@ import { auth } from "../firebase"
 import { Avatar, Icon, Input } from 'react-native-elements'
 
 const EditProfileScreen = ({ navigation }) => {
+  const [newName, setNewName] = useState("")
+  const [newEmail, setNewEmail] = useState("")
+  const [newAvatar, setNewAvatar] = useState("")
+  const [newPassword, setNewPassword] = useState("")
+  const [currentPassword, setCurrentPassword] = useState("")
 
   useLayoutEffect(() => {
     navigation.setOptions({
