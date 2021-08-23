@@ -181,6 +181,7 @@ const ProfileScreen = ({ navigation }) => {
           type='font-awesome'
           color='#D50000' /><Text style={styles.text}>Logout</Text>
       </TouchableOpacity>
+
     </View>
   )
 }
@@ -192,6 +193,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
     justifyContent: 'flex-start',
+    // alignItems: 'center',
     padding: 10,
     backgroundColor: "white",
 
@@ -206,6 +208,8 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     alignItems: 'baseline',
+    // padding:5,
+    // justifyContent: 'center',
   },
   icon: {
     marginRight: 10,
