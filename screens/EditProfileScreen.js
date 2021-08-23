@@ -1,7 +1,7 @@
-import React, { useLayoutEffect } from 'react'
+import React, { useLayoutEffect, useState } from 'react'
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import { auth } from "../firebase"
-import { Avatar, Icon, Input } from 'react-native-elements'
+import { Avatar, Icon, Input, Button } from 'react-native-elements'
 
 const EditProfileScreen = ({ navigation }) => {
   const [newName, setNewName] = useState("")
@@ -19,6 +19,23 @@ const EditProfileScreen = ({ navigation }) => {
       headerBackTitle: "Cancel",
     });
   }, [navigation])
+
+  const onChangePasswordPress = () => {
+    reauthenticate(currentPassword)
+      .then(() => {
+        var user = firebase.auth().currentUser
+        console.log(user)
+        user.updatePassword(newPassword)
+          .then(() => {
+            Alert.alert("User details updated")
+          }).catch((e) => {
+            Alert.alert(e.message)
+          })
+      }).catch((e) => {
+        Alert.alert(e.message)
+      })
+
+  }
 
   return (
     <View>
