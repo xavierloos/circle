@@ -36,6 +36,12 @@ const EditProfileScreen = ({ navigation }) => {
       })
 
   }
+  const reauthenticate = currentPassword => {
+    var user = firebase.auth().currentUser
+    var cred = firebase.auth.EmailAuthProvider.credential(user.email, currentPassword)
+    return user.reauthenticateWithCredential(cred)
+  }
+
 
   return (
     <ScrollView style={styles.scroll}>
@@ -84,8 +90,6 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     alignItems: 'baseline',
-    // padding:5,
-    // justifyContent: 'center',
   },
   icon: {
     marginRight: 10,
