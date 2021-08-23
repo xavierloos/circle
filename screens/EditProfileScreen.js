@@ -38,7 +38,7 @@ const EditProfileScreen = ({ navigation }) => {
   }
 
   return (
-    
+    <ScrollView style={styles.scroll}>
       <KeyboardAvoidingView behavior="padding" style={styles.container}>
         <View style={styles.container}>
           <Text>Edit profile</Text>
@@ -55,7 +55,7 @@ const EditProfileScreen = ({ navigation }) => {
           </View>
         </View>
       </KeyboardAvoidingView>
-
+    </ScrollView>
   )
 }
 
