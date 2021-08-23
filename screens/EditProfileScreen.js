@@ -1,8 +1,9 @@
 import React, { useLayoutEffect } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-
+import { auth } from "../firebase"
+import { Avatar } from 'react-native-elements'
 const EditProfileScreen = ({ navigation }) => {
-  
+
   useLayoutEffect(() => {
     navigation.setOptions({
       headerTitle: "Edit Profile",
@@ -12,15 +13,18 @@ const EditProfileScreen = ({ navigation }) => {
       headerBackTitle: "Cancel",
     });
   }, [navigation])
-  
+
   return (
     <View>
       <Text>Edit profile</Text>
+      <View style={styles.content}>
+        <Avatar size={100} rounded source={{ uri: auth?.currentUser?.photoURL }} />
+      </View>
     </View>
   )
 }
 
 export default EditProfileScreen
 
-// const styles = StyleSheet.create({})
+ const styles = StyleSheet.create({})
 
