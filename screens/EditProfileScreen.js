@@ -70,5 +70,64 @@ const EditProfileScreen = ({ navigation }) => {
 
 export default EditProfileScreen
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: 'flex-start',
+    padding: 10,
+    backgroundColor: "white",
+
+  },
+  avatarContainer: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  infoContainer: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: 'baseline',
+    // padding:5,
+    // justifyContent: 'center',
+  },
+  icon: {
+    marginRight: 10,
+    display: "flex",
+    flexDirection: "row",
+    alignItems: 'baseline',
+    justifyContent: 'center',
+  },
+
+  text: {
+    fontWeight: "600",
+    fontSize: 26,
+    marginTop: 20
+  },
+  button: {
+    width: "100%",
+    marginTop: 20,
+  },
+  modalBg: {
+    flex: 1,
+    backgroundColor: "rgba(0,0,0,0.5)",
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  modalContainer: {
+    width: "80%",
+    backgroundColor: "white",
+    paddingHorizontal: 20,
+    paddingVertical: 20,
+    borderRadius: 20,
+    elevation: 20
+  },
+  header: {
+    display: "flex",
+    flexDirection: "row",
+    width: '100%',
+    justifyContent: "space-between"
+  }
+})
 
