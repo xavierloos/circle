@@ -1,5 +1,5 @@
 import React, { useLayoutEffect, useState } from 'react'
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, ScrollView, KeyboardAvoidingView } from 'react-native'
 import { auth } from "../firebase"
 import { Avatar, Icon, Input, Button } from 'react-native-elements'
 
@@ -62,6 +62,10 @@ const EditProfileScreen = ({ navigation }) => {
 export default EditProfileScreen
 
 const styles = StyleSheet.create({
+  scroll: {
+    backgroundColor: "white",
+    paddingTop: 50
+  },
   container: {
     display: "flex",
     flexDirection: "column",
