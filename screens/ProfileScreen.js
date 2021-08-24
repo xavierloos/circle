@@ -68,23 +68,6 @@ const ProfileScreen = ({ navigation }) => {
     return user.reauthenticateWithCredential(cred)
   }
 
-  const onChangePasswordPress = () => {
-    reauthenticate(currentPassword)
-      .then(() => {
-        var user = firebase.auth().currentUser
-        console.log(user)
-        user.updatePassword(newPassword)
-          .then(() => {
-            Alert.alert("User details updated")
-          }).catch((e) => {
-            Alert.alert(e.message)
-          })
-      }).catch((e) => {
-        Alert.alert(e.message)
-      })
-
-  }
-
   return (
 
     <View style={styles.container}>
