@@ -84,10 +84,13 @@ const styles = StyleSheet.create({
     backgroundColor: "white"
   },
   circle: {
-    padding: 10,
+    padding: 35,
+    width:"50%",
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: "red",
+    borderWidth: 5,
+    borderColor: "#D50000",
+    borderRadius:100,
     marginBottom: 50,
   },
   title: {
