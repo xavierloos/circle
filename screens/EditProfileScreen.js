@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useState } from 'react'
-import { StyleSheet, Text, View, ScrollView, KeyboardAvoidingView } from 'react-native'
+import { StyleSheet, Text, View, ScrollView, KeyboardAvoidingView, Alert } from 'react-native'
 import { auth } from "../firebase"
-import { Avatar, Icon, Input, Button, Alert } from 'react-native-elements'
+import { Avatar, Icon, Input, Button } from 'react-native-elements'
 import firebase from "firebase"
 
 const EditProfileScreen = ({ navigation }) => {
