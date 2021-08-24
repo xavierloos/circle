@@ -5,7 +5,7 @@ import { auth } from '../firebase'
 import firebase from "firebase"
 
 const ProfileScreen = ({ navigation }) => {
-  const [visible, setVisible] = useState(true)
+  const [visible, setVisible] = useState(false)
   const [newName, setNewName] = useState("")
   const [newEmail, setNewEmail] = useState("")
   const [newAvatar, setNewAvatar] = useState("")
@@ -134,12 +134,12 @@ const ProfileScreen = ({ navigation }) => {
               color='#D50000' />
             <Text h3>Are you sure you want to log out?</Text> 
           </View>
-          <TouchableOpacity activeOpacity={0.5} onPress={() => setVisible(false)} >
-              <Button raised title="No, cancel" type="outline" onPress={() => setVisible(false)} />
-            </TouchableOpacity>
-            <TouchableOpacity activeOpacity={0.5} onPress={() => setVisible(false)} >
-              <Button raised title="Yes, log me out" type="outline" onPress={logout} />
-            </TouchableOpacity>
+          <TouchableOpacity style={styles.button} activeOpacity={0.5} onPress={() => setVisible(false)} >
+            <Button raised title="No, cancel" type="outline" onPress={() => setVisible(false)} />
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.button} activeOpacity={0.5} onPress={() => setVisible(false)} >
+            <Button raised title="Yes, log me out" type="outline" onPress={logout} />
+          </TouchableOpacity>
         </View>
       </ModalPoup>
       <View style={styles.infoContainer}>
@@ -166,7 +166,7 @@ const ProfileScreen = ({ navigation }) => {
           type='font-awesome'
           color='#D50000' /><Text style={styles.text}>About</Text>
       </View>
-      <TouchableOpacity onPress={logout} activeOpacity={0.5} style={styles.infoContainer}>
+      <TouchableOpacity onPress={() => setVisible(true)} activeOpacity={0.5} style={styles.infoContainer}>
         <Icon style={styles.icon}
           name='sign-out'
           type='font-awesome'
@@ -235,8 +235,8 @@ const styles = StyleSheet.create({
   },
   header: {
     display: "flex",
-    flexDirection: "row",
+    // flexDirection: "row",
     width: '100%',
-    justifyContent: "space-between"
+    justifyContent: "center"
   }
 })
