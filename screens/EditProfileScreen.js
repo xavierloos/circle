@@ -1,5 +1,5 @@
 import React, { useLayoutEffect, useState } from 'react'
-import { StyleSheet, Text, View, ScrollView, KeyboardAvoidingView, Alert } from 'react-native'
+import { StyleSheet, View, ScrollView, KeyboardAvoidingView, Alert } from 'react-native'
 import { auth } from "../firebase"
 import { Avatar, Icon, Input, Button } from 'react-native-elements'
 import firebase from "firebase"
@@ -48,7 +48,6 @@ const EditProfileScreen = ({ navigation }) => {
     <ScrollView style={styles.scroll}>
       <KeyboardAvoidingView behavior="padding" style={styles.container}>
         <View style={styles.container}>
-          <Text>Edit profile</Text>
           <View style={{ alignItems: "center" }}>
             <View style={styles.content}>
               <Avatar size={100} rounded source={{ uri: auth?.currentUser?.photoURL }} />
