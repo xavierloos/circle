@@ -132,16 +132,14 @@ const ProfileScreen = ({ navigation }) => {
               name='question'
               type='font-awesome'
               color='#D50000' />
-            <Text h3>Are you sure you want to log out?</Text>
-            <TouchableOpacity activeOpacity={0.5} onPress={() => setVisible(false)} >
+            <Text h3>Are you sure you want to log out?</Text> 
+          </View>
+          <TouchableOpacity activeOpacity={0.5} onPress={() => setVisible(false)} >
               <Button raised title="No, cancel" type="outline" onPress={() => setVisible(false)} />
             </TouchableOpacity>
             <TouchableOpacity activeOpacity={0.5} onPress={() => setVisible(false)} >
               <Button raised title="Yes, log me out" type="outline" onPress={logout} />
             </TouchableOpacity>
-          </View>
-
-          <Button raised title="No, cancel" type="outline" onPress={() => setVisible(false)} />
         </View>
       </ModalPoup>
       <View style={styles.infoContainer}>
