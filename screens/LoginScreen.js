@@ -84,8 +84,8 @@ const styles = StyleSheet.create({
     backgroundColor: "white"
   },
   circle: {
-    paddingVertical: 50,
-    width:150,
+    width: 150,
+    height:150,
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 5,
