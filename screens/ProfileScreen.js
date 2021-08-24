@@ -6,11 +6,6 @@ import firebase from "firebase"
 
 const ProfileScreen = ({ navigation }) => {
   const [visible, setVisible] = useState(false)
-  const [newName, setNewName] = useState("")
-  const [newEmail, setNewEmail] = useState("")
-  const [newAvatar, setNewAvatar] = useState("")
-  const [newPassword, setNewPassword] = useState("")
-  const [currentPassword, setCurrentPassword] = useState("")
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -92,7 +87,6 @@ const ProfileScreen = ({ navigation }) => {
       <View style={styles.avatarContainer}>
         <Avatar size={100} rounded source={{ uri: auth?.currentUser?.photoURL }} />
       </View>
-
       <View style={styles.infoContainer}>
         <Icon style={styles.icon}
           name='user'
