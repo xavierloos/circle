@@ -83,8 +83,14 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: "white"
   },
-  title: {
+  circle: {
+    padding: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: "red",
     marginBottom: 50,
+  },
+  title: {
     fontWeight: "700",
     color: "#D50000"
   },
