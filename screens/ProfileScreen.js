@@ -5,7 +5,7 @@ import { auth } from '../firebase'
 import firebase from "firebase"
 
 const ProfileScreen = ({ navigation }) => {
-  const [visible, setVisible] = useState(false)
+  const [visible, setVisible] = useState(true)
   const [newName, setNewName] = useState("")
   const [newEmail, setNewEmail] = useState("")
   const [newAvatar, setNewAvatar] = useState("")
@@ -68,6 +68,23 @@ const ProfileScreen = ({ navigation }) => {
     return user.reauthenticateWithCredential(cred)
   }
 
+  const onChangePasswordPress = () => {
+    reauthenticate(currentPassword)
+      .then(() => {
+        var user = firebase.auth().currentUser
+        console.log(user)
+        user.updatePassword(newPassword)
+          .then(() => {
+            Alert.alert("User details updated")
+          }).catch((e) => {
+            Alert.alert(e.message)
+          })
+      }).catch((e) => {
+        Alert.alert(e.message)
+      })
+
+  }
+
   return (
 
     <View style={styles.container}>
@@ -108,6 +125,21 @@ const ProfileScreen = ({ navigation }) => {
       </View>
 
       <Button raised type="outline" title="Edit user" containerStyle={styles.button} onPress={() => navigation.navigate("EditProfile")} />
+      <ModalPoup visible={visible}>
+        <View style={{ alignItems: "center" }}>
+          <View style={styles.header}>
+            <Text h5>Are you sure you want to log out</Text>
+            <TouchableOpacity activeOpacity={0.5} onPress={() => setVisible(false)} >
+              <Icon style={styles.icon}
+                name='question'
+                type='font-awesome'
+                color='#D50000' />
+            </TouchableOpacity>
+          </View>
+          <Button raised title="Yes, log me out" type="outline" onPress={() => logout()} />
+          <Button raised title="No, cancel" type="outline" onPress={() => setVisible(false)} />
+        </View>
+      </ModalPoup>
       <View style={styles.infoContainer}>
         <Icon style={styles.icon}
           name='users'
