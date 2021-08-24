@@ -128,15 +128,19 @@ const ProfileScreen = ({ navigation }) => {
       <ModalPoup visible={visible}>
         <View style={{ alignItems: "center" }}>
           <View style={styles.header}>
-            <Text h5>Are you sure you want to log out</Text>
+            <Icon style={styles.icon}
+              name='question'
+              type='font-awesome'
+              color='#D50000' />
+            <Text h3>Are you sure you want to log out?</Text>
             <TouchableOpacity activeOpacity={0.5} onPress={() => setVisible(false)} >
-              <Icon style={styles.icon}
-                name='question'
-                type='font-awesome'
-                color='#D50000' />
+              <Button raised title="No, cancel" type="outline" onPress={() => setVisible(false)} />
+            </TouchableOpacity>
+            <TouchableOpacity activeOpacity={0.5} onPress={() => setVisible(false)} >
+              <Button raised title="Yes, log me out" type="outline" onPress={logout} />
             </TouchableOpacity>
           </View>
-          <Button raised title="Yes, log me out" type="outline" onPress={() => logout()} />
+
           <Button raised title="No, cancel" type="outline" onPress={() => setVisible(false)} />
         </View>
       </ModalPoup>
