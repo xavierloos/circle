@@ -83,22 +83,20 @@ const styles = StyleSheet.create({
     
   },
   container: {
-    // flex: 1,
-    // justifyContent: 'center',
-    // alignItems: 'center',
-    // padding: 10,
-    backgroundColor: "transparent",
-    position:"absolute",
-    zIndex: 1,
-    top:-100
+    flex: 1,
+    height:"100%",
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 10,
+    backgroundColor: "transparent", 
+    top:200
   },
   headerCircle: {
     width: "100%",
     height: 400,
     backgroundColor: "#D50000",
     borderBottomEndRadius: 2000,
-    // position: "absolute",
-    // zIndex:1,
+    position: "absolute",
     top: -100,
     left:-0
   },
@@ -111,6 +109,7 @@ const styles = StyleSheet.create({
     borderColor: "#D50000",
     borderRadius: 100,
     marginBottom: 50,
+    backgroundColor: "white",
     
   },
   title: {
