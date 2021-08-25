@@ -89,15 +89,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 10,
     backgroundColor: "transparent", 
-    top:200
+    top:100
   },
   headerCircle: {
     width: "100%",
     height: 400,
     backgroundColor: "#D50000",
-    borderBottomEndRadius: 2000,
+    borderRadius: 2000,
     position: "absolute",
-    top: -100,
+    top: -200,
     left:-0
   },
   circle: {
