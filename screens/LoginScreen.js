@@ -89,14 +89,14 @@ const styles = StyleSheet.create({
     backgroundColor: "white"
   },
   headerCircle: {
-    width: 500,
-    height: 500,
+    width: "100%",
+    height: 400,
     backgroundColor: "#D50000",
     borderBottomEndRadius: 2000,
     position: "absolute",
     zIndex:1,
-    top: -200,
-    left:-80
+    top: -100,
+    left:-0
   },
   circle: {
     width: 150,
