@@ -18,12 +18,11 @@ const LoginScreen = ({ navigation }) => {
 
   useLayoutEffect(() => {
     navigation.setOptions({
-      headerTitle: "CIRCLE",
+      headerTitle:false,
       headerStyle: { backgroundColor: "#D50000" },
-      headerTitleStyle: { color: "white" },
-      headerTintColor: "white",
       headerBackTitle: false,
-      borderWidth:0
+      borderWidth:0,
+      
     })
   }, [navigation])
 
