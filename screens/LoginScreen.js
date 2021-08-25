@@ -21,7 +21,8 @@ const LoginScreen = ({ navigation }) => {
       headerTitle:false,
       headerStyle: { backgroundColor: "#D50000" },
       headerBackTitle: false,
-      borderWidth:0,
+      borderWidth: 0,
+      headerShown: false
       
     })
   }, [navigation])
