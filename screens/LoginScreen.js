@@ -79,23 +79,26 @@ export default LoginScreen
 
 const styles = StyleSheet.create({
   scroll: {
-    backgroundColor: "white",
-    paddingTop: 50
+    backgroundColor: "transparent",
+    
   },
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 10,
-    backgroundColor: "white"
+    // flex: 1,
+    // justifyContent: 'center',
+    // alignItems: 'center',
+    // padding: 10,
+    backgroundColor: "transparent",
+    position:"absolute",
+    zIndex: 1,
+    top:-100
   },
   headerCircle: {
     width: "100%",
     height: 400,
     backgroundColor: "#D50000",
     borderBottomEndRadius: 2000,
-    position: "absolute",
-    zIndex:1,
+    // position: "absolute",
+    // zIndex:1,
     top: -100,
     left:-0
   },
