@@ -23,6 +23,7 @@ const LoginScreen = ({ navigation }) => {
       headerTitleStyle: { color: "white" },
       headerTintColor: "white",
       headerBackTitle: false,
+      borderWidth:0
     })
   }, [navigation])
 
@@ -89,10 +90,14 @@ const styles = StyleSheet.create({
     backgroundColor: "white"
   },
   headerCircle: {
-    width: "100%",
-    height: 150,
+    width: 500,
+    height: 500,
     backgroundColor: "#D50000",
-    borderRadius: 100,
+    borderBottomEndRadius: 2000,
+    position: "absolute",
+    zIndex:1,
+    top: -200,
+    left:-80
   },
   circle: {
     width: 150,
@@ -103,6 +108,7 @@ const styles = StyleSheet.create({
     borderColor: "#D50000",
     borderRadius: 100,
     marginBottom: 50,
+    
   },
   title: {
     fontWeight: "700",
