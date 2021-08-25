@@ -47,25 +47,30 @@ const LoginScreen = ({ navigation }) => {
   }
 
   return (
-    <ScrollView style={styles.scroll}>
-      <KeyboardAvoidingView behavior="padding" style={styles.container}>
-        <StatusBar style="light" />
-        <View style={styles.circle}>
-          <Text h2 style={styles.title}>Login</Text>
-        </View>
-        
-        <View style={styles.inputContainer}>
-          <Input style={styles.input} type="email" autoCapitalize="none" placeholder="Email" autoFocus value={email} onChangeText={(text) => setEmail(text)} leftIcon={<Icon name="at" type="font-awesome" size={30} color="#D50000" />} />
-          <Input secureTextEntry type="password" autoCapitalize placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} onSubmitEditing={singIn} leftIcon={<Icon name="lock" type="font-awesome" size={30} color="#D50000" />} />
-        </View>
-        <Button raised disabled={!password && !email} title="Login" containerStyle={styles.button} onPress={singIn} />
-        <Button raised title="Register" type="outline" containerStyle={styles.button} onPress={() => navigation.navigate("Register")} />
-        {Platform.OS === 'ios' && <>
-          <Text style={styles.textConnect}>Connect with: </Text>
-          <Button type="clear" containerStyle={styles.buttonFacebook} onPress={loginFacebook} icon={<Icon name="facebook" size={40} color="red" />} />
-        </>}
-      </KeyboardAvoidingView>
-    </ScrollView>
+    <View>
+      <View style={styles.headerCircle}>
+      </View>
+      <ScrollView style={styles.scroll}>
+        <KeyboardAvoidingView behavior="padding" style={styles.container}>
+          <StatusBar style="light" />
+          <View style={styles.circle}>
+            <Text h2 style={styles.title}>Login</Text>
+          </View>
+
+          <View style={styles.inputContainer}>
+            <Input style={styles.input} type="email" autoCapitalize="none" placeholder="Email" autoFocus value={email} onChangeText={(text) => setEmail(text)} leftIcon={<Icon name="at" type="font-awesome" size={30} color="#D50000" />} />
+            <Input secureTextEntry type="password" autoCapitalize placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} onSubmitEditing={singIn} leftIcon={<Icon name="lock" type="font-awesome" size={30} color="#D50000" />} />
+          </View>
+          <Button raised disabled={!password && !email} title="Login" containerStyle={styles.button} onPress={singIn} />
+          <Button raised title="Register" type="outline" containerStyle={styles.button} onPress={() => navigation.navigate("Register")} />
+          {Platform.OS === 'ios' && <>
+            <Text style={styles.textConnect}>Connect with: </Text>
+            <Button type="clear" containerStyle={styles.buttonFacebook} onPress={loginFacebook} icon={<Icon name="facebook" size={40} color="red" />} />
+          </>}
+        </KeyboardAvoidingView>
+      </ScrollView>
+    </View>
+
   )
 }
 
@@ -83,14 +88,20 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: "white"
   },
+  headerCircle: {
+    width: "100%",
+    height: 150,
+    backgroundColor: "#D50000",
+    borderRadius: 100,
+  },
   circle: {
     width: 150,
-    height:150,
+    height: 150,
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 5,
     borderColor: "#D50000",
-    borderRadius:100,
+    borderRadius: 100,
     marginBottom: 50,
   },
   title: {
