@@ -91,6 +91,7 @@ const styles = StyleSheet.create({
     backgroundColor: "transparent", 
     top:100
   },
+  
   headerCircle: {
     width: "100%",
     height: 400,
