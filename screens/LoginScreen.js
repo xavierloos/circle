@@ -50,7 +50,7 @@ const LoginScreen = ({ navigation }) => {
   return (
     <View>
       <View style={styles.headerCircle}>
-        <Text h2 style={styles.headerTitle}>CIRCLE</Text>
+        <Text style={styles.headerTitle}>CIRCLE</Text>
       </View>
       <ScrollView style={styles.scroll}>
         <KeyboardAvoidingView behavior="padding" style={styles.container}>
@@ -104,10 +104,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   headerTitle: {
-    fontWeight: "900",
-    fontSize: 50,
+    fontWeight: "700",
+    fontSize: 60,
     color: "white",
-    marginBottom:20
+    marginBottom:40
   },
   circle: {
     width: 150,
