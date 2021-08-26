@@ -107,7 +107,8 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     fontSize: 60,
     color: "white",
-    marginBottom:40
+    marginBottom: 50,
+    letterSpacing:7
   },
   circle: {
     width: 150,
