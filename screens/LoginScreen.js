@@ -51,6 +51,7 @@ const LoginScreen = ({ navigation }) => {
     <View style={styles.container}>
       <View style={styles.headerCircle}>
         <Text style={styles.headerTitle}>CIRCLE</Text>
+        
       </View>
       <ScrollView style={styles.scroll}>
         <KeyboardAvoidingView behavior="padding" style={styles.formContainer}>
