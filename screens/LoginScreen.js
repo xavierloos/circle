@@ -18,12 +18,12 @@ const LoginScreen = ({ navigation }) => {
 
   useLayoutEffect(() => {
     navigation.setOptions({
-      headerTitle:false,
+      headerTitle: false,
       headerStyle: { backgroundColor: "#D50000" },
       headerBackTitle: false,
       borderWidth: 0,
       headerShown: false
-      
+
     })
   }, [navigation])
 
@@ -50,6 +50,7 @@ const LoginScreen = ({ navigation }) => {
   return (
     <View>
       <View style={styles.headerCircle}>
+        <Text h2 style={styles.headerTitle}>CIRCLE</Text>
       </View>
       <ScrollView style={styles.scroll}>
         <KeyboardAvoidingView behavior="padding" style={styles.container}>
@@ -80,16 +81,16 @@ export default LoginScreen
 const styles = StyleSheet.create({
   scroll: {
     backgroundColor: "transparent",
-    
+
   },
   container: {
     flex: 1,
-    height:"100%",
+    height: "100%",
     justifyContent: 'center',
     alignItems: 'center',
     padding: 10,
-    backgroundColor: "transparent", 
-    top:100
+    backgroundColor: "transparent",
+    top: 100
   },
   headerCircle: {
     width: "100%",
@@ -98,7 +99,12 @@ const styles = StyleSheet.create({
     borderRadius: 2000,
     position: "absolute",
     top: -200,
-    left:-0
+    left: -0,
+    justifyContent:"center",
+  },
+  headerTitle: {
+    fontWeight: "700",
+    color: "white",
   },
   circle: {
     width: 150,
@@ -110,7 +116,7 @@ const styles = StyleSheet.create({
     borderRadius: 100,
     marginBottom: 50,
     backgroundColor: "white",
-    
+
   },
   title: {
     fontWeight: "700",
