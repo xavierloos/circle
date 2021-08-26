@@ -56,7 +56,13 @@ const LoginScreen = ({ navigation }) => {
         <KeyboardAvoidingView behavior="padding" style={styles.formContainer}>
           <StatusBar style="light" />
           <View style={styles.inputContainer}>
-          <Text h2 style={styles.title}>Login</Text>
+            <Text h2 style={styles.title}>Login</Text>
+            {/* <Text>
+        <Text style={styles.username} >
+           Hello
+        </Text>
+        <Text style={styles.content}>is me</Text>
+    </Text> */}
             <Input style={styles.input} type="email" autoCapitalize="none" placeholder="Email" autoFocus value={email} onChangeText={(text) => setEmail(text)} leftIcon={<Icon name="at" type="font-awesome" size={30} color="#D50000" />} />
             <Input secureTextEntry type="password" autoCapitalize placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} onSubmitEditing={singIn} leftIcon={<Icon name="lock" type="font-awesome" size={30} color="#D50000" />} />
           </View>
@@ -83,13 +89,12 @@ const styles = StyleSheet.create({
   container: {
     height: "100%",
     display: "flex",
-    flexDirection:"column",
+    flexDirection: "column",
     backgroundColor: "white",
   },
   formContainer: {
-    justifyContent: 'center',
     alignItems: 'center',
-    padding: 10,
+    // padding: 10,
     backgroundColor: "white",
   },
   headerCircle: {
@@ -107,7 +112,7 @@ const styles = StyleSheet.create({
     fontSize: 60,
     color: "white",
     marginBottom: 50,
-    letterSpacing:7
+    letterSpacing: 7
   },
   title: {
     fontWeight: "700",
