@@ -6,11 +6,6 @@ import firebase from "firebase"
 
 const ProfileScreen = ({ navigation }) => {
   const [visible, setVisible] = useState(false)
-  const [newName, setNewName] = useState("")
-  const [newEmail, setNewEmail] = useState("")
-  const [newAvatar, setNewAvatar] = useState("")
-  const [newPassword, setNewPassword] = useState("")
-  const [currentPassword, setCurrentPassword] = useState("")
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -86,13 +81,11 @@ const ProfileScreen = ({ navigation }) => {
   }
 
   return (
-
     <View style={styles.container}>
       {console.log(auth?.currentUser)}
       <View style={styles.avatarContainer}>
         <Avatar size={100} rounded source={{ uri: auth?.currentUser?.photoURL }} />
       </View>
-
       <View style={styles.infoContainer}>
         <Icon style={styles.icon}
           name='user'
@@ -123,32 +116,22 @@ const ProfileScreen = ({ navigation }) => {
           <Text style={styles.text}>{auth?.currentUser?.email}</Text>
         </>}
       </View>
-
       <Button raised type="outline" title="Edit user" containerStyle={styles.button} onPress={() => navigation.navigate("EditProfile")} />
       <ModalPoup visible={visible}>
         <View style={{ alignItems: "center" }}>
           <View style={styles.header}>
-            <Text h4><Icon style={styles.icon}
-              name='pencil'
+            <Icon style={styles.icon}
+              name='question'
               type='font-awesome'
-              color='#D50000' />Edit user</Text>
-            <TouchableOpacity activeOpacity={0.5} onPress={() => setVisible(false)} >
-              <Icon style={styles.icon}
-                name='times'
-                type='font-awesome'
-                color='#D50000' />
-            </TouchableOpacity>
+              color='#D50000' />
+            <Text h3>Are you sure you want to log out?</Text> 
           </View>
-
-          <View style={styles.content}>
-            <Avatar size={100} rounded source={{ uri: auth?.currentUser?.photoURL }} />
-          </View>
-          <Input type="text" placeholder={auth?.currentUser?.displayName} value={newName} autoFocus autoCapitalize="none" leftIcon={<Icon name="user" type="font-awesome" size={30} color="#D50000" />} />
-          <Input type="email" placeholder={auth?.currentUser?.email} value={newEmail} autoCapitalize="none" leftIcon={<Icon name="at" type="font-awesome" size={30} color="#D50000" />} keyboardType="email-address" />
-          <Input type="text" placeholder="Profile picture URL" value={newAvatar} leftIcon={<Icon name="photo" type="font-awesome" size={30} color="#D50000" style={{ marginRight: 10 }} />} />
-          <Input secureTextEntry type="password" placeholder="Current Password" autoCapitalize="none" leftIcon={<Icon name="lock" type="font-awesome" size={30} color="#D50000" />} value={currentPassword} onChangeText={(text) => setCurrentPassword(text)} />
-          <Input secureTextEntry type="password" placeholder="New Password" autoCapitalize="none" leftIcon={<Icon name="star" type="font-awesome" size={30} color="#D50000" />} value={newPassword} onChangeText={(text) => setNewPassword(text)} />
-          <Button raised title="Update user" type="outline" onPress={onChangePasswordPress} />
+          <TouchableOpacity style={styles.button} activeOpacity={0.5} onPress={() => setVisible(false)} >
+            <Button raised title="No, cancel" type="outline" onPress={() => setVisible(false)} />
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.button} activeOpacity={0.5} onPress={() => setVisible(false)} >
+            <Button raised title="Yes, log me out" type="outline" onPress={logout} />
+          </TouchableOpacity>
         </View>
       </ModalPoup>
       <View style={styles.infoContainer}>
@@ -175,7 +158,7 @@ const ProfileScreen = ({ navigation }) => {
           type='font-awesome'
           color='#D50000' /><Text style={styles.text}>About</Text>
       </View>
-      <TouchableOpacity onPress={logout} activeOpacity={0.5} style={styles.infoContainer}>
+      <TouchableOpacity onPress={() => setVisible(true)} activeOpacity={0.5} style={styles.infoContainer}>
         <Icon style={styles.icon}
           name='sign-out'
           type='font-awesome'
@@ -194,7 +177,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     padding: 10,
     backgroundColor: "white",
-
+    height:"100%"
   },
   avatarContainer: {
     display: "flex",
@@ -206,6 +189,8 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     alignItems: 'baseline',
+    // padding:5,
+    // justifyContent: 'center',
   },
   icon: {
     marginRight: 10,
@@ -240,8 +225,8 @@ const styles = StyleSheet.create({
   },
   header: {
     display: "flex",
-    flexDirection: "row",
+    // flexDirection: "row",
     width: '100%',
-    justifyContent: "space-between"
+    justifyContent: "center"
   }
 })
