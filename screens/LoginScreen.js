@@ -55,9 +55,9 @@ const LoginScreen = ({ navigation }) => {
       <ScrollView style={styles.scroll}>
         <KeyboardAvoidingView behavior="padding" style={styles.container}>
           <StatusBar style="light" />
-          <View style={styles.circle}>
+          {/* <View style={styles.circle}>
             <Text h2 style={styles.title}>Login</Text>
-          </View>
+          </View> */}
 
           <View style={styles.inputContainer}>
             <Input style={styles.input} type="email" autoCapitalize="none" placeholder="Email" autoFocus value={email} onChangeText={(text) => setEmail(text)} leftIcon={<Icon name="at" type="font-awesome" size={30} color="#D50000" />} />
@@ -100,11 +100,14 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: -200,
     left: -0,
-    justifyContent:"center",
+    justifyContent: "flex-end",
+    alignItems: 'center',
   },
   headerTitle: {
-    fontWeight: "700",
+    fontWeight: "900",
+    fontSize: 50,
     color: "white",
+    marginBottom:20
   },
   circle: {
     width: 150,
