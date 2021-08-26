@@ -48,18 +48,15 @@ const LoginScreen = ({ navigation }) => {
   }
 
   return (
-    <View>
+    <View style={styles.container}>
       <View style={styles.headerCircle}>
         <Text style={styles.headerTitle}>CIRCLE</Text>
       </View>
       <ScrollView style={styles.scroll}>
-        <KeyboardAvoidingView behavior="padding" style={styles.container}>
+        <KeyboardAvoidingView behavior="padding" style={styles.formContainer}>
           <StatusBar style="light" />
-          {/* <View style={styles.circle}>
-            <Text h2 style={styles.title}>Login</Text>
-          </View> */}
-
           <View style={styles.inputContainer}>
+          <Text h2 style={styles.title}>Login</Text>
             <Input style={styles.input} type="email" autoCapitalize="none" placeholder="Email" autoFocus value={email} onChangeText={(text) => setEmail(text)} leftIcon={<Icon name="at" type="font-awesome" size={30} color="#D50000" />} />
             <Input secureTextEntry type="password" autoCapitalize placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} onSubmitEditing={singIn} leftIcon={<Icon name="lock" type="font-awesome" size={30} color="#D50000" />} />
           </View>
@@ -84,20 +81,22 @@ const styles = StyleSheet.create({
 
   },
   container: {
-    flex: 1,
     height: "100%",
+    display: "flex",
+    flexDirection:"column",
+    backgroundColor: "white",
+  },
+  formContainer: {
     justifyContent: 'center',
     alignItems: 'center',
     padding: 10,
-    backgroundColor: "transparent",
-    top: 100
+    backgroundColor: "white",
   },
   headerCircle: {
     width: "100%",
     height: 400,
     backgroundColor: "#D50000",
     borderRadius: 2000,
-    position: "absolute",
     top: -200,
     left: -0,
     justifyContent: "flex-end",
@@ -109,18 +108,6 @@ const styles = StyleSheet.create({
     color: "white",
     marginBottom: 50,
     letterSpacing:7
-  },
-  circle: {
-    width: 150,
-    height: 150,
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderWidth: 5,
-    borderColor: "#D50000",
-    borderRadius: 100,
-    marginBottom: 50,
-    backgroundColor: "white",
-
   },
   title: {
     fontWeight: "700",
