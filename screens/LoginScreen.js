@@ -57,12 +57,6 @@ const LoginScreen = ({ navigation }) => {
           <StatusBar style="light" />
           <View style={styles.inputContainer}>
             <Text h2 style={styles.title}>Login</Text>
-            {/* <Text>
-        <Text style={styles.username} >
-           Hello
-        </Text>
-        <Text style={styles.content}>is me</Text>
-    </Text> */}
             <Input style={styles.input} type="email" autoCapitalize="none" placeholder="Email" autoFocus value={email} onChangeText={(text) => setEmail(text)} leftIcon={<Icon name="at" type="font-awesome" size={30} color="#D50000" />} />
             <Input secureTextEntry type="password" autoCapitalize placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} onSubmitEditing={singIn} leftIcon={<Icon name="lock" type="font-awesome" size={30} color="#D50000" />} />
           </View>
