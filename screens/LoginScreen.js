@@ -18,12 +18,12 @@ const LoginScreen = ({ navigation }) => {
 
   useLayoutEffect(() => {
     navigation.setOptions({
-      headerTitle:false,
+      headerTitle: false,
       headerStyle: { backgroundColor: "#D50000" },
       headerBackTitle: false,
       borderWidth: 0,
       headerShown: false
-      
+
     })
   }, [navigation])
 
@@ -48,17 +48,21 @@ const LoginScreen = ({ navigation }) => {
   }
 
   return (
-    <View>
+    <View style={styles.container}>
       <View style={styles.headerCircle}>
+        <Text style={styles.headerTitle}>CIRCLE</Text>
       </View>
       <ScrollView style={styles.scroll}>
-        <KeyboardAvoidingView behavior="padding" style={styles.container}>
+        <KeyboardAvoidingView behavior="padding" style={styles.formContainer}>
           <StatusBar style="light" />
-          <View style={styles.circle}>
-            <Text h2 style={styles.title}>Login</Text>
-          </View>
-
           <View style={styles.inputContainer}>
+            <Text h2 style={styles.title}>Login</Text>
+            {/* <Text>
+        <Text style={styles.username} >
+           Hello
+        </Text>
+        <Text style={styles.content}>is me</Text>
+    </Text> */}
             <Input style={styles.input} type="email" autoCapitalize="none" placeholder="Email" autoFocus value={email} onChangeText={(text) => setEmail(text)} leftIcon={<Icon name="at" type="font-awesome" size={30} color="#D50000" />} />
             <Input secureTextEntry type="password" autoCapitalize placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} onSubmitEditing={singIn} leftIcon={<Icon name="lock" type="font-awesome" size={30} color="#D50000" />} />
           </View>
@@ -80,37 +84,35 @@ export default LoginScreen
 const styles = StyleSheet.create({
   scroll: {
     backgroundColor: "transparent",
-    
+
   },
   container: {
-    flex: 1,
-    height:"100%",
-    justifyContent: 'center',
+    height: "100%",
+    display: "flex",
+    flexDirection: "column",
+    backgroundColor: "white",
+  },
+  formContainer: {
     alignItems: 'center',
-    padding: 10,
-    backgroundColor: "transparent", 
-    top:100
+    // padding: 10,
+    backgroundColor: "white",
   },
   headerCircle: {
     width: "100%",
     height: 400,
     backgroundColor: "#D50000",
     borderRadius: 2000,
-    position: "absolute",
     top: -200,
-    left:-0
-  },
-  circle: {
-    width: 150,
-    height: 150,
-    justifyContent: 'center',
+    left: -0,
+    justifyContent: "flex-end",
     alignItems: 'center',
-    borderWidth: 5,
-    borderColor: "#D50000",
-    borderRadius: 100,
+  },
+  headerTitle: {
+    fontWeight: "700",
+    fontSize: 60,
+    color: "white",
     marginBottom: 50,
-    backgroundColor: "white",
-    
+    letterSpacing: 7
   },
   title: {
     fontWeight: "700",
