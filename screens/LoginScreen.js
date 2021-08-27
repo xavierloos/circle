@@ -51,13 +51,16 @@ const LoginScreen = ({ navigation }) => {
     <View style={styles.container}>
       <View style={styles.headerCircle}>
         <Text style={styles.headerTitle}>CIRCLE</Text>
-        
+
       </View>
       <ScrollView style={styles.scroll}>
         <KeyboardAvoidingView behavior="padding" style={styles.formContainer}>
           <StatusBar style="light" />
           <View style={styles.inputContainer}>
-            <Text h2 style={styles.title}>Login to create a Circle, or create an account to get start!</Text>
+            <Text h2 style={styles.slogan}>
+              <Text style={styles.span}>Login</Text>
+              <Text> to create a Circle, or create an account to get start!</Text>
+            </Text>
             <Input style={styles.input} type="email" autoCapitalize="none" placeholder="Email" autoFocus value={email} onChangeText={(text) => setEmail(text)} leftIcon={<Icon name="at" type="font-awesome" size={30} color="#D50000" />} />
             <Input secureTextEntry type="password" autoCapitalize placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} onSubmitEditing={singIn} leftIcon={<Icon name="lock" type="font-awesome" size={30} color="#D50000" />} />
           </View>
@@ -109,7 +112,11 @@ const styles = StyleSheet.create({
     marginBottom: 50,
     letterSpacing: 7
   },
-  title: {
+  slogan: {
+    fontWeight: "500",
+    color: "gray",
+  },
+  span: {
     fontWeight: "700",
     color: "#D50000"
   },
