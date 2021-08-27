@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
     color: "gray",
   },
   span: {
-    fontWeight: "700",
+    fontWeight: "900",
     color: "#D50000"
   },
   inputContainer: {
