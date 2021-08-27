@@ -51,7 +51,6 @@ const LoginScreen = ({ navigation }) => {
     <View style={styles.container}>
       <View style={styles.headerCircle}>
         <Text style={styles.headerTitle}>CIRCLE</Text>
-
       </View>
       <ScrollView style={styles.scroll}>
         <KeyboardAvoidingView behavior="padding" style={styles.formContainer}>
@@ -82,18 +81,18 @@ export default LoginScreen
 const styles = StyleSheet.create({
   scroll: {
     backgroundColor: "transparent",
-
+    top: -200,
   },
   container: {
     height: "100%",
     display: "flex",
     flexDirection: "column",
-    backgroundColor: "white",
+    backgroundColor: "transparent",
   },
   formContainer: {
     alignItems: 'center',
-    // padding: 10,
-    backgroundColor: "white",
+    paddingTop: 20,
+    backgroundColor: "transparent",
   },
   headerCircle: {
     width: "100%",
