@@ -93,6 +93,8 @@ const LoginScreen = ({ navigation }) => {
           title="Register"
           type="standar"
           onPress={() => navigation.navigate("Register")}
+          iconRight
+          icon={<Icon name="chevron-right" type="font-awesome" size={30} color="#D50000" paddingLeft={10} />}
         />
       </View>
       {/* </ScrollView> */}
