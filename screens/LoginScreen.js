@@ -79,12 +79,12 @@ const LoginScreen = ({ navigation }) => {
           <Button type="clear" containerStyle={styles.buttonFacebook} onPress={loginFacebook} icon={<Icon name="facebook" size={40} color="red" />} />
         </>}
       </KeyboardAvoidingView>
-      <View style={styles.options}>
+      <View style={{ flex: 1, justifyContent: 'flex-end' }}>
         <Button
           raised
           title="Register"
           type="outline"
-          containerStyle={styles.registerButton}
+          // containerStyle={styles.registerButton}
           onPress={() => navigation.navigate("Register")}
         />
       </View>
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
     height: 400,
     backgroundColor: "#D50000",
     borderRadius: 2000,
-    top: -200,
+    top: -180,
     left: -0,
     justifyContent: "flex-end",
     alignItems: 'center',
@@ -162,6 +162,6 @@ const styles = StyleSheet.create({
   options: {
     alignItems: 'center',
     top: -400,
-    position:"absolute"
+    position: "absolute"
   }
 })
