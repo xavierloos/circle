@@ -53,33 +53,37 @@ const LoginScreen = ({ navigation }) => {
         <Text style={styles.headerTitle}>CIRCLE</Text>
       </View>
       {/* <ScrollView style={styles.scroll}> */}
-      <KeyboardAvoidingView behavior="padding" style={styles.formContainer}>
-        <StatusBar style="light" />
-        <View style={styles.inputContainer}>
-          <Text h2 style={styles.slogan}>
-            <Text style={styles.span}>Login</Text>
-            <Text> to create a Circle or register to get started!</Text>
-          </Text>
-          <Input
-            style={styles.input}
-            type="email"
-            autoCapitalize="none"
-            placeholder="Email"
-            // autoFocus
-            value={email}
-            onChangeText={(text) => setEmail(text)}
-            leftIcon={<Icon name="at" type="font-awesome" size={30} color="#D50000" />}
-          />
-          <Input secureTextEntry type="password" autoCapitalize placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} onSubmitEditing={singIn} leftIcon={<Icon name="lock" type="font-awesome" size={30} color="#D50000" />} />
-        </View>
-        <Button raised disabled={!password && !email} title="Login" containerStyle={styles.button} onPress={singIn} />
+      <View style={styles.formContainer}>
+        <KeyboardAvoidingView behavior="padding" >
+          <StatusBar style="light" />
+          <View style={styles.inputContainer}>
+            <Text h2 style={styles.slogan}>
+              <Text style={styles.span}>Login</Text>
+              <Text> to create a Circle or register to get started!</Text>
+            </Text>
+            <Input
+              style={styles.input}
+              type="email"
+              autoCapitalize="none"
+              placeholder="Email"
+              // autoFocus
+              value={email}
+              onChangeText={(text) => setEmail(text)}
+              leftIcon={<Icon name="at" type="font-awesome" size={30} color="#D50000" />}
+            />
+            <Input secureTextEntry type="password" autoCapitalize placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} onSubmitEditing={singIn} leftIcon={<Icon name="lock" type="font-awesome" size={30} color="#D50000" />} />
+            <Button raised disabled={!password && !email} title="Login" containerStyle={styles.button} onPress={singIn} />
 
-        {Platform.OS === 'ios' && <>
-          <Text style={styles.textConnect}>Connect with: </Text>
-          <Button type="clear" containerStyle={styles.buttonFacebook} onPress={loginFacebook} icon={<Icon name="facebook" size={40} color="red" />} />
-        </>}
-      </KeyboardAvoidingView>
-      <View style={{ flex: 1, justifyContent: 'flex-end' }}>
+            {Platform.OS === 'ios' && <>
+              <Text style={styles.textConnect}>Connect with: </Text>
+              <Button type="clear" containerStyle={styles.buttonFacebook} onPress={loginFacebook} icon={<Icon name="facebook" size={40} color="red" />} />
+            </>}
+          </View>
+
+        </KeyboardAvoidingView>
+      </View>
+
+      <View style={styles.options}>
         <Button
           raised
           title="Register"
@@ -107,11 +111,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     backgroundColor: "white",
   },
-  formContainer: {
-    alignItems: 'center',
-    backgroundColor: "transparent",
-    top: -200,
-  },
+
   headerCircle: {
     width: "100%",
     height: 400,
@@ -128,6 +128,12 @@ const styles = StyleSheet.create({
     color: "white",
     marginBottom: 50,
     letterSpacing: 7
+  },
+  formContainer: {
+    height: "auto",
+    alignItems: 'center',
+    backgroundColor: "transparent",
+    top: -200,
   },
   slogan: {
     fontWeight: "500",
@@ -161,7 +167,9 @@ const styles = StyleSheet.create({
   },
   options: {
     alignItems: 'center',
-    top: -400,
-    position: "absolute"
+    bottom: 50,
+    // position: "absolute"
+    // flex: 1,
+    // justifyContent: 'flex-end'
   }
 })
