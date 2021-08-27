@@ -169,10 +169,11 @@ const styles = StyleSheet.create({
     backgroundColor: "white"
   },
   options: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent:"space-between",
     alignItems: 'center',
     bottom: 50,
-    // position: "absolute"
-    // flex: 1,
-    // justifyContent: 'flex-end'
+    paddingHorizontal:30
   }
 })
