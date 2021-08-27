@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
   },
   slogan: {
     fontWeight: "500",
-    color: "gray",
+    color: "#9A9A9A",
     paddingVertical: 30,
   },
   span: {
