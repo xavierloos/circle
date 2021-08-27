@@ -52,7 +52,7 @@ const LoginScreen = ({ navigation }) => {
       <View style={styles.headerCircle}>
         <Text style={styles.headerTitle}>CIRCLE</Text>
       </View>
-      <ScrollView style={styles.scroll}>
+      {/* <ScrollView style={styles.scroll}> */}
         <KeyboardAvoidingView behavior="padding" style={styles.formContainer}>
           <StatusBar style="light" />
           <View style={styles.inputContainer}>
@@ -70,7 +70,7 @@ const LoginScreen = ({ navigation }) => {
             <Button type="clear" containerStyle={styles.buttonFacebook} onPress={loginFacebook} icon={<Icon name="facebook" size={40} color="red" />} />
           </>}
         </KeyboardAvoidingView>
-      </ScrollView>
+      {/* </ScrollView> */}
     </View>
 
   )
@@ -91,8 +91,8 @@ const styles = StyleSheet.create({
   },
   formContainer: {
     alignItems: 'center',
-    paddingTop: 20,
     backgroundColor: "transparent",
+    top: -200,
   },
   headerCircle: {
     width: "100%",
