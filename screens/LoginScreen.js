@@ -59,7 +59,7 @@ const LoginScreen = ({ navigation }) => {
           <View style={styles.inputContainer}>
             <Text h2 style={styles.slogan}>
               <Text style={styles.span}>Login</Text>
-              <Text> to create a Circle, or create an account to get start!</Text>
+              <Text> to create a Circle or register to get started!</Text>
             </Text>
             <Input style={styles.input} type="email" autoCapitalize="none" placeholder="Email" autoFocus value={email} onChangeText={(text) => setEmail(text)} leftIcon={<Icon name="at" type="font-awesome" size={30} color="#D50000" />} />
             <Input secureTextEntry type="password" autoCapitalize placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} onSubmitEditing={singIn} leftIcon={<Icon name="lock" type="font-awesome" size={30} color="#D50000" />} />
