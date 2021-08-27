@@ -60,16 +60,34 @@ const LoginScreen = ({ navigation }) => {
             <Text style={styles.span}>Login</Text>
             <Text> to create a Circle or register to get started!</Text>
           </Text>
-          <Input style={styles.input} type="email" autoCapitalize="none" placeholder="Email" autoFocus value={email} onChangeText={(text) => setEmail(text)} leftIcon={<Icon name="at" type="font-awesome" size={30} color="#D50000" />} />
+          <Input
+            style={styles.input}
+            type="email"
+            autoCapitalize="none"
+            placeholder="Email"
+            // autoFocus
+            value={email}
+            onChangeText={(text) => setEmail(text)}
+            leftIcon={<Icon name="at" type="font-awesome" size={30} color="#D50000" />}
+          />
           <Input secureTextEntry type="password" autoCapitalize placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} onSubmitEditing={singIn} leftIcon={<Icon name="lock" type="font-awesome" size={30} color="#D50000" />} />
         </View>
         <Button raised disabled={!password && !email} title="Login" containerStyle={styles.button} onPress={singIn} />
-        <Button raised title="Register" type="outline" containerStyle={styles.button} onPress={() => navigation.navigate("Register")} />
+
         {Platform.OS === 'ios' && <>
           <Text style={styles.textConnect}>Connect with: </Text>
           <Button type="clear" containerStyle={styles.buttonFacebook} onPress={loginFacebook} icon={<Icon name="facebook" size={40} color="red" />} />
         </>}
       </KeyboardAvoidingView>
+      <View style={styles.options}>
+        <Button
+          raised
+          title="Register"
+          type="outline"
+          containerStyle={styles.registerButton}
+          onPress={() => navigation.navigate("Register")}
+        />
+      </View>
       {/* </ScrollView> */}
     </View>
 
@@ -140,5 +158,10 @@ const styles = StyleSheet.create({
   buttonFacebook: {
     marginTop: 10,
     backgroundColor: "white"
+  },
+  options: {
+    alignItems: 'center',
+    top: -400,
+    position:"absolute"
   }
 })
