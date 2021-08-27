@@ -85,10 +85,13 @@ const LoginScreen = ({ navigation }) => {
 
       <View style={styles.options}>
         <Button
-          raised
+          title="Forgot my password"
+          type="standar"
+          onPress={() => navigation.navigate("Register")}
+        />
+        <Button
           title="Register"
-          type="outline"
-          // containerStyle={styles.registerButton}
+          type="standar"
           onPress={() => navigation.navigate("Register")}
         />
       </View>
