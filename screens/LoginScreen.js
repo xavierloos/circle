@@ -73,16 +73,13 @@ const LoginScreen = ({ navigation }) => {
             />
             <Input secureTextEntry type="password" autoCapitalize placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} onSubmitEditing={singIn} leftIcon={<Icon name="lock" type="font-awesome" size={30} color="#D50000" />} />
             <Button raised disabled={!password && !email} title="Login" containerStyle={styles.button} onPress={singIn} />
-
             {Platform.OS === 'ios' && <>
               <Text style={styles.textConnect}>Connect with: </Text>
               <Button type="clear" containerStyle={styles.buttonFacebook} onPress={loginFacebook} icon={<Icon name="facebook" size={40} color="red" />} />
             </>}
           </View>
-
         </KeyboardAvoidingView>
       </View>
-
       <View style={styles.options}>
         <Button
           title="Forgot my password"
@@ -99,7 +96,6 @@ const LoginScreen = ({ navigation }) => {
       </View>
       {/* </ScrollView> */}
     </View>
-
   )
 }
 
@@ -116,7 +112,6 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     backgroundColor: "white",
   },
-
   headerCircle: {
     width: "100%",
     height: 400,
@@ -148,7 +143,6 @@ const styles = StyleSheet.create({
   span: {
     fontWeight: "800",
     color: "#D50000",
-
   },
   inputContainer: {
     width: 300,
