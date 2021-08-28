@@ -116,7 +116,6 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     backgroundColor: "white",
   },
-
   headerCircle: {
     width: "100%",
     height: 400,
@@ -148,7 +147,6 @@ const styles = StyleSheet.create({
   span: {
     fontWeight: "800",
     color: "#D50000",
-
   },
   inputContainer: {
     width: 300,
