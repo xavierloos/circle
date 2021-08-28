@@ -98,7 +98,6 @@ const styles = StyleSheet.create({
     alignItems: 'baseline',
     justifyContent: 'center',
   },
-
   text: {
     fontWeight: "600",
     fontSize: 26,
