@@ -46,6 +46,7 @@ const LoginScreen = ({ navigation }) => {
       console.log(`Facebook Login Error: ${message}`)
     }
   }
+  
 
   return (
     <View style={styles.container}>
