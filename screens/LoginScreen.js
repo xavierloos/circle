@@ -82,7 +82,6 @@ const LoginScreen = ({ navigation }) => {
 
         </KeyboardAvoidingView>
       </View>
-
       <View style={styles.options}>
         <Button
           title="Forgot my password"
