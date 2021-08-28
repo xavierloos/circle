@@ -79,7 +79,6 @@ const LoginScreen = ({ navigation }) => {
               <Button type="clear" containerStyle={styles.buttonFacebook} onPress={loginFacebook} icon={<Icon name="facebook" size={40} color="red" />} />
             </>}
           </View>
-
         </KeyboardAvoidingView>
       </View>
       <View style={styles.options}>
