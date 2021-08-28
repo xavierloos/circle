@@ -99,7 +99,6 @@ const LoginScreen = ({ navigation }) => {
       </View>
       {/* </ScrollView> */}
     </View>
-
   )
 }
 
