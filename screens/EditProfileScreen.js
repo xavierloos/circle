@@ -10,7 +10,7 @@ const EditProfileScreen = ({ navigation }) => {
   const [newAvatar, setNewAvatar] = useState("")
   const [newPassword, setNewPassword] = useState("")
   const [currentPassword, setCurrentPassword] = useState("")
-  
+
   useLayoutEffect(() => {
     navigation.setOptions({
       headerTitle: "Edit Profile",
@@ -20,7 +20,6 @@ const EditProfileScreen = ({ navigation }) => {
       headerBackTitle: "Cancel",
     });
   }, [navigation])
-
   const onChangePasswordPress = () => {
     reauthenticate(currentPassword)
       .then(() => {
