@@ -77,7 +77,6 @@ const ProfileScreen = ({ navigation }) => {
       }).catch((e) => {
         Alert.alert(e.message)
       })
-
   }
 
   return (
