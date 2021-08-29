@@ -77,7 +77,6 @@ const ProfileScreen = ({ navigation }) => {
       }).catch((e) => {
         Alert.alert(e.message)
       })
-
   }
 
   return (
@@ -189,8 +188,6 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     alignItems: 'baseline',
-    // padding:5,
-    // justifyContent: 'center',
   },
   icon: {
     marginRight: 10,
@@ -199,7 +196,6 @@ const styles = StyleSheet.create({
     alignItems: 'baseline',
     justifyContent: 'center',
   },
-
   text: {
     fontWeight: "600",
     fontSize: 26,
@@ -225,7 +221,6 @@ const styles = StyleSheet.create({
   },
   header: {
     display: "flex",
-    // flexDirection: "row",
     width: '100%',
     justifyContent: "center"
   }
