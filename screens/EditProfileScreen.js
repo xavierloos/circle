@@ -65,6 +65,7 @@ const EditProfileScreen = ({ navigation }) => {
 }
 
 export default EditProfileScreen
+
 const styles = StyleSheet.create({
   scroll: {
     backgroundColor: "white",
