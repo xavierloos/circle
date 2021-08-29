@@ -10,7 +10,6 @@ const EditProfileScreen = ({ navigation }) => {
   const [newAvatar, setNewAvatar] = useState("")
   const [newPassword, setNewPassword] = useState("")
   const [currentPassword, setCurrentPassword] = useState("")
-
   useLayoutEffect(() => {
     navigation.setOptions({
       headerTitle: "Edit Profile",
