@@ -20,6 +20,7 @@ const EditProfileScreen = ({ navigation }) => {
       headerBackTitle: "Cancel",
     });
   }, [navigation])
+  
   const onChangePasswordPress = () => {
     reauthenticate(currentPassword)
       .then(() => {
