@@ -77,7 +77,6 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     padding: 10,
     backgroundColor: "white",
-
   },
   avatarContainer: {
     display: "flex",
