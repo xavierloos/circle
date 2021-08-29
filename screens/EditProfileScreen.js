@@ -20,7 +20,7 @@ const EditProfileScreen = ({ navigation }) => {
       headerBackTitle: "Cancel",
     });
   }, [navigation])
-  
+
   const onChangePasswordPress = () => {
     reauthenticate(currentPassword)
       .then(() => {
@@ -35,7 +35,6 @@ const EditProfileScreen = ({ navigation }) => {
       }).catch((e) => {
         Alert.alert(e.message)
       })
-
   }
   const reauthenticate = currentPassword => {
     var user = firebase.auth().currentUser
