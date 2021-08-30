@@ -51,7 +51,6 @@ const ProfileScreen = ({ navigation }) => {
   
     return (<Modal transparent visible={showModal}>
       <View style={styles.modalBg}>
-        
         <Animated.View style={[styles.modalContainer, { transform: [{ scale: scaleValue }] }]}>
           {children}
         </Animated.View>
