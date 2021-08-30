@@ -166,6 +166,7 @@ const ProfileScreen = ({ navigation }) => {
     </View>
   )
 }
+
 export default ProfileScreen
 const styles = StyleSheet.create({
   container: {
