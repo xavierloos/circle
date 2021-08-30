@@ -6,7 +6,6 @@ import firebase from "firebase"
 
 const ProfileScreen = ({ navigation }) => {
   const [visible, setVisible] = useState(false)
-
   useLayoutEffect(() => {
     navigation.setOptions({
       title: "CIRCLE: Profile",
