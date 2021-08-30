@@ -165,6 +165,7 @@ const ProfileScreen = ({ navigation }) => {
       </TouchableOpacity>
     </View>
   )
+  
 }
 
 export default ProfileScreen
