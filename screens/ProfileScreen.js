@@ -3,7 +3,6 @@ import { StyleSheet, View, Modal, TouchableOpacity, Animated, Alert } from 'reac
 import { Avatar, Icon, Button, Text, Input } from 'react-native-elements'
 import { auth } from '../firebase'
 import firebase from "firebase"
-
 const ProfileScreen = ({ navigation }) => {
   const [visible, setVisible] = useState(false)
 
@@ -23,7 +22,7 @@ const ProfileScreen = ({ navigation }) => {
   }
 
   const ModalPoup = ({ visible, children }) => {
-    
+
     const [showModal, setShowModal] = useState(visible)
     const scaleValue = useRef(new Animated.Value(0)).current
 
