@@ -77,9 +77,9 @@ const LoginScreen = ({ navigation }) => {
             {Platform.OS === 'ios' && <>
               <View style={styles.socialLogin}>
                 <Text style={styles.textConnect}>Connect with: </Text>
-              <Button type="clear" containerStyle={styles.buttonFacebook} onPress={loginFacebook} icon={<Icon name="facebook" size={40} color="red" />} />
+                <Button type="clear" containerStyle={styles.buttonFacebook} onPress={loginFacebook} icon={<Icon name="facebook" size={40} color="red" />} />
               </View>
-              
+
             </>}
           </View>
         </KeyboardAvoidingView>
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
   scroll: {
     backgroundColor: "transparent",
     top: -200,
-    
+
   },
   container: {
     height: "100%",
@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     display: "flex",
     flexDirection: "column",
-    justifyContent:"space-between",
+    justifyContent: "space-between",
     alignItems: 'center',
   },
   headerCircle: {
@@ -164,12 +164,16 @@ const styles = StyleSheet.create({
     marginTop: 10,
     color: "red"
   },
+  socialLogin: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    alignItems: 'center',
+  },
   textConnect: {
     marginTop: 20,
     fontWeight: "500",
-    color: "white",
-    justifyContent:"center",
-    alignItems: 'center',
+    color: "#D50000",
   },
   buttonFacebook: {
     marginTop: 10,
@@ -180,22 +184,22 @@ const styles = StyleSheet.create({
     elevation: 0,
     display: "flex",
     flexDirection: "row",
-    justifyContent:"space-between",
+    justifyContent: "space-between",
     alignItems: 'center',
     bottom: 50,
     left: 20,
     right: 20,
     backgroundColor: "white",
     borderColor: "#D50000",
-    borderWidth:0.25,
+    borderWidth: 0.25,
     borderRadius: 15,
     height: 50,
     shadowColor: "#808080",
     shadowOffset: {
       width: 0,
-      height:5,
+      height: 5,
     },
     shadowOpacity: 0.50,
-    shadowRadius:3.5
+    shadowRadius: 3.5
   }
 })
