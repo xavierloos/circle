@@ -5,6 +5,7 @@ import { StatusBar } from "expo-status-bar";
 import { auth } from "../firebase"
 import * as Facebook from 'expo-facebook'
 
+
 const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -165,11 +166,19 @@ const styles = StyleSheet.create({
     backgroundColor: "white"
   },
   options: {
+    position: "absolute",
+    elevation: 0,
     display: "flex",
     flexDirection: "row",
     justifyContent:"space-between",
     alignItems: 'center',
     bottom: 50,
-    paddingHorizontal:30
+    left: 20,
+    right: 20,
+    backgroundColor: "white",
+    borderColor: "#D50000",
+    borderWidth:1,
+    borderRadius: 15,
+    height:50
   }
 })
