@@ -85,7 +85,7 @@ const LoginScreen = ({ navigation }) => {
       </View>
       <View style={styles.options}>
         <Button
-          title="Forgot my password"
+          title="Forgot password?"
           type="standar"
           onPress={() => navigation.navigate("Register")}
         />
