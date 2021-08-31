@@ -83,10 +83,23 @@ const LoginScreen = ({ navigation }) => {
             {Platform.OS === 'ios' && <>
             <Text style={styles.textConnect}>Connect with: </Text>
               <View style={styles.socialContainer}>
-                
                 <TouchableOpacity style={styles.socialButton} onPress={loginFacebook}>
                   <Icon
                     name='facebook'
+                    type='font-awesome'
+                    color='white'
+                  />
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.socialButton}>
+                  <Icon
+                    name='google'
+                    type='font-awesome'
+                    color='white'
+                  />
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.socialButton}>
+                  <Icon
+                    name='github'
                     type='font-awesome'
                     color='white'
                   />
@@ -188,6 +201,7 @@ const styles = StyleSheet.create({
     padding: 15,
   },
   socialButton: {
+    margin:10,
     width: 50,
     height:50,
     borderRadius: 50,
@@ -197,7 +211,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   socialContainer: {
-    marginTop:10,
+    
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
