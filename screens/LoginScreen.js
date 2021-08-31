@@ -179,6 +179,13 @@ const styles = StyleSheet.create({
     borderColor: "#D50000",
     borderWidth:1,
     borderRadius: 15,
-    height:50
+    height: 50,
+    shadowColor: "#808080",
+    shadowOffset: {
+      width: 0,
+      height:5,
+    },
+    shadowOpacity: 0.50,
+    shadowRadius:3.5
   }
 })
