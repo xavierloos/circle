@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useLayoutEffect } from 'react'
-import { StyleSheet, View, KeyboardAvoidingView, ScrollView, Platform } from 'react-native';
-import { Button, Input, Icon, Text } from "react-native-elements"
+import { Button, StyleSheet, View, KeyboardAvoidingView, ScrollView, Platform, TouchableOpacity } from 'react-native';
+import { Input, Icon, Text } from "react-native-elements"
 import { StatusBar } from "expo-status-bar";
 import { auth } from "../firebase"
 import * as Facebook from 'expo-facebook'
+
 
 const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState("")
@@ -72,27 +73,54 @@ const LoginScreen = ({ navigation }) => {
               leftIcon={<Icon name="at" type="font-awesome" size={30} color="#D50000" />}
             />
             <Input secureTextEntry type="password" autoCapitalize placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} onSubmitEditing={singIn} leftIcon={<Icon name="lock" type="font-awesome" size={30} color="#D50000" />} />
-            <Button raised disabled={!password && !email} title="Login" containerStyle={styles.button} onPress={singIn} />
+            <TouchableOpacity style={styles.button} onPress={singIn}>
+              <Text style={styles.buttonText}>
+                Login
+              </Text>
+            </TouchableOpacity>
+            {/* <Button color="red" containerStyle={styles.button} title="Press me" onPress={singIn} */}
+            {/* <Button raised disabled={!password && !email} title="Login" containerStyle={styles.button} onPress={singIn} /> */}
             {Platform.OS === 'ios' && <>
-              <Text style={styles.textConnect}>Connect with: </Text>
-              <Button type="clear" containerStyle={styles.buttonFacebook} onPress={loginFacebook} icon={<Icon name="facebook" size={40} color="red" />} />
+            <Text style={styles.textConnect}>Connect with: </Text>
+              <View style={styles.socialContainer}>
+                <TouchableOpacity style={styles.socialButton} onPress={loginFacebook}>
+                  <Icon
+                    name='facebook'
+                    type='font-awesome'
+                    color='white'
+                  />
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.socialButton}>
+                  <Icon
+                    name='google'
+                    type='font-awesome'
+                    color='white'
+                  />
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.socialButton}>
+                  <Icon
+                    name='github'
+                    type='font-awesome'
+                    color='white'
+                  />
+                </TouchableOpacity>
+                {/* <Button type="clear" containerStyle={styles.buttonFacebook} onPress={loginFacebook} icon={<Icon name="facebook" size={40} color="red" />} /> */}
+              </View>
             </>}
           </View>
         </KeyboardAvoidingView>
       </View>
-      <View style={styles.options}>
-        <Button
-          title="Forgot my password"
-          type="standar"
-          onPress={() => navigation.navigate("Register")}
-        />
-        <Button
-          title="Register"
-          type="standar"
-          onPress={() => navigation.navigate("Register")}
-          iconRight
-          icon={<Icon name="chevron-right" type="font-awesome" size={30} color="#D50000" paddingLeft={10} />}
-        />
+      <View style={styles.optionBar}>
+        <TouchableOpacity>
+          <Text>
+            Forgot Password?
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity  onPress={() => navigation.navigate("Register")}>
+          <Text>
+            Register >
+          </Text>
+        </TouchableOpacity>
       </View>
       {/* </ScrollView> */}
     </View>
@@ -105,12 +133,17 @@ const styles = StyleSheet.create({
   scroll: {
     backgroundColor: "transparent",
     top: -200,
+
   },
   container: {
     height: "100%",
     display: "flex",
     flexDirection: "column",
     backgroundColor: "white",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    alignItems: 'center',
   },
   headerCircle: {
     width: "100%",
@@ -146,30 +179,73 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     width: 300,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    alignItems: 'center',
   },
   input: {
     textTransform: 'lowercase'
   },
   button: {
     width: 200,
-    marginTop: 10,
-    color: "red"
+    borderRadius: 50,
+    alignItems: "center",
+    backgroundColor: "red"
+  },
+  buttonText: {
+    color: "white",
+    fontSize: 20,
+    padding: 15,
+  },
+  socialButton: {
+    margin:10,
+    width: 50,
+    height:50,
+    borderRadius: 50,
+    alignItems: "center",
+    backgroundColor: "red",
+    justifyContent: "center",
+    alignItems: 'center',
+  },
+  socialContainer: {
+    
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: 'center',
   },
   textConnect: {
     marginTop: 20,
-    fontWeight: "500",
-    color: "#D50000"
+    fontWeight: "600",
+    color: "#808080",
   },
   buttonFacebook: {
     marginTop: 10,
     backgroundColor: "white"
   },
-  options: {
+  optionBar: {
+    position: "absolute",
+    elevation: 0,
     display: "flex",
     flexDirection: "row",
-    justifyContent:"space-between",
+    justifyContent: "space-between",
     alignItems: 'center',
     bottom: 50,
-    paddingHorizontal:30
+    left: 20,
+    right: 20,
+    padding:10,
+    backgroundColor: "white",
+    borderColor: "#D50000",
+    borderWidth: 0.25,
+    borderRadius: 15,
+    height: 50,
+    shadowColor: "#808080",
+    shadowOffset: {
+      width: 0,
+      height: 5,
+    },
+    shadowOpacity: 0.50,
+    shadowRadius: 3.5
   }
 })
