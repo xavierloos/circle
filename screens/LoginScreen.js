@@ -73,7 +73,7 @@ const LoginScreen = ({ navigation }) => {
               leftIcon={<Icon name="at" type="font-awesome" size={30} color="#D50000" />}
             />
             <Input secureTextEntry type="password" autoCapitalize placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} onSubmitEditing={singIn} leftIcon={<Icon name="lock" type="font-awesome" size={30} color="#D50000" />} />
-            <TouchableOpacity style={styles.button}  onPress={singIn}>
+            <TouchableOpacity style={styles.button} onPress={singIn}>
               <Text style={styles.buttonText}>
                 Login
               </Text>
@@ -81,8 +81,16 @@ const LoginScreen = ({ navigation }) => {
             {/* <Button color="red" containerStyle={styles.button} title="Press me" onPress={singIn} */}
             {/* <Button raised disabled={!password && !email} title="Login" containerStyle={styles.button} onPress={singIn} /> */}
             {Platform.OS === 'ios' && <>
-              <View style={styles.socialLogin}>
-                <Text style={styles.textConnect}>Connect with: </Text>
+            <Text style={styles.textConnect}>Connect with: </Text>
+              <View style={styles.socialContainer}>
+                
+                <TouchableOpacity style={styles.socialButton} onPress={loginFacebook}>
+                  <Icon
+                    name='facebook'
+                    type='font-awesome'
+                    color='white'
+                  />
+                </TouchableOpacity>
                 {/* <Button type="clear" containerStyle={styles.buttonFacebook} onPress={loginFacebook} icon={<Icon name="facebook" size={40} color="red" />} /> */}
               </View>
             </>}
@@ -172,23 +180,33 @@ const styles = StyleSheet.create({
     width: 200,
     borderRadius: 50,
     alignItems: "center",
-    backgroundColor:"red"
+    backgroundColor: "red"
   },
   buttonText: {
     color: "white",
     fontSize: 20,
     padding: 15,
   },
-  socialLogin: {
+  socialButton: {
+    width: 50,
+    height:50,
+    borderRadius: 50,
+    alignItems: "center",
+    backgroundColor: "red",
+    justifyContent: "center",
+    alignItems: 'center',
+  },
+  socialContainer: {
+    marginTop:10,
     display: "flex",
-    flexDirection: "column",
+    flexDirection: "row",
     justifyContent: "space-between",
     alignItems: 'center',
   },
   textConnect: {
     marginTop: 20,
-    fontWeight: "500",
-    color: "#D50000",
+    fontWeight: "600",
+    color: "#808080",
   },
   buttonFacebook: {
     marginTop: 10,
