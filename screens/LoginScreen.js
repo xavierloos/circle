@@ -170,14 +170,14 @@ const styles = StyleSheet.create({
   },
   button: {
     width: 200,
-    borderRadius: 25,
+    borderRadius: 50,
     alignItems: "center",
-    fontSize: 20,
-    padding: 16,
     backgroundColor:"red"
   },
   buttonText: {
     color: "white",
+    fontSize: 20,
+    padding: 15,
   },
   socialLogin: {
     display: "flex",
