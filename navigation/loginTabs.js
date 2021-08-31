@@ -7,9 +7,10 @@ const Tab = createBottomTabNavigator()
 
 const loginTabs = () => {
   return (
-    <View>
-      <Text></Text>
-    </View>
+    <Tab.Navigator>
+      <Tab.Screen name="Register" component={RegisterScreen} />
+      <Tab.Screen name="Register" component={RegisterScreen} />
+    </Tab.Navigator>
   )
 }
 
