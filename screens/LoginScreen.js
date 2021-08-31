@@ -110,19 +110,17 @@ const LoginScreen = ({ navigation }) => {
           </View>
         </KeyboardAvoidingView>
       </View>
-      <View style={styles.options}>
-        <Button
-          title="Forgot password?"
-          type="standar"
-          onPress={() => navigation.navigate("Register")}
-        />
-        <Button
-          title="Register"
-          type="standar"
-          onPress={() => navigation.navigate("Register")}
-          iconRight
-          icon={<Icon name="chevron-right" type="font-awesome" size={30} color="#D50000" paddingLeft={10} />}
-        />
+      <View style={styles.optionBar}>
+        <TouchableOpacity>
+          <Text>
+            Forgot Password?
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity  onPress={() => navigation.navigate("Register")}>
+          <Text>
+            Register >
+          </Text>
+        </TouchableOpacity>
       </View>
       {/* </ScrollView> */}
     </View>
@@ -226,7 +224,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
     backgroundColor: "white"
   },
-  options: {
+  optionBar: {
     position: "absolute",
     elevation: 0,
     display: "flex",
@@ -236,6 +234,7 @@ const styles = StyleSheet.create({
     bottom: 50,
     left: 20,
     right: 20,
+    padding:10,
     backgroundColor: "white",
     borderColor: "#D50000",
     borderWidth: 0.25,
