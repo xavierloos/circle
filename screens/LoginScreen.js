@@ -79,7 +79,6 @@ const LoginScreen = ({ navigation }) => {
                 <Text style={styles.textConnect}>Connect with: </Text>
                 <Button type="clear" containerStyle={styles.buttonFacebook} onPress={loginFacebook} icon={<Icon name="facebook" size={40} color="red" />} />
               </View>
-
             </>}
           </View>
         </KeyboardAvoidingView>
@@ -155,6 +154,10 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     width: 300,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    alignItems: 'center',
   },
   input: {
     textTransform: 'lowercase'
