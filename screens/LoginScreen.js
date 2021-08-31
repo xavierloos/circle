@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useLayoutEffect } from 'react'
-import { StyleSheet, View, KeyboardAvoidingView, ScrollView, Platform } from 'react-native';
-import { Button, Input, Icon, Text } from "react-native-elements"
+import { Button, StyleSheet, View, KeyboardAvoidingView, ScrollView, Platform, TouchableOpacity } from 'react-native';
+import { Input, Icon, Text } from "react-native-elements"
 import { StatusBar } from "expo-status-bar";
 import { auth } from "../firebase"
 import * as Facebook from 'expo-facebook'
@@ -73,11 +73,17 @@ const LoginScreen = ({ navigation }) => {
               leftIcon={<Icon name="at" type="font-awesome" size={30} color="#D50000" />}
             />
             <Input secureTextEntry type="password" autoCapitalize placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} onSubmitEditing={singIn} leftIcon={<Icon name="lock" type="font-awesome" size={30} color="#D50000" />} />
-            <Button raised disabled={!password && !email} title="Login" containerStyle={styles.button} onPress={singIn} />
+            <TouchableOpacity style={styles.button}  onPress={singIn}>
+              <Text style={styles.buttonText}>
+                Login
+              </Text>
+            </TouchableOpacity>
+            {/* <Button color="red" containerStyle={styles.button} title="Press me" onPress={singIn} */}
+            {/* <Button raised disabled={!password && !email} title="Login" containerStyle={styles.button} onPress={singIn} /> */}
             {Platform.OS === 'ios' && <>
               <View style={styles.socialLogin}>
                 <Text style={styles.textConnect}>Connect with: </Text>
-                <Button type="clear" containerStyle={styles.buttonFacebook} onPress={loginFacebook} icon={<Icon name="facebook" size={40} color="red" />} />
+                {/* <Button type="clear" containerStyle={styles.buttonFacebook} onPress={loginFacebook} icon={<Icon name="facebook" size={40} color="red" />} /> */}
               </View>
             </>}
           </View>
@@ -164,8 +170,14 @@ const styles = StyleSheet.create({
   },
   button: {
     width: 200,
-    marginTop: 10,
-    color: "red"
+    borderRadius: 25,
+    alignItems: "center",
+    fontSize: 20,
+    padding: 16,
+    backgroundColor:"red"
+  },
+  buttonText: {
+    color: "white",
   },
   socialLogin: {
     display: "flex",
