@@ -116,7 +116,7 @@ const LoginScreen = ({ navigation }) => {
             Forgot Password?
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate("Register")}>
+        <TouchableOpacity style={styles.optionTextContainer} onPress={() => navigation.navigate("Register")}>
           <Text style={styles.optionText}>Register <Icon
             name='chevron-right'
             type='font-awesome'
@@ -241,7 +241,7 @@ const styles = StyleSheet.create({
     borderColor: "#D50000",
     borderWidth: 0.25,
     borderRadius: 15,
-    height: 50,
+    height: 100,
     shadowColor: "#808080",
     shadowOffset: {
       width: 0,
@@ -250,14 +250,15 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.50,
     shadowRadius: 3.5
   },
+  optionTextContainer: {
+    display: "flex",
+    justifyContent:"center",
+    alignItems: 'center',
+  },
   optionText: {
     fontWeight: "600",
     color: "#D50000",
     display: "flex",
-    flexDirection: "row",
-    alignSelf: 'center',
-    // alignContent: "center",
-    justifyContent:"center",
-    textAlignVertical:"center"
+    alignItems: 'center',
   }
 })
