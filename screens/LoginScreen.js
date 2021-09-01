@@ -81,7 +81,7 @@ const LoginScreen = ({ navigation }) => {
             {/* <Button color="red" containerStyle={styles.button} title="Press me" onPress={singIn} */}
             {/* <Button raised disabled={!password && !email} title="Login" containerStyle={styles.button} onPress={singIn} /> */}
             {Platform.OS === 'ios' && <>
-            <Text style={styles.textConnect}>Connect with: </Text>
+              <Text style={styles.textConnect}>Connect with: </Text>
               <View style={styles.socialContainer}>
                 <TouchableOpacity style={styles.socialButton} onPress={loginFacebook}>
                   <Icon
@@ -116,10 +116,12 @@ const LoginScreen = ({ navigation }) => {
             Forgot Password?
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity  onPress={() => navigation.navigate("Register")}>
-          <Text>
-            Register >
-          </Text>
+        <TouchableOpacity onPress={() => navigation.navigate("Register")}>
+          <Text style={styles.optionText}>Register <Icon
+            name='chevron-right'
+            type='font-awesome'
+            color='#D50000'
+          /></Text>
         </TouchableOpacity>
       </View>
       {/* </ScrollView> */}
@@ -191,7 +193,7 @@ const styles = StyleSheet.create({
     width: 200,
     borderRadius: 50,
     alignItems: "center",
-    backgroundColor: "red"
+    backgroundColor: "#D50000"
   },
   buttonText: {
     color: "white",
@@ -199,17 +201,17 @@ const styles = StyleSheet.create({
     padding: 15,
   },
   socialButton: {
-    margin:10,
+    margin: 10,
     width: 50,
-    height:50,
+    height: 50,
     borderRadius: 50,
     alignItems: "center",
-    backgroundColor: "red",
+    backgroundColor: "#D50000",
     justifyContent: "center",
     alignItems: 'center',
   },
   socialContainer: {
-    
+
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
@@ -234,7 +236,7 @@ const styles = StyleSheet.create({
     bottom: 50,
     left: 20,
     right: 20,
-    padding:10,
+    padding: 10,
     backgroundColor: "white",
     borderColor: "#D50000",
     borderWidth: 0.25,
@@ -247,5 +249,15 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.50,
     shadowRadius: 3.5
+  },
+  optionText: {
+    fontWeight: "600",
+    color: "#D50000",
+    display: "flex",
+    flexDirection: "row",
+    alignSelf: 'center',
+    // alignContent: "center",
+    justifyContent:"center",
+    textAlignVertical:"center"
   }
 })
