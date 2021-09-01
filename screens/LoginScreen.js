@@ -131,10 +131,6 @@ const LoginScreen = ({ navigation }) => {
 export default LoginScreen
 
 const styles = StyleSheet.create({
-  scroll: {
-    backgroundColor: "transparent",
-    top: -200,
-  },
   container: {
     height: "100%",
     display: "flex",

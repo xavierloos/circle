@@ -63,16 +63,63 @@ const RegisterScreen = ({ navigation }) => {
 }
 export default RegisterScreen;
 const styles = StyleSheet.create({
-  scroll: {
-    backgroundColor: "white",
-    paddingTop: 50
-  },
   container: {
-    flex: 1,
-    padding: 10,
+    height: "100%",
+    display: "flex",
+    flexDirection: "column",
     backgroundColor: "white",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    alignItems: 'center'
+  },
+  headerCircle: {
+    width: "100%",
+    height: 400,
+    backgroundColor: "#D50000",
+    borderRadius: 2000,
+    top: -180,
+    left: -0,
+    justifyContent: "flex-end",
+    alignItems: 'center'
+  },
+  headerTitle: {
+    fontWeight: "700",
+    fontSize: 60,
+    color: "white",
+    marginBottom: 50,
+    letterSpacing: 7
+  },
+  formContainer: {
+    height: "auto",
+    alignItems: 'center',
+    backgroundColor: "transparent",
+    top: -200
+  },
+  slogan: {
+    fontWeight: "300",
+    color: "#9A9A9A",
+    paddingVertical: 30
+  },
+  span: {
+    fontWeight: "800",
+    color: "#D50000"
+  },
+  inputContainer: {
+    width: 300,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    alignItems: 'center'
+  },
+  input: {
+    textTransform: 'lowercase'
+  },
+  button: {
+    width: 200,
+    borderRadius: 50,
     alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: "#D50000"
   },
   title: {
     marginBottom: 50,
