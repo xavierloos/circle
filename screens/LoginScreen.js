@@ -117,11 +117,11 @@ const LoginScreen = ({ navigation }) => {
           </Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.optionTextContainer} onPress={() => navigation.navigate("Register")}>
-          <Text style={styles.optionText}>Register <Icon
+          <Text style={styles.optionText}>Register </Text><Icon
             name='chevron-right'
             type='font-awesome'
             color='#D50000'
-          /></Text>
+          />
         </TouchableOpacity>
       </View>
       {/* </ScrollView> */}
@@ -241,7 +241,7 @@ const styles = StyleSheet.create({
     borderColor: "#D50000",
     borderWidth: 0.25,
     borderRadius: 15,
-    height: 100,
+    height: 50,
     shadowColor: "#808080",
     shadowOffset: {
       width: 0,
@@ -252,13 +252,12 @@ const styles = StyleSheet.create({
   },
   optionTextContainer: {
     display: "flex",
+    flexDirection:"row",
     justifyContent:"center",
     alignItems: 'center',
   },
   optionText: {
     fontWeight: "600",
-    color: "#D50000",
-    display: "flex",
-    alignItems: 'center',
+    color: "#D50000"
   }
 })
