@@ -41,7 +41,7 @@ const RegisterScreen = ({ navigation }) => {
         <Text style={styles.headerTitle}>CIRCLE</Text>
       </View>
       <View style={styles.formContainer}>
-        <KeyboardAvoidingView behavior="padding" style={styles.container}>
+        <KeyboardAvoidingView behavior="padding" style={styles.formContainer}>
           <StatusBar style="light" />
           <Text h2 style={styles.title}>Register</Text>
           <View style={styles.inputContainer}>

@@ -53,7 +53,6 @@ const LoginScreen = ({ navigation }) => {
       <View style={styles.headerCircle}>
         <Text style={styles.headerTitle}>CIRCLE</Text>
       </View>
-      {/* <ScrollView style={styles.scroll}> */}
       <View style={styles.formContainer}>
         <KeyboardAvoidingView behavior="padding" >
           <StatusBar style="light" />
@@ -123,7 +122,6 @@ const LoginScreen = ({ navigation }) => {
           />
         </TouchableOpacity>
       </View>
-      {/* </ScrollView> */}
     </View>
   )
 }
