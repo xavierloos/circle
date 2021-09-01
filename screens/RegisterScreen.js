@@ -41,10 +41,13 @@ const RegisterScreen = ({ navigation }) => {
         <Text style={styles.headerTitle}>CIRCLE</Text>
       </View>
       <View style={styles.formContainer}>
-        <KeyboardAvoidingView behavior="padding" style={styles.formContainer}>
+        <KeyboardAvoidingView behavior="padding">
           <StatusBar style="light" />
-          <Text h2 style={styles.title}>Register</Text>
           <View style={styles.inputContainer}>
+            <Text h2 style={styles.slogan}>
+              <Text style={styles.span}>Register</Text>
+              <Text> now and start talkin' to your friends!</Text>
+            </Text>
             <Input style={styles.input} type="text" placeholder="First name" autoFocus value={firstName} onChangeText={(text) => setFirstName(text)} leftIcon={<Icon name="user" type="font-awesome" size={30} color="#D50000" style={{ marginRight: 10 }} />} />
             <Input type="email" placeholder="Email" autoCapitalize="none" value={email} onChangeText={(text) => setEmail(text)} leftIcon={<Icon name="at" type="font-awesome" size={30} color="#D50000" style={{ marginRight: 10 }} />} />
             <Input secureTextEntry autoCapitalize="none" type="password" placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} leftIcon={<Icon name="lock" type="font-awesome" size={30} color="#D50000" style={{ marginRight: 10 }} />} />
