@@ -78,9 +78,17 @@ const RegisterScreen = ({ navigation }) => {
               />
               <Input containerStyle={styles.input} type="email" placeholder="Email" autoCapitalize="none" value={email} onChangeText={(text) => setEmail(text)} />
             </View>
-
-            <Input secureTextEntry autoCapitalize="none" type="password" placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} leftIcon={<Icon name="lock" type="font-awesome" size={30} color="#D50000" style={{ marginRight: 10 }} />} />
-            <Input type="text" autoCapitalize="none" placeholder="Profile picture URL" value={imageUrl} onChangeText={(text) => setImageUrl(text)} onSubmitEditing={register} leftIcon={<Icon name="photo" type="font-awesome" size={30} color="#D50000" style={{ marginRight: 10 }} />} />
+            <View style={styles.inputs}>
+              <Icon
+                name='lock'
+                type='antdesign'
+                color='#D50000'
+              />
+              <Input containerStyle={styles.input} secureTextEntry autoCapitalize="none" type="password" placeholder="Password" value={password} onChangeText={(text) => setPassword(text)}  />
+            </View>
+            <View style={styles.inputs}>
+              <Input containerStyle={styles.input} type="text" autoCapitalize="none" placeholder="Profile picture URL" value={imageUrl} onChangeText={(text) => setImageUrl(text)} onSubmitEditing={register} leftIcon={<Icon name="photo" type="font-awesome" size={30} color="#D50000" style={{ marginRight: 10 }} />} />
+            </View>
           </View>
           <Button raised disabled={!password} containerStyle={styles.button} raised onPress={register} title="Register" />
           <View style={{ height: 100 }} />
