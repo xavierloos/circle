@@ -84,10 +84,15 @@ const RegisterScreen = ({ navigation }) => {
                 type='antdesign'
                 color='#D50000'
               />
-              <Input containerStyle={styles.input} secureTextEntry autoCapitalize="none" type="password" placeholder="Password" value={password} onChangeText={(text) => setPassword(text)}  />
+              <Input containerStyle={styles.input} secureTextEntry autoCapitalize="none" type="password" placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} />
             </View>
             <View style={styles.inputs}>
-              <Input containerStyle={styles.input} type="text" autoCapitalize="none" placeholder="Profile picture URL" value={imageUrl} onChangeText={(text) => setImageUrl(text)} onSubmitEditing={register} leftIcon={<Icon name="photo" type="font-awesome" size={30} color="#D50000" style={{ marginRight: 10 }} />} />
+              <Icon
+                name='picture'
+                type='antdesign'
+                color='#D50000'
+              />
+              <Input containerStyle={styles.input} type="text" autoCapitalize="none" placeholder="Profile picture URL" value={imageUrl} onChangeText={(text) => setImageUrl(text)} onSubmitEditing={register} />
             </View>
           </View>
           <Button raised disabled={!password} containerStyle={styles.button} raised onPress={register} title="Register" />
