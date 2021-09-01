@@ -112,12 +112,11 @@ const LoginScreen = ({ navigation }) => {
       </View>
       <View style={styles.optionBar}>
         <TouchableOpacity>
-          <Text>
-            Forgot Password?
-          </Text>
+          <Text style={styles.optionText}>Forgot Password?</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.optionTextContainer} onPress={() => navigation.navigate("Register")}>
-          <Text style={styles.optionText}>Register </Text><Icon
+          <Text style={styles.optionText}>Register </Text>
+          <Icon
             name='chevron-right'
             type='font-awesome'
             color='#D50000'
@@ -171,7 +170,7 @@ const styles = StyleSheet.create({
     top: -200,
   },
   slogan: {
-    fontWeight: "500",
+    fontWeight: "300",
     color: "#9A9A9A",
     paddingVertical: 30,
   },
@@ -257,7 +256,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   optionText: {
-    fontWeight: "600",
+    fontWeight: "300",
     color: "#D50000"
   }
 })
