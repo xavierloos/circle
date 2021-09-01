@@ -134,7 +134,6 @@ const styles = StyleSheet.create({
   scroll: {
     backgroundColor: "transparent",
     top: -200,
-
   },
   container: {
     height: "100%",
@@ -144,7 +143,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
-    alignItems: 'center',
+    alignItems: 'center'
   },
   headerCircle: {
     width: "100%",
@@ -154,7 +153,7 @@ const styles = StyleSheet.create({
     top: -180,
     left: -0,
     justifyContent: "flex-end",
-    alignItems: 'center',
+    alignItems: 'center'
   },
   headerTitle: {
     fontWeight: "700",
@@ -167,23 +166,23 @@ const styles = StyleSheet.create({
     height: "auto",
     alignItems: 'center',
     backgroundColor: "transparent",
-    top: -200,
+    top: -200
   },
   slogan: {
     fontWeight: "300",
     color: "#9A9A9A",
-    paddingVertical: 30,
+    paddingVertical: 30
   },
   span: {
     fontWeight: "800",
-    color: "#D50000",
+    color: "#D50000"
   },
   inputContainer: {
     width: 300,
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
-    alignItems: 'center',
+    alignItems: 'center'
   },
   input: {
     textTransform: 'lowercase'
@@ -198,7 +197,7 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 20,
     padding: 15,
-    fontWeight: "300",
+    fontWeight: "300"
   },
   socialButton: {
     margin: 10,
@@ -208,19 +207,18 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#D50000",
     justifyContent: "center",
-    alignItems: 'center',
+    alignItems: 'center'
   },
   socialContainer: {
-
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: 'center',
+    alignItems: 'center'
   },
   textConnect: {
     marginTop: 20,
     fontWeight: "300",
-    color: "#808080",
+    color: "#808080"
   },
   buttonFacebook: {
     marginTop: 10,
@@ -245,7 +243,7 @@ const styles = StyleSheet.create({
     shadowColor: "#808080",
     shadowOffset: {
       width: 0,
-      height: 5,
+      height: 5
     },
     shadowOpacity: 0.50,
     shadowRadius: 3.5
@@ -254,7 +252,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection:"row",
     justifyContent:"center",
-    alignItems: 'center',
+    alignItems: 'center'
   },
   optionText: {
     fontWeight: "300",
