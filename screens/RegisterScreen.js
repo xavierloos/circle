@@ -48,7 +48,24 @@ const RegisterScreen = ({ navigation }) => {
               <Text style={styles.span}>Register</Text>
               <Text> now and start talkin' to your friends!</Text>
             </Text>
-            <Input style={styles.input} type="text" placeholder="First name" autoFocus value={firstName} onChangeText={(text) => setFirstName(text)} leftIcon={<Icon name="user" type="font-awesome" size={30} color="#D50000" style={{ marginRight: 10 }} />} />
+            <View style={styles.inputNameContainer}>
+              <Input
+                containerStyle={styles.inputName}
+                type="text"
+                placeholder="Name"
+                autoFocus
+                value={firstName}
+                onChangeText={(text) => setFirstName(text)}
+                leftIcon={<Icon name="user" type="font-awesome" size={30} color="#D50000" style={{ marginRight: 10 }} />}
+              />
+              <Input
+                containerStyle={styles.inputName}
+                type="text"
+                placeholder="Lastname"
+                // value={firstName}
+                // onChangeText={(text) => setFirstName(text)}
+              />
+            </View>
             <Input type="email" placeholder="Email" autoCapitalize="none" value={email} onChangeText={(text) => setEmail(text)} leftIcon={<Icon name="at" type="font-awesome" size={30} color="#D50000" style={{ marginRight: 10 }} />} />
             <Input secureTextEntry autoCapitalize="none" type="password" placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} leftIcon={<Icon name="lock" type="font-awesome" size={30} color="#D50000" style={{ marginRight: 10 }} />} />
             <Input type="text" autoCapitalize="none" placeholder="Profile picture URL" value={imageUrl} onChangeText={(text) => setImageUrl(text)} onSubmitEditing={register} leftIcon={<Icon name="photo" type="font-awesome" size={30} color="#D50000" style={{ marginRight: 10 }} />} />
@@ -109,13 +126,19 @@ const styles = StyleSheet.create({
     color: "#D50000"
   },
   inputContainer: {
-    width: 300,
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
     alignItems: 'center'
   },
-  input: {
+  inputNameContainer: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: 'center'
+  },
+  inputName: {
+    width: "50%",
     textTransform: 'lowercase'
   },
   button: {
