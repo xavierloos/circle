@@ -54,21 +54,24 @@ const RegisterScreen = ({ navigation }) => {
                 type='antdesign'
                 color='#D50000'
               />
-              <Input
-                containerStyle={styles.inputName}
-                type="text"
-                placeholder="Name"
-                autoFocus
-                value={firstName}
-                onChangeText={(text) => setFirstName(text)}
-              />
-              <Input
-                containerStyle={styles.inputName}
-                type="text"
-                placeholder="Lastname"
-              // value={firstName}
-              // onChangeText={(text) => setFirstName(text)}
-              />
+              <View style={styles.inputs}>
+                <Input
+                  containerStyle={styles.inputName}
+                  type="text"
+                  placeholder="Name"
+                  autoFocus
+                  value={firstName}
+                  onChangeText={(text) => setFirstName(text)}
+                />
+                <Input
+                  containerStyle={styles.inputName}
+                  type="text"
+                  placeholder="Lastname"
+                // value={firstName}
+                // onChangeText={(text) => setFirstName(text)}
+                />
+              </View>
+
             </View>
             <View style={styles.inputs}>
               <Icon
@@ -144,7 +147,7 @@ const styles = StyleSheet.create({
   slogan: {
     fontWeight: "300",
     color: "#9A9A9A",
-    paddingVertical: 30
+    paddingTop: 30
   },
   span: {
     fontWeight: "800",
@@ -154,32 +157,31 @@ const styles = StyleSheet.create({
     width: "70%",
   },
   inputs: {
+    paddingTop: 20,
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: 'center'
   },
   inputName: {
-    width: "45%",
-    textTransform: 'lowercase'
+    width: "50%",
+    textTransform: 'lowercase',
+    display: "flex",
+    flexDirection: "row",
+    alignItems: 'center'
   },
   input: {
     width: "100%",
-    textTransform: 'lowercase'
+    textTransform: 'lowercase',
+    display: "flex",
+    flexDirection: "row",
+    alignItems: 'center'
   },
   button: {
     width: 200,
     borderRadius: 50,
     alignItems: "center",
     backgroundColor: "#D50000"
-  },
-  title: {
-    marginBottom: 50,
-    fontWeight: "700",
-    color: "#D50000"
-  },
-
-  input: {
   },
   button: {
     width: 200,
