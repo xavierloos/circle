@@ -48,7 +48,12 @@ const RegisterScreen = ({ navigation }) => {
               <Text style={styles.span}>Register</Text>
               <Text> now and start talkin' to your friends!</Text>
             </Text>
-            <View style={styles.inputNameContainer}>
+            <View style={styles.inputs}>
+              <Icon
+                name='user'
+                type='antdesign'
+                color='#D50000'
+              />
               <Input
                 containerStyle={styles.inputName}
                 type="text"
@@ -56,17 +61,24 @@ const RegisterScreen = ({ navigation }) => {
                 autoFocus
                 value={firstName}
                 onChangeText={(text) => setFirstName(text)}
-                leftIcon={<Icon name="user" type="font-awesome" size={30} color="#D50000" style={{ marginRight: 10 }} />}
               />
               <Input
                 containerStyle={styles.inputName}
                 type="text"
                 placeholder="Lastname"
-                // value={firstName}
-                // onChangeText={(text) => setFirstName(text)}
+              // value={firstName}
+              // onChangeText={(text) => setFirstName(text)}
               />
             </View>
-            <Input type="email" placeholder="Email" autoCapitalize="none" value={email} onChangeText={(text) => setEmail(text)} leftIcon={<Icon name="at" type="font-awesome" size={30} color="#D50000" style={{ marginRight: 10 }} />} />
+            <View style={styles.inputs}>
+              <Icon
+                name='mail'
+                type='antdesign'
+                color='#D50000'
+              />
+              <Input containerStyle={styles.input} type="email" placeholder="Email" autoCapitalize="none" value={email} onChangeText={(text) => setEmail(text)} />
+            </View>
+
             <Input secureTextEntry autoCapitalize="none" type="password" placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} leftIcon={<Icon name="lock" type="font-awesome" size={30} color="#D50000" style={{ marginRight: 10 }} />} />
             <Input type="text" autoCapitalize="none" placeholder="Profile picture URL" value={imageUrl} onChangeText={(text) => setImageUrl(text)} onSubmitEditing={register} leftIcon={<Icon name="photo" type="font-awesome" size={30} color="#D50000" style={{ marginRight: 10 }} />} />
           </View>
@@ -126,19 +138,20 @@ const styles = StyleSheet.create({
     color: "#D50000"
   },
   inputContainer: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-between",
-    alignItems: 'center'
+    width: "70%",
   },
-  inputNameContainer: {
+  inputs: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: 'center'
   },
   inputName: {
-    width: "50%",
+    width: "45%",
+    textTransform: 'lowercase'
+  },
+  input: {
+    width: "100%",
     textTransform: 'lowercase'
   },
   button: {
@@ -152,9 +165,7 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     color: "#D50000"
   },
-  inputContainer: {
-    width: 300
-  },
+
   input: {
   },
   button: {
