@@ -198,6 +198,7 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 20,
     padding: 15,
+    fontWeight: "300",
   },
   socialButton: {
     margin: 10,
@@ -218,7 +219,7 @@ const styles = StyleSheet.create({
   },
   textConnect: {
     marginTop: 20,
-    fontWeight: "600",
+    fontWeight: "300",
     color: "#808080",
   },
   buttonFacebook: {
