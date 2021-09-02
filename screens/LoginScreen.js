@@ -182,6 +182,14 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: 'center'
   },
+  inputs: {
+    width: "90%",
+    paddingTop: 20,
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: 'center'
+  },
   input: {
     textTransform: 'lowercase'
   },
