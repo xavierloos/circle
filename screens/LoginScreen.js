@@ -182,7 +182,7 @@ const styles = StyleSheet.create({
     color: "#D50000"
   },
   inputContainer: {
-    width:"80%",
+    width: "80%",
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
@@ -197,7 +197,11 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   input: {
-    textTransform: 'lowercase'
+    width: "100%",
+    textTransform: 'lowercase',
+    display: "flex",
+    flexDirection: "row",
+    alignItems: 'center'
   },
   button: {
     width: 200,
