@@ -97,13 +97,13 @@ const RegisterScreen = ({ navigation }) => {
               />
               <Input containerStyle={styles.input} type="text" autoCapitalize="none" placeholder="Profile picture URL" value={imageUrl} onChangeText={(text) => setImageUrl(text)} onSubmitEditing={register} />
             </View>
+            <TouchableOpacity style={styles.button} onPress={register}>
+              <Text style={styles.buttonText}>Register</Text>
+            </TouchableOpacity>
           </View>
+
           {/* <Button raised disabled={!password} containerStyle={styles.button} raised onPress={register} title="Register" /> */}
-          <TouchableOpacity style={styles.button} onPress={register}>
-            <Text style={styles.buttonText}>
-              Register
-            </Text>
-          </TouchableOpacity>
+
         </KeyboardAvoidingView>
       </View>
     </View>
@@ -159,6 +159,10 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     width: "80%",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    alignItems: 'center'
   },
   inputs: {
     width: "90%",
