@@ -77,6 +77,13 @@ const LoginScreen = ({ navigation }) => {
                 onChangeText={(text) => setEmail(text)}
               />
             </View>
+            <View style={styles.inputs}>
+              <Icon
+                name='lock'
+                type='antdesign'
+                color='#D50000'
+              />
+            </View>
 
             <Input secureTextEntry type="password" autoCapitalize="none" placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} onSubmitEditing={singIn} leftIcon={<Icon name="lock" type="font-awesome" size={30} color="#D50000" />} />
             <TouchableOpacity style={styles.button} onPress={singIn}>
