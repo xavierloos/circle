@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useLayoutEffect } from 'react'
-import { Button, StyleSheet, View, KeyboardAvoidingView, ScrollView, Platform, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, KeyboardAvoidingView, Platform, TouchableOpacity } from 'react-native';
 import { Input, Icon, Text } from "react-native-elements"
 import { StatusBar } from "expo-status-bar";
 import { auth } from "../firebase"
@@ -77,8 +77,6 @@ const LoginScreen = ({ navigation }) => {
                 Login
               </Text>
             </TouchableOpacity>
-            {/* <Button color="red" containerStyle={styles.button} title="Press me" onPress={singIn} */}
-            {/* <Button raised disabled={!password && !email} title="Login" containerStyle={styles.button} onPress={singIn} /> */}
             {Platform.OS === 'ios' && <>
               <Text style={styles.textConnect}>Connect with: </Text>
               <View style={styles.socialContainer}>
@@ -103,7 +101,6 @@ const LoginScreen = ({ navigation }) => {
                     color='white'
                   />
                 </TouchableOpacity>
-                {/* <Button type="clear" containerStyle={styles.buttonFacebook} onPress={loginFacebook} icon={<Icon name="facebook" size={40} color="red" />} /> */}
               </View>
             </>}
           </View>
