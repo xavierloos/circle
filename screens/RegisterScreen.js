@@ -1,9 +1,8 @@
 import React, { useState, useLayoutEffect } from 'react'
 import { View, KeyboardAvoidingView, StyleSheet, TouchableOpacity } from 'react-native'
-import { Button, Input, Text, Icon } from "react-native-elements"
+import {Input, Text, Icon } from "react-native-elements"
 import { StatusBar } from 'expo-status-bar'
 import { auth } from "../firebase"
-import { color } from 'react-native-reanimated'
 
 const RegisterScreen = ({ navigation }) => {
   const [firstName, setFirstName] = useState("")
@@ -35,7 +34,6 @@ const RegisterScreen = ({ navigation }) => {
       .catch((error) => alert(error.message))
   }
   return (
-    // <ScrollView style={styles.scroll}>
     <View style={styles.container}>
       <View style={styles.headerCircle}>
         <Text style={styles.headerTitle}>CIRCLE</Text>
@@ -101,16 +99,9 @@ const RegisterScreen = ({ navigation }) => {
               <Text style={styles.buttonText}>Register</Text>
             </TouchableOpacity>
           </View>
-
-          {/* <Button raised disabled={!password} containerStyle={styles.button} raised onPress={register} title="Register" /> */}
-
         </KeyboardAvoidingView>
       </View>
     </View>
-
-
-    // </ScrollView>
-
   )
 }
 export default RegisterScreen;
