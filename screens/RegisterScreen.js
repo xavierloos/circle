@@ -99,7 +99,6 @@ const RegisterScreen = ({ navigation }) => {
             </View>
           </View>
           <Button raised disabled={!password} containerStyle={styles.button} raised onPress={register} title="Register" />
-          <View style={{ height: 100 }} />
         </KeyboardAvoidingView>
       </View>
     </View>
