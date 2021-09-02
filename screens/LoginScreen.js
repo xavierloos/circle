@@ -68,7 +68,7 @@ const LoginScreen = ({ navigation }) => {
                 color='#D50000'
               />
               <Input
-                style={styles.input}
+                containerStyle={styles.input}
                 type="email"
                 autoCapitalize="none"
                 placeholder="Email"
@@ -83,7 +83,7 @@ const LoginScreen = ({ navigation }) => {
                 type='antdesign'
                 color='#D50000'
               />
-              <Input secureTextEntry type="password" autoCapitalize="none" placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} onSubmitEditing={singIn} />
+              <Input containerStyle={styles.input} secureTextEntry type="password" autoCapitalize="none" placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} onSubmitEditing={singIn} />
             </View>
             <TouchableOpacity style={styles.button} onPress={singIn}>
               <Text style={styles.buttonText}>
@@ -182,7 +182,7 @@ const styles = StyleSheet.create({
     color: "#D50000"
   },
   inputContainer: {
-    width: 300,
+    width:"80%",
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
