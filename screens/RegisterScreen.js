@@ -80,11 +80,7 @@ const RegisterScreen = ({ navigation }) => {
               <Input containerStyle={styles.input} type="email" placeholder="Email" autoCapitalize="none" value={email} onChangeText={(text) => setEmail(text)} />
             </View>
             <View style={styles.inputs}>
-              <Icon
-                name='lock'
-                type='antdesign'
-                color='#D50000'
-              />
+              <Icon name='lock' type='antdesign' color='#D50000' />
               <Input containerStyle={styles.input} secureTextEntry autoCapitalize="none" type="password" placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} />
             </View>
             <View style={styles.inputs}>
