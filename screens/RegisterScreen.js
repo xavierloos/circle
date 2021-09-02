@@ -1,5 +1,5 @@
 import React, { useState, useLayoutEffect } from 'react'
-import { View, KeyboardAvoidingView, StyleSheet, ScrollView } from 'react-native'
+import { View, KeyboardAvoidingView, StyleSheet, } from 'react-native'
 import { Button, Input, Text, Icon } from "react-native-elements"
 import { StatusBar } from 'expo-status-bar'
 import { auth } from "../firebase"
@@ -99,6 +99,7 @@ const RegisterScreen = ({ navigation }) => {
             </View>
           </View>
           <Button raised disabled={!password} containerStyle={styles.button} raised onPress={register} title="Register" />
+        
         </KeyboardAvoidingView>
       </View>
     </View>
