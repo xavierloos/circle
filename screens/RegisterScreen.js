@@ -54,7 +54,7 @@ const RegisterScreen = ({ navigation }) => {
                 type='antdesign'
                 color='#D50000'
               />
-              <View style={styles.inputs}>
+              <View style={styles.input}>
                 <Input
                   containerStyle={styles.inputName}
                   type="text"
@@ -158,9 +158,10 @@ const styles = StyleSheet.create({
     color: "#D50000"
   },
   inputContainer: {
-    width: "70%",
+    width: "80%",
   },
   inputs: {
+    width: "90%",
     paddingTop: 20,
     display: "flex",
     flexDirection: "row",
