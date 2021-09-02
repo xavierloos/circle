@@ -101,6 +101,19 @@ const RegisterScreen = ({ navigation }) => {
           </View>
         </KeyboardAvoidingView>
       </View>
+      <View style={styles.optionBar}>
+        <TouchableOpacity>
+          <Text style={styles.optionText}>Forgot Password?</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.optionTextContainer} onPress={() => navigation.navigate("Login")}>
+          <Text style={styles.optionText}>Login </Text>
+          <Icon
+            name='chevron-right'
+            type='font-awesome'
+            color='#D50000'
+          />
+        </TouchableOpacity>
+      </View>
     </View>
   )
 }
