@@ -61,16 +61,23 @@ const LoginScreen = ({ navigation }) => {
               <Text style={styles.span}>Login</Text>
               <Text> to create a Circle or register to get started!</Text>
             </Text>
-            <Input
-              style={styles.input}
-              type="email"
-              autoCapitalize="none"
-              placeholder="Email"
-              // autoFocus
-              value={email}
-              onChangeText={(text) => setEmail(text)}
-              leftIcon={<Icon name="at" type="font-awesome" size={30} color="#D50000" />}
-            />
+            <View style={styles.inputs}>
+              <Icon
+                name='mail'
+                type='antdesign'
+                color='#D50000'
+              />
+              <Input
+                style={styles.input}
+                type="email"
+                autoCapitalize="none"
+                placeholder="Email"
+                // autoFocus
+                value={email}
+                onChangeText={(text) => setEmail(text)}
+              />
+            </View>
+
             <Input secureTextEntry type="password" autoCapitalize="none" placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} onSubmitEditing={singIn} leftIcon={<Icon name="lock" type="font-awesome" size={30} color="#D50000" />} />
             <TouchableOpacity style={styles.button} onPress={singIn}>
               <Text style={styles.buttonText}>
@@ -241,8 +248,8 @@ const styles = StyleSheet.create({
   },
   optionTextContainer: {
     display: "flex",
-    flexDirection:"row",
-    justifyContent:"center",
+    flexDirection: "row",
+    justifyContent: "center",
     alignItems: 'center'
   },
   optionText: {
