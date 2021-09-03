@@ -186,7 +186,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: 'center'
   },
-  
+
   button: {
     marginTop: 20,
     width: 200,
@@ -194,6 +194,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#D50000"
   },
+  
   buttonText: {
     color: "white",
     fontSize: 20,
