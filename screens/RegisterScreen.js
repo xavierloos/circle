@@ -164,7 +164,6 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: 'center'
   },
-
   inputs: {
     width: "90%",
     paddingTop: 20,
