@@ -186,7 +186,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: 'center'
   },
-
   button: {
     marginTop: 20,
     width: 200,
