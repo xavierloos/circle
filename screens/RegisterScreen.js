@@ -172,7 +172,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: 'center'
   },
-  
+
   inputName: {
     width: "50%",
     textTransform: 'lowercase',
@@ -180,7 +180,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: 'center'
   },
-
   input: {
     width: "100%",
     textTransform: 'lowercase',
