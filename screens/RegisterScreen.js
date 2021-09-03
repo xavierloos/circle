@@ -179,6 +179,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: 'center'
   },
+  
   input: {
     width: "100%",
     textTransform: 'lowercase',
