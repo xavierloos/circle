@@ -173,7 +173,6 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: 'center'
   },
-  
   inputName: {
     width: "50%",
     textTransform: 'lowercase',
