@@ -181,7 +181,6 @@ const styles = StyleSheet.create({
     fontWeight: "800",
     color: "#D50000"
   },
-
   inputContainer: {
     width: "80%",
     display: "flex",
