@@ -153,7 +153,6 @@ const styles = StyleSheet.create({
     color: "#9A9A9A",
     paddingTop: 30
   },
-  
   span: {
     fontWeight: "800",
     color: "#D50000"
