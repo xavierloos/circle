@@ -33,6 +33,7 @@ const RegisterScreen = ({ navigation }) => {
       })
       .catch((error) => alert(error.message))
   }
+  
   return (
     <View style={styles.container}>
       <View style={styles.headerCircle}>
