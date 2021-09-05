@@ -148,13 +148,12 @@ const styles = StyleSheet.create({
     backgroundColor: "transparent",
     top: -200
   },
-
   slogan: {
     fontWeight: "300",
     color: "#9A9A9A",
     paddingTop: 30
   },
-  
+
   span: {
     fontWeight: "800",
     color: "#D50000"
