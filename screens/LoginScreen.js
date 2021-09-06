@@ -5,7 +5,6 @@ import { StatusBar } from "expo-status-bar";
 import { auth } from "../firebase"
 import * as Facebook from 'expo-facebook'
 
-
 const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
