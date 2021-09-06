@@ -114,7 +114,6 @@ const RegisterScreen = ({ navigation }) => {
     </View>
   )
 }
-
 export default RegisterScreen;
 
 const styles = StyleSheet.create({
