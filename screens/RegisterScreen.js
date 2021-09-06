@@ -116,6 +116,7 @@ const RegisterScreen = ({ navigation }) => {
 }
 
 export default RegisterScreen;
+
 const styles = StyleSheet.create({
   container: {
     height: "100%",
