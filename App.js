@@ -21,6 +21,7 @@ const globalScreenOptions = {
 export default function App() {
   console.disableYellowBox = true;
   return (
+    
     <NavigationContainer>
       <Stack.Navigator
         // initialRouteName="Home"
@@ -35,7 +36,7 @@ export default function App() {
         <Stack.Screen name="ChatInfo" component={ChatInfoScreen} />
         <Stack.Screen name="Profile" component={ProfileScreen} />
         <Stack.Screen name="EditProfile" component={EditProfileScreen} />
-        
+
       </Stack.Navigator>
 
     </NavigationContainer>
