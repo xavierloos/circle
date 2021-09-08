@@ -26,7 +26,7 @@ export default function App() {
         // initialRouteName="Home"
         screenOptions={globalScreenOptions}
       >
-        
+
         <Stack.Screen name="Login" component={LoginScreen}/>
         <Stack.Screen name="Register" component={RegisterScreen} />
         <Stack.Screen name="Home" component={HomeScreen} />
@@ -35,6 +35,7 @@ export default function App() {
         <Stack.Screen name="ChatInfo" component={ChatInfoScreen} />
         <Stack.Screen name="Profile" component={ProfileScreen} />
         <Stack.Screen name="EditProfile" component={EditProfileScreen} />
+        
       </Stack.Navigator>
 
     </NavigationContainer>
