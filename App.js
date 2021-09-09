@@ -19,6 +19,7 @@ const globalScreenOptions = {
   headerTintColor: "white"
 }
 
+
 export default function App() {
   console.disableYellowBox = true;
   return (
