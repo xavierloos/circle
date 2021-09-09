@@ -26,8 +26,9 @@ export default function App() {
   return (
 
     <NavigationContainer>
-      
+
       <Stack.Navigator
+        
         // initialRouteName="Home"
         screenOptions={globalScreenOptions}
       >
