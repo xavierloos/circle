@@ -36,7 +36,7 @@ const EditProfileScreen = ({ navigation }) => {
         Alert.alert(e.message)
       })
   }
-  
+
   const reauthenticate = currentPassword => {
     var user = firebase.auth().currentUser
     var cred = firebase.auth.EmailAuthProvider.credential(user.email, currentPassword)
@@ -52,7 +52,7 @@ const EditProfileScreen = ({ navigation }) => {
               <Avatar size={100} rounded source={{ uri: auth?.currentUser?.photoURL }} />
             </View>
             <Input type="text" placeholder={auth?.currentUser?.displayName} value={newName} autoFocus autoCapitalize="none" leftIcon={<Icon name="user" type="font-awesome" size={30} color="#D50000" />} />
-            <Input type="email" placeholder={auth?.currentUser?.email} value={newEmail} autoCapitalize="none" leftIcon={<Icon name="at" type="font-awesome" size={30} color="#D50000" />} keyboardType="email-address" />
+            <Input type="email" placeholder={auth?.currentUser?.email} value={newEmail} autoCapitalize="none" leftIcon={<Icon name="at" type="font-awesome" size={30} color="#D50000"/>} keyboardType="email-address" />
             <Input type="text" placeholder="Profile picture URL" value={newAvatar} leftIcon={<Icon name="photo" type="font-awesome" size={30} color="#D50000" style={{ marginRight: 10 }} />} />
             <Input secureTextEntry type="password" placeholder="Current Password" autoCapitalize="none" leftIcon={<Icon name="lock" type="font-awesome" size={30} color="#D50000" />} value={currentPassword} onChangeText={(text) => setCurrentPassword(text)} />
             <Input secureTextEntry type="password" placeholder="New Password" autoCapitalize="none" leftIcon={<Icon name="star" type="font-awesome" size={30} color="#D50000" />} value={newPassword} onChangeText={(text) => setNewPassword(text)} />
