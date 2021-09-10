@@ -47,9 +47,8 @@ const EditProfileScreen = ({ navigation }) => {
     <ScrollView style={styles.scroll}>
       <KeyboardAvoidingView behavior="padding" style={styles.container}>
         <View style={styles.container}>
-          
-          <View style={{ alignItems: "center" }}>
 
+          <View style={{ alignItems: "center" }}>
             <View style={styles.content}>
               <Avatar size={100} rounded source={{ uri: auth?.currentUser?.photoURL }} />
             </View>
