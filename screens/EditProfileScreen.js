@@ -42,7 +42,6 @@ const EditProfileScreen = ({ navigation }) => {
     var cred = firebase.auth.EmailAuthProvider.credential(user.email, currentPassword)
     return user.reauthenticateWithCredential(cred)
   }
-
   return (
     <ScrollView style={styles.scroll}>
       <KeyboardAvoidingView behavior="padding" style={styles.container}>
