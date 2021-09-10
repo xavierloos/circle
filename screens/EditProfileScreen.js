@@ -36,6 +36,7 @@ const EditProfileScreen = ({ navigation }) => {
         Alert.alert(e.message)
       })
   }
+  
   const reauthenticate = currentPassword => {
     var user = firebase.auth().currentUser
     var cred = firebase.auth.EmailAuthProvider.credential(user.email, currentPassword)
