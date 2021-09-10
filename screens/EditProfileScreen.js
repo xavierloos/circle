@@ -71,9 +71,31 @@ const EditProfileScreen = ({ navigation }) => {
               type="text"
               placeholder="Profile picture URL"
               value={newAvatar}
-              leftIcon={<Icon name="photo" type="font-awesome" size={30} color="#D50000" style={{ marginRight: 10 }} />}
+              leftIcon={
+                <Icon
+                  name="photo"
+                  type="font-awesome"
+                  size={30} color="#D50000"
+                  style={{ marginRight: 10 }}
+                />
+              }
             />
-            <Input secureTextEntry type="password" placeholder="Current Password" autoCapitalize="none" leftIcon={<Icon name="lock" type="font-awesome" size={30} color="#D50000" />} value={currentPassword} onChangeText={(text) => setCurrentPassword(text)} />
+            <Input
+              secureTextEntry
+              type="password"
+              placeholder="Current Password"
+              autoCapitalize="none"
+              leftIcon={
+                <Icon
+                  name="lock"
+                  type="font-awesome"
+                  size={30}
+                  color="#D50000"
+                />
+              }
+              value={currentPassword}
+              onChangeText={(text) => setCurrentPassword(text)}
+            />
             <Input secureTextEntry type="password" placeholder="New Password" autoCapitalize="none" leftIcon={<Icon name="star" type="font-awesome" size={30} color="#D50000" />} value={newPassword} onChangeText={(text) => setNewPassword(text)} />
             <Button raised title="Update user" type="outline" onPress={onChangePasswordPress} />
           </View>
