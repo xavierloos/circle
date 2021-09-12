@@ -108,7 +108,8 @@ const EditProfileScreen = ({ navigation }) => {
                   size={30} color="#D50000"
                 />
               }
-              value={newPassword} onChangeText={(text) => setNewPassword(text)} />
+              value={newPassword}
+              onChangeText={(text) => setNewPassword(text)} />
             <Button raised title="Update user" type="outline" onPress={onChangePasswordPress} />
           </View>
         </View>
