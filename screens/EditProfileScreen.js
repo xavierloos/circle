@@ -103,7 +103,8 @@ const EditProfileScreen = ({ navigation }) => {
               autoCapitalize="none"
               leftIcon={
                 <Icon
-                  name="star" type="font-awesome" size={30} color="#D50000" />} value={newPassword} onChangeText={(text) => setNewPassword(text)} />
+                  name="star"
+                  type="font-awesome" size={30} color="#D50000" />} value={newPassword} onChangeText={(text) => setNewPassword(text)} />
             <Button raised title="Update user" type="outline" onPress={onChangePasswordPress} />
           </View>
         </View>
