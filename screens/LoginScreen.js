@@ -90,7 +90,8 @@ const LoginScreen = ({ navigation }) => {
                 placeholder="Password"
                 value={password}
                 onChangeText={(text) => setPassword(text)}
-                onSubmitEditing={singIn} />
+                onSubmitEditing={singIn}
+              />
             </View>
             <TouchableOpacity style={styles.button} onPress={singIn}>
               <Text style={styles.buttonText}>
