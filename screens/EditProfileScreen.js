@@ -49,7 +49,8 @@ const EditProfileScreen = ({ navigation }) => {
         <View style={styles.container}>
           <View style={{ alignItems: "center" }}>
             <View style={styles.content}>
-              <Avatar size={100} rounded source={{ uri: auth?.currentUser?.photoURL }} />
+              <Avatar
+                size={100} rounded source={{ uri: auth?.currentUser?.photoURL }} />
             </View>
             <Input
               type="text"
