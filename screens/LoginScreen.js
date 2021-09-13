@@ -85,7 +85,8 @@ const LoginScreen = ({ navigation }) => {
               <Input
                 containerStyle={styles.input}
                 secureTextEntry
-                type="password" autoCapitalize="none" placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} onSubmitEditing={singIn} />
+                type="password"
+                autoCapitalize="none" placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} onSubmitEditing={singIn} />
             </View>
             <TouchableOpacity style={styles.button} onPress={singIn}>
               <Text style={styles.buttonText}>
