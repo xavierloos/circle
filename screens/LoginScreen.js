@@ -82,7 +82,8 @@ const LoginScreen = ({ navigation }) => {
                 type='antdesign'
                 color='#D50000'
               />
-              <Input containerStyle={styles.input} secureTextEntry type="password" autoCapitalize="none" placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} onSubmitEditing={singIn} />
+              <Input
+                containerStyle={styles.input} secureTextEntry type="password" autoCapitalize="none" placeholder="Password" value={password} onChangeText={(text) => setPassword(text)} onSubmitEditing={singIn} />
             </View>
             <TouchableOpacity style={styles.button} onPress={singIn}>
               <Text style={styles.buttonText}>
