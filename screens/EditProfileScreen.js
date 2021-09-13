@@ -115,7 +115,8 @@ const EditProfileScreen = ({ navigation }) => {
               raised
               title="Update user"
               type="outline"
-              onPress={onChangePasswordPress} />
+              onPress={onChangePasswordPress}
+            />
           </View>
         </View>
       </KeyboardAvoidingView>
