@@ -52,7 +52,8 @@ const EditProfileScreen = ({ navigation }) => {
               <Avatar
                 size={100}
                 rounded
-                source={{ uri: auth?.currentUser?.photoURL }} />
+                source={{ uri: auth?.currentUser?.photoURL }}
+              />
             </View>
             <Input
               type="text"
