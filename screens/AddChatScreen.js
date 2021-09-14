@@ -75,10 +75,10 @@ const AddChatScreen = ({ navigation }) => {
             color='#D50000'
           />
           <Input
+            containerStyle={styles.input}
             placeholder="Description"
             value={chatDescription}
             onChangeText={(text) => setChatDescription(text)}
-            leftIcon={<Icon name="comments" type="font-awesome" size={30} color="#D50000" required />}
             onSubmitEditing={createChat}
           />
         </View>
