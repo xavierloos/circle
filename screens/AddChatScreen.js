@@ -91,7 +91,26 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   inputContainer: {
-    width: 300
+    width: "80%",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    alignItems: 'center'
+  },
+  inputs: {
+    width: "90%",
+    paddingTop: 20,
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: 'center'
+  },
+  input: {
+    width: "100%",
+    textTransform: 'lowercase',
+    display: "flex",
+    flexDirection: "row",
+    alignItems: 'center'
   },
   button: {
     width: 200,
