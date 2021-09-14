@@ -77,6 +77,8 @@ const AddChatScreen = ({ navigation }) => {
       </View>
       <View style={styles.inputs}>
         <Text style={styles.creator}>Created by: {auth?.currentUser?.displayName}</Text>
+      </View>
+      <View style={styles.inputs}>
         <Button style={styles.button} onPress={chooseImage} title="Choose image" />
       </View>
       <Button disabled={!chatDescription} style={styles.button} onPress={createChat} title="Create Circle" />
