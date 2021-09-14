@@ -74,6 +74,8 @@ const AddChatScreen = ({ navigation }) => {
           leftIcon={<Icon name="comments" type="font-awesome" size={30} color="#D50000" required />}
           onSubmitEditing={createChat}
         />
+      </View>
+      <View style={styles.inputs}>
         <Text style={styles.creator}>Created by: {auth?.currentUser?.displayName}</Text>
         <Button style={styles.button} onPress={chooseImage} title="Choose image" />
       </View>
