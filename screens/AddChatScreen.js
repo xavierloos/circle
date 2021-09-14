@@ -63,7 +63,8 @@ const AddChatScreen = ({ navigation }) => {
           placeholder="Circle name"
           value={chatname}
           onChangeText={(text) => setChatname(text)}
-          leftIcon={<Icon name="comment" type="font-awesome" size={30} color="#D50000" required />}
+          color="#D50000"
+          required
         />
       </View>
       <View style={styles.inputs}>
