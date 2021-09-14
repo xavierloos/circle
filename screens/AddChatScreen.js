@@ -61,6 +61,7 @@ const AddChatScreen = ({ navigation }) => {
             color='#D50000'
           />
           <Input
+            containerStyle={styles.input}
             placeholder="Circle name"
             value={chatname}
             onChangeText={(text) => setChatname(text)}
