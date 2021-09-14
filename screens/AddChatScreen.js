@@ -54,6 +54,11 @@ const AddChatScreen = ({ navigation }) => {
 
     <View style={styles.container}>
       <View style={styles.inputContainer}>
+        <Icon
+          name='pluscircle'
+          type='antdesign'
+          color='#D50000'
+        />
         <Input
           placeholder="Circle name"
           value={chatname}
