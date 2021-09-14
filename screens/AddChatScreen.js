@@ -84,17 +84,28 @@ const AddChatScreen = ({ navigation }) => {
           />
         </View>
         <View style={styles.inputs}>
-          <Text style={styles.creator}>Created by: {auth?.currentUser?.displayName}</Text>
+          <Icon
+            name='user'
+            type='font-awesome'
+            color='#D50000'
+          />
+          <Input
+            disabled
+            containerStyle={styles.input}
+            placeholder="Description"
+            value={auth?.currentUser?.displayName}
+          />
         </View>
-        {/* <View style={styles.inputs}>
-          <Button style={styles.button} onPress={chooseImage} title="Choose image" />
-        </View> */}
         <TouchableOpacity style={styles.buttonUploadImage} onPress={chooseImage}>
-          <Text style={styles.buttonText}>
+          <Text style={styles.buttonUploadImageText}>
             Upload cover image
-              </Text>
+          </Text>
         </TouchableOpacity>
-        <Button disabled={!chatDescription} style={styles.button} onPress={createChat} title="Create Circle" />
+        <TouchableOpacity disabled={!chatDescription} style={styles.button} onPress={createChat}>
+          <Text style={styles.buttonText}>
+            Create CIRCLE
+          </Text>
+        </TouchableOpacity>
       </View>
     </View>
   )
