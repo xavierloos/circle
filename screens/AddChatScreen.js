@@ -53,41 +53,43 @@ const AddChatScreen = ({ navigation }) => {
   return (
 
     <View style={styles.container}>
-      <View style={styles.inputs}>
-        <Icon
-          name='edit'
-          type='antdesign'
-          color='#D50000'
-        />
-        <Input
-          placeholder="Circle name"
-          value={chatname}
-          onChangeText={(text) => setChatname(text)}
-          color="#D50000"
-          required
-        />
+      <View style={styles.inputContainer}>
+        <View style={styles.inputs}>
+          <Icon
+            name='circle'
+            type='font-awesome'
+            color='#D50000'
+          />
+          <Input
+            placeholder="Circle name"
+            value={chatname}
+            onChangeText={(text) => setChatname(text)}
+            color="#D50000"
+            required
+          />
+        </View>
+        <View style={styles.inputs}>
+          <Icon
+            name='users'
+            type='font-awesome'
+            color='#D50000'
+          />
+          <Input
+            placeholder="Description"
+            value={chatDescription}
+            onChangeText={(text) => setChatDescription(text)}
+            leftIcon={<Icon name="comments" type="font-awesome" size={30} color="#D50000" required />}
+            onSubmitEditing={createChat}
+          />
+        </View>
+        <View style={styles.inputs}>
+          <Text style={styles.creator}>Created by: {auth?.currentUser?.displayName}</Text>
+        </View>
+        <View style={styles.inputs}>
+          <Button style={styles.button} onPress={chooseImage} title="Choose image" />
+        </View>
+        <Button disabled={!chatDescription} style={styles.button} onPress={createChat} title="Create Circle" />
       </View>
-      <View style={styles.inputs}>
-        <Icon
-          name='filetext'
-          type='antdesign'
-          color='#D50000'
-        />
-        <Input
-          placeholder="Circle description"
-          value={chatDescription}
-          onChangeText={(text) => setChatDescription(text)}
-          leftIcon={<Icon name="comments" type="font-awesome" size={30} color="#D50000" required />}
-          onSubmitEditing={createChat}
-        />
-      </View>
-      <View style={styles.inputs}>
-        <Text style={styles.creator}>Created by: {auth?.currentUser?.displayName}</Text>
-      </View>
-      <View style={styles.inputs}>
-        <Button style={styles.button} onPress={chooseImage} title="Choose image" />
-      </View>
-      <Button disabled={!chatDescription} style={styles.button} onPress={createChat} title="Create Circle" />
     </View>
   )
 }
