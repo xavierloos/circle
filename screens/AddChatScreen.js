@@ -53,7 +53,7 @@ const AddChatScreen = ({ navigation }) => {
   return (
 
     <View style={styles.container}>
-      <View style={styles.inputContainer}>
+      <View style={styles.inputs}>
         <Icon
           name='edit'
           type='antdesign'
@@ -65,6 +65,8 @@ const AddChatScreen = ({ navigation }) => {
           onChangeText={(text) => setChatname(text)}
           leftIcon={<Icon name="comment" type="font-awesome" size={30} color="#D50000" required />}
         />
+      </View>
+      <View style={styles.inputs}>
         <Input
           placeholder="Circle description"
           value={chatDescription}
