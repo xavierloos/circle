@@ -86,12 +86,12 @@ const AddChatScreen = ({ navigation }) => {
         <View style={styles.inputs}>
           <Text style={styles.creator}>Created by: {auth?.currentUser?.displayName}</Text>
         </View>
-        <View style={styles.inputs}>
+        {/* <View style={styles.inputs}>
           <Button style={styles.button} onPress={chooseImage} title="Choose image" />
-        </View>
-        <TouchableOpacity style={styles.button} onPress={chooseImage}>
+        </View> */}
+        <TouchableOpacity style={styles.buttonUploadImage} onPress={chooseImage}>
           <Text style={styles.buttonText}>
-            Login
+            Upload cover image
               </Text>
         </TouchableOpacity>
         <Button disabled={!chatDescription} style={styles.button} onPress={createChat} title="Create Circle" />
@@ -131,6 +131,21 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     alignItems: 'center'
+  },
+  buttonUploadImage: {
+    marginTop: 20,
+    width: 300,
+    borderRadius: 50,
+    alignItems: "center",
+    backgroundColor: "white",
+    borderColor: "#D50000",
+    borderWidth: 0.25,
+  },
+  buttonUploadImageText: {
+    color: "gray",
+    fontSize: 20,
+    padding: 15,
+    fontWeight: "300"
   },
   button: {
     marginTop: 20,
