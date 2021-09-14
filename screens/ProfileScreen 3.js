@@ -3,7 +3,6 @@ import { StyleSheet, View, Modal, TouchableOpacity, Animated, Alert } from 'reac
 import { Avatar, Icon, Button, Text, Input } from 'react-native-elements'
 import { auth } from '../firebase'
 import firebase from "firebase"
-
 const ProfileScreen = ({ navigation }) => {
   const [visible, setVisible] = useState(false)
 
@@ -124,7 +123,7 @@ const ProfileScreen = ({ navigation }) => {
               name='question'
               type='font-awesome'
               color='#D50000' />
-            <Text h3>Are you sure you want to log out?</Text> 
+            <Text h3>Are you sure you want to log out?</Text>
           </View>
           <TouchableOpacity style={styles.button} activeOpacity={0.5} onPress={() => setVisible(false)} >
             <Button raised title="No, cancel" type="outline" onPress={() => setVisible(false)} />
@@ -177,7 +176,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     padding: 10,
     backgroundColor: "white",
-    height:"100%"
+    height: "100%"
   },
   avatarContainer: {
     display: "flex",
