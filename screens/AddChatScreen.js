@@ -1,5 +1,5 @@
 import React, { useLayoutEffect, useState } from 'react'
-import { StyleSheet, View, Alert } from 'react-native'
+import { StyleSheet, View, Alert, TouchableOpacity } from 'react-native'
 import { Input, Icon, Button, Text } from 'react-native-elements';
 import { auth, db } from '../firebase';
 import * as ImagePicker from 'expo-image-picker';
@@ -89,6 +89,11 @@ const AddChatScreen = ({ navigation }) => {
         <View style={styles.inputs}>
           <Button style={styles.button} onPress={chooseImage} title="Choose image" />
         </View>
+        <TouchableOpacity style={styles.button} onPress={chooseImage}>
+          <Text style={styles.buttonText}>
+            Login
+              </Text>
+        </TouchableOpacity>
         <Button disabled={!chatDescription} style={styles.button} onPress={createChat} title="Create Circle" />
       </View>
     </View>
@@ -128,8 +133,17 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   button: {
+    marginTop: 20,
     width: 200,
-    marginTop: 10,
+    borderRadius: 50,
+    alignItems: "center",
+    backgroundColor: "#D50000"
+  },
+  buttonText: {
+    color: "white",
+    fontSize: 20,
+    padding: 15,
+    fontWeight: "300"
   },
   creator: {
     textAlign: "center",
