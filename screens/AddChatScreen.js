@@ -105,7 +105,8 @@ const AddChatScreen = ({ navigation }) => {
         </TouchableOpacity>
         <TouchableOpacity
           disabled={!chatDescription}
-          style={styles.button} onPress={createChat}>
+          style={styles.button}
+          onPress={createChat}>
           <Text style={styles.buttonText}>
             Create CIRCLE
           </Text>
