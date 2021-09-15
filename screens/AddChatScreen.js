@@ -46,7 +46,6 @@ const AddChatScreen = ({ navigation }) => {
     const response = await fetch(uri)
     const blob = await response.blob()
     var ref = db.storage().ref().child("images/" + imageName)
-    console.log(ref)
     return ref.put(blob)
   }
 
