@@ -32,7 +32,6 @@ const AddChatScreen = ({ navigation }) => {
     if (!result.cancelled) {
       uploadImage(result.uri, "test-img")
         .then(() => {
-          console.log("uploadImage(result.uri)")
           console.log(uploadImage(result.uri))
           Alert.alert("Image uploaded")
         })
