@@ -250,6 +250,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white"
   },
 
+
   
   optionBar: {
     position: "absolute",
