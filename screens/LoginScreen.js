@@ -249,6 +249,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
     backgroundColor: "white"
   },
+  
   optionBar: {
     position: "absolute",
     elevation: 0,
