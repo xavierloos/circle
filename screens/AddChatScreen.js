@@ -97,7 +97,8 @@ const AddChatScreen = ({ navigation }) => {
           />
         </View>
         <TouchableOpacity
-          style={styles.buttonUploadImage} onPress={chooseImage}>
+          style={styles.buttonUploadImage}
+          onPress={chooseImage}>
           <Text style={styles.buttonUploadImageText}>
             Upload cover image
           </Text>
