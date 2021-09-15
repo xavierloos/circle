@@ -96,7 +96,8 @@ const AddChatScreen = ({ navigation }) => {
             value={auth?.currentUser?.displayName}
           />
         </View>
-        <TouchableOpacity style={styles.buttonUploadImage} onPress={chooseImage}>
+        <TouchableOpacity
+          style={styles.buttonUploadImage} onPress={chooseImage}>
           <Text style={styles.buttonUploadImageText}>
             Upload cover image
           </Text>
