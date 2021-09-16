@@ -24,7 +24,7 @@ const AddChatScreen = ({ navigation }) => {
       headerTintColor: "white",
       headerRight: () => (
         <View style={{ marginRight: 20, flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
-          
+
         </View>
       ),
       headerLeft: () => (
@@ -37,7 +37,7 @@ const AddChatScreen = ({ navigation }) => {
           </TouchableOpacity> */}
           <View>
             <Text style={styles.headerTitle}>CIRCLE</Text>
-            <Text style={styles.headerSubtitle}>Chats</Text>
+            <Text style={styles.headerSubtitle}>Add New Circle</Text>
           </View>
         </View>
       ),
@@ -146,6 +146,16 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     alignItems: "center",
     justifyContent: "center",
+  },
+  headerTitle: {
+    fontSize: 30,
+    fontWeight: "800",
+    color: "white"
+  },
+  headerSubtitle: {
+    fontSize: 25,
+    fontWeight: "400",
+    color: "white"
   },
   inputContainer: {
     width: "80%",
