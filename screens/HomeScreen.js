@@ -11,7 +11,15 @@ const HomeScreen = ({ navigation }) => {
   useLayoutEffect(() => {
     navigation.setOptions({
       title: false,
-      headerStyle: { backgroundColor: "#D50000", height: 115, borderRadius: 30, },
+      headerStyle: {
+        backgroundColor: "#D50000", height: 115, borderRadius: 30, shadowColor: "#808080",
+        shadowOffset: {
+          width: 0,
+          height: 5
+        },
+        shadowOpacity: 0.50,
+        shadowRadius: 3.5
+      },
       headerTitleStyle: { color: "white" },
       headerTintColor: "white",
       headerRight: () => (
