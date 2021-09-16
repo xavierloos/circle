@@ -6,18 +6,18 @@ import { Avatar } from 'react-native-elements'
 import { SimpleLineIcons } from "@expo/vector-icons"
 import { auth, db } from '../firebase'
 
-const HomeScreen = ({ navigation}) => {
+const HomeScreen = ({ navigation }) => {
   const [chats, setChats] = useState([]);
   useLayoutEffect(() => {
     navigation.setOptions({
       title: "CIRCLE",
-      headerStyle: { backgroundColor: "#D50000", height: 130  },
-      headerTitleStyle: { color: "white"},
+      headerStyle: { backgroundColor: "#D50000", height: 130 },
+      headerTitleStyle: { color: "white" },
       headerTintColor: "white",
       headerRight: () => (
         <View style={{ marginRight: 20, flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
           <TouchableOpacity activeOpacity={0.5} style={{ marginLeft: 5 }} onPress={() => navigation.navigate("Profile")}>
-            { 
+            {
               (auth?.currentUser?.photoURL === null) ? <SimpleLineIcons name="plus" size={24} color="white" /> : <Avatar size={70} rounded source={{ uri: auth?.currentUser?.photoURL }} />
             }
           </TouchableOpacity>
@@ -28,9 +28,13 @@ const HomeScreen = ({ navigation}) => {
           {/* <TouchableOpacity activeOpacity={0.5} style={{ marginLeft: 5 }}>
             <SimpleLineIcons name="camera" size={24} color="white" />
           </TouchableOpacity> */}
-          <TouchableOpacity onPress={() => navigation.navigate("AddChat")} activeOpacity={0.5} style={{ marginLeft: 5 }}>
+          {/* <TouchableOpacity onPress={() => navigation.navigate("AddChat")} activeOpacity={0.5} style={{ marginLeft: 5 }}>
             <SimpleLineIcons name="plus" size={24} color="white" />
-          </TouchableOpacity>
+          </TouchableOpacity> */}
+          <View>
+            <Text style={styles.headerTitle}>CIRCLE</Text>
+            <Text>Chats</Text>
+          </View>
         </View>
       ),
     })
