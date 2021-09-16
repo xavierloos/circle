@@ -71,12 +71,10 @@ const HomeScreen = ({ navigation }) => {
         </View>
       </ScrollView>
       <View style={styles.optionBar}>
-        <TouchableOpacity>
-          <Text style={styles.optionText}>Forgot Password?</Text>
-        </TouchableOpacity>
         <TouchableOpacity style={styles.optionTextContainer} onPress={() => navigation.navigate("AddChat")}>
-          <Text style={styles.optionText}>Register </Text>
           <Icon
+            reverse
+            size={25}
             name='plus'
             type='font-awesome'
             color='#D50000'
@@ -115,16 +113,13 @@ const styles = StyleSheet.create({
     elevation: 0,
     display: "flex",
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "flex-end",
     alignItems: 'center',
     bottom: 50,
     left: 20,
     right: 20,
     padding: 10,
-    backgroundColor: "white",
-    borderColor: "#D50000",
-    borderWidth: 0.25,
-    borderRadius: 15,
+    backgroundColor: "transparent",
     height: 50,
     shadowColor: "#808080",
     shadowOffset: {
