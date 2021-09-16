@@ -11,8 +11,8 @@ const HomeScreen = ({ navigation}) => {
   useLayoutEffect(() => {
     navigation.setOptions({
       title: "CIRCLE",
-      headerStyle: { backgroundColor: "#D50000" },
-      headerTitleStyle: { color: "white" },
+      headerStyle: { backgroundColor: "#D50000", height: 130  },
+      headerTitleStyle: { color: "white"},
       headerTintColor: "white",
       headerRight: () => (
         <View style={{ marginRight: 20, flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
