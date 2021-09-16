@@ -134,7 +134,7 @@ const AddChatScreen = ({ navigation }) => {
         </TouchableOpacity>
       </View>
       <View style={styles.optionBar}>
-        <TouchableOpacity style={styles.optionTextContainer} onPress={() => navigation.navigate("AddChat")}>
+        <TouchableOpacity style={styles.optionTextContainer} onPress={() => navigation.navigate("Home")}>
           <Icon
             reverse
             size={25}
