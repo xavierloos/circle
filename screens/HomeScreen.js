@@ -109,5 +109,39 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: "400",
     color: "white"
+  },
+  optionBar: {
+    position: "absolute",
+    elevation: 0,
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: 'center',
+    bottom: 50,
+    left: 20,
+    right: 20,
+    padding: 10,
+    backgroundColor: "white",
+    borderColor: "#D50000",
+    borderWidth: 0.25,
+    borderRadius: 15,
+    height: 50,
+    shadowColor: "#808080",
+    shadowOffset: {
+      width: 0,
+      height: 5
+    },
+    shadowOpacity: 0.50,
+    shadowRadius: 3.5
+  },
+  optionTextContainer: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: 'center'
+  },
+  optionText: {
+    fontWeight: "300",
+    color: "#D50000"
   }
 })
