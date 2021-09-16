@@ -133,6 +133,17 @@ const AddChatScreen = ({ navigation }) => {
           </Text>
         </TouchableOpacity>
       </View>
+      <View style={styles.optionBar}>
+        <TouchableOpacity style={styles.optionTextContainer} onPress={() => navigation.navigate("AddChat")}>
+          <Icon
+            reverse
+            size={25}
+            name='plus'
+            type='font-awesome'
+            color='#D50000'
+          />
+        </TouchableOpacity>
+      </View>
     </View>
   )
 }
@@ -211,4 +222,5 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: "gray"
   }
+  
 })
