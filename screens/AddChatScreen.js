@@ -138,7 +138,7 @@ const AddChatScreen = ({ navigation }) => {
           <Icon
             reverse
             size={25}
-            name='plus'
+            name='times'
             type='font-awesome'
             color='#D50000'
           />
