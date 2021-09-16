@@ -221,6 +221,37 @@ const styles = StyleSheet.create({
   creator: {
     textAlign: "center",
     color: "gray"
+  },
+  optionBar: {
+    position: "absolute",
+    elevation: 0,
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "flex-end",
+    alignItems: 'center',
+    bottom: 50,
+    left: 20,
+    right: 20,
+    padding: 10,
+    backgroundColor: "transparent",
+    height: 50,
+    shadowColor: "#808080",
+    shadowOffset: {
+      width: 0,
+      height: 5
+    },
+    shadowOpacity: 0.50,
+    shadowRadius: 3.5
+  },
+  optionTextContainer: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: 'center'
+  },
+  optionText: {
+    fontWeight: "300",
+    color: "#D50000"
   }
-  
+
 })
