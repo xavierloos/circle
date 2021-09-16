@@ -2,7 +2,7 @@ import React, { useLayoutEffect, useState, useEffect } from 'react'
 import { ScrollView, StyleSheet, Text, View, SafeAreaView, TouchableOpacity } from 'react-native'
 import CustomListItem from '../components/CustomListItem'
 import { StatusBar } from 'expo-status-bar'
-import { Avatar } from 'react-native-elements'
+import { Avatar, Icon } from 'react-native-elements'
 import { SimpleLineIcons } from "@expo/vector-icons"
 import { auth, db } from '../firebase'
 
@@ -70,6 +70,19 @@ const HomeScreen = ({ navigation }) => {
           ))}
         </View>
       </ScrollView>
+      <View style={styles.optionBar}>
+        <TouchableOpacity>
+          <Text style={styles.optionText}>Forgot Password?</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.optionTextContainer} onPress={() => navigation.navigate("Register")}>
+          <Text style={styles.optionText}>Register </Text>
+          <Icon
+            name='chevron-right'
+            type='font-awesome'
+            color='#D50000'
+          />
+        </TouchableOpacity>
+      </View>
     </SafeAreaView>
   )
 }
