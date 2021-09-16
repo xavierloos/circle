@@ -74,10 +74,10 @@ const HomeScreen = ({ navigation }) => {
         <TouchableOpacity>
           <Text style={styles.optionText}>Forgot Password?</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.optionTextContainer} onPress={() => navigation.navigate("Register")}>
+        <TouchableOpacity style={styles.optionTextContainer} onPress={() => navigation.navigate("AddChat")}>
           <Text style={styles.optionText}>Register </Text>
           <Icon
-            name='chevron-right'
+            name='plus'
             type='font-awesome'
             color='#D50000'
           />
