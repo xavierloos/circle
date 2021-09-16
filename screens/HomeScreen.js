@@ -11,14 +11,14 @@ const HomeScreen = ({ navigation }) => {
   useLayoutEffect(() => {
     navigation.setOptions({
       title: false,
-      headerStyle: { backgroundColor: "#D50000", height: 115 },
+      headerStyle: { backgroundColor: "#D50000", height: 115, borderRadius: 30, },
       headerTitleStyle: { color: "white" },
       headerTintColor: "white",
       headerRight: () => (
         <View style={{ marginRight: 20, flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
           <TouchableOpacity activeOpacity={0.5} style={{ marginLeft: 5 }} onPress={() => navigation.navigate("Profile")}>
             {
-              (auth?.currentUser?.photoURL === null) ? <SimpleLineIcons name="plus" size={24} color="white" /> : <Avatar size={70} rounded source={{ uri: auth?.currentUser?.photoURL }} />
+              (auth?.currentUser?.photoURL === null) ? <SimpleLineIcons name="plus" size={24} color="white" /> : <Avatar size={60} rounded source={{ uri: auth?.currentUser?.photoURL }} />
             }
           </TouchableOpacity>
         </View>
