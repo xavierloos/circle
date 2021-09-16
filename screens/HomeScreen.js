@@ -10,8 +10,8 @@ const HomeScreen = ({ navigation }) => {
   const [chats, setChats] = useState([]);
   useLayoutEffect(() => {
     navigation.setOptions({
-      title: "CIRCLE",
-      headerStyle: { backgroundColor: "#D50000", height: 130 },
+      title: false,
+      headerStyle: { backgroundColor: "#D50000", height: 115 },
       headerTitleStyle: { color: "white" },
       headerTintColor: "white",
       headerRight: () => (
@@ -33,7 +33,7 @@ const HomeScreen = ({ navigation }) => {
           </TouchableOpacity> */}
           <View>
             <Text style={styles.headerTitle}>CIRCLE</Text>
-            <Text>Chats</Text>
+            <Text style={styles.headerSubtitle}>Chats</Text>
           </View>
         </View>
       ),
@@ -86,5 +86,15 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignContent: "flex-end",
     flexWrap: "wrap",
+  },
+  headerTitle: {
+    fontSize: 30,
+    fontWeight: "800",
+    color: "white"
+  },
+  headerSubtitle: {
+    fontSize: 25,
+    fontWeight: "400",
+    color: "white"
   }
 })
