@@ -29,15 +29,15 @@ const ProfileScreen = ({ navigation }) => {
       },
       headerTitleStyle: { color: "white" },
       headerTintColor: "white",
-      headerRight: () => (
-        <View style={{ marginRight: 20, flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
-          <TouchableOpacity activeOpacity={0.5} style={{ marginLeft: 5 }} onPress={() => navigation.navigate("Profile")}>
-            {
-              (auth?.currentUser?.photoURL === null) ? <SimpleLineIcons name="plus" size={24} color="white" /> : <Avatar size={60} rounded source={{ uri: auth?.currentUser?.photoURL }} />
-            }
-          </TouchableOpacity>
-        </View>
-      ),
+      // `headerRight: () => (
+      //   <View style={{ marginRight: 20, flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
+      //     <TouchableOpacity activeOpacity={0.5} style={{ marginLeft: 5 }} onPress={() => navigation.navigate("Profile")}>
+      //       {
+      //         (auth?.currentUser?.photoURL === null) ? <SimpleLineIcons name="plus" size={24} color="white" /> : <Avatar size={60} rounded source={{ uri: auth?.currentUser?.photoURL }} />
+      //       }
+      //     </TouchableOpacity>
+      //   </View>
+      // ),`
       headerLeft: () => (
         <View style={{ marginLeft: 20, flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
           {/* <TouchableOpacity activeOpacity={0.5} style={{ marginLeft: 5 }}>
