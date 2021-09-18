@@ -218,6 +218,16 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     height: "100%"
   },
+  headerTitle: {
+    fontSize: 30,
+    fontWeight: "800",
+    color: "white"
+  },
+  headerSubtitle: {
+    fontSize: 25,
+    fontWeight: "400",
+    color: "white"
+  },
   avatarContainer: {
     display: "flex",
     flexDirection: "column",
