@@ -48,7 +48,7 @@ const ProfileScreen = ({ navigation }) => {
           </TouchableOpacity> */}
           <View>
             <Text style={styles.headerTitle}>CIRCLE</Text>
-            <Text style={styles.headerSubtitle}>Chats</Text>
+            <Text style={styles.headerSubtitle}>Profile</Text>
           </View>
         </View>
       ),
