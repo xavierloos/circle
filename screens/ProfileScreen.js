@@ -17,19 +17,41 @@ const ProfileScreen = ({ navigation }) => {
   // }, [])
   useLayoutEffect(() => {
     navigation.setOptions({
-      headerTitle: "CIRCLE",
-      headerStyle: { backgroundColor: "#D50000" },
-      headerTitleStyle: { color: "#D50000" },
+      title: false,
+      headerStyle: {
+        backgroundColor: "#D50000", height: 115, borderRadius: 30, shadowColor: "#808080",
+        shadowOffset: {
+          width: 0,
+          height: 5
+        },
+        shadowOpacity: 0.50,
+        shadowRadius: 3.5
+      },
+      headerTitleStyle: { color: "white" },
       headerTintColor: "white",
-      headerBackTitleVisible: false,
       headerRight: () => (
-        <View style={{ marginRight: 10, flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
-          {/* <Text style={styles.chatTitle}>{route.params.chatName}{route.params.id}</Text>
-          <TouchableOpacity activeOpacity={0.5} style={{ marginLeft: 5 }} onPress={() => navigation.navigate("ChatInfo", route.params.id)}>
-            {(auth?.currentUser?.photoURL === null) ? <SimpleLineIcons name="user" size={24} color="white" /> : <Avatar rounded source={{ uri: auth?.currentUser?.photoURL }} />}
-          </TouchableOpacity> */}
+        <View style={{ marginRight: 20, flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
+          <TouchableOpacity activeOpacity={0.5} style={{ marginLeft: 5 }} onPress={() => navigation.navigate("Profile")}>
+            {
+              (auth?.currentUser?.photoURL === null) ? <SimpleLineIcons name="plus" size={24} color="white" /> : <Avatar size={60} rounded source={{ uri: auth?.currentUser?.photoURL }} />
+            }
+          </TouchableOpacity>
         </View>
-      )
+      ),
+      headerLeft: () => (
+        <View style={{ marginLeft: 20, flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
+          {/* <TouchableOpacity activeOpacity={0.5} style={{ marginLeft: 5 }}>
+            <SimpleLineIcons name="camera" size={24} color="white" />
+          </TouchableOpacity> */}
+          {/* <TouchableOpacity onPress={() => navigation.navigate("AddChat")} activeOpacity={0.5} style={{ marginLeft: 5 }}>
+            <SimpleLineIcons name="plus" size={24} color="white" />
+          </TouchableOpacity> */}
+          <View>
+            <Text style={styles.headerTitle}>CIRCLE</Text>
+            <Text style={styles.headerSubtitle}>Chats</Text>
+          </View>
+        </View>
+      ),
     })
   }, [])
 
