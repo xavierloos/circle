@@ -123,7 +123,7 @@ const ProfileScreen = ({ navigation }) => {
     <View style={styles.container}>
       {console.log(auth?.currentUser)}
       <View style={styles.avatarContainer}>
-        <Avatar size="xlarge"
+        <Avatar size={250}
           squared
           activeOpacity={0.7}
           source={{ uri: auth?.currentUser?.photoURL }} />
