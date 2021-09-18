@@ -7,14 +7,32 @@ import firebase from "firebase"
 const ProfileScreen = ({ navigation }) => {
   const [visible, setVisible] = useState(false)
 
+  // useLayoutEffect(() => {
+  //   navigation.setOptions({
+  //     title: "CIRCLE: Profile",
+  //     headerStyle: { backgroundColor: "#D50000" },
+  //     headerTitleStyle: { color: "white" },
+  //     headerTintColor: "white",
+  //   })
+  // }, [])
   useLayoutEffect(() => {
     navigation.setOptions({
-      title: "CIRCLE: Profile",
+      headerTitle: "CIRCLE",
       headerStyle: { backgroundColor: "#D50000" },
-      headerTitleStyle: { color: "white" },
+      headerTitleStyle: { color: "#D50000" },
       headerTintColor: "white",
+      headerBackTitleVisible: false,
+      headerRight: () => (
+        <View style={{ marginRight: 10, flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
+          {/* <Text style={styles.chatTitle}>{route.params.chatName}{route.params.id}</Text>
+          <TouchableOpacity activeOpacity={0.5} style={{ marginLeft: 5 }} onPress={() => navigation.navigate("ChatInfo", route.params.id)}>
+            {(auth?.currentUser?.photoURL === null) ? <SimpleLineIcons name="user" size={24} color="white" /> : <Avatar rounded source={{ uri: auth?.currentUser?.photoURL }} />}
+          </TouchableOpacity> */}
+        </View>
+      )
     })
   }, [])
+
 
   const logout = () => {
     auth.signOut().then(() => {
@@ -47,7 +65,7 @@ const ProfileScreen = ({ navigation }) => {
         }).start()
       }
     }
-  
+
     return (<Modal transparent visible={showModal}>
       <View style={styles.modalBg}>
         <Animated.View style={[styles.modalContainer, { transform: [{ scale: scaleValue }] }]}>
@@ -123,7 +141,7 @@ const ProfileScreen = ({ navigation }) => {
               name='question'
               type='font-awesome'
               color='#D50000' />
-            <Text h3>Are you sure you want to log out?</Text> 
+            <Text h3>Are you sure you want to log out?</Text>
           </View>
           <TouchableOpacity style={styles.button} activeOpacity={0.5} onPress={() => setVisible(false)} >
             <Button raised title="No, cancel" type="outline" onPress={() => setVisible(false)} />
@@ -176,7 +194,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     padding: 10,
     backgroundColor: "white",
-    height:"100%"
+    height: "100%"
   },
   avatarContainer: {
     display: "flex",
