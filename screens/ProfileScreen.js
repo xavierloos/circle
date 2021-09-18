@@ -128,7 +128,6 @@ const ProfileScreen = ({ navigation }) => {
           activeOpacity={0.7}
           source={{ uri: auth?.currentUser?.photoURL }} />
       </View>
-      
       <View style={styles.infoContainer}>
         <Icon style={styles.icon}
           name='user'
